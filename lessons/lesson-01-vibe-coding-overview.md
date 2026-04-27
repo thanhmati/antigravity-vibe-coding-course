@@ -317,30 +317,30 @@ Dưới đây là roadmap phát triển mà chúng ta sẽ đi theo xuyên suố
 
 ```mermaid
 gantt
-    title 📅 Roadmap phát triển English Practice Hub
-    dateFormat X
-    axisFormat %s
+    title Roadmap phat trien English Practice Hub
+    dateFormat YYYY-MM-DD
+    axisFormat %d
 
-    section Chuẩn bị
-    Cài đặt Skills & Môi trường   :done, a1, 0, 1
-    Tạo GitHub Repository          :done, a2, 0, 1
+    section Chuan bi
+    Cai dat Skills va Moi truong    :done, a1, 2026-01-01, 1d
+    Tao GitHub Repository           :done, a2, 2026-01-01, 1d
 
     section Design
-    Tạo Design System (Stitch)     :active, b1, 1, 2
-    UI: Landing Page               :b2, 2, 3
-    UI: Vocabulary, Quiz, Flashcard:b3, 3, 4
+    Tao Design System               :active, b1, 2026-01-02, 1d
+    UI Landing Page                 :b2, 2026-01-03, 1d
+    UI Vocabulary Quiz Flashcard    :b3, 2026-01-04, 1d
 
     section Code
-    Convert Design → React         :c1, 4, 5
-    Build Next.js Project          :c2, 5, 6
+    Convert Design to React         :c1, 2026-01-05, 1d
+    Build NextJS Project            :c2, 2026-01-06, 1d
 
-    section Git & Iterate
-    Git Workflow (Branch, PR)      :d1, 6, 7
-    Thêm Dark Mode, Progress      :d2, 7, 8
+    section Git va Iterate
+    Git Workflow Branch PR          :d1, 2026-01-07, 1d
+    Them Dark Mode Progress         :d2, 2026-01-08, 1d
 
-    section Polish
-    Responsive & Animations        :e1, 8, 9
-    Review & Tổng kết              :e2, 9, 10
+    section Hoan thien
+    Responsive va Animations        :e1, 2026-01-09, 1d
+    Review va Tong ket              :e2, 2026-01-10, 1d
 ```
 
 ### Từng giai đoạn chi tiết
