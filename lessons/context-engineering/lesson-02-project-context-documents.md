@@ -210,12 +210,12 @@ English Practice Hub là SPA (Single Page Application) với 4 routes chính.
 
 ## Pages & Routes
 
-| Route | Page | Component chính | Data source |
-|-------|------|----------------|-------------|
-| / | Landing | HeroSection, FeatureCard | Static |
-| /vocabulary | Vocabulary | VocabularyCard, ProgressBar | vocabulary.ts |
-| /grammar | Grammar Quiz | QuizCard, Timer, ScoreBoard | grammar-questions.ts |
-| /flashcards | Flashcard | FlashCard, DeckList | flashcards.ts |
+| Route          | Page          | Main Components              | Data Source             |
+|----------------|--------------|------------------------------|-------------------------|
+| `/`            | Landing      | HeroSection, FeatureCard     | Static                  |
+| `/vocabulary`  | Vocabulary   | VocabularyCard, ProgressBar  | `vocabulary.ts`         |
+| `/grammar`     | Grammar Quiz | QuizCard, Timer, ScoreBoard  | `grammar-questions.ts`  |
+| `/flashcards`  | Flashcard    | FlashCard, DeckList          | `flashcards.ts`         |
 
 ## Component Hierarchy
 
