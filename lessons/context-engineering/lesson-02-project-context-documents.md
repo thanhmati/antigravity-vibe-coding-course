@@ -219,7 +219,6 @@ English Practice Hub là SPA (Single Page Application) với 4 routes chính.
 
 ## Component Hierarchy
 
-```
 Layout (Header + Footer)
 ├── LandingPage
 │   ├── HeroSection
@@ -236,7 +235,7 @@ Layout (Header + Footer)
 └── FlashcardPage
     ├── DeckList (sidebar)
     └── FlashCard (flip animation)
-```
+
 
 ## Data Flow
 
