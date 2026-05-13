@@ -1,0 +1,247 @@
+Course Title: Google Antigravity: Xây dựng AI Agent, AI App & Vibe Coding
+Course subtitle: Vibe Coding and Agentic Workflow: Build AI Apps nhanh, scalable and production-ready
+Course description:
+Khóa học này giúp bạn hiểu và xây dựng AI Agent thực chiến – không chỉ dừng ở lý thuyết, mà đi từ mindset đến triển khai production.
+
+Bạn sẽ bắt đầu từ:
+
+Hiểu AI Agent là gì và sự khác biệt với AI truyền thống
+
+Làm quen với Google Antigravity – nền tảng mới để build AI App
+
+Nắm được cách Agent suy nghĩ, ra quyết định và hành động
+
+Sau đó bạn sẽ đi sâu vào:
+
+Model selection (Gemini, Claude, GPT-OSS)
+
+Rules & Constraints để kiểm soát hành vi Agent
+
+Workflows để tự động hóa quy trình
+
+Agent Skills để kết nối API, database, hệ thống thực
+
+Tiếp theo là các phần nâng cao:
+
+Prompt Engineering cho AI Agents
+
+Debug & tối ưu prompt
+
+Context Engineering cho AI Agents
+
+Multi-Agent Systems & Orchestration
+
+Thiết kế Planner & Orchestrator
+
+Chạy nhiều agents song song (parallel execution)
+
+Cuối cùng, bạn sẽ học cách:
+
+Kết nối AI Agent với hệ thống ngoài qua MCP (Model Context Protocol)
+
+Build workflow thực tế với MCP + Google Stitch
+
+Setup môi trường production-ready
+
+Sau khóa học, bạn có thể:
+
+Build AI Agent cho sản phẩm thật
+
+Tự động hóa workflow dev/business
+
+Thiết kế hệ thống multi-agent phức tạp
+
+Điểm đặc biệt của khóa học
+
+Tập trung vào Agent Engineering thay vì AI theory chung chung
+
+Hướng dẫn theo real-world use cases (không chỉ demo)
+
+Áp dụng trực tiếp vào developer workflow & production systems
+
+Kết hợp nhiều công nghệ mới: Antigravity, MCP, Multi-Agent
+
+
+What is primarily taught in your course?
+- Google Antigravity
+- Vibe Coding
+- AI Agents & Agentic AI
+
+What will students learn in your course?
+Hiểu AI Agent & Agentic AI mindset (how agents reason, plan, act)
+Setup & build AI App với Google Antigravity từ A–Z
+Làm chủ Core Concepts: Model, Rules, Workflows, Agent Skills
+Chọn & sử dụng LLM (Gemini, Claude, GPT, OSS) đúng use case
+Xây dựng Workflows automation & tích hợp API, database
+Thiết kế Prompt Engineering + debug & optimize output
+Phát triển Multi-Agent Systems (Orchestrator, Planner, parallel execution)
+Kết nối hệ thống qua MCP (Model Context Protocol)
+Build real-world AI workflows với MCP + Google Stitch
+Context Engineering – Giúp AI Agent "Nhớ" & Tối Ưu Token
+Vibe Coding Dự Án Thực Tế – Từ Ý Tưởng Đến Sản Phẩm
+
+What are the requirements or prerequisites for taking your course?
+Có kiến thức cơ bản về programming (JavaScript / TypeScript)
+Hiểu cách làm việc với API, HTTP, JSON
+Không yêu cầu kiến thức về AI (sẽ được giải thích từ đầu)
+Có tài khoản để sử dụng Google Antigravity (sẽ hướng dẫn setup trong khoá học)
+Không yêu cầu kiến thức trước về AI Agent, MCP hay Multi-Agent Systems
+
+Who is this course for?
+Developer muốn ứng dụng AI vào sản phẩm thực tế
+Lập trình viên muốn học AI Agent & Agentic Development từ zero → production
+Backend/Frontend/Fullstack dev muốn tăng tốc độ build app với AI
+Người đang làm sản phẩm muốn tích hợp AI Agent vào workflow hiện tại
+Tech lead / founder muốn hiểu cách xây dựng AI-powered product
+Những ai đã dùng ChatGPT nhưng muốn đi xa hơn (từ prompt → system)
+
+Curriculum
+[chapter] Giới thiệu khóa học & định hướng
+- Description: 
+
+[lecture] Mua khoá học với giá ưu đãi như nào ?
+- Description: 
+
+[lecture] Lời cảm ơn
+- Description: 
+
+[lecture] About me
+- Description: 
+
+[chapter] Foundation: AI Agent & Antigravity Basics
+- Description: Xây nền tảng từ concept → setup → làm quen công cụ
+
+[lecture] AI Agent là gì? Tư duy Agentic AI cho Developer
+- Description: Hiểu đúng bản chất AI Agent và sự khác biệt với AI truyền thống. Nắm được cách Agent “suy nghĩ” và ứng dụng thực tế trong workflow của developer.
+
+[lecture] Google Antigravity là gì? Nền tảng mới thay đổi cách Dev build AI App
+- Description: Tổng quan về Antigravity và cách nó thay đổi cách xây dựng AI Agent. Hiểu vì sao đây là bước tiến tiếp theo trong AI-driven development.
+
+[lecture] Pricing Antigravity: Hiểu chi phí khi build AI App & cách tối ưu
+- Description: Hiểu rõ cost structure khi build AI app production
+
+[lecture] Setup Antigravity từ A-Z: Chuẩn bị môi trường dev chuyên nghiệp
+- Description: Hướng dẫn setup đầy đủ môi trường để bắt đầu build AI Agent.
+
+[lecture] Antigravity IDE: Làm quen giao diện & các thành phần chính
+- Description: Overview nhanh trước khi bắt đầu build AI app
+
+[chapter] Core Concepts - Model, Rules, Workflows & Skills
+- Description: Từ hiểu → build → control → production mindset
+
+[lecture] Model trong AI Agent: Cách chọn Reasoning Model phù hợp
+- Description: Deep dive các model: Gemini, Claude, GPT-OSS
+
+[lecture] Agent Modes & Settings: Kiểm soát hành vi AI Agent
+- Description: Hiểu cách Agent suy nghĩ và thực thi task
+
+[lecture] Build AI App với 1 câu lệnh: Demo sức mạnh Antigravity
+- Description: 
+
+[lecture] Rules trong AI Agent: Kiểm soát hành vi & coding style của Agent
+- Description: Tạo rules để kiểm soát output và hành vi của AI Agent. Áp dụng constraint để Agent hoạt động đúng theo use case.
+
+[lecture] Demo Rules: Trước vs Sau – AI Agent thay đổi như thế nào?
+- Description: So sánh trực quan hiệu quả của việc áp dụng Rules. Hiểu rõ impact của Rules trong production AI system.
+
+[lecture] Workflows trong AI Agent: Tự động hoá quy trình & tăng tốc development
+- Description: Hiểu Workflows là gì và vai trò trong AI Agent. Cách định nghĩa các bước để Agent tự động xử lý task lặp lại. Biến các quy trình thủ công (manual) thành automation với AI.
+
+[lecture] Workflows Demo: Từ manual → auto với AI Agent
+- Description: Demo cách tạo một Workflow hoàn chỉnh trong AI Agent. Xem cách Agent tự động thực thi nhiều bước thay vì làm thủ công. Hiểu rõ cách áp dụng Workflows vào các task thực tế (dev, automation). Nắm được tư duy thiết kế workflow hiệu quả cho production.
+
+[lecture] Agent Skills là gì? Mở rộng sức mạnh AI Agent với Tools
+- Description: Agent Skills là gì? Mở rộng sức mạnh AI Agent với Tools. Agent Skills: Cách AI Agent tương tác với API, Database & Code. Xây dựng Agent Skills: Biến AI Agent thành hệ thống thực thi thực tế. AI Agent Skills: Từ trả lời → hành động (Action-based AI)
+
+[lecture] Demo cách sử dụng Agent Skills từ Vercel Labs trong thực tế
+- Description: Demo cách sử dụng Agent Skills từ Vercel Labs trong thực tế. Hiểu cách Skills giúp AI Agent thực thi workflow phức tạp (không chỉ gọi tool). Áp dụng các skills như React, AI SDK, deployment vào AI Agent. Nắm được cách integrate skills vào project để build production AI system.
+
+[chapter] Prompt Engineering for AI Agents
+- Description: 
+
+[lecture] Prompt Engineering cho AI Agent là gì ?
+- Description: Hiểu Prompt Engineering trong AI Agent và cách prompt ảnh hưởng đến cách agent suy nghĩ, quyết định và hành động.
+
+[lecture] Các lỗi phổ biến khi viết Prompt
+- Description: Những lỗi thường gặp như prompt mơ hồ, xung đột instruction, context quá dài khiến agent trả lời sai.
+
+[lecture] Cách thiết kế Prompt hiệu quả (Role, Goal, Constraints, Output)
+- Description: 
+
+[lecture] Debug & phân tích Prompt (Antigravity Kit)
+- Description: 
+
+[chapter] Context Engineering for AI Agents
+- Description: Quản lý context & memory cho AI Agent khi Vibe Coding, tránh Agent "quên" dự án, giảm token usage, tăng tốc development.
+
+[lecture] Context Engineering là gì và khác gì Prompt Engineering
+- Description: Context Engineering là kỹ thuật thiết kế, quản lý và tối ưu toàn bộ thông tin mà AI Agent nhận được — bao gồm instructions, tools, memory, data — để Agent luôn hoạt động chính xác, nhất quán và tiết kiệm
+
+[lecture] Context Window là gì?
+- Description: Mỗi AI model có một Context Window — giới hạn lượng thông tin nó có thể "nhìn thấy" tại 1 thời điểm.
+
+[lecture] 5 trụ cột của Context Engineering
+- Description: 
+
+[lecture] Token là gì? Tại sao quan trọng?
+- Description: 
+
+[lecture] Context Documents – Bộ nhớ ngoài cho Agent
+- Description: 
+
+[lecture] AGENTS.md – File quan trọng nhất
+- Description: 
+
+[lecture] ARCHITECTURE.md – Bản đồ dự án
+- Description: 
+
+[lecture] PLAN.md – Trạng thái dự án
+- Description: 
+
+[lecture] Kỹ thuật Summarize Context - Giữ Agent "tỉnh táo" trong những phiên làm việc dài
+- Description: 
+
+[lecture] Context Compaction – "Nén" lại conversation
+- Description: 
+
+[chapter] Multi-Agent Systems & Orchestration
+- Description: 
+
+[lecture] Multi-Agent System trong AI là gì?
+- Description: Hiểu cách nhiều AI agents phối hợp với nhau để giải quyết bài toán phức tạp.
+
+[lecture] Thiết kế Orchestrator cho Multi-Agent System
+- Description: Tìm hiểu cách xây dựng Orchestrator để điều phối agents, quản lý workflow và tổng hợp kết quả.
+
+[lecture] Thiết kế Planner: Phân rã task trong Multi-Agent System
+- Description: Hiểu cách Planner Agent phân tích yêu cầu, chia nhỏ thành các task rõ ràng, xác định dependency và phân công đúng agent để đảm bảo hệ thống hoạt động hiệu quả và có thể scale.
+
+[lecture] Parallel Agent Execution với Agent Manager
+- Description: 
+
+[chapter] Model Context Protocol (MCP): Kết nối AI Agents với External System
+- Description: Sau section này, học viên sẽ hiểu rõ MCP và vai trò của nó trong việc xây dựng AI Agents, biết cách kết nối AI với MCP để gọi tool và sử dụng dữ liệu thực tế.
+
+[lecture] MCP là gì? Tổng quan và kiến trúc hệ thống
+- Description: 
+
+[lecture] Review workflow vibe coding với MCP + Google Stitch
+- Description: 
+
+[lecture] Kết nối IDE tới Google Stitch MCP server
+- Description: 
+
+[lecture] Cài đặt Stitch Agent Skills
+- Description: 
+
+[lecture] GitHub MCP Server là gì? Setup trong Antigravity
+- Description: 
+
+[lecture] GitHub MCP Server Demo: 4 Use Cases thực tế
+- Description: 
+
+[chapter] Vibe Coding Dự Án Thực Tế – Từ Ý Tưởng Đến Sản Phẩm - UPDATING
+- Description: Áp dụng toàn bộ kiến thức từ Section 1-5 để xây dựng một dự án web hoàn chỉnh bằng phương pháp Vibe Coding, sử dụng Google Stitch MCP (thiết kế UI) và GitHub MCP (quản lý source code)
+
+[lecture] Tổng Quan Vibe Coding – Từ Concept Đến Product
+- Description:
