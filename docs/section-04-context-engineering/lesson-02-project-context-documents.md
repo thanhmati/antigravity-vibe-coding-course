@@ -144,7 +144,7 @@ Dưới đây là template bạn có thể **copy và tuỳ chỉnh** cho dự �
 - **Data:** Mock data trong /src/data/
 
 ## Project Structure
-```
+
 src/
 ├── app/           → Pages (Next.js App Router)
 ├── components/    → Reusable UI components
@@ -152,7 +152,6 @@ src/
 ├── hooks/         → Custom React hooks
 ├── types/         → TypeScript type definitions
 └── utils/         → Helper functions
-```
 
 ## Conventions
 - **Components:** PascalCase, functional components + hooks
@@ -220,7 +219,6 @@ English Practice Hub là SPA (Single Page Application) với 4 routes chính.
 
 ## Component Hierarchy
 
-```
 Layout (Header + Footer)
 ├── LandingPage
 │   ├── HeroSection
@@ -237,7 +235,6 @@ Layout (Header + Footer)
 └── FlashcardPage
     ├── DeckList (sidebar)
     └── FlashCard (flip animation)
-```
 
 ## Data Flow
 
