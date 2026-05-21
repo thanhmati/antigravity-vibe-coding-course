@@ -18,40 +18,39 @@
 
 ## 🎯 Curriculum Chi Tiết
 
-### Bài 1: Tổng quan Vibe Coding & Lập kế hoạch dự án
+### Bài 1: Tổng quan Vibe Coding, Viết PRD & Lập kế hoạch dự án
 **Thời lượng:** 30-40 phút
 
 **Nội dung:**
-- Vibe Coding là gì? Triết lý "mô tả ý tưởng, AI xây dựng"
-- So sánh Vibe Coding vs Traditional Coding
-- Workflow tổng thể: Ý tưởng → Design → Code → Deploy
-- Giới thiệu dự án "VibeSpace Studio"
-- Phân tích yêu cầu và lên danh sách tính năng (Lobby, Immersive Studio, Journal, Settings)
-- Lên kế hoạch phát triển MVP (Minimum Viable Product) bằng Antigravity
+- Vibe Coding là gì? Triết lý "mô tả ý tưởng, AI xây dựng".
+- So sánh Vibe Coding vs Traditional Coding.
+- Quy trình Vibe Coding chuyên nghiệp: **Specs-Driven Development**.
+- Thực hành viết **PRD (Product Requirement Document)** chi tiết cho VibeSpace Studio (User Stories, Flow, MVP).
+- Thực hành viết **Tech Specs (Đặc tả kỹ thuật)**: Routing Next.js 14 App Router, LocalStorage Schema và Audio Singleton specification.
+- Lên kế hoạch phát triển MVP bằng Antigravity.
 
 **Kết quả bài học:**
-- Hiểu rõ mindset Vibe Coding
-- Có project plan chi tiết cho dự án VibeSpace
+- Hiểu rõ mindset Vibe Coding & Quy trình Specs-Driven Development.
+- Có bộ PRD và Tech Specs hoàn chỉnh của VibeSpace Studio để định hình hướng đi.
 
 ---
 
-### Bài 2: Cài đặt Stitch Skills & Chuẩn bị môi trường
-**Thời lượng:** 20-30 phút
+### Bài 2: Cài đặt & Setup Context Engineering cho VibeSpace
+**Thời lượng:** 25-35 phút
 
 **Nội dung:**
-- Tổng quan thư viện Stitch Skills (google-labs-code/stitch-skills)
-- Cài đặt các skills cần thiết:
-  - `stitch-design` – Thiết kế UI tổng thể
-  - `stitch-loop` – Sinh multi-page website
-  - `enhance-prompt` – Tối ưu prompt cho Stitch
-  - `design-md` – Tạo design system document
-  - `react-components` – Convert design → React components
-- Verify cài đặt thành công
-- Tạo GitHub repo mới `vibespace-dashboard` bằng GitHub MCP
+- Tổng quan thư viện Stitch Skills (google-labs-code/stitch-skills) và vai trò của các skills.
+- Cài đặt các Stitch skills cần thiết bằng terminal.
+- Tạo GitHub repo mới `vibespace-dashboard` bằng GitHub MCP.
+- **Tầm quan trọng của Context Engineering** trong Vibe Coding.
+- Thiết lập bộ 3 file context documents tại root của dự án VibeSpace:
+  - `AGENTS.md` (Tech stack, coding conventions, rules cho Audio & LocalStorage)
+  - `ARCHITECTURE.md` (Phân mảnh component, State flow, định tuyến)
+  - `PLAN.md` (Task list ban đầu của MVP)
 
 **Kết quả bài học:**
-- Môi trường dev đầy đủ với tất cả skills
-- Repo GitHub đã sẵn sàng
+- Môi trường dev sẵn sàng cùng Git Repo.
+- **Bộ nhớ ngoài (Context Documents)** được cài đặt giúp AI Agent hiểu chính xác dự án ngay từ đầu, giảm 80%+ tokens lãng phí.
 
 ---
 

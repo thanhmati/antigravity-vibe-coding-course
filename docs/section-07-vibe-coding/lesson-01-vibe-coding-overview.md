@@ -344,6 +344,99 @@ gantt
 
 ---
 
+## 6. Quy trình Vibe Coding chuẩn: Specs-Driven Development
+
+Khi Vibe Coding ở mức độ chuyên nghiệp, chúng ta **không bao giờ** ném trực tiếp một ý tưởng mơ hồ cho AI Agent. Làm như vậy sẽ khiến Agent sinh mã nguồn lan man, tốn token và dễ gặp lỗi logic nghiêm trọng. 
+
+Quy trình chuẩn hóa thế giới thực yêu cầu phương pháp **Specs-Driven Development (Phát triển hướng Đặc tả)**:
+
+```mermaid
+graph TD
+    PRD["📝 1. Viết PRD<br/><i>(Product Requirement Document)</i>"] --> SPEC["🏗️ 2. Viết Tech Specs<br/><i>(System Design & APIs)</i>"]
+    SPEC --> CTX["📜 3. Setup Context Documents<br/><i>(AGENTS.md, ARCHITECTURE.md, PLAN.md)</i>"]
+    CTX --> DESIGN["🎨 4. Stitch Design<br/><i>(Design System & Screens)</i>"]
+    DESIGN --> CODE["🤖 5. Agent Coding & Git<br/><i>(Vibe Coding & Verification)</i>"]
+
+    style PRD fill:#fbbf24,stroke:#f59e0b,color:#000
+    style SPEC fill:#f59e0b,stroke:#d97706,color:#fff
+    style CTX fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style DESIGN fill:#3b82f6,stroke:#2563eb,color:#fff
+    style CODE fill:#10b981,stroke:#059669,color:#fff
+```
+
+Dưới đây là bộ tài liệu đặc tả chuẩn hóa cho dự án **VibeSpace Studio** mà học viên sẽ dựa vào để hướng dẫn AI Agent làm việc:
+
+### 📄 Tài liệu 1: PRD (Product Requirement Document) — VibeSpace Studio
+
+#### 1. Tổng quan & Mục tiêu (Overview)
+VibeSpace Studio là một ứng dụng trạm tập trung cao độ (Focus Station) dạng web cao cấp dành riêng cho lập trình viên và những người làm việc trí óc. Sản phẩm giúp loại bỏ sự xao nhãng, mang lại không gian thiền định yên ả qua âm thanh và hình nền phong cảnh động, kết hợp các công cụ quản lý thời gian đắc lực.
+
+#### 2. Đối tượng người dùng (Target Audience)
+- Lập trình viên làm việc ban đêm, dễ mất tập trung.
+- Nhà sáng tạo nội dung, nhà thiết kế cần không gian tĩnh lặng, khơi nguồn ý tưởng.
+
+#### 3. Các tính năng cốt lõi (Functional Requirements)
+- **F-01: Sảnh chờ Lobby huyền ảo**:
+  - Chào đón người dùng, hiển thị tổng thời lượng tập trung tích lũy trong ngày và chuỗi ngày streak liên tục.
+  - Hiển thị nút bấm rực rỡ "Enter Immersive Space" có hiệu ứng phát sáng tím để chuyển tiếp sang chế độ làm việc.
+- **F-02: Bảng điều khiển Studio (/space)**: Giao diện tối mờ kính (Glassmorphic) toàn màn hình nổi trên ảnh nền phong cảnh động thiên nhiên. Chứa 4 Widget tương tác:
+  - **Pomodoro Widget**: Đếm ngược 25p làm việc, 5p nghỉ ngắn, 15p nghỉ dài. Tự động phát âm thanh sfx báo hiệu nhẹ nhàng khi hết giờ và lưu số phút tích lũy vào hệ thống.
+  - **Ambient Sound Mixer**: Bộ trộn âm thanh nền đa kênh chạy song song độc lập (Rain, Waves, Fireplace, Cafe). Cho phép trượt volume 0-100% hoặc Mute nhanh từng kênh.
+  - **Lofi Player (iTunes API)**: Cho phép tìm kiếm bài hát theo từ khóa và tải danh sách nhạc Lo-fi động từ iTunes. Có ảnh bìa CD xoay 360 độ khi phát nhạc.
+  - **Daily Focus Goals**: Checklist thêm/xóa và đánh dấu hoàn thành mục tiêu công việc trong ngày.
+- **F-03: Vòng tròn Thiền thở (Breathing Bubble)**: Hoạt ảnh SVG đồng tâm co giãn nhịp nhàng (Hít vào 4s -> Giữ 4s -> Thở ra 4s) giúp giảm căng thẳng nhanh.
+- **F-04: Nhật ký Năng suất (/journal)**: Biểu đồ đóng góp Contribution Grid (giống như GitHub) hiển thị lịch sử tập trung 365 ngày qua các mức độ tím đậm nhạt.
+- **F-05: Cài đặt Cá nhân hóa (/settings & LocalStorage)**:
+  - Cho phép người dùng tùy chọn thay đổi link hình nền động hoặc nhập từ khóa để lấy ảnh ngẫu nhiên từ Unsplash.
+  - Đồng bộ tự động mọi thay đổi âm lượng, công việc checklist, thời gian đếm ngược Pomodoro và lịch sử đóng góp vào `localStorage` của trình duyệt.
+
+---
+
+### 📄 Tài liệu 2: Tech Specs (Technical Specifications) — VibeSpace Studio
+
+#### 1. Kiến trúc Định tuyến (Routing Architecture)
+Ứng dụng sử dụng cấu trúc **Next.js 14 App Router** với 4 phân trang độc lập:
+- `/` - Lobby Entrance (Trang chủ chính sảnh chờ, hiển thị Header/Footer).
+- `/space` - Immersive Studio (Dashboard tập trung toàn màn hình, **ẩn** toàn bộ Header/Footer để loại bỏ xao nhãng bằng hook `usePathname`).
+- `/journal` - Productivity Stats (Biểu đồ Contribution Grid và Timeline hoạt động).
+- `/settings` - Cài đặt cấu hình Timer Pomodoro và custom hình nền.
+
+#### 2. Thiết kế Cơ sở Dữ liệu & State (State & LocalStorage Schemas)
+Tất cả dữ liệu được đồng bộ ngay lập tức sang `localStorage` dưới định dạng JSON:
+
+```typescript
+// Cấu hình âm lượng Ambient Mixer
+interface AmbientVolume {
+  rain: number;      // 0.0 - 1.0
+  fire: number;      // 0.0 - 1.0
+  waves: number;     // 0.0 - 1.0
+  cafe: number;      // 0.0 - 1.0
+}
+
+// Trạng thái đồng hồ Pomodoro & Lịch sử năng suất
+interface FocusSession {
+  date: string;       // YYYY-MM-DD
+  minutes: number;    // Số phút tập trung tích lũy trong ngày
+}
+
+// Cấu hình tuỳ chỉnh cá nhân
+interface UserSettings {
+  backgroundUrl: string;
+  focusTime: number;       // default 25
+  shortBreak: number;      // default 5
+  longBreak: number;       // default 15
+}
+```
+
+#### 3. Đặc tả Giao diện Âm thanh (Audio Engine Specifications)
+- Sử dụng đối tượng **HTML5 Audio API** dạng singleton được bao bọc trong React `useRef` tại component `AmbientMixer` và `LofiPlayer` để ngăn hiện tượng rò rỉ bộ nhớ hoặc phát đè âm thanh lặp lại khi component re-render.
+- Thuộc tính `loop = true` được áp dụng cho tất cả các luồng âm thanh thiên nhiên để đảm bảo phát liên tục không đứt quãng.
+- Logic iTunes API Fetcher:
+  - Endpoint: `https://itunes.apple.com/search?term={query}&media=music&entity=musicTrack&limit=20`
+  - Trường âm thanh nghe thử: `previewUrl` (sử dụng tệp preview MP3 30 giây chất lượng cao không vi phạm bản quyền).
+
+---
+
 ## 7. Tư duy quan trọng khi Vibe Coding
 
 ### 🧠 5 Nguyên tắc vàng
@@ -376,7 +469,7 @@ AI rất mạnh nhưng có thể gặp lỗi khi xử lý luồng Audio đồng 
 |-----------|---------------|
 | **Vibe Coding** | Lập trình bằng ngôn ngữ tự nhiên, AI Agent thực thi |
 | **Vai trò mới** | Developer = Product Manager + Architect |
-| **Workflow** | Ý tưởng → Design (Stitch) → Code → Git (GitHub MCP) → Lặp |
+| **Specs-Driven** | Phải viết rõ PRD & Tech Specs trước khi code |
 | **Dự án** | VibeSpace Studio – Trạm tập trung chữa lành cho lập trình viên |
 | **MVP** | Lobby Entrance (`/`) & Focus Studio (`/space` với Widget hợp nhất) |
 | **Nguyên tắc** | Design First, Mô tả chi tiết, Lặp liên tục |
@@ -385,7 +478,7 @@ AI rất mạnh nhưng có thể gặp lỗi khi xử lý luồng Audio đồng 
 
 ## ⏭️ Bài tiếp theo
 
-**Bài 2: Cài đặt Stitch Skills & Chuẩn bị môi trường** – Chúng ta sẽ cài đặt tất cả các skills cần thiết và tạo GitHub repository cho dự án VibeSpace.
+**Bài 2: Setup Context Engineering & Môi trường** – Chúng ta sẽ cài đặt tất cả các Stitch skills cần thiết, tạo GitHub repository và thiết lập 3 file context documents (`AGENTS.md`, `ARCHITECTURE.md`, `PLAN.md`) chuẩn hóa để định hình "bộ nhớ" cho Agent khi làm việc với VibeSpace.
 
 ---
 

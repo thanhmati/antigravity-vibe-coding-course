@@ -35,58 +35,59 @@ Sau section này, học viên sẽ:
 
 ---
 
-### Bài 1: Tổng quan Vibe Coding & Lập kế hoạch dự án
+### Bài 1: Tổng quan Vibe Coding, Viết PRD & Lập kế hoạch dự án
 
 **🕐 Thời lượng:** 30-40 phút
 
 **Cách mở bài:**
-> "Các bạn đã học cách điều khiển AI Agent, viết prompt, kết nối MCP. Giờ là lúc kết hợp tất cả để build 1 sản phẩm thực tế – chỉ bằng cách mô tả ý tưởng. Hãy quên các dòng code đi và 'vibe' cùng sản phẩm!"
+> "Các bạn đã biết cách ra lệnh cho AI Agent viết những hàm nhỏ. Nhưng để xây dựng một ứng dụng SaaS thực thụ như VibeSpace Studio bằng Vibe Coding, chúng ta phải làm việc như những Product Manager chuyên nghiệp. Chúng ta sẽ bắt đầu bằng cách viết PRD và Tech Specs (đặc tả kỹ thuật) rõ ràng trước khi cho AI viết code. Đó là quy trình Specs-Driven Vibe Coding chuẩn!"
 
 **Nội dung giảng dạy:**
-1. **Vibe Coding là gì?** (10 phút)
-   - Định nghĩa: Mô tả ý tưởng bằng ngôn ngữ tự nhiên, AI Agent thực thi.
-   - Trích dẫn mindset của Andrej Karpathy.
-   - Developer đóng vai trò Product Manager định hướng sản phẩm.
+1. **Mindset Specs-Driven Vibe Coding** (10 phút)
+   - Giải thích tại sao ném ý tưởng mơ hồ ("làm web nghe nhạc") sẽ khiến Agent sinh code sai lệch và tốn token.
+   - Giới thiệu triết lý: "Specs-Driven Vibe Coding" — Viết rõ tài liệu nghiệp vụ (PRD) và đặc tả hệ thống (Tech Specs) làm bản đồ chỉ đường cho AI.
 
-2. **Giới thiệu dự án VibeSpace Studio** (10 phút)
-   - Tên: **VibeSpace**
-   - Ý nghĩa: Trạm tập trung và âm thanh chữa lành tích hợp đồng hồ Pomodoro, bộ trộn âm thanh thiên nhiên đa kênh, trình phát nhạc Lo-fi và phong cảnh động cá nhân hóa.
-   - Show sự hấp dẫn: Gần gũi với lập trình viên, giao diện tối mờ kính mượt mà, thực sự phát được nhạc và tự thay đổi phong cảnh theo thời gian.
+2. **Soạn thảo PRD cho VibeSpace Studio** (10 phút)
+   - Giảng viên hướng dẫn viết PRD: phân tích 4 tính năng cốt lõi (Lobby, Focus Studio với 4 Widget nổi, Breathing Bubble, Stats Journal).
+   - Xác định danh sách tính năng MVP (đồng hồ, mixer, checklist) và Nice-to-have (iTunes API, background switcher, contribution grid).
 
-3. **Phân tích yêu cầu & MVP** (10 phút)
-   - Thiết lập các tính năng MVP: Sảnh chờ (`/`), Focus Studio toàn màn hình (`/space`) chứa Mixer, Pomodoro, Checklist.
-   - Lập kế hoạch phát triển (Project Plan) sử dụng Antigravity.
+3. **Soạn thảo đặc tả kỹ thuật Tech Specs** (10 phút)
+   - Xác định tech stack chi tiết: Next.js 14 App Router, Tailwind CSS, TypeScript, Web Audio API.
+   - Thiết kế lược đồ dữ liệu `localStorage` cho trạng thái âm lượng, Pomodoro và tasks.
+   - Thảo luận logic gọi iTunes Search API ( previewUrl nhạc nghe thử 30s) và singleton Audio instance quản lý qua React Ref.
 
 **💡 Tips giảng dạy:**
-- Hỏi học viên: "Bình thường khi code bạn có nghe nhạc lo-fi hay tiếng mưa không?" để tạo sự kết nối tự nhiên.
-- Nhấn mạnh: "Ứng dụng này có độ phức tạp cao về mặt UI và Audio, nếu tự code sẽ mất 2-3 tuần, nhưng với Vibe Coding, chúng ta sẽ hoàn thành chỉ trong vài giờ!"
+- Nhấn mạnh: "Việc chuẩn bị PRD và Tech Specs mất 15 phút nhưng sẽ giúp AI sinh code đúng 95% ngay từ lần chạy đầu tiên, tiết kiệm 90% thời gian debug về sau!"
 
 ---
 
-### Bài 2: Cài đặt Stitch Skills & Chuẩn bị môi trường
+### Bài 2: Setup Môi trường & Thiết lập Context Engineering cho VibeSpace
 
-**🕐 Thời lượng:** 20-30 phút
+**🕐 Thời lượng:** 25-35 phút
+
+**Cách mở bài:**
+> "Hôm nay chúng ta sẽ chuẩn bị 'bộ nhớ dài hạn' cho AI Agent. Bằng cách thiết lập bộ ba Context Documents (AGENTS.md, ARCHITECTURE.md, PLAN.md) ngay trong thư mục code, AI Agent sẽ hiểu toàn bộ dự án chỉ trong 1 giây mà không mất hàng chục ngàn tokens để quét dự án lặp đi lặp lại."
 
 **Nội dung giảng dạy:**
-1. **Giới thiệu Stitch Skills** (5 phút)
-   - Repo: `google-labs-code/stitch-skills`
-   - Giải thích vai trò của 5 skills chuyên biệt.
+1. **Cài đặt Stitch Skills & Tạo Repository** (10 phút)
+   - Hướng dẫn học viên cài đặt 5 skills toàn cục của Stitch qua CLI:
+     ```bash
+     npx skills add google-labs-code/stitch-skills --skill stitch-design --global
+     npx skills add google-labs-code/stitch-skills --skill stitch-loop --global
+     npx skills add google-labs-code/stitch-skills --skill enhance-prompt --global
+     npx skills add google-labs-code/stitch-skills --skill design-md --global
+     npx skills add google-labs-code/stitch-skills --skill react:components --global
+     ```
+   - Sử dụng GitHub MCP Server để khởi tạo kho lưu trữ `vibespace-dashboard` trực tiếp từ giao diện chat Antigravity.
 
-2. **Cài đặt từng skill** (10 phút)
-   - Demo chạy các lệnh cài đặt trên terminal:
-   ```bash
-   npx skills add google-labs-code/stitch-skills --skill stitch-design --global
-   npx skills add google-labs-code/stitch-skills --skill stitch-loop --global
-   npx skills add google-labs-code/stitch-skills --skill enhance-prompt --global
-   npx skills add google-labs-code/stitch-skills --skill design-md --global
-   npx skills add google-labs-code/stitch-skills --skill react:components --global
-   ```
-   - Xác minh việc cài đặt thành công.
+2. **Thiết lập Context Documents (Context Engineering)** (15 phút)
+   - Giảng viên demo tạo và giải thích vai trò của 3 file ở thư mục root:
+     - `AGENTS.md`: Định nghĩa Tech stack chi tiết, quy chuẩn đặt tên file, quy tắc quản lý singleton Audio qua React Refs để chống rò rỉ âm thanh, và cấm sử dụng kiểu `any`.
+     - `ARCHITECTURE.md`: Sơ đồ component dạng cây (Tree) và luồng đồng bộ `localStorage` giúp Agent hiểu bản đồ dự án mà không cần scan code.
+     - `PLAN.md`: Liệt kê các đầu mục Todo MVP để theo dõi tiến độ phát triển.
 
-3. **Tạo GitHub repo** (5 phút)
-   - Tạo repo `vibespace-dashboard` qua GitHub MCP.
-   - Prompt mẫu:
-   > "Tạo 1 GitHub repository mới tên 'vibespace-dashboard' với description 'A modern ambient focus station and lo-fi mixer built with Vibe Coding and Antigravity', public, có README"
+**💡 Tips giảng dạy:**
+- Hãy trực tiếp mở file `AGENTS.md` và `PLAN.md` lên màn hình máy giảng viên để học viên thấy rõ cách Agent đọc và phản hồi thông minh khi có context documents.
 
 ---
 

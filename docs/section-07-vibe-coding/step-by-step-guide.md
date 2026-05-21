@@ -8,88 +8,64 @@
 
 ## 📋 Mục lục
 
-1. [Step 1: Lên ý tưởng & Lập kế hoạch](#step-1)
-2. [Step 2: Tạo GitHub Repository](#step-2)
-3. [Step 3: Cài đặt Stitch Skills](#step-3)
+1. [Step 1: Specs-Driven Vibe Coding – Viết PRD & Tech Specs](#step-1)
+2. [Step 2: Cài đặt Môi trường & Tạo GitHub Repo](#step-2)
+3. [Step 3: Setup Context Engineering cho VibeSpace](#step-3)
 4. [Step 4: Tạo Stitch Project & Design System (Màu sắc Cyber-Zen)](#step-4)
 5. [Step 5: Enhance Prompt & Thiết kế Sảnh chờ (Lobby Entrance Page)](#step-5)
 6. [Step 6: Thiết kế các trang chính (Immersive Studio, Stats Journal, Settings)](#step-6)
-7. [Step 7: Tạo DESIGN.md Document](#step-7)
+7. [Step 7: Tạo DESIGN.md Document (Design Specs)](#step-7)
 8. [Step 8: Convert Design → React Code sử dụng react-components skill](#step-8)
 9. [Step 9: Khởi tạo Project Next.js & Tích hợp cấu trúc định tuyến (App Router)](#step-9)
-10. [Step 10: GitHub Workflow – Branch & Pull Request tự động bằng GitHub MCP](#step-10)
+10. [Step 10: GitHub Workflow – Branch & Pull Request tự động](#step-10)
 11. [Step 11: Tích hợp âm thanh đa kênh & APIs (iTunes Lo-fi, Ambient Mixer, ZenQuotes)](#step-11)
 12. [Step 12: Polish UI, Responsive & Animations (Breathing Bubble, Scene Selector, deploy)](#step-12)
 
 ---
 
 <a id="step-1"></a>
-## Step 1: Lên ý tưởng & Lập kế hoạch
+## Step 1: Specs-Driven Vibe Coding – Viết PRD & Tech Specs
 
 ### 🎯 Mục tiêu
-Xác định rõ ý tưởng cốt lõi của **VibeSpace Studio**, phác thảo các tính năng MVP (Minimum Viable Product), xác định luồng dữ liệu, APIs sẽ sử dụng và lập lịch phát triển chi tiết bằng Agent.
+Thực hành quy trình **Specs-Driven Development** chuẩn hóa chuyên nghiệp. Trước khi bắt đầu viết bất cứ dòng code nào hay thậm chí là tạo project trên Stitch, chúng ta phải viết **PRD (Product Requirement Document)** và **Tech Specs (Đặc tả kỹ thuật)** chi tiết. Việc này giúp AI Agent hiểu thấu suốt mọi ngóc ngách của sản phẩm, chống hiện tượng ảo giác (hallucination), tiết kiệm hơn 80% token và giảm 90% thời gian debug về sau!
 
-### 📝 Prompt mẫu
+### 📝 Hướng dẫn thực hiện
 
-Mở Antigravity và nhập prompt sau để Agent hỗ trợ lập kế hoạch chi tiết:
+Mở **Antigravity** và nhập prompt có cấu trúc sau để Agent cùng bạn brainstorming và soạn thảo tài liệu:
 
 ```text
-Tôi muốn xây dựng 1 ứng dụng web giúp lập trình viên và người làm việc sáng tạo có thể tập trung tối đa, tên là "VibeSpace Studio" với các yêu cầu sau:
+[BỐI CẢNH / CONTEXT]
+Tôi chuẩn bị phát triển một dự án Focus Station (Trạm tập trung làm việc & âm thanh thiền định) có tên là "VibeSpace Studio" bằng phương pháp Vibe Coding (sử dụng Next.js 14, Tailwind CSS, TypeScript).
 
-1. Landing/Lobby Page (/): Sảnh chờ huyền ảo với hiệu ứng glassmorphism, nút "Enter Studio" cùng widget xem nhanh báo cáo năng suất tối nay.
-2. Immersive Focus Studio (/space): Trang làm việc trung tâm toàn màn hình (full-bleed landscape/animated gradient). Có các widget nổi (glassmorphic cards):
-   - Pomodoro Timer: Có nút Start/Pause/Reset, cho phép cấu hình thời gian làm việc/nghỉ ngơi.
-   - Ambient Mixer: Bộ trộn âm thanh thiên nhiên đa kênh (tiếng mưa rơi, tiếng sóng biển, tiếng lửa trại bập bùng, tiếng quán cafe xôn xao) chạy song song với thanh trượt âm lượng cho từng kênh.
-   - Lofi Player: Kết nối với iTunes Search API để tìm kiếm và phát các bản nhạc Lo-fi chất lượng cao (sử dụng 30-sec preview MP3).
-   - Daily Focus Goals: Danh sách TODO nhỏ cho ngày hôm đó.
-   - Breathing Bubble: Vòng tròn SVG chuyển động nhịp thở "Hít vào - Giữ - Thở ra" để người dùng giải tỏa căng thẳng.
-3. Journal & Stats Page (/journal): Trang hiển thị biểu đồ nhiệt năng suất (Contribution Grid kiểu GitHub), các mốc thời gian hoàn thành (Timeline) và tổng số phút tập trung.
-4. Settings Page (/settings): Tuỳ chỉnh sâu về thời gian Pomodoro, lựa chọn nhạc mặc định và cài đặt liên kết hình nền/từ khóa Unsplash.
+[VAI TRÒ / ROLE]
+Bạn là một Giám đốc Sản phẩm (Product Manager) kiêm Kiến trúc sư Phần mềm (Software Architect) cấp cao.
 
-Hãy tạo cho tôi 1 project plan chi tiết bao gồm:
-- Danh sách tính năng MVP & Nice-to-have.
-- Tech Stack đề xuất (Next.js 14 App Router, Tailwind CSS, TypeScript, Web Audio API).
-- Cấu trúc thư mục mã nguồn chuẩn hóa.
-- Lịch trình phát triển chi tiết cho từng buổi học.
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy cùng tôi soạn thảo 2 tài liệu đặc tả chuẩn hóa thế giới thực bao gồm:
+1. PRD (Product Requirement Document) chi tiết: Định nghĩa rõ mục tiêu sản phẩm, đối tượng người dùng, sơ đồ tính năng MVP (Lobby, Focus Space với 4 Widgets: Pomodoro, Sound Mixer, Lofi Player từ iTunes API, Todo Checklist), Breathing thiền thở, và trang Productivity Journal (GitHub Grid).
+2. Tech Specs (Technical Specifications): Định nghĩa chi tiết routing Next.js 14 App Router, cấu trúc cơ sở dữ liệu lưu trong localStorage (lược đồ typescript cho Volume, Goals, Settings, Sessions), và đặc tả Audio Engine (sử dụng singleton useRef để chống tràn âm thanh khi re-render).
+
+[RÀNG BUỘC KỸ THUẬT / CONSTRAINTS]
+Tài liệu cần cực kỳ chuyên nghiệp, trình bày rõ ràng bằng Markdown, có sơ đồ Mermaid trực quan để bất kỳ AI Agent nào đọc vào cũng có thể thực thi chính xác.
 ```
 
 ### ✅ Kết quả mong đợi
-- Bản kế hoạch dự án (Project Plan) rõ ràng và cấu trúc thư mục logic.
-- Hiểu được cách phân tách các component để thiết kế trên Stitch trước khi đưa vào code.
+
+Agent sẽ sinh ra bộ tài liệu PRD & Tech Specs vô cùng chặt chẽ. Bạn sẽ lưu hai tài liệu này vào phần mô tả chung của dự án để làm kim chỉ nam. Dưới đây là nội dung chuẩn hóa để bạn tham khảo và bắt đầu:
+
+> 💡 *Chi tiết tài liệu PRD & Tech Specs đã được tích hợp đầy đủ tại [lesson-01-vibe-coding-overview.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-coding-course/docs/section-07-vibe-coding/lesson-01-vibe-coding-overview.md#6-quy-trinh-vibe-coding-chuan-specs-driven-development). Hãy đọc kỹ trước khi bước sang Step 2!*
 
 ---
 
 <a id="step-2"></a>
-## Step 2: Tạo GitHub Repository
+## Step 2: Cài đặt Môi trường & Tạo GitHub Repo
 
 ### 🎯 Mục tiêu
-Tạo kho lưu trữ trên GitHub để quản lý phiên bản source code chuyên nghiệp bằng cách sử dụng GitHub MCP Server.
+Cài đặt các Agent Skills quan trọng từ Google Labs để Antigravity có đầy đủ công cụ thiết kế, sinh mã nguồn nhanh chóng, đồng thời sử dụng GitHub MCP Server để khởi tạo repository quản lý source code chuyên nghiệp.
 
-### 📝 Prompt mẫu
+### 📝 Prompt mẫu – Cài đặt CLI Stitch Skills
 
-```text
-Hãy sử dụng GitHub MCP Server để tạo 1 repository mới với thông tin:
-- Tên repo: vibespace-studio
-- Mô tả: "🧘‍♂️ A premium dark-cyberpunk Focus Station with dynamic audio mixing, iTunes Lo-fi integration, and glassmorphic aesthetics. Built using Antigravity, Stitch, and Next.js."
-- Trạng thái: Public
-- Khởi tạo với README.md
-```
-
-### ✅ Kết quả mong đợi
-- Repo `vibespace-studio` được tạo thành công trên tài khoản GitHub của bạn.
-- Bạn nhận được đường dẫn liên kết đến repo mới.
-
----
-
-<a id="step-3"></a>
-## Step 3: Cài đặt Stitch Skills
-
-### 🎯 Mục tiêu
-Cài đặt các Agent Skills quan trọng từ Google Labs để Antigravity có đầy đủ công cụ thiết kế và sinh mã nguồn nhanh chóng.
-
-### 📝 Prompt mẫu
-
-Nhập lệnh sau hoặc yêu cầu Antigravity tự động cài đặt trong terminal:
+Mở Terminal của bạn hoặc yêu cầu Antigravity thực thi câu lệnh sau để cài đặt các công cụ cần thiết trên hệ thống:
 
 ```bash
 # Cài đặt bộ công cụ thiết kế Stitch Design
@@ -108,9 +84,163 @@ npx skills add google-labs-code/stitch-skills --skill design-md --global
 npx skills add google-labs-code/stitch-skills --skill react:components --global
 ```
 
-### ✅ Kết quả mong đợi
-- Các công cụ được đăng ký thành công trên máy cục bộ của bạn.
-- Khi gọi các skill như `react-components` hay `design-md`, Antigravity sẽ hiểu và thực thi lập tức.
+### 📝 Prompt mẫu – Tạo GitHub Repository bằng GitHub MCP
+
+Sau khi môi trường đã sẵn sàng, hãy gửi prompt có cấu trúc sau tới Antigravity:
+
+```text
+[BỐI CẢNH / CONTEXT]
+Tôi đang chuẩn bị code dự án VibeSpace Studio theo PRD và Tech Specs đã thống nhất.
+
+[VAI TRÒ / ROLE]
+Bạn là một DevOps Engineer và Git Administrator.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy sử dụng công cụ GitHub MCP Server để tạo một repository mới trên GitHub cá nhân của tôi với các thông số sau:
+- Tên repo: vibespace-studio
+- Mô tả: "🧘‍♂️ A premium dark-cyberpunk Focus Station with dynamic audio mixing, iTunes Lo-fi integration, and glassmorphic aesthetics. Built using Antigravity, Stitch, and Next.js 14."
+- Trạng thái: Public
+- Khởi tạo cùng file README.md mặc định.
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+Đường dẫn liên kết trực tiếp tới Repository vừa tạo trên GitHub kèm thông báo trạng thái thành công.
+```
+
+---
+
+<a id="step-3"></a>
+## Step 3: Setup Context Engineering cho VibeSpace
+
+### 🎯 Mục tiêu
+Áp dụng nghệ thuật **Context Engineering** bằng cách thiết lập "Bộ nhớ ngoài" (Context Documents) ngay tại thư mục gốc của dự án vừa khởi tạo. Bộ ba file `AGENTS.md`, `ARCHITECTURE.md`, và `PLAN.md` sẽ giúp AI Agent hiểu sâu sắc toàn bộ cấu trúc dự án, các quy chuẩn code, các giải pháp kỹ thuật khó (như singleton Audio) trong nháy mắt mà không lãng phí token scan code.
+
+### 📝 Hướng dẫn thực hiện
+
+Tạo ra 3 file markdown tại thư mục gốc (`/`) của project vừa khởi tạo và sao chép chính xác nội dung bên dưới:
+
+#### 1️⃣ File `AGENTS.md` (Định vị luật chơi cho AI)
+Tạo file [AGENTS.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-coding-course/AGENTS.md) với nội dung:
+
+```markdown
+# AGENTS.md
+
+## 🧘‍♂️ Overview
+- **Project Name:** VibeSpace Studio
+- **Description:** A premium, dark-cyberpunk, glassmorphic Focus Station designed to help developers and creatives focus. Features a Pomodoro timer, multi-channel ambient sound mixer, iTunes Lo-fi player, and personalized background scene manager.
+- **Status:** Development (Vibe Coding Workshop)
+
+## 🛠️ Tech Stack
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript (Strict Mode)
+- **Styling:** Tailwind CSS (Cyber-Zen Dark Mode & Neon accents) + Glassmorphism
+- **Audio Engine:** Web Audio API & HTML5 Audio
+- **State Management:** React Context + React Hooks (`useState`, `useReducer`, `useRef`)
+- **Persistence:** Browser `localStorage`
+
+## 📂 Project Structure
+src/
+├── app/               # Next.js App Router Pages
+│   ├── page.tsx       # Lobby Entrance Page (Sảnh chờ)
+│   ├── space/         # Immersive Studio
+│   │   └── page.tsx   # Core Immersive Interface
+│   ├── journal/       # Productivity Journal
+│   │   └── page.tsx   # Contribution Grid & Stats
+│   └── settings/      # Settings Page
+│       └── page.tsx   # Configurations & Shortcuts
+├── components/        # Isolated & Reusable Components
+│   ├── PomodoroTimer.tsx   # Pomodoro widget
+│   ├── AmbientMixer.tsx    # White noise audio mixer
+│   ├── LofiPlayer.tsx      # iTunes search & player
+│   ├── TodoChecklist.tsx   # Today's goal items
+│   ├── BreathingBubble.tsx # Breathing visualizer (SVG)
+│   ├── SceneSelector.tsx   # Background switcher
+│   └── Header.tsx          # Navigation (hidden on /space)
+└── styles/
+    └── globals.css    # Custom Glassmorphism styles
+
+## 📜 Coding Conventions & Rules
+- **TypeScript:** Strict Mode. **NO `any` type.** Every function parameter and return type must be explicitly typed.
+- **Components:** Functional components only. Use PascalCase. Prefer modular composition.
+- **Files:** Component files must be PascalCase.tsx, hooks and utility files must be camelCase.ts.
+- **Path Aliases:** Always use absolute path alias `@/*` for imports (e.g., `@/components/PomodoroTimer` instead of `../../components/PomodoroTimer`).
+- **Styling:** Utilize standard Tailwind utility classes. Avoid inline styles.
+- **Audio Management (CRITICAL):**
+  - All Audio instances must be managed using React `useRef` as a singleton (e.g., `const audioRef = useRef<HTMLAudioElement | null>(null)`).
+  - You must never instantiate new Audio objects during React render cycles as this triggers massive memory leaks and overlapping sound streams.
+  - Implement a clean-up function inside `useEffect` return block to pause and destroy audio streams on component unmount.
+- **State Persistence:** Whenever updating Pomodoro session status, goals, or volume configurations, immediately synchronize the state to `localStorage` under keys `vibespace_volume`, `vibespace_goals`, `vibespace_settings`, and `vibespace_sessions`.
+```
+
+#### 2️⃣ File `ARCHITECTURE.md` (Bản đồ kiến trúc dự án)
+Tạo file [ARCHITECTURE.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-coding-course/ARCHITECTURE.md) với nội dung:
+
+```markdown
+# ARCHITECTURE.md
+
+## 🏗️ Routing & Page Architecture
+VibeSpace is constructed as a Next.js 14 App Router application with 4 views:
+
+```mermaid
+graph TD
+    A[Root /] -->|Enter Studio| B[/space - Focus Studio]
+    A -->|View Stats| C[/journal - Productivity Stats]
+    A -->|Configure| D[/settings - Configurations]
+    
+    subgraph Space View [/space]
+        B --> W1[PomodoroTimer]
+        B --> W2[AmbientMixer]
+        B --> W3[LofiPlayer]
+        B --> W4[TodoChecklist]
+        B --> W5[BreathingBubble]
+    end
+```
+
+- **Navigation Visibility:**
+  - Trang `/space` (Immersive Studio) là môi trường tập trung tuyệt đối. **Ẩn hoàn toàn Header/Footer** bằng cách kiểm tra hook `usePathname`.
+  - Các trang `/`, `/journal`, `/settings` hiển thị `Header` chung để điều hướng linh hoạt.
+
+## 🔄 State Synchronization Flow
+1. **Audio State:** Managed locally within `AmbientMixer` and `LofiPlayer` but stored globally in `localStorage` to preserve user volume mixes across tabs and reload cycles.
+2. **Productivity History Grid:** Triggered on Pomodoro Timer complete. A session item is pushed to `localStorage` under `vibespace_sessions`. The `/journal` page reads this array to draw a GitHub-style Contribution Grid and a timeline.
+3. **Daily Goals:** Synced under `vibespace_goals`. Fully interactive in both the Focus Studio widget and the settings page.
+```
+
+#### 3️⃣ File `PLAN.md` (Theo dõi tiến độ phát triển)
+Tạo file [PLAN.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-coding-course/PLAN.md) với nội dung:
+
+```markdown
+# PLAN.md - VibeSpace Development Checklist
+
+## 🎯 Phase 1: Preparation & Environment [Completed]
+- [x] Write PRD & Tech Specs
+- [x] Configure Stitch Skills globally
+- [x] Initialize Git Repository `vibespace-studio`
+
+## 🎨 Phase 2: Design System & Screens [In Progress]
+- [/] Design VibeSpace Color Tokens & Glassmorphic styles in Stitch
+- [ ] Write DESIGN.md
+- [ ] Create UI screen for Lobby Entrance (Sảnh chờ)
+- [ ] Create UI screen for Focus Studio (/space) with 4 floating cards
+- [ ] Create UI screen for Journal & Settings page
+
+## ⚛️ Phase 3: Code Conversion & App Scaffold [Planned]
+- [ ] Run `react-components` skill to generate TSX
+- [ ] Initialize Next.js 14 App Router boilerplate
+- [ ] Map routing `/`, `/space`, `/journal`, `/settings`
+- [ ] Add Custom Glassmorphic classes to `globals.css`
+
+## 🎵 Phase 4: Core Engine Integration [Planned]
+- [ ] Implement multi-channel sound mixing inside `AmbientMixer` (Rain, Waves, Fire, Cafe)
+- [ ] Program `LofiPlayer` with iTunes Search API integration (dynamic search, CD spin)
+- [ ] Program `PomodoroTimer` with local storage and audio completion alarm
+- [ ] Build GitHub-style Contribution Grid visualizer on `/journal`
+
+## ✨ Phase 5: Polish & Animations [Planned]
+- [ ] Code Breathing Bubble (SVG stretching animation)
+- [ ] Add Background Scene Selector (image/video URL customizer)
+- [ ] Optimize layouts for Mobile & responsive screens
+- [ ] Deploy to Vercel/Netlify
+```
 
 ---
 
@@ -120,33 +250,33 @@ npx skills add google-labs-code/stitch-skills --skill react:components --global
 ### 🎯 Mục tiêu
 Tạo project trên ứng dụng thiết kế Stitch và thiết lập Design System mang phong cách **Cyber-Zen** (tối giản, huyền bí, sử dụng kính mờ glassmorphism và đèn neon dịu mắt để chống mỏi mắt cho lập trình viên).
 
-### 📝 Prompt mẫu – Tạo Project
+### 📝 Prompt mẫu – Tạo Project & Design System
+
+Gửi prompt có cấu trúc sau tới Antigravity:
 
 ```text
-Hãy tạo một Stitch project mới với tên "VibeSpace Studio".
+[BỐI CẢNH / CONTEXT]
+Tôi đang ở giai đoạn đầu thiết kế giao diện cho VibeSpace Studio trên Stitch. Theo như ARCHITECTURE.md, chúng tôi cần một hệ thống UI nhất quán với phong cách Cyber-Zen.
+
+[VAI TRÒ / ROLE]
+Bạn là một Senior UI/UX Designer chuyên nghiệp.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+1. Hãy tạo một Stitch project mới có tên "VibeSpace Studio".
+2. Thiết lập một Design System Cyber-Zen cao cấp cho project này với các mã màu và thông số sau:
+   - Primary Color (Neon Indigo): #6366F1
+   - Secondary Color (Cyber Emerald): #10B981
+   - Accent Color (Hot Pink): #EC4899
+   - Background Color (Dark Slate): #0B0F19 (tạo cảm giác không gian vũ trụ sâu thẳm)
+   - Card Glass (Kính mờ): #151D30 với opacity 70%, viền trong suốt nhẹ (#FFFFFF1A) và hiệu ứng blur 16px.
+   - Text Color: #F8FAFC (White/Silver), Sub-text: #94A3B8 (Slate-400).
+   - Typography: Sử dụng font chữ "Outfit" hoặc "Inter" hiện đại, thanh lịch.
+   - Corners: Bo góc mềm mại với bán kính 16px (tương đương rounded-2xl).
+   - Theme Mode: Dark Mode duy nhất.
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+Xác nhận đã khởi tạo Stitch Project và áp dụng thành công hệ màu thiết kế Cyber-Zen lên dự án.
 ```
-
-### 📝 Prompt mẫu – Thiết lập Design System
-
-```text
-Hãy tạo Design System cho dự án VibeSpace Studio mang phong cách Cyber-Zen với các định nghĩa:
-
-- Color Palette:
-  - Primary (Neon Indigo): #6366F1
-  - Secondary (Cyber Emerald): #10B981
-  - Accent (Hot Pink): #EC4899
-  - Dark Slate (Background): #0B0F19
-  - Card Glass (Glassmorphism): #151D30 (opacity 70%) với border mờ (#FFFFFF1A)
-  - Text: #F8FAFC (White/Silver), sub-text: #94A3B8 (Slate-400)
-- Typography: Font family "Outfit" hoặc "Inter" hiện đại, clean.
-- Shape: Góc bo cực mềm (Corner roundness: 16px - `rounded-2xl`).
-- Appearance: Dark Mode duy nhất, sử dụng hiệu ứng bóng đổ mịn (soft neon glow).
-
-Sau khi tạo xong, hãy áp dụng thiết kế này cho toàn dự án.
-```
-
-### ✅ Kết quả mong đợi
-- Stitch Project được thiết lập với đầy đủ các mã màu token và font chữ sẵn sàng cho các trang màn hình tiếp theo.
 
 ---
 
@@ -154,43 +284,54 @@ Sau khi tạo xong, hãy áp dụng thiết kế này cho toàn dự án.
 ## Step 5: Enhance Prompt & Thiết kế Sảnh chờ (Lobby Entrance Page)
 
 ### 🎯 Mục tiêu
-Sử dụng công cụ `enhance-prompt` để tối ưu hóa và sinh ra màn hình trang chủ Sảnh chờ (Lobby) tuyệt đẹp có nút chuyển hướng sang Trạm làm việc và xem nhanh trạng thái ngày hôm nay.
+Sử dụng công cụ `enhance-prompt` để tối ưu hóa và thiết kế sảnh chờ Lobby huyền ảo trên Stitch.
 
-### 📝 Prompt mẫu – Tối ưu hóa với Enhance Prompt
-
-```text
-Hãy sử dụng skill enhance-prompt để nâng cấp yêu cầu thiết kế trang Lobby của ứng dụng VibeSpace:
-"Tạo giao diện sảnh chờ Lobby của VibeSpace Studio. Background tối huyền ảo với các hạt bụi sao bay. Ở giữa có tiêu đề 'VibeSpace' phát sáng neon nhạt, giới thiệu ngắn về trạm sạc năng lượng tập trung. Có nút bấm nổi bật 'Enter Immersive Space' có hiệu ứng hover đổi màu. Góc dưới có widget nhỏ hiển thị thành tích tập trung ngày hôm nay: 120 phút, streak 5 ngày."
-```
-
-### 📝 Prompt mẫu – Thiết kế màn hình Lobby trên Stitch
-
-Sử dụng prompt đã được tối ưu hoặc prompt trực quan sau để tạo screen:
+### 📝 Prompt mẫu – Tối ưu hóa prompt với Enhance Prompt skill
 
 ```text
-Tạo một screen mới trong Stitch project VibeSpace Studio cho trang Lobby Entrance với giao diện sau:
+[BỐI CẢNH / CONTEXT]
+Tôi cần thiết kế trang Lobby sảnh chờ cho VibeSpace Studio nhưng muốn prompt thật tinh xảo để Stitch vẽ ra giao diện đẹp nhất.
 
-- Background: Gradient chéo huyền ảo từ Deep Blue (#0B0F19) sang Dark Purple (#1E152A).
-- Center Hero Block (Glassmorphic Card):
-  - Badge nhỏ phía trên: "🎧 VIBESPACE v1.0" (chữ tím neon, viền sáng)
-  - Tiêu đề: "Your Sanctuary for Deep Work" (Font Outfit, kích thước lớn)
-  - Subtitle: "Layer natural ambient sounds, search custom Lo-fi beats, and visualize breathing cycles in a highly personalizable focus station."
-  - CTA Button: "Enter Immersive Space" (Gradient từ #6366F1 sang #EC4899, chữ trắng, bo tròn 16px, hiệu ứng đổ bóng phát sáng tím).
-- Quick Stats Panel (Card Glass mỏng bên dưới):
-  - Hiển thị 3 số liệu nhanh:
-    + "Today: 120 mins"
-    + "Current Streak: 5 Days"
-    + "Rank: Zen Master 🧘‍♂️"
-- Bottom Bar:
-  - Hiển thị một câu danh ngôn ngẫu nhiên từ ZenQuotes (Mockup: "Act as if what you do makes a difference. It does. — William James")
-  - Các liên kết phụ: [Journal], [Settings], [About]
+[VAI TRÒ / ROLE]
+Bạn là một AI Prompt Engineer chuyên biệt về thiết kế UI.
 
-Thiết bị: Desktop (1920x1080)
-Phong cách: Cyber-Zen, glassmorphism cao cấp, typography cuốn hút.
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy sử dụng công cụ `enhance-prompt` để nâng cấp yêu cầu thiết kế thô sau đây thành một cấu trúc prompt thiết kế chuyên nghiệp:
+"Tạo sảnh chờ Lobby của VibeSpace Studio. Nền tối có hạt bụi sao bay. Ở giữa có một card kính lớn hiển thị tiêu đề phát sáng, lời giới thiệu và nút bấm rực rỡ bắt đầu tập trung. Ở dưới có thêm các con số thống kê streak của người dùng."
 ```
 
-### ✅ Kết quả mong đợi
-- Màn hình Lobby lộng lẫy được vẽ thành công trên Stitch, các card có viền mờ 1px phản quang đặc trưng.
+### 📝 Prompt mẫu – Thiết kế sảnh chờ Lobby trên Stitch
+
+Sử dụng kết quả prompt đã tối ưu hoặc prompt cấu trúc sau để vẽ screen:
+
+```text
+[BỐI CẢNH / CONTEXT]
+Tôi đang trong project Stitch "VibeSpace Studio" và muốn vẽ giao diện trang đầu tiên: Sảnh chờ Lobby Entrance.
+
+[VAI TRÒ / ROLE]
+Bạn là một Senior UI Designer chuyên thiết kế Dashboard mờ kính cao cấp.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy tạo một Screen mới cho trang Lobby Entrance với các thành phần thiết kế chi tiết:
+1. Background: Gradient chéo mượt mà từ Deep Slate (#0B0F19) sang Dark Purple (#1E152A).
+2. Center Hero Card (Floating Glassmorphic Card):
+   - Bo góc 24px, viền sáng mỏng 1px (#FFFFFF1A), hiệu ứng đổ bóng tím nhẹ phát sáng.
+   - Phía trên cùng: Một tag nhỏ "🎧 VIBESPACE v1.0" chữ tím neon phát sáng.
+   - Tiêu đề chính: "Your Sanctuary for Deep Work" (Font Outfit, size lớn, chữ trắng).
+   - Nội dung mô tả: "Layer natural ambient sounds, fetch customizable Lo-fi playlists, and synchronize your Pomodoro workflow in a dark, distraction-free environment."
+   - Nút CTA chính: "Enter Immersive Space" (Nút bo tròn 16px, phủ gradient chéo từ Neon Indigo #6366F1 sang Hot Pink #EC4899, chữ trắng đậm, đổ bóng phát sáng neon rực rỡ).
+3. Quick Stats Bar (Đặt nằm lơ lửng ngay dưới Hero Card):
+   - Một hàng ngang gồm 3 thẻ kính mỏng hiển thị:
+     + "Today Focus: 120 mins"
+     + "Current Streak: 5 Days 🔥"
+     + "Rank: Zen Master 🧘‍♂️"
+4. Bottom Bar:
+   - Một ô nhỏ hiển thị trích dẫn tĩnh: "Act as if what you do makes a difference. It does. — William James" (chữ mờ Slate-400).
+   - Các liên kết điều hướng mờ: [Productivity Journal] | [Timer Settings] | [Quick Guide].
+
+[RÀNG BUỘC / CONSTRAINTS]
+Thiết kế cho độ phân giải Desktop (1920x1080). Đảm bảo tuân thủ chặt chẽ bảng màu Cyber-Zen đã thiết lập ở Step 4.
+```
 
 ---
 
@@ -198,124 +339,130 @@ Phong cách: Cyber-Zen, glassmorphism cao cấp, typography cuốn hút.
 ## Step 6: Thiết kế các trang chính (Immersive Studio, Stats Journal, Settings)
 
 ### 🎯 Mục tiêu
-Thiết kế tiếp 3 màn hình cốt lõi trên Stitch bằng cách sử dụng `stitch-loop` skill để tạo giao diện nhất quán.
+Sử dụng công cụ sinh mã hàng loạt trang `stitch-loop` để tạo giao diện lõi Focus Space tràn viền tích hợp các Floating Card và hai trang phụ `/journal`, `/settings`.
 
-### 📝 Prompt mẫu – Thiết kế trang Immersive Focus Studio `/space`
+### 📝 Prompt mẫu – Thiết kế Focus Studio `/space`
 
 ```text
-Tạo screen tiếp theo cho trang chính: Immersive Focus Studio (/space). Trang này sẽ là một Dashboard tràn viền (full-bleed) với hình nền phong cảnh động (ví dụ: khu rừng mưa sương mù lấp lánh). Trên đó có 4 Float Widget mờ (glassmorphic cards):
+[BỐI CẢNH / CONTEXT]
+Tôi cần tạo trang lõi Immersive Focus Studio (/space) nơi người dùng trực tiếp làm việc trong project Stitch "VibeSpace Studio".
 
-1. WIDGET 1: Pomodoro Timer (Phía trên bên trái)
-   - Vòng tròn đếm ngược lớn hiển thị "25:00".
-   - 3 Nút tròn nhỏ: Play/Pause/Reset.
-   - Thẻ hiển thị trạng thái hiện tại: "Focus Time".
+[VAI TRÒ / ROLE]
+Bạn là một UI/UX Designer chuyên thiết kế các sản phẩm SaaS tối giản, tập trung.
 
-2. WIDGET 2: Ambient Mixer (Phía dưới bên trái)
-   - Tiêu đề: "Soundscapes"
-   - 4 Thanh âm lượng ngang dạng trượt (Volume Slider) tương ứng với:
-     + 🌧️ Raindrop (Mưa rơi)
-     + 🔥 Crackling Fire (Lửa trại)
-     + 🌊 Ocean Waves (Sóng biển)
-     + ☕ Cozy Cafe (Quán cafe)
-   - Mỗi kênh có nút Mute/Unmute nhanh.
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy tạo một screen mới cho trang `/space` có cấu trúc layout như sau:
+- Background: Một hình ảnh phong cảnh rừng thông phủ đầy sương mù yên bình làm nền toàn màn hình (full-bleed landscape).
+- Layout: Gồm 4 thẻ kính mờ nổi (Floating Glassmorphic Cards) được định vị khéo léo ở các góc màn hình để không che đi trung tâm phong cảnh:
+  1. WIDGET 1 (Top-Left): Pomodoro Timer
+     - Một đồng hồ số lớn hiển thị "25:00" phát sáng xanh mint nhẹ.
+     - 3 nút điều khiển tròn tối giản: Play, Pause, Reset.
+     - Nhãn hiển thị trạng thái: "Focus Session".
+  2. WIDGET 2 (Bottom-Left): Ambient Sound Mixer
+     - Tiêu đề: "Soundscapes".
+     - 4 thanh kéo volume ngang mỏng tương ứng: 🌧️ Rain, 🔥 Fire, 🌊 Ocean, ☕ Cafe.
+     - Mỗi thanh trượt có một nút mute/unmute nhanh hình chiếc loa nhỏ.
+  3. WIDGET 3 (Top-Right): Lofi Player (iTunes API)
+     - Khung tìm kiếm nhỏ phía trên: "Search lo-fi beats (e.g., jazz, synthwave)..."
+     - Một đĩa CD album nhạc tròn mô phỏng đang quay mượt.
+     - Text hiển thị: "Late Night Code" - Artist: "Chillhop Beats".
+     - Thanh thời gian tiến trình và các nút Next/Prev/Pause.
+  4. WIDGET 4 (Bottom-Right): Today Goals Checklist
+     - Tiêu đề: "Deep Focus Goals".
+     - Checklist 3 đầu việc nhỏ có ô tick:
+       + [x] Refactor core state using Refs
+       + [ ] Setup AGENTS.md for AI Agent
+       + [ ] Drink 500ml water
+     - Một nút bấm nhanh ở dưới: "+ Add Focus Goal".
+- CENTER BOTTOM: Breathing Bubble
+  - Một vòng tròn SVG đồng tâm phát sáng màu tím, có hoạt ảnh co giãn nhịp nhàng để hướng dẫn hít thở.
+  - Text chính giữa vòng tròn: "Breathe In (4s)" hoặc "Hold (4s)" hoặc "Breathe Out (4s)".
 
-3. WIDGET 3: Lofi Player & Search (Phía trên bên phải)
-   - Một ô Input tìm kiếm: "Search lo-fi playlists (e.g. synthwave, jazz, chill)..."
-   - Ảnh bìa đĩa CD đang quay mượt mà (Mockup đĩa nhạc Lo-fi)
-   - Tên bài hát: "Late Night Coding" - Artist: "Chillhop Beats"
-   - Thanh tiến trình phát nhạc & các nút Media Control (Prev, Play, Next).
-
-4. WIDGET 4: Todo Checklist (Phía dưới bên phải)
-   - Tiêu đề: "Deep Focus Goals"
-   - Danh sách 3 công việc nhỏ có checkbox:
-     + [x] Refactor core state
-     + [ ] Review Stitch documentation
-     + [ ] Drink 500ml water
-   - Nút "Add Task" nhanh ở dưới.
-
-5. CENTER FOOTER: Breathing Bubble
-   - Vòng tròn đồng tâm có hoạt ảnh to nhỏ đều đặn để thở thiền.
-   - Nhãn chữ động: "Breathe In (4s)" / "Hold (4s)" / "Breathe Out (4s)".
-
-Thiết bị: Desktop (1920x1080), tối ưu tối đa không gian hiển thị phong cảnh nền.
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+Thiết kế trang `/space` hoàn chỉnh trên Stitch với các layout float cards mờ kính sang trọng.
 ```
 
-### 📝 Prompt mẫu – Thiết kế các trang /journal và /settings
+### 📝 Prompt mẫu – Thiết kế các trang phụ `/journal` & `/settings` bằng `stitch-loop`
 
 ```text
-Hãy thiết kế tiếp 2 screen cho VibeSpace Studio trong cùng một project Stitch:
+[BỐI CẢNH / CONTEXT]
+Tôi muốn hoàn thiện toàn bộ các trang giao diện cho VibeSpace Studio trên Stitch.
 
+[VAI TRÒ / ROLE]
+Bạn là một Front-End Architect.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy sử dụng công cụ `stitch-loop` để tạo thêm 2 trang phụ đồng bộ phong cách Cyber-Zen mờ kính trong project:
 1. Trang Productivity Journal (/journal):
-   - Header có nút "Back to Space".
-   - Grid bản đồ nhiệt (Contribution Grid) gồm 52 tuần x 7 ngày, đổi màu sắc từ tím nhạt đến tím đậm neon dựa trên thời gian tập trung mỗi ngày.
-   - Bảng Timeline chi tiết bên cạnh: "21:00 - Hoàn thành 1 phiên Pomodoro (25m)", "19:30 - Thêm 3 task mới".
-   - Biểu đồ tròn hiển thị tỉ lệ phân bổ âm thanh (ví dụ: Rain 60%, Lofi 40%).
-
+   - Có nút quay lại "<- Back to Focus Space" mờ ở góc trái.
+   - Khu vực trung tâm: Một grid biểu đồ đóng góp (Contribution Grid) gồm 52 tuần x 7 ngày, đổi màu sắc từ tím nhạt sang tím neon đậm đại diện cho số phút tập trung tích lũy mỗi ngày của người dùng.
+   - Cột bên phải: Timeline lịch sử các phiên hoàn thành (ví dụ: "10:30 PM - Hoàn thành phiên Pomodoro 25p", "08:15 PM - Hoàn thành mục tiêu: Write PRD").
 2. Trang Quick Settings (/settings):
-   - Menu cấu hình trực quan:
-     + Pomodoro Settings: Thay đổi thời lượng Focus (15/25/45m), Short Break (5/10m), Long Break (15/30m).
-     + Theme Customizer: Lựa chọn phong cảnh nền mặc định (Rừng mưa xanh, Cyberpunk City ban đêm, Ga tàu hoàng hôn).
-     + Custom Scene URL: Ô nhập link ảnh/video động bất kỳ từ Unsplash hoặc Youtube.
-     + Local Cache: Nút "Reset All Data" để xóa cấu hình lưu trữ.
-
-Thiết kế đồng bộ phong cách Cyber-Zen với sảnh chờ Lobby và Focus Studio.
+   - Khu vực tuỳ chỉnh thời gian đếm ngược Pomodoro (Focus Time: 15/25/45m, Break Time: 5/10m).
+   - Bộ chọn hình nền nhanh (Scene Selection) hoặc ô Input dán đường dẫn URL phong cảnh tùy chọn từ internet.
+   - Nút khẩn cấp: "Reset All Cache Data" màu đỏ mờ để xoá sạch localStorage.
 ```
-
-### ✅ Kết quả mong đợi
-- Stitch đã lưu trữ đầy đủ 4 màn hình của dự án VibeSpace.
-- Các layer được đặt tên rõ ràng, sẵn sàng để convert.
 
 ---
 
 <a id="step-7"></a>
-## Step 7: Tạo DESIGN.md Document
+## Step 7: Tạo DESIGN.md Document (Design Specs)
 
 ### 🎯 Mục tiêu
-Chụp ảnh cấu trúc Design System từ Stitch sang tài liệu đặc tả `DESIGN.md` để hướng dẫn AI Agent thế hệ tiếp theo hoặc bản thân bạn duy trì giao diện nhất quán khi bổ sung code.
+Sử dụng công cụ `design-md` của Stitch để chiết xuất toàn bộ thông số tokens, CSS variables, luật glassmorphism và animations sang file `.stitch/DESIGN.md` phục vụ việc viết CSS/Tailwind đồng bộ.
 
 ### 📝 Prompt mẫu
 
+Gửi prompt sau tới Antigravity:
+
 ```text
-Hãy sử dụng skill design-md để phân tích dự án Stitch "VibeSpace Studio" và tạo file DESIGN.md lưu tại thư mục `.stitch/` của dự án. 
+[BỐI CẢNH / CONTEXT]
+Tôi đã hoàn tất việc thiết kế toàn bộ 4 trang giao diện tuyệt đẹp cho VibeSpace Studio trên Stitch.
 
-Tài liệu này cần làm rõ:
-1. Các thông số CSS Variables cho Dark Cyber-Zen Theme.
-2. Cách xây dựng lớp nền Glassmorphism (backdrop-filter blur, border mỏng phản quang, background mờ).
-3. Thiết lập hoạt ảnh chuyển động (đĩa CD xoay, bubble thở co giãn, nhấp nháy đèn neon).
-4. Các quy tắc khoảng cách (padding, margin) và hệ thống layout Grid/Absolute phục vụ cho việc xếp đè các floating widget trên nền hình nền.
+[VAI TRÒ / ROLE]
+Bạn là một Design System Engineer.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy chạy công cụ `design-md` để phân tích project thiết kế "VibeSpace Studio" và tự động sinh ra tài liệu đặc tả `DESIGN.md` tại thư mục `.stitch/` của workspace.
+Đặc tả này cần làm nổi bật các điểm kỹ thuật sau để chuẩn bị code:
+1. Định nghĩa các CSS variables hệ màu tối Cyber-Zen.
+2. Các class Tailwind chi tiết để dựng lớp kính mờ Glassmorphism (độ trong suốt, độ mờ backdrop filter, màu border phát sáng).
+3. Hoạt ảnh CSS keyframes cho đĩa nhạc CD quay chậm và bong bóng thiền thở co giãn nhịp nhịp 4s-4s-4s.
 ```
-
-### ✅ Kết quả mong đợi
-- File `.stitch/DESIGN.md` được tạo với thông tin cấu trúc hệ thống rõ ràng và đầy đủ.
 
 ---
 
 <a id="step-8"></a>
-## Step 8: Convert Design → React Code
+## Step 8: Convert Design → React Code sử dụng react-components skill
 
 ### 🎯 Mục tiêu
-Chuyển hóa toàn bộ giao diện tĩnh từ các screen trên Stitch thành code cấu trúc React Component có sử dụng TypeScript và Tailwind CSS.
+Sử dụng công cụ `react-components` để chuyển đổi toàn bộ 4 screens tĩnh từ Stitch thành mã nguồn cấu trúc React Components TypeScript và Tailwind CSS hoàn chỉnh.
 
 ### 📝 Prompt mẫu
 
+Gửi prompt cấu trúc cao sau tới Antigravity:
+
 ```text
-Hãy chạy skill react-components để chuyển đổi toàn bộ 4 screens của dự án "VibeSpace Studio" trên Stitch thành mã nguồn React/Next.js:
+[BỐI CẢNH / CONTEXT]
+Tôi đã có tài liệu đặc tả thiết kế `.stitch/DESIGN.md` và các trang màn hình vẽ trên Stitch. Tôi cần đưa giao diện này vào dự án code Next.js 14.
 
-Yêu cầu chi tiết:
-- Sử dụng TypeScript hoàn toàn.
-- Phân chia thành các component tái sử dụng độc lập tại thư mục `src/components/`:
-  + `PomodoroTimer.tsx` (Logic đếm ngược, chuyển đổi giữa focus/break)
-  + `AmbientMixer.tsx` (Giao diện volume sliders cho âm thanh thiên nhiên)
-  + `LofiPlayer.tsx` (Trình phát nhạc tích hợp khung tìm kiếm)
-  + `TodoChecklist.tsx` (Danh sách nhiệm vụ có tương tác check)
-  + `BreathingBubble.tsx` (Hoạt ảnh bong bóng thở bằng SVG)
-  + `SceneSelector.tsx` (Bộ chuyển đổi hình nền nhanh hoặc qua URL)
-  + `ThemeToggle.tsx` (Tuỳ chỉnh giao diện)
-- Sử dụng Tailwind CSS để dựng cấu trúc mờ mượt mà: `bg-slate-900/60 backdrop-blur-md border border-white/10 shadow-2xl shadow-indigo-500/10`.
+[VAI TRÒ / ROLE]
+Bạn là một Senior Frontend Engineer chuyên sâu về React, Tailwind CSS và TypeScript.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy chạy công cụ `react-components` skill để phân tích 4 screens trên Stitch của "VibeSpace Studio" và tạo ra các React Components tương ứng đặt trong thư mục `src/components/` của workspace:
+- `PomodoroTimer.tsx` (Widget đếm ngược focus/break)
+- `AmbientMixer.tsx` (Widget trượt chỉnh âm thanh mưa, sóng, lửa, cafe)
+- `LofiPlayer.tsx` (Trình phát nhạc kèm input tìm kiếm)
+- `TodoChecklist.tsx` (Widget checklist mục tiêu ngày)
+- `BreathingBubble.tsx` (Hoạt ảnh co giãn thiền thở SVG)
+- `SceneSelector.tsx` (Bộ chọn đổi hình nền động phong cảnh)
+
+[RÀNG BUỘC KỸ THUẬT / CONSTRAINTS]
+- Bắt buộc sử dụng TypeScript (khai báo tường minh kiểu dữ liệu, KHÔNG được dùng `any`).
+- Dựng lớp nền kính mờ bằng các class Tailwind chuẩn xác: `bg-slate-900/60 backdrop-blur-md border border-white/10 shadow-2xl shadow-indigo-500/10`.
+- Chừa sẵn các event handlers và prop types để chuẩn bị lập trình logic ở các bước sau.
 ```
-
-### ✅ Kết quả mong đợi
-- Toàn bộ các files component được tạo ra tại thư mục tương ứng trong workspace, code rõ ràng và sạch sẽ.
 
 ---
 
@@ -323,76 +470,87 @@ Yêu cầu chi tiết:
 ## Step 9: Khởi tạo Project Next.js & Tích hợp cấu trúc định tuyến
 
 ### 🎯 Mục tiêu
-Khởi tạo dự án Next.js 14 bằng `npx -y create-next-app` và cấu hình các route `/`, `/space`, `/journal`, `/settings` để liên kết các components lại với nhau.
+Khởi tạo cấu trúc dự án Next.js 14 App Router chuẩn hóa và dựng bản đồ định tuyến `/`, `/space`, `/journal`, `/settings` lồng ghép các component đã convert.
 
-### 📝 Prompt mẫu – Khởi tạo dự án Next.js 14
+### 📝 Prompt mẫu – Khởi tạo dự án Next.js bằng Terminal CLI
+
+Gõ câu lệnh sau trong Terminal để khởi tạo project không tương tác:
+
+```bash
+npx -y create-next-app@latest ./ --typescript --eslint --tailwind --src-dir --app --import-alias "@/*"
+```
+
+### 📝 Prompt mẫu – Tích hợp Route và Global Style
+
+Sau khi khởi tạo xong Next.js, hãy gửi prompt có cấu trúc sau tới Antigravity để Agent tự động dọn dẹp và cấu hình định tuyến:
 
 ```text
-Hãy chạy lệnh không tương tác để khởi tạo một ứng dụng Next.js mới có tên `vibespace-dashboard` trong thư mục hiện tại của workspace:
-- Sử dụng TypeScript: Yes
-- Sử dụng ESLint: Yes
-- Sử dụng Tailwind CSS: Yes
-- Thư mục src/: Yes
-- App Router: Yes
-- Customize default import alias: @/* (Yes)
+[BỐI CẢNH / CONTEXT]
+Tôi vừa khởi tạo thành công project Next.js 14 App Router trắng trong workspace. Tôi muốn thiết lập hệ thống trang theo đúng ARCHITECTURE.md.
 
-Sau khi tạo xong, hãy xóa hết code mặc định của trang `src/app/page.tsx` và `src/app/globals.css` để chuẩn bị tích hợp VibeSpace.
+[VAI TRÒ / ROLE]
+Bạn là một Next.js Architect.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy thực hiện dọn dẹp và cấu hình định tuyến cho dự án VibeSpace Studio:
+1. Làm sạch file `src/app/page.tsx` và viết giao diện Sảnh chờ Lobby tuyệt đẹp sử dụng card kính mờ và nút chuyển trang sang `/space`.
+2. Tạo các thư mục page App Router tương ứng:
+   - `src/app/space/page.tsx` (Trang Immersive Focus Studio chính: bọc toàn trang trong hình nền phong cảnh động, chứa 4 widget nổi và Breathing Bubble).
+   - `src/app/journal/page.tsx` (Trang Nhật ký năng suất chứa Contribution Grid).
+   - `src/app/settings/page.tsx` (Trang cài đặt Timer và custom URL background).
+3. Tạo thanh điều hướng Header chung tại `src/components/Header.tsx` (Hiển thị link Lobby, Journal, Settings). 
+   - LƯU Ý QUAN TRỌNG: Sử dụng hook `usePathname` để ẩn hoàn toàn Header này khi người dùng truy cập vào trang `/space` nhằm mang lại trải nghiệm làm việc tập trung không xao nhãng.
+4. Cập nhật file `src/app/globals.css` để định nghĩa các hiệu ứng kính mờ và hoạt ảnh spin chậm phục vụ đĩa CD:
+   ```css
+   @keyframes spin-slow {
+     from { transform: rotate(0deg); }
+     to { transform: rotate(360deg); }
+   }
+   .animate-spin-slow {
+     animation: spin-slow 20s linear infinite;
+   }
+   .glass-panel {
+     background: rgba(11, 15, 25, 0.65);
+     backdrop-filter: blur(12px);
+     -webkit-backdrop-filter: blur(12px);
+     border: 1px solid rgba(255, 255, 255, 0.08);
+   }
+   ```
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+Xác nhận cấu trúc routing Next.js đã chạy thử thành công với lệnh `npm run dev` không phát sinh lỗi.
 ```
-
-### 📝 Prompt mẫu – Tích hợp Route và Styles
-
-```text
-Hãy viết cấu trúc định tuyến cho Next.js 14 App Router tương ứng với VibeSpace:
-1. Tạo trang chính Sảnh chờ tại `src/app/page.tsx`.
-2. Tạo trang tập trung chính tại `src/app/space/page.tsx`.
-3. Tạo trang nhật ký tại `src/app/journal/page.tsx`.
-4. Tạo trang cấu hình cài đặt tại `src/app/settings/page.tsx`.
-5. Tạo thanh điều hướng Header chung tại `src/components/Header.tsx` hiển thị ở mọi trang (trừ trang `/space` cần ẩn đi để người dùng tập trung hoàn toàn - có thể dùng hook `usePathname` để ẩn Header).
-
-Cập nhật `src/app/globals.css` để thêm các utility phục vụ cho Cyber-Zen Theme, glassmorphism và các animations:
-```css
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-.glass-panel {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-```
-```
-
-### ✅ Kết quả mong đợi
-- Ứng dụng Next.js có cấu trúc phân trang hoàn thiện.
-- Chạy thử local `npm run dev` không phát sinh lỗi biên dịch và các trang hiển thị đúng giao diện khung.
 
 ---
 
 <a id="step-10"></a>
-## Step 10: GitHub Workflow – Branch & Pull Request
+## Step 10: GitHub Workflow – Branch & Pull Request tự động
 
 ### 🎯 Mục tiêu
-Sử dụng GitHub MCP để tạo nhánh làm việc mới, commit code ban đầu và gửi Pull Request lên GitHub, giả lập quy trình làm việc thực tế tại các công ty công nghệ lớn.
+Thực hành kỹ thuật Git chuyên nghiệp thế giới thực. Sử dụng GitHub MCP Server để tạo branch làm việc mới, commit toàn bộ cấu trúc file và gửi Pull Request tự động lên GitHub.
 
 ### 📝 Prompt mẫu
 
-```text
-Hãy thực hiện quy trình Git chuẩn hóa bằng GitHub MCP Server:
-1. Tạo một branch mới tên là `feature/vibespace-core` tách từ branch `main`.
-2. Commit toàn bộ cấu trúc file, component tĩnh và cấu hình routing của dự án VibeSpace Studio vừa tạo lên branch này.
-3. Tạo một Pull Request trên GitHub từ `feature/vibespace-core` vào `main`:
-   - Title: "feat: Initialize VibeSpace Studio core dashboard and routes"
-   - Description: Mô tả chi tiết việc xây dựng 4 trang chính theo phong cách Cyber-Zen, sử dụng Glassmorphism và cấu hình Next.js 14 App Router.
-```
+Gửi prompt sau tới Antigravity:
 
-### ✅ Kết quả mong đợi
-- Branch mới được đẩy lên GitHub.
-- Nhận được link Pull Request để kiểm duyệt code.
+```text
+[BỐI CẢNH / CONTEXT]
+Tôi đã xây dựng xong cấu trúc thư mục định tuyến Next.js và giao diện thô mờ kính cho VibeSpace Studio. Tôi cần đẩy phần code nền tảng này lên GitHub.
+
+[VAI TRÒ / ROLE]
+Bạn là một DevOps Engineer và Git Administrator.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy sử dụng công cụ GitHub MCP Server để thực hiện quy trình Git tự động hóa sau:
+1. Tạo một nhánh (branch) mới có tên là `feature/vibespace-core` tách từ branch `main`.
+2. Commit toàn bộ cấu trúc file Next.js, components, và file globals.css vừa được tạo lên branch này.
+3. Tạo một Pull Request (PR) từ nhánh `feature/vibespace-core` vào nhánh chính `main` trên repository GitHub:
+   - Tiêu đề PR: "feat: Initialize VibeSpace Studio core dashboard, routing, and glassmorphic UI layout"
+   - Mô tả PR: Mô tả chi tiết việc xây dựng cấu trúc định tuyến 4 trang chính bằng App Router, lồng ghép các widgets tĩnh kính mờ phong cách Cyber-Zen, và cấu hình ẩn Header tại trang focus `/space` để loại bỏ xao nhãng.
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+Đường dẫn liên kết trực tiếp tới Pull Request vừa được tạo trên GitHub của bạn.
+```
 
 ---
 
@@ -400,167 +558,83 @@ Hãy thực hiện quy trình Git chuẩn hóa bằng GitHub MCP Server:
 ## Step 11: Tích hợp âm thanh đa kênh & APIs (iTunes Lo-fi, Ambient Mixer, ZenQuotes)
 
 ### 🎯 Mục tiêu
-Biến ứng dụng tĩnh thành một ứng dụng sống động bằng việc tích hợp các API mở và Web Audio API / HTML5 Audio:
-1. Gọi **iTunes API** để tìm kiếm và phát nhạc Lo-fi động.
-2. Sử dụng các file audio tự do để phối trộn âm lượng đa kênh.
-3. Fetch danh ngôn từ **ZenQuotes API** ở footer trang chủ.
-4. Đảm bảo trạng thái âm lượng, playlist và cấu hình timer được lưu giữ trong `localStorage`.
+Biến ứng dụng tĩnh thành một ứng dụng sống động bằng việc tích hợp các API thực tế và lập trình audio đa kênh hoạt động song song mượt mà, lưu trữ trạng thái người dùng vào `localStorage`.
 
 ### 📝 Prompt mẫu – Tích hợp LofiPlayer & iTunes API
 
-```text
-Hãy lập trình logic gọi iTunes Search API cho component `src/components/LofiPlayer.tsx`:
-- URL endpoint: `https://itunes.apple.com/search?term=lofi+chill&media=music&limit=25` (Cho phép thay đổi từ khóa tìm kiếm).
-- Trích xuất: Lấy tên bài hát (`trackName`), nghệ sĩ (`artistName`), ảnh bìa album lớn (`artworkUrl100` nâng lên ảnh kích thước lớn hơn bằng cách thay thế `100x100bb` thành `400x400bb`), và file nghe thử MP3 (`previewUrl`).
-- Viết các hàm điều khiển phát nhạc: Play, Pause, Next, Prev, thay đổi âm lượng nhạc Lo-fi.
-- Thêm hiệu ứng quay đĩa CD: Khi nhạc phát (`isPlaying`), ảnh album sẽ xoay liên tục (`animate-spin-slow`), khi pause thì dừng xoay.
-```
-
-### 📝 Prompt mẫu – Lập trình AmbientMixer (Tiếng ồn trắng)
+Gửi prompt cấu trúc cao sau để lập trình component `LofiPlayer.tsx`:
 
 ```text
-Cập nhật component `src/components/AmbientMixer.tsx` sử dụng HTML5 Audio để tải và phát song song 4 luồng âm thanh thiên nhiên lặp đi lặp lại (loop). 
+[BỐI CẢNH / CONTEXT]
+Tôi cần lập trình logic phát nhạc cho component `src/components/LofiPlayer.tsx` trong VibeSpace Studio.
 
-Các luồng âm thanh thiên nhiên sử dụng các URL CDN tự do:
-- Rain (Mưa rơi): `https://assets.mixkit.co/active_storage/sfx/2433/2433-500.wav` hoặc các link tương đương.
-- Fire (Lửa trại): `https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3` (Thay thế bằng nguồn âm thanh sfx campfire lặp vòng).
-- Waves (Sóng biển): `https://assets.mixkit.co/active_storage/sfx/2501/2501-500.wav`
-- Cafe (Quán cafe): `https://assets.mixkit.co/active_storage/sfx/1074/1074-500.wav`
+[VAI TRÒ / ROLE]
+Bạn là một Senior React Developer chuyên sâu về Web Audio API.
 
-Viết logic cho thanh trượt âm lượng:
-- Người dùng có thể kéo volume từ 0% đến 100% độc lập cho từng kênh.
-- Khi người dùng điều chỉnh âm lượng, hãy cập nhật đối tượng Audio tương ứng và lưu giá trị âm lượng này vào `localStorage` dưới dạng một Object để khi tải lại trang, cấu hình âm thanh tự động phục hồi.
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy viết logic chi tiết cho component `LofiPlayer.tsx` đáp ứng các yêu cầu kỹ thuật sau:
+1. iTunes Search API integration: 
+   - Viết hàm fetch danh sách bài hát không lời từ iTunes API: `https://itunes.apple.com/search?term={keyword}&media=music&entity=musicTrack&limit=15`.
+   - Mặc định tìm kiếm từ khóa "lofi chill". Cho phép người dùng nhập từ khóa tìm kiếm thể loại khác (ví dụ: jazz, synthwave, ambient) qua một ô input và bấm Search để cập nhật playlist mới.
+   - Lọc dữ liệu lấy ra: `trackId`, `trackName` (tên bài), `artistName` (nghệ sĩ), `previewUrl` (file MP3 nghe thử 30 giây chất lượng cao), và `artworkUrl100` (hãy tự động nâng chất lượng ảnh bìa lên kích thước lớn bằng cách thay thế chuỗi "100x100bb" thành "400x400bb").
+2. Quản lý Audio Engine Singleton (QUAN TRỌNG):
+   - Để chống hiện tượng trùng lặp luồng âm thanh hoặc rò rỉ bộ nhớ khi component re-render, bạn bắt buộc phải quản lý đối tượng `new Audio` bên trong một React `useRef` dạng singleton: `const audioRef = useRef<HTMLAudioElement | null>(null);`.
+   - Viết các hàm điều khiển phát nhạc: Play, Pause, Next, Prev, thay đổi âm lượng của luồng nhạc Lo-fi.
+   - Lắng nghe sự thay đổi của bài hát hoặc trạng thái Play/Pause để tương tác chính xác với `audioRef.current`.
+   - Đảm bảo có hàm dọn dẹp (clean-up) dừng audio trong return block của `useEffect` khi unmount.
+3. Đồng bộ giao diện:
+   - Khi bài hát đang phát (`isPlaying`), ảnh bìa album sẽ xoay tròn chậm rãi bằng class `animate-spin-slow`, khi pause thì dừng xoay.
+
+[RÀNG BUỘC / CONSTRAINTS]
+Sử dụng TypeScript strict mode. Không sử dụng kiểu dữ liệu `any`. Tránh trùng lặp âm lượng bằng cách đọc/ghi giá trị volume vào `localStorage` dưới key `vibespace_lofi_volume`.
 ```
 
-### 📝 Prompt mẫu – Lập trình PomodoroTimer & LocalStorage
+> 💡 **Mã nguồn tham khảo chuẩn cho LofiPlayer.tsx:**
+> Học viên có thể tham khảo trực tiếp cấu trúc code mẫu sử dụng React useRef và Audio API an toàn đã được cung cấp chi tiết ở phần cẩm nang [LofiPlayer.tsx](file:///Users/thanhdo/Documents/Project/antigravity-vibe-coding-course/docs/section-07-vibe-coding/step-by-step-guide.md#445-tham-khao-code-mau-tich-hop-api-va-am-thanh) để đảm bảo không bị dính lỗi re-render lặp âm thanh!
+
+### 📝 Prompt mẫu – Lập trình AmbientMixer (Tiếng ồn trắng đa luồng)
+
+Gửi prompt sau để lập trình component `AmbientMixer.tsx` phát song song nhiều âm thanh nền:
 
 ```text
-Cập nhật component `src/components/PomodoroTimer.tsx` với logic đếm ngược chuẩn:
-- Quản lý 3 trạng thái: 'focus' (25 phút), 'short_break' (5 phút), 'long_break' (15 phút).
-- Khi thời gian chạy hết 0:00, tự động phát tiếng chuông sfx báo hiệu nhẹ nhàng, cộng 1 điểm phiên làm việc thành công vào `localStorage` (để hiển thị lên biểu đồ Contribution Grid tại `/journal`), và chuyển trạng thái tiếp theo.
-- Lắng nghe cấu hình thời gian từ trang `/settings` qua Context hoặc lưu trữ đồng bộ từ `localStorage`.
+[BỐI CẢNH / CONTEXT]
+Tôi muốn lập trình component `src/components/AmbientMixer.tsx` trong VibeSpace Studio giúp người dùng có thể kéo thả trộn các âm thanh thiên nhiên thư giãn chạy song song với nhạc Lo-fi.
+
+[VAI TRÒ / ROLE]
+Bạn là một Audio Engineer và React Developer.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy lập trình logic điều phối âm thanh đa kênh lặp vòng cho `AmbientMixer.tsx`:
+1. Quản lý 4 luồng âm thanh thiên nhiên song song bằng cách lưu 4 đối tượng `HTMLAudioElement` vào một React `useRef` dạng Object/Dictionary để tránh re-render sinh luồng mới:
+   - 🌧️ Rain (Tiếng mưa rơi): `https://assets.mixkit.co/active_storage/sfx/2433/2433-500.wav`
+   - 🔥 Fire (Lửa trại bập bùng): `https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3` (SFX Campfire)
+   - 🌊 Ocean (Tiếng sóng biển): `https://assets.mixkit.co/active_storage/sfx/2501/2501-500.wav`
+   - ☕ Cafe (Quán cafe xôn xao): `https://assets.mixkit.co/active_storage/sfx/1074/1074-500.wav`
+2. Thiết lập thuộc tính `loop = true` cho tất cả các đối tượng Audio này để âm thanh lặp lại vô tận mượt mà.
+3. Thiết kế 4 thanh trượt slider tương ứng với mỗi kênh âm thanh, cho phép kéo chỉnh volume độc lập từ 0% đến 100% (tương đương 0.0 đến 1.0 của đối tượng Audio). Có nút Mute/Unmute nhanh cho từng kênh.
+4. Đồng bộ hóa cấu hình âm lượng: Mỗi khi người dùng thay đổi âm lượng của một kênh bất kỳ, hãy cập nhật âm lượng đối tượng Audio thực tế và tự động lưu cấu hình Object âm lượng này vào `localStorage` dưới key `vibespace_ambient_volume`. Khi người dùng tải lại trang, hãy tự động đọc từ cache để phục hồi đúng tỷ lệ hòa âm yêu thích của họ!
+
+[RÀNG BUỘC / CONSTRAINTS]
+TypeScript strict mode. Xử lý triệt để việc huỷ phát âm thanh trong hook useEffect return để tránh rò rỉ âm thanh khi chuyển trang.
 ```
 
-### 💡 Tham khảo Code mẫu (Tích hợp API và Âm thanh)
+### 📝 Prompt mẫu – Lập trình PomodoroTimer & Persistence
 
-Dưới đây là gợi ý viết code cho `LofiPlayer.tsx` tích hợp iTunes API:
+```text
+[BỐI CẢNH / CONTEXT]
+Tôi cần lập trình logic đếm ngược cho component `src/components/PomodoroTimer.tsx` trong VibeSpace Studio.
 
-```tsx
-"use client";
+[VAI TRÒ / ROLE]
+Bạn là một React Logic Developer.
 
-import React, { useState, useEffect, useRef } from "react";
-
-interface Track {
-  trackId: number;
-  trackName: string;
-  artistName: string;
-  artworkUrl100: string;
-  previewUrl: string;
-}
-
-export default function LofiPlayer() {
-  const [query, setQuery] = useState("lofi chill");
-  const [tracks, setTracks] = useState<Track[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    fetchTracks();
-  }, []);
-
-  const fetchTracks = async (searchWord = "lofi chill") => {
-    try {
-      const res = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(searchWord)}&media=music&limit=15`);
-      const data = await res.json();
-      const formattedTracks = data.results.map((item: any) => ({
-        trackId: item.trackId,
-        trackName: item.trackName,
-        artistName: item.artistName,
-        artworkUrl100: item.artworkUrl100 ? item.artworkUrl100.replace("100x100bb", "400x400bb") : "",
-        previewUrl: item.previewUrl,
-      }));
-      setTracks(formattedTracks);
-      setCurrentIndex(0);
-      setIsPlaying(false);
-    } catch (err) {
-      console.error("Lỗi fetch iTunes:", err);
-    }
-  };
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
-    if (tracks.length > 0 && tracks[currentIndex]?.previewUrl) {
-      audioRef.current = new Audio(tracks[currentIndex].previewUrl);
-      audioRef.current.volume = volume;
-      audioRef.current.loop = true;
-      if (isPlaying) {
-        audioRef.current.play().catch(e => console.log("User interaction required", e));
-      }
-    }
-    return () => {
-      if (audioRef.current) audioRef.current.pause();
-    };
-  }, [currentIndex, tracks]);
-
-  const togglePlay = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch(e => console.log(e));
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % tracks.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + tracks.length) % tracks.length);
-  };
-
-  return (
-    <div className="glass-panel p-6 rounded-2xl flex flex-col items-center w-full max-w-sm">
-      <div className="flex gap-2 mb-4 w-full">
-        <input 
-          type="text" 
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search lo-fi genre..."
-          className="bg-slate-800/80 border border-white/10 rounded-xl px-3 py-1.5 text-sm flex-1 focus:outline-none focus:border-indigo-500 text-white"
-        />
-        <button onClick={() => fetchTracks(query)} className="bg-indigo-600 hover:bg-indigo-500 rounded-xl px-3 py-1.5 text-sm text-white font-medium">Search</button>
-      </div>
-
-      {tracks.length > 0 && (
-        <div className="flex flex-col items-center text-center">
-          <div className="relative w-40 h-40 mb-4 rounded-full overflow-hidden border-4 border-slate-800/80 shadow-2xl flex items-center justify-center">
-            {/* Đĩa CD Xoay */}
-            <img 
-              src={tracks[currentIndex].artworkUrl100 || "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400"} 
-              alt="Artwork" 
-              className={`w-full h-full object-cover transition-transform duration-1000 ${isPlaying ? "animate-spin-slow" : ""}`}
-            />
-            <div className="absolute w-8 h-8 bg-slate-900 rounded-full border-2 border-white/20"></div>
-          </div>
-          <h4 className="font-bold text-white text-lg truncate w-60">{tracks[currentIndex].trackName}</h4>
-          <p className="text-slate-400 text-sm mb-4 truncate w-60">{tracks[currentIndex].artistName}</p>
-
-          <div className="flex items-center gap-4">
-            <button onClick={handlePrev} className="text-slate-400 hover:text-white text-xl">⏮</button>
-            <button onClick={togglePlay} className="bg-indigo-500 hover:bg-indigo-400 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/20">{isPlaying ? "⏸" : "▶"}</button>
-            <button onClick={handleNext} className="text-slate-400 hover:text-white text-xl">⏭</button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy viết logic cho đồng hồ đếm ngược Pomodoro:
+1. Đồng hồ đếm ngược hoạt động với 3 chế độ luân phiên: 'focus' (Mặc định 25 phút), 'short_break' (5 phút), và 'long_break' (15 phút).
+2. Khi đồng hồ đếm ngược chạy về 0:00:
+   - Tự động phát một tiếng chuông báo sfx nhẹ nhàng (ví dụ: `https://assets.mixkit.co/active_storage/sfx/911/911-500.wav`).
+   - Tự động ghi nhận 1 phiên làm việc thành công vào mảng lịch sử tập trung trong `localStorage` dưới dạng một object chứa ngày hiện tại `{ date: 'YYYY-MM-DD', minutes: 25 }` (Dữ liệu này sẽ được trang `/journal` đọc để vẽ Contribution Grid).
+   - Tự động chuyển đổi sang phiên tiếp theo (ví dụ từ focus sang short_break).
+3. Lắng nghe và đồng bộ cấu hình thời gian Pomodoro tuỳ chỉnh (Focus Time, Break Time) được lưu trong `localStorage` dưới key `vibespace_settings` (do trang `/settings` ghi vào).
 ```
 
 ---
@@ -569,71 +643,75 @@ export default function LofiPlayer() {
 ## Step 12: Polish UI, Responsive & Animations
 
 ### 🎯 Mục tiêu
-Làm đẹp tối đa dự án ("wow factor") bằng các hiệu ứng chuyển động thở của thiền định, cơ chế đổi hình nền phong cảnh, thiết kế tương thích trên thiết bị di động và triển khai (Deploy) sản phẩm.
+Đạt tới mức độ hoàn thiện tối đa ("wow factor") cho VibeSpace Studio bằng cách lập trình hoạt ảnh co giãn thiền thở mượt mà, bộ chọn đổi hình nền động linh hoạt, tối ưu responsive trên thiết bị di động và deploy ứng dụng lên internet.
 
-### 📝 Prompt mẫu – Lập trình BreathingBubble (SVG Breath)
+### 📝 Prompt mẫu – Lập trình BreathingBubble (SVG thiền thở)
 
 ```text
-Cập nhật component `src/components/BreathingBubble.tsx` để hiển thị một quả bóng nước SVG phát sáng tuyệt đẹp:
-- Quả bóng nước có màu tím mờ mịn và bóng đổ phát sáng neon.
-- Sử dụng CSS Keyframe Animations để tự động co giãn kích thước vòng tròn theo chu kỳ:
-  + 4 giây phóng to dần (Hít vào - Scale 1.25)
-  + 4 giây giữ nguyên kích thước (Giữ hơi thở)
-  + 4 giây thu nhỏ dần (Thở ra - Scale 0.85)
-- Thêm một nhãn văn bản ở trung tâm hiển thị trạng thái hơi thở hiện tại chạy đồng hồ đếm lặp 12 giây.
+[BỐI CẢNH / CONTEXT]
+Tôi muốn hoàn thiện vòng tròn thiền thở `BreathingBubble.tsx` nằm ở vị trí trung tâm đáy trang `/space` của VibeSpace Studio.
+
+[VAI TRÒ / ROLE]
+Bạn là một UI Motion Designer và SVG Specialist.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy cập nhật component `src/components/BreathingBubble.tsx`:
+1. Vẽ một bong bóng nước hình tròn SVG tuyệt đẹp có màu gradient tím mờ, viền phát sáng nhẹ neon và bóng đổ lấp lánh (box-shadow/drop-shadow).
+2. Viết hoạt ảnh CSS Keyframes tự động co giãn kích thước vòng tròn theo chu kỳ thiền thở 12 giây:
+   - 4 giây đầu tiên: Vòng tròn từ từ phình to lên (Scale 1.25) - Nhãn chữ trung tâm hiển thị: "Hít vào... 🧘‍♂️" (Breathe In).
+   - 4 giây tiếp theo: Vòng tròn giữ nguyên kích thước lớn phát sáng rực rỡ - Nhãn chữ trung tâm hiển thị: "Giữ hơi thở... ⚓" (Hold).
+   - 4 giây cuối cùng: Vòng tròn từ từ co nhỏ lại về kích thước ban đầu (Scale 0.85) - Nhãn chữ trung tâm hiển thị: "Thở ra chậm rãi... 🍃" (Breathe Out).
+3. Hoạt ảnh cần chuyển động cực kỳ mềm mại, mượt mà (sử dụng cubic-bezier transition).
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+Một component thiền thở SVG hoạt động tuần hoàn mượt mà không bị giật lag, giúp lập trình viên thư giãn đầu óc.
 ```
 
-### 📝 Prompt mẫu – Lập trình Bộ chọn phong cảnh nền (SceneSelector)
+### 📝 Prompt mẫu – Lập trình đổi cảnh phong cảnh nền (SceneSelector)
 
 ```text
-Cập nhật component `src/components/SceneSelector.tsx` và cấu trúc trang `/space`:
-- Trang `/space` sẽ bọc trong một container có hình nền động toàn màn hình.
-- `SceneSelector` cho phép lựa chọn giữa các hình nền:
-  + Forest: `https://images.unsplash.com/photo-1511497584788-876760111969?w=1920&q=80` (Rừng thông sương mù)
-  + Rain City: `https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?w=1920&q=80` (Thành phố mưa rơi yên ả)
-  + Retro Sunset: `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1920&q=80` (Mặt trời lặn hoàng hôn 3D)
-- Thêm ô Input cho phép dán bất kỳ URL hình ảnh/GIF nào bên ngoài làm hình nền làm việc.
-- Lưu cấu hình hình nền hoạt động vào `localStorage` để tự động tải lại trong lần đăng nhập tiếp theo.
+[BỐI CẢNH / CONTEXT]
+Tôi muốn lập trình component `src/components/SceneSelector.tsx` giúp người dùng thay đổi hình nền toàn màn hình của trang `/space`.
+
+[VAI TRÒ / ROLE]
+Bạn là một Frontend Engineer.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy cập nhật component `SceneSelector.tsx` và tích hợp với trang `/space` để mang lại khả năng cá nhân hoá hình nền động cực sâu:
+1. Cung cấp một danh sách các cảnh đẹp chất lượng cao được tuyển chọn sẵn:
+   - Forest Rain (Rừng thông sương mù): `https://images.unsplash.com/photo-1511497584788-876760111969?w=1920&q=80`
+   - Cozy Cafe (Quán cafe lo-fi đêm): `https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&q=80`
+   - Retro Horizon (Hoàng hôn neon 3D): `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1920&q=80`
+2. Thiết kế một ô Input thông minh cho phép người dùng:
+   - Dán một đường dẫn URL hình ảnh tĩnh hoặc ảnh động GIF bất kỳ từ internet làm hình nền cá nhân.
+   - Hoặc nhập một từ khóa tìm ảnh nhanh (ví dụ: "cyberpunk", "autumn", "zen") và bấm Go để hệ thống tự động tìm và tải ảnh nền tuyệt đẹp từ Unsplash về.
+3. Lưu hình nền đang hoạt động của người dùng vào `localStorage` dưới key `vibespace_active_background` để khi họ truy cập lại vào Focus Space lần sau, không gian cá nhân của họ lập tức hiển thị mà không cần cài đặt lại!
 ```
 
-### 📝 Prompt mẫu – Tương thích Mobile & Hiệu ứng chuyển động trang
+### 📝 Prompt mẫu – Tối ưu hóa Responsive Mobile & Deploy dự án
 
 ```text
-Hãy tối ưu hóa giao diện VibeSpace để chạy mượt mà trên Mobile và Tablet:
-- Trên Mobile (màn hình dọc < 768px): Thay vì xếp đè các floating widget lên nhau gây rối mắt, hãy ẩn bớt và chỉ hiển thị 1 thanh điều khiển chuyển đổi giữa các tab: [Timer ⏱️] - [Mixer 🎵] - [Player 🎧] - [Goals 📋]. 
-- Quả bóng thở Breathing Bubble được thu nhỏ đặt tại góc màn hình hoặc ẩn đi.
-- Sử dụng thư viện `framer-motion` (hoặc viết CSS transition) để tạo hiệu ứng mượt mà khi người dùng nhấn chuyển trang từ Lobby sang Focus Space (hiệu ứng trượt lướt mờ nhạt dần - Fade & Zoom Out).
-```
+[BỐI CẢNH / CONTEXT]
+Dự án VibeSpace Studio đã chạy rất tốt trên màn hình máy tính lớn. Tôi muốn tối ưu hóa để ứng dụng hiển thị tuyệt vời trên di động và chuẩn bị deploy.
 
-### 🚀 Polish & Đẩy Code Lên GitHub để Merge hoàn thiện
+[VAI TRÒ / ROLE]
+Bạn là một Senior Frontend Developer kiêm DevOps Engineer.
 
-```text
-Tạo branch `feature/polish-animations-v1` bằng GitHub MCP.
-Commit toàn bộ code hoàn chỉnh có tích hợp API nhạc, mixer âm lượng, SVG thở thiền, responsive và background switcher.
-Tạo Pull Request và thực hiện Squash Merge vào branch `main`.
-Gắn thẻ phiên bản dự án là `v1.0.0` để kỷ niệm sản phẩm Vibe Coding tuyệt hảo đầu tiên của bạn!
+[NHIỆM VỤ / INSTRUCTIONS]
+1. Hãy tối ưu CSS Responsive cho trang Immersive Studio `/space` trên thiết bị di động (màn hình < 768px):
+   - Thay vì xếp đè các floating card gây chật chội, hãy ẩn 4 widget lớn và thay thế bằng một thanh điều hướng tab nhỏ gọn ở đáy màn hình di động: [⏱️ Pomodoro] - [🎵 Mixer] - [🎧 Lofi] - [📋 Goals]. Người dùng nhấn vào tab nào thì chỉ hiển thị nổi duy nhất Widget đó lên màn hình trên nền phong cảnh.
+   - Vòng tròn thiền thở được thu nhỏ tối đa đặt tại một góc hoặc ẩn đi để tiết kiệm không gian.
+2. Thiết lập SEO cơ bản cho dự án Next.js: Cấu hình title tags "VibeSpace Studio - Ultimate Deep Work & Cyber-Zen Focus Station", thẻ meta description hấp dẫn để chia sẻ lên các mạng xã hội.
+3. Hướng dẫn tôi các bước kiểm thử build cuối cùng (`npm run build`) để kiểm tra toàn bộ lỗi biên dịch TypeScript, và hướng dẫn đẩy code lên GitHub tự động merge PR để deploy trực tiếp lên Vercel chỉ trong 1 click.
 ```
 
 ---
 
 ## 🎉 Tổng kết Dự Án VibeSpace Studio
 
-### Các cột mốc đạt được:
+Xin chúc mừng! Bằng việc hoàn thành cẩm nang step-by-step này, bạn đã tự tay xây dựng một **Trạm tập trung Cyber-Zen VibeSpace Studio** đỉnh cao công nghệ và thẩm mỹ, áp dụng hoàn hảo:
+1. **Specs-Driven Vibe Coding:** Viết PRD & Tech Specs chuyên nghiệp để định hướng Agent.
+2. **Context Engineering:** Xây dựng "Bộ nhớ ngoài" (`AGENTS.md`, `ARCHITECTURE.md`, `PLAN.md`) giúp tiết kiệm hơn 80% token và điều phối Agent cực kỳ chính xác.
+3. **Advanced Prompt Engineering:** Sử dụng các prompt có cấu trúc chặt chẽ (Role, Context, Instructions, Constraints) để ra lệnh cho AI Agent tạo ra các tính năng audio đa kênh singleton phức tạp mà không mắc lỗi.
 
-| Step | Công cụ chính | Giá trị đạt được |
-|------|---------------|------------------|
-| 1 | Antigravity | Project Plan chi tiết cho Focus Station |
-| 2 | GitHub MCP | Tạo Repository `vibespace-studio` |
-| 4 | Stitch MCP | Thiết lập Design System Cyber-Zen mờ ảo |
-| 5-6 | Stitch + enhance-prompt | Vẽ 4 trang giao diện Dashboard lộng lẫy |
-| 7 | `design-md` skill | Viết file `DESIGN.md` chuẩn thiết kế |
-| 8 | `react-components` | Convert layout Stitch sang React component TSX |
-| 9 | Terminal / Next.js | Tạo repo code Next.js 14 App Router, set Route |
-| 11 | Web Audio API / iTunes API | Lập trình tính năng mixer đa kênh, nhạc Lo-fi động |
-| 12 | CSS Keyframes / local | Hoạt ảnh SVG chu kỳ thở, đổi hình nền Unsplash |
-
-### 🔑 Chìa khóa thành công khi Vibe Coding:
-1. **Lắng nghe AI**: Vibe Coding không phải là lập trình thụ động, hãy để AI Agent tư vấn các API và cách giải quyết logic bất đồng bộ tối ưu nhất.
-2. **Khởi đầu từ Design System**: Một ứng dụng "wow" bắt đầu từ những mã màu chuẩn xác, hệ thống đổ bóng kính mờ (glassmorphic shadow) và font chữ cao cấp.
-3. **Quản lý State thông minh**: Việc kết hợp âm thanh đa luồng đòi hỏi quản lý ref/state tốt để tránh bị rò rỉ âm thanh hoặc chạy trùng lặp khi người dùng chuyển trang.
-4. **Deploy và tự hào**: Hãy chụp hình giao diện và quay video ngắn để chia sẻ thành tích của bạn với cộng đồng! 🚀
+Hãy tự hào triển khai sản phẩm lên internet, chia sẻ trạm sạc năng lượng tập trung của riêng bạn tới cộng đồng lập trình viên và tận hưởng những giờ phút làm việc thăng hoa nhất! 🧘‍♂️⚡🚀
