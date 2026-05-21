@@ -53,7 +53,7 @@ Tài liệu cần cực kỳ chuyên nghiệp, trình bày rõ ràng bằng Mark
 
 Agent sẽ sinh ra bộ tài liệu PRD & Tech Specs vô cùng chặt chẽ. Bạn sẽ lưu hai tài liệu này vào phần mô tả chung của dự án để làm kim chỉ nam. Dưới đây là nội dung chuẩn hóa để bạn tham khảo và bắt đầu:
 
-> 💡 *Chi tiết tài liệu PRD & Tech Specs đã được tích hợp đầy đủ tại [lesson-01-vibe-coding-overview.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-coding-course/docs/section-07-vibe-coding/lesson-01-vibe-coding-overview.md#6-quy-trinh-vibe-coding-chuan-specs-driven-development). Hãy đọc kỹ trước khi bước sang Step 2!*
+> 💡 *Chi tiết tài liệu PRD & Tech Specs đã được tích hợp đầy đủ tại [lesson-02-prd-and-project-planning.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-coding-course/docs/section-07-vibe-coding/lesson-02-prd-and-project-planning.md). Hãy đọc kỹ trước khi bước sang Step 2!*
 
 ---
 

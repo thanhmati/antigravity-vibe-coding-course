@@ -24,44 +24,53 @@ Sau section này, học viên sẽ:
 - [ ] Tài khoản GitHub đã đăng nhập
 - [ ] Mạng internet ổn định (Stitch & iTunes API cần kết nối mạng)
 
-### Chuẩn bị demo
-- Tạo sẵn 1 Stitch project mẫu về VibeSpace để demo nhanh khi cần
-- Chuẩn bị sẵn một thư mục trống cho repo GitHub
-- Thử nghiệm trước các prompt trong guide ít nhất 1 lần
+### Chu�### Bài 1: Tổng quan Vibe Coding & Giới thiệu VibeSpace Studio
+
+**🕐 Thời lượng:** 25-30 phút
+
+**Cách mở bài:**
+> "Chào mừng các bạn đến với phần thực hành dự án thực tế. Hôm nay, chúng ta không chỉ học code, chúng ta học cách xây dựng một ứng dụng hoàn chỉnh bằng phương pháp Vibe Coding. Chúng ta sẽ làm quen với VibeSpace Studio – một trạm tập trung chữa lành tuyệt đẹp cho các nhà phát triển. Bài học hôm nay sẽ giúp các bạn chuyển đổi mindset từ lập trình truyền thống sang tư duy Vibe Coding: biến bạn thành một Product Manager thực thụ điều hành AI Agent."
+
+**Nội dung giảng dạy:**
+1. **Triết lý Vibe Coding & Mindset mới** (10 phút)
+   - Vibe Coding là gì? "Mô tả ý tưởng, AI xây dựng".
+   - So sánh chi tiết Vibe Coding vs Traditional Coding để thấy rõ sự khác biệt trong vai trò của lập trình viên (Developer trở thành Product Manager & Solutions Architect).
+2. **Giới thiệu siêu dự án VibeSpace Studio** (15 phút)
+   - Trình bày ý tưởng: Một Focus Station kết hợp âm thanh ambient đa kênh, Pomodoro, danh sách Todo và phong cảnh thiên nhiên động.
+   - Sơ đồ các cấu phần chính và giá trị thực tế của sản phẩm đối với người dùng (persona).
+   - Thiết lập các nguyên tắc vàng khi Vibe Coding để tránh bẫy token.
+
+**💡 Tips giảng dạy:**
+- Sử dụng hình ảnh demo giao diện (nếu có) hoặc mô tả cực kỳ sinh động về âm thanh và visual mờ kính của VibeSpace để kích thích trí tò mò của học viên ngay từ phút đầu tiên.
 
 ---
 
-## 📚 Hướng Dẫn Từng Bài
-
----
-
-### Bài 1: Tổng quan Vibe Coding, Viết PRD & Lập kế hoạch dự án
+### Bài 2: Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch dự án
 
 **🕐 Thời lượng:** 30-40 phút
 
 **Cách mở bài:**
-> "Các bạn đã biết cách ra lệnh cho AI Agent viết những hàm nhỏ. Nhưng để xây dựng một ứng dụng SaaS thực thụ như VibeSpace Studio bằng Vibe Coding, chúng ta phải làm việc như những Product Manager chuyên nghiệp. Chúng ta sẽ bắt đầu bằng cách viết PRD và Tech Specs (đặc tả kỹ thuật) rõ ràng trước khi cho AI viết code. Đó là quy trình Specs-Driven Vibe Coding chuẩn!"
+> "Các bạn đã biết cách ra lệnh cho AI Agent viết những hàm nhỏ. Nhưng để xây dựng một ứng dụng SaaS phức tạp như VibeSpace Studio, chúng ta không thể ném những prompt mơ hồ cho AI được. Chúng ta phải thực hiện quy trình Specs-Driven Development: viết PRD (Product Requirement Document) và Tech Specs (Đặc tả kỹ thuật) siêu chi tiết trước khi code. Đây chính là 'bản thiết kế' giúp AI sinh code chuẩn 100% không lệch schema."
 
 **Nội dung giảng dạy:**
-1. **Mindset Specs-Driven Vibe Coding** (10 phút)
-   - Giải thích tại sao ném ý tưởng mơ hồ ("làm web nghe nhạc") sẽ khiến Agent sinh code sai lệch và tốn token.
-   - Giới thiệu triết lý: "Specs-Driven Vibe Coding" — Viết rõ tài liệu nghiệp vụ (PRD) và đặc tả hệ thống (Tech Specs) làm bản đồ chỉ đường cho AI.
-
-2. **Soạn thảo PRD cho VibeSpace Studio** (10 phút)
-   - Giảng viên hướng dẫn viết PRD: phân tích 4 tính năng cốt lõi (Lobby, Focus Studio với 4 Widget nổi, Breathing Bubble, Stats Journal).
-   - Xác định danh sách tính năng MVP (đồng hồ, mixer, checklist) và Nice-to-have (iTunes API, background switcher, contribution grid).
-
-3. **Soạn thảo đặc tả kỹ thuật Tech Specs** (10 phút)
-   - Xác định tech stack chi tiết: Next.js 14 App Router, Tailwind CSS, TypeScript, Web Audio API.
-   - Thiết kế lược đồ dữ liệu `localStorage` cho trạng thái âm lượng, Pomodoro và tasks.
-   - Thảo luận logic gọi iTunes Search API ( previewUrl nhạc nghe thử 30s) và singleton Audio instance quản lý qua React Ref.
+1. **Sức mạnh của Specs-Driven Development** (10 phút)
+   - Lý giải tại sao AI Agent cần đặc tả rõ ràng để chống hiện tượng ảo giác (hallucination) và tránh lãng phí hàng nghìn tokens vô ích.
+2. **Thực hành viết PRD chuyên nghiệp** (10 phút)
+   - Hướng dẫn học viên cấu trúc một tài liệu PRD: Mục tiêu, Target Persona, Phân rã MVP (P0) vs Nice-to-have (P1, P2), sơ đồ luồng đi của người dùng (User Flow) bằng Mermaid.
+3. **Thực hành viết Tech Specs chi tiết** (10 phút)
+   - Định nghĩa cấu trúc định tuyến (Next.js 14 App Router).
+   - Thiết lập State Schema TypeScript hoàn chỉnh để đồng bộ hóa `localStorage` mà không bị lỗi kiểu dữ liệu.
+   - Đặc tả Audio Engine: Cơ chế Singleton / React Ref để tránh hiện tượng re-render làm tràn tiếng, lặp âm thanh.
+4. **Prompt Engineering và Lập kế hoạch PLAN.md** (10 phút)
+   - Demo mẫu Prompt Engineering thần thánh giúp sinh Specs tự động từ ý tưởng thô.
+   - Hướng dẫn phân rã MVP thành các Milestone nhỏ trong file `PLAN.md` ở root dự án để kiểm soát tiến độ làm việc của AI.
 
 **💡 Tips giảng dạy:**
-- Nhấn mạnh: "Việc chuẩn bị PRD và Tech Specs mất 15 phút nhưng sẽ giúp AI sinh code đúng 95% ngay từ lần chạy đầu tiên, tiết kiệm 90% thời gian debug về sau!"
+- Nhấn mạnh: "Dành 15 phút viết tài liệu đặc tả chặt chẽ sẽ giúp bạn tiết kiệm 5 tiếng đồng hồ debug và hàng triệu token lãng phí về sau!"
 
 ---
 
-### Bài 2: Setup Môi trường & Thiết lập Context Engineering cho VibeSpace
+### Bài 3: Setup Môi trường & Thiết lập Context Engineering cho VibeSpace
 
 **🕐 Thời lượng:** 25-35 phút
 
@@ -91,7 +100,7 @@ Sau section này, học viên sẽ:
 
 ---
 
-### Bài 3: Thiết kế Design System với Stitch
+### Bài 4: Thiết kế Design System với Stitch
 
 **🕐 Thời lượng:** 40-50 phút
 
@@ -113,7 +122,7 @@ Sau section này, học viên sẽ:
 
 ---
 
-### Bài 4: Tạo UI Screens – Phần 1 (Sảnh chờ Lobby)
+### Bài 5: Tạo UI Screens – Phần 1 (Sảnh chờ Lobby)
 
 **🕐 Thời lượng:** 45-60 phút
 
@@ -130,7 +139,7 @@ Sau section này, học viên sẽ:
 
 ---
 
-### Bài 5: Tạo UI Screens – Phần 2 (Immersive Focus Studio)
+### Bài 6: Tạo UI Screens – Phần 2 (Immersive Focus Studio)
 
 **🕐 Thời lượng:** 45-60 phút
 
@@ -148,7 +157,7 @@ Sau section này, học viên sẽ:
 
 ---
 
-### Bài 6: Convert Design → Code
+### Bài 7: Convert Design → Code
 
 **🕐 Thời lượng:** 50-60 phút
 
@@ -168,7 +177,7 @@ Sau section này, học viên sẽ:
 
 ---
 
-### Bài 7: GitHub Workflow tự động
+### Bài 8: GitHub Workflow tự động
 
 **🕐 Thời lượng:** 40-50 phút
 
@@ -185,7 +194,7 @@ Sau section này, học viên sẽ:
 
 ---
 
-### Bài 8: Thêm tính năng & Fix bug (Tích hợp Audio & APIs)
+### Bài 9: Thêm tính năng & Fix bug (Tích hợp Audio & APIs)
 
 **Thời lượng:** 40-50 phút
 
@@ -197,6 +206,43 @@ Sau section này, học viên sẽ:
 2. **Viết trình trộn âm thanh thiên nhiên đa kênh** (15 phút)
    - Cập nhật `AmbientMixer.tsx` để người dùng có thể phát đồng thời nhiều file tiếng mưa, lửa trại lặp đi lặp lại:
    > "Cài đặt trình phát âm thanh đa kênh lặp (loop) cho AmbientMixer.tsx. Khi trượt volume slider, thay đổi thuộc tính volume của từng đối tượng Audio tương ứng. Lưu tất cả cấu hình âm lượng vào localStorage."
+
+3. **Fix bug và tối ưu** (10 phút)
+   - Demo khắc phục các lỗi bất đồng bộ khi gọi API hoặc lỗi trình duyệt chặn autoplay.
+
+---
+
+### Bài 10: Polish UI, Responsive & Animation
+
+**🕐 Thời lượng:** 40-50 phút
+
+**Nội dung giảng dạy:**
+1. **Thiết kế nhịp thở thiền định SVG** (15 phút)
+   - Tạo widget `BreathingBubble.tsx` chuyển động SVG mượt mà theo nhịp thở 4-4-4:
+   > "Tạo widget BreathingBubble.tsx hiển thị một hình tròn SVG mờ ảo phát sáng. Sử dụng CSS keyframes để animate hình tròn này: Phình to trong 4 giây (hít vào) -> Giữ nguyên trong 4 giây -> Co nhỏ trong 4 giây (thở ra)."
+
+2. **Đổi hình nền động bằng URL/Unsplash** (15 phút)
+   - Nâng cấp `SceneSelector.tsx` cho phép người dùng thay đổi background:
+   > "Cập nhật SceneSelector.tsx để cho phép người dùng dán link ảnh URL bất kỳ làm hình nền toàn màn hình, hoặc nhập từ khóa tìm kiếm ảnh thiên nhiên Unsplash. Lưu hình nền đã chọn vào localStorage để không bị mất khi tải lại trang."
+
+3. **Polish Responsive & Transitions** (10 phút)
+   - Tối ưu hóa giao diện di động và hiệu ứng chuyển cảnh mượt mà.
+
+---
+
+### Bài 11: Review & Tổng kết
+
+**🕐 Thời lượng:** 30-40 phút
+
+**Nội dung giảng dạy:**
+1. **Trải nghiệm sản phẩm hoàn chỉnh** (15 phút)
+   - Bật toàn màn hình VibeSpace Studio, vừa mở một bài nhạc chill, vừa trộn tiếng mưa rơi nhè nhẹ, chạy Pomodoro và hoàn thành Todo.
+   - Xem lại lịch sử Git vô cùng sạch sẽ và chuyên nghiệp.
+
+2. **Đúc kết Best Practices & Chia sẻ** (15 phút)
+   - Tinh thần "Design First, Code Later".
+   - Cách duy trì Context Documents lâu dài để AI không bị "quên".
+   - Hướng dẫn áp dụng Vibe Coding để tạo ra các ứng dụng SaaS kiếm tiền trong thế giới thực.loop) cho AmbientMixer.tsx. Khi trượt volume slider, thay đổi thuộc tính volume của từng đối tượng Audio tương ứng. Lưu tất cả cấu hình âm lượng vào localStorage."
 
 3. **Fix bug và tối ưu** (10 phút)
    - Demo khắc phục các lỗi bất đồng bộ khi gọi API hoặc lỗi trình duyệt chặn autoplay.

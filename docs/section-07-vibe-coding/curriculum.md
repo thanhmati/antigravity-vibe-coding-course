@@ -8,7 +8,7 @@
 
 | Thông tin | Chi tiết |
 |-----------|----------|
-| **Số bài học** | 10 bài |
+| **Số bài học** | 11 bài |
 | **Thời lượng ước tính** | 6-8 giờ |
 | **Dự án thực tế** | **VibeSpace** – Studio tập trung & âm thanh chữa lành tích hợp |
 | **Công nghệ sử dụng** | Antigravity, Stitch MCP, GitHub MCP, Stitch Skills, React/Next.js |
@@ -18,24 +18,40 @@
 
 ## 🎯 Curriculum Chi Tiết
 
-### Bài 1: Tổng quan Vibe Coding, Viết PRD & Lập kế hoạch dự án
-**Thời lượng:** 30-40 phút
+### Bài 1: Tổng quan Vibe Coding & Giới thiệu VibeSpace Studio
+**Thời lượng:** 25-30 phút
 
 **Nội dung:**
 - Vibe Coding là gì? Triết lý "mô tả ý tưởng, AI xây dựng".
-- So sánh Vibe Coding vs Traditional Coding.
-- Quy trình Vibe Coding chuyên nghiệp: **Specs-Driven Development**.
-- Thực hành viết **PRD (Product Requirement Document)** chi tiết cho VibeSpace Studio (User Stories, Flow, MVP).
-- Thực hành viết **Tech Specs (Đặc tả kỹ thuật)**: Routing Next.js 14 App Router, LocalStorage Schema và Audio Singleton specification.
-- Lên kế hoạch phát triển MVP bằng Antigravity.
+- So sánh sự khác biệt lớn giữa Vibe Coding vs Traditional Coding.
+- Giới thiệu dự án VibeSpace Studio – Trạm tập trung và chữa lành cho lập trình viên.
+- Phân tích sơ đồ các cấu phần lõi và tính năng của VibeSpace.
+- Thiết lập mindset đúng đắn khi lập trình cùng AI Agent.
 
 **Kết quả bài học:**
-- Hiểu rõ mindset Vibe Coding & Quy trình Specs-Driven Development.
-- Có bộ PRD và Tech Specs hoàn chỉnh của VibeSpace Studio để định hình hướng đi.
+- Thấu hiểu mindset Vibe Coding cốt lõi.
+- Có cái nhìn tổng quan về kiến trúc và giao diện dự án thực tế VibeSpace Studio.
 
 ---
 
-### Bài 2: Cài đặt & Setup Context Engineering cho VibeSpace
+### Bài 2: Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch dự án
+**Thời lượng:** 30-40 phút
+
+**Nội dung:**
+- Triết lý **Specs-Driven Development** (Phát triển hướng Đặc tả) và lý do nó là cứu tinh của Vibe Coding.
+- Soạn thảo và phân tích tài liệu **PRD (Product Requirement Document)** hoàn chỉnh của VibeSpace Studio (User Stories, Flow, MVP vs Nice-to-have).
+- Xây dựng tài liệu **Tech Specs (Đặc tả kỹ thuật)**: Routing Next.js 14, LocalStorage State Schema, Audio Engine (Singleton/Ref Pattern).
+- Kỹ thuật Prompt Engineering để tự động tạo PRD & Tech Specs cho các ý tưởng dự án cá nhân.
+- Lên kế hoạch phát triển MVP và phân rã các Task nhỏ thông qua file `PLAN.md`.
+
+**Kết quả bài học:**
+- Có bộ tài liệu PRD và Tech Specs hoàn chỉnh để làm kim chỉ nam phát triển VibeSpace.
+- Biết cách dùng AI tạo tài liệu đặc tả chuẩn hóa cho bất kỳ sản phẩm nào.
+- Sở hữu file kế hoạch phát triển `PLAN.md` chuyên nghiệp.
+
+---
+
+### Bài 3: Cài đặt & Setup Context Engineering cho VibeSpace
 **Thời lượng:** 25-35 phút
 
 **Nội dung:**
@@ -54,7 +70,7 @@
 
 ---
 
-### Bài 3: Thiết kế Design System với Stitch
+### Bài 4: Thiết kế Design System với Stitch
 **Thời lượng:** 40-50 phút
 
 **Nội dung:**
@@ -70,7 +86,7 @@
 
 ---
 
-### Bài 4: Tạo UI Screens với Stitch – Phần 1 (Sảnh chờ Lobby & Navigation)
+### Bài 5: Tạo UI Screens với Stitch – Phần 1 (Sảnh chờ Lobby & Navigation)
 **Thời lượng:** 45-60 phút
 
 **Nội dung:**
@@ -86,7 +102,7 @@
 
 ---
 
-### Bài 5: Tạo UI Screens với Stitch – Phần 2 (Immersive Focus Studio)
+### Bài 6: Tạo UI Screens với Stitch – Phần 2 (Immersive Focus Studio)
 **Thời lượng:** 45-60 phút
 
 **Nội dung:**
@@ -103,7 +119,7 @@
 
 ---
 
-### Bài 6: Convert Design → Code với React Components
+### Bài 7: Convert Design → Code với React Components
 **Thời lượng:** 50-60 phút
 
 **Nội dung:**
@@ -119,7 +135,7 @@
 
 ---
 
-### Bài 7: GitHub Workflow – Branch, Commit & Pull Request tự động
+### Bài 8: GitHub Workflow – Branch, Commit & Pull Request tự động
 **Thời lượng:** 40-50 phút
 
 **Nội dung:**
@@ -134,7 +150,7 @@
 
 ---
 
-### Bài 8: Thêm tính năng & Fix bug bằng Vibe Coding (Nhạc & Âm thanh Mixer)
+### Bài 9: Thêm tính năng & Fix bug bằng Vibe Coding (Nhạc & Âm thanh Mixer)
 **Thời lượng:** 40-50 phút
 
 **Nội dung:**
@@ -150,7 +166,7 @@
 
 ---
 
-### Bài 9: Polish UI, Responsive Design & Animation
+### Bài 10: Polish UI, Responsive Design & Animation
 **Thời lượng:** 40-50 phút
 
 **Nội dung:**
@@ -167,7 +183,7 @@
 
 ---
 
-### Bài 10: Review dự án, Best Practices & Tổng kết
+### Bài 11: Review dự án, Best Practices & Tổng kết
 **Thời lượng:** 30-40 phút
 
 **Nội dung:**
@@ -188,13 +204,13 @@
 | Công cụ / Skill | Mục đích | Bài học |
 |-----------------|---------|--------|
 | **Antigravity IDE** | Coding agent chính | Tất cả |
-| **Stitch MCP Server** | Thiết kế UI, tạo screens | 3, 4, 5, 9 |
-| **GitHub MCP Server** | Quản lý repo, branches, PRs | 2, 7, 8 |
-| `stitch-design` | Thiết kế tổng thể, prompt enhance, design system | 3, 4, 5 |
-| `stitch-loop` | Sinh multi-page website | 5 |
-| `enhance-prompt` | Tối ưu prompt cho Stitch | 4, 5 |
-| `design-md` | Tạo DESIGN.md document | 3 |
-| `react-components` | Convert design → React code | 6 |
+| **Stitch MCP Server** | Thiết kế UI, tạo screens | 4, 5, 6, 10 |
+| **GitHub MCP Server** | Quản lý repo, branches, PRs | 3, 8, 9 |
+| `stitch-design` | Thiết kế tổng thể, prompt enhance, design system | 4, 5, 6 |
+| `stitch-loop` | Sinh multi-page website | 6 |
+| `enhance-prompt` | Tối ưu prompt cho Stitch | 5, 6 |
+| `design-md` | Tạo DESIGN.md document | 4 |
+| `react-components` | Convert design → React code | 7 |
 
 ---
 

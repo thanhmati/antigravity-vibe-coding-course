@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Section-7_of_7-06b6d4?style=for-the-badge" alt="Section 7" />
-  <img src="https://img.shields.io/badge/Lectures-10-blue?style=for-the-badge" alt="10 Lectures" />
+  <img src="https://img.shields.io/badge/Lectures-11-blue?style=for-the-badge" alt="11 Lectures" />
   <img src="https://img.shields.io/badge/Duration-~6--8_hours-green?style=for-the-badge" alt="~6-8 hours" />
   <img src="https://img.shields.io/badge/Level-Advanced-red?style=for-the-badge" alt="Advanced" />
   <img src="https://img.shields.io/badge/Hands--on-Project-ff6b6b?style=for-the-badge" alt="Hands-on" />
@@ -54,16 +54,17 @@ graph TD
 
 | # | Lecture | Mô tả | Thời lượng |
 |---|---------|--------|------------|
-| 7.1 | [**Tổng quan Vibe Coding & Lập kế hoạch**](lesson-01-vibe-coding-overview.md) | Mindset, workflow, project plan cho VibeSpace | ~35 phút |
-| 7.2 | **Cài đặt Stitch Skills & Chuẩn bị** | Setup môi trường dev đầy đủ cho dự án | ~25 phút |
-| 7.3 | **Thiết kế Design System với Stitch** | Màu sắc (Cyber-Zen), typography, shape, DESIGN.md | ~45 phút |
-| 7.4 | **Tạo UI Screens – Phần 1** | Thiết kế Sảnh chờ (Lobby) & Cấu trúc chính | ~50 phút |
-| 7.5 | **Tạo UI Screens – Phần 2** | Thiết kế Immersive Focus Studio với các Widget nổi | ~50 phút |
-| 7.6 | **Convert Design → React Code** | `react-components` skill, cấu trúc Next.js App Router | ~55 phút |
-| 7.7 | **GitHub Workflow tự động** | Quản lý repo workspaces, branch, commit, PR, merge | ~45 phút |
-| 7.8 | **Thêm tính năng & Fix bug** | Tích hợp iTunes API nhạc Lo-fi & Mixer đa kênh | ~45 phút |
-| 7.9 | **Polish UI, Responsive & Animation** | Nhịp thở SVG, lật thẻ, chuyển cảnh mượt mà | ~45 phút |
-| 7.10 | **Review & Tổng kết** | Best practices khi Vibe Coding với AI Agent | ~35 phút |
+| 7.1 | [**Tổng quan Vibe Coding & Giới thiệu VibeSpace**](lesson-01-vibe-coding-overview.md) | Mindset, workflow, giới thiệu dự án VibeSpace | ~30 phút |
+| 7.2 | [**Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch**](lesson-02-prd-and-project-planning.md) | Viết PRD, Tech Specs, và lập kế hoạch PLAN.md | ~35 phút |
+| 7.3 | **Cài đặt Stitch Skills & Setup Context Engineering** | Setup môi trường dev, cài đặt skills, khởi tạo context docs | ~30 phút |
+| 7.4 | **Thiết kế Design System với Stitch** | Màu sắc (Cyber-Zen), typography, shape, DESIGN.md | ~45 phút |
+| 7.5 | **Tạo UI Screens – Phần 1** | Thiết kế Sảnh chờ (Lobby) & Cấu trúc chính | ~50 phút |
+| 7.6 | **Tạo UI Screens – Phần 2** | Thiết kế Immersive Focus Studio với các Widget nổi | ~50 phút |
+| 7.7 | **Convert Design → React Code** | `react-components` skill, cấu trúc Next.js App Router | ~55 phút |
+| 7.8 | **GitHub Workflow tự động** | Quản lý repo workspaces, branch, commit, PR, merge | ~45 phút |
+| 7.9 | **Thêm tính năng & Fix bug** | Tích hợp iTunes API nhạc Lo-fi & Mixer đa kênh | ~45 phút |
+| 7.10 | **Polish UI, Responsive & Animation** | Nhịp thở SVG, lật thẻ, chuyển cảnh mượt mà | ~45 phút |
+| 7.11 | **Review & Tổng kết** | Best practices khi Vibe Coding với AI Agent | ~35 phút |
 
 ---
 
@@ -71,7 +72,7 @@ graph TD
 
 | File | Mô tả | Đối tượng |
 |------|--------|-----------|
-| [curriculum.md](curriculum.md) | Curriculum chi tiết 10 bài học | Giảng viên & Học viên |
+| [curriculum.md](curriculum.md) | Curriculum chi tiết 11 bài học | Giảng viên & Học viên |
 | [teaching-guide.md](teaching-guide.md) | Hướng dẫn giảng dạy chi tiết với prompt mẫu | Giảng viên |
 | [step-by-step-guide.md](step-by-step-guide.md) | Hướng dẫn từng bước với prompt và tích hợp API | Học viên |
 
@@ -82,13 +83,13 @@ graph TD
 | Công cụ | Vai trò | Bài học |
 |---------|---------|---------|
 | **Antigravity IDE** | AI Coding Agent chính | Tất cả |
-| **Stitch MCP Server** | Thiết kế UI, tạo screens | 3, 4, 5, 9 |
-| **GitHub MCP Server** | Quản lý repo, branches, PRs | 2, 7, 8 |
-| `stitch-design` | Thiết kế tổng thể | 3, 4, 5 |
-| `stitch-loop` | Sinh multi-page website | 5 |
-| `enhance-prompt` | Tối ưu prompt cho Stitch | 4, 5 |
-| `design-md` | Tạo DESIGN.md | 3 |
-| `react-components` | Convert design → React | 6 |
+| **Stitch MCP Server** | Thiết kế UI, tạo screens | 4, 5, 6, 10 |
+| **GitHub MCP Server** | Quản lý repo, branches, PRs | 3, 8, 9 |
+| `stitch-design` | Thiết kế tổng thể | 4, 5, 6 |
+| `stitch-loop` | Sinh multi-page website | 6 |
+| `enhance-prompt` | Tối ưu prompt cho Stitch | 5, 6 |
+| `design-md` | Tạo DESIGN.md | 4 |
+| `react-components` | Convert design → React | 7 |
 
 ---
 
