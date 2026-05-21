@@ -1,8 +1,8 @@
 # 📘 Bài 1: Tổng quan Vibe Coding & Lập kế hoạch dự án
 
-> **Section 6** · Vibe Coding Dự Án Thực Tế  
+> **Section 7** · Vibe Coding Dự Án Thực Tế  
 > **Thời lượng:** 30-40 phút  
-> **Yêu cầu:** Đã hoàn thành Section 1-5
+> **Yêu cầu:** Đã hoàn thành Section 1-6
 
 ---
 
@@ -13,7 +13,7 @@ Sau bài này, bạn sẽ:
 - ✅ Hiểu **Vibe Coding** là gì và nó khác gì so với lập trình truyền thống
 - ✅ Nắm được **workflow tổng thể** từ ý tưởng → sản phẩm hoàn chỉnh
 - ✅ Biết được **vai trò mới của Developer** trong kỷ nguyên AI Agent
-- ✅ Có **project plan chi tiết** cho dự án thực tế sẽ xây dựng xuyên suốt section
+- ✅ Có **project plan chi tiết** cho dự án thực tế **VibeSpace** sẽ xây dựng xuyên suốt section
 
 ---
 
@@ -89,7 +89,7 @@ graph LR
 
 ## 2. Workflow tổng thể của Vibe Coding
 
-Toàn bộ quy trình Vibe Coding mà chúng ta sẽ thực hành trong Section 6:
+Toàn bộ quy trình Vibe Coding mà chúng ta sẽ thực hành trong Section 7:
 
 ```mermaid
 flowchart TD
@@ -128,7 +128,7 @@ flowchart TD
 
 ## 3. Các công cụ sẽ sử dụng
 
-Trong Section 6, chúng ta sẽ sử dụng **hệ sinh thái công cụ** sau:
+Trong Section 7, chúng ta sẽ sử dụng **hệ sinh thái công cụ** sau:
 
 ```mermaid
 graph TD
@@ -161,63 +161,55 @@ graph TD
 
 ---
 
-## 4. Giới thiệu dự án: English Practice Hub
+## 4. Giới thiệu dự án: VibeSpace Studio
 
 ### 4.1 Tổng quan dự án
 
-> 🎓 **English Practice Hub** — Trang web giúp người dùng luyện tập tiếng Anh một cách hiệu quả và thú vị.
+> 🧘‍♂️ **VibeSpace Studio** — Trạm tập trung và âm thanh chữa lành tích hợp đồng hồ Pomodoro, bộ trộn âm thanh thiên nhiên đa kênh, trình phát nhạc Lo-fi và phong cảnh động cá nhân hóa.
 
 **Tại sao chọn dự án này?**
-- 📱 UI phong phú – nhiều loại component khác nhau
-- 🎮 Tương tác nhiều – quiz, flashcard, progress tracking
-- 🌍 Thực tế – ai cũng cần học tiếng Anh
-- 🎨 Phù hợp demo Stitch – design đẹp, nhiều screens
+- 📱 **UI cực kỳ lộng lẫy** – Thiết kế dạng thẻ kính mờ (Glassmorphism) nổi trên nền phong cảnh động.
+- 🎮 **Tương tác rất mạnh** – Trình phát nhạc iTunes API thực tế, bộ trộn âm thanh (mixer) đa kênh chạy song song, đồng hồ đếm ngược Pomodoro và bảng việc cần làm.
+- 🎨 **Cá nhân hóa sâu sắc** – Cho phép người dùng tùy chọn chủ đề nhạc lo-fi theo từ khóa, đổi ảnh phong cảnh nền bằng URL bất kỳ hoặc qua từ khóa Unsplash, và lưu thiết lập vào `localStorage`.
+- 🌍 **Đời sống gần gũi** – Hỗ trợ đắc lực cho các lập trình viên rèn luyện lối sống tập trung, giảm stress mỗi ngày.
 
 ### 4.2 Các trang của ứng dụng
 
 ```mermaid
 graph TD
-    LP["🏠 Landing Page<br/><i>Trang chủ giới thiệu</i>"]
-    LP --> VP["📚 Vocabulary Practice<br/><i>Luyện từ vựng</i>"]
-    LP --> GQ["🧠 Grammar Quiz<br/><i>Trắc nghiệm ngữ pháp</i>"]
-    LP --> FR["🗂️ Flashcard Review<br/><i>Ôn tập flashcard</i>"]
+    LE["🏠 Sảnh chờ Lobby /<br/><i>Giới thiệu và thống kê</i>"]
+    LE --> VS["🧘‍♂️ Immersive Studio /space<br/><i>Bảng điều khiển tập trung</i>"]
+    LE --> PJ["📊 Productivity Journal /journal<br/><i>Nhật ký đóng góp năng suất</i>"]
+    LE --> CS["⚙️ Customizer Settings /settings<br/><i>Cấu hình thời gian Pomodoro</i>"]
 
-    VP --> PS["📊 Progress & Stats<br/><i>Thống kê tiến trình</i>"]
-    GQ --> PS
-    FR --> PS
+    VS --> AM["🎵 Ambient Mixer<br/><i>Trình trộn âm thanh nền</i>"]
+    VS --> PT["⏱️ Pomodoro Timer<br/><i>Đếm ngược tập trung</i>"]
+    VS --> DG["📋 Daily Goals<br/><i>Nhiệm vụ trong ngày</i>"]
+    VS --> SS["🌅 Scene Selector<br/><i>Đổi cảnh phong cảnh nền</i>"]
 
-    style LP fill:#3b82f6,stroke:#2563eb,color:#fff
-    style VP fill:#8b5cf6,stroke:#7c3aed,color:#fff
-    style GQ fill:#ec4899,stroke:#db2777,color:#fff
-    style FR fill:#f59e0b,stroke:#d97706,color:#fff
-    style PS fill:#10b981,stroke:#059669,color:#fff
+    style LE fill:#3b82f6,stroke:#2563eb,color:#fff
+    style VS fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style PJ fill:#ec4899,stroke:#db2777,color:#fff
+    style CS fill:#f59e0b,stroke:#d97706,color:#fff
 ```
 
-### 4.3 Chi tiết từng trang
+### 4.3 Chi tiết từng cấu phần tại Focus Studio (`/space`)
 
-#### 🏠 Landing Page
-- Hero section với tiêu đề, mô tả, nút CTA
-- 3 Feature cards: Vocabulary, Grammar, Flashcard
-- Thống kê: "5000+ Words", "200+ Quizzes", "10K+ Learners"
-- Footer
+#### 🎵 Ambient Mixer & Lo-fi Player (Study With Me)
+- **iTunes Search API integration**: Nhập từ khóa (lofi, piano, jazz...) để tải về playlist dynamic. Hỗ trợ Play, Pause, Next, Prev.
+- **Multi-channel Sound Mixer**: Các thanh trượt chỉnh âm lượng độc lập cho tiếng mưa rơi, sóng biển, gió thổi, lửa trại để người dùng tự thiết kế bản nhạc thư giãn của mình.
 
-#### 📚 Vocabulary Practice
-- Hiển thị từ vựng: từ, phiên âm IPA, loại từ, nghĩa, ví dụ
-- Nút hành động: "Đã biết" / "Chưa biết" / "Tiếp theo"
-- Progress bar theo dõi tiến trình
-- Filter theo category: Common, Academic, Business
+#### ⏱️ Pomodoro Timer & Zen Quotes
+- **Pomodoro Timer**: Đồng hồ đếm ngược với 3 chế độ (Work, Short Break, Long Break). Có vòng tròn tiến trình SVG sinh động, tự chuyển đổi trạng thái và âm báo nhẹ nhàng khi kết thúc phiên.
+- **Zen Quotes**: Trích dẫn châm ngôn sống ngẫu nhiên từ ZenQuotes API hiển thị tinh tế ở dưới cùng màn hình giúp chữa lành và tiếp thêm năng lực tích cực.
 
-#### 🧠 Grammar Quiz
-- Câu hỏi trắc nghiệm 4 đáp án
-- Timer đếm ngược
-- Score counter
-- Progress indicator (câu mấy / tổng câu)
+#### 📋 Daily Focus Goals
+- Bảng Checklist ghi chú nhanh các công việc cần hoàn thành trong ngày.
+- Hỗ trợ lưu trữ tự động vào `localStorage` kèm thanh tiến độ hoàn thành (Progress Bar).
 
-#### 🗂️ Flashcard Review
-- Card có thể flip: mặt trước (English) ↔ mặt sau (Vietnamese)
-- Navigation: Previous / Next
-- Đánh giá: Again, Hard, Good, Easy
-- Deck list sidebar
+#### 🌅 Scene Selector & dynamic backgrounds
+- Cung cấp danh sách các cảnh đẹp tuyển chọn (ảnh chất lượng cao / ảnh động).
+- Hỗ trợ đổi hình nền động bằng cách nhập từ khóa tìm ảnh Unsplash hoặc dán một đường dẫn ảnh URL bất kỳ.
 
 ---
 
@@ -225,24 +217,24 @@ graph TD
 
 ### 5.1 MVP (Minimum Viable Product) vs Nice-to-have
 
-Khi Vibe Coding, chúng ta vẫn cần **tư duy sản phẩm** – không phải nhảy vào làm tất cả cùng lúc.
+Khi Vibe Coding, chúng ta cần tư duy sản phẩm để phân chia giai đoạn phát triển hợp lý:
 
 ```mermaid
 graph TD
-    subgraph "🟢 MVP - Làm trước"
-        M1["Landing Page hoàn chỉnh"]
-        M2["Vocabulary Practice<br/>(hiển thị từ + đánh dấu)"]
-        M3["Grammar Quiz<br/>(trắc nghiệm cơ bản)"]
-        M4["Flashcard Review<br/>(flip card + navigate)"]
-        M5["Navigation giữa các trang"]
+    subgraph "A1: MVP - Làm trước"
+        M1["Lobby Entrance Page"]
+        M2["Immersive Studio với layout Widget nổi"]
+        M3["Trình trộn âm thanh Ambient Mixer"]
+        M4["Đồng hồ Pomodoro cơ bản"]
+        M5["Checklist Todo lưu localStorage"]
     end
 
-    subgraph "🟡 Nice-to-have - Làm sau"
-        N1["🌙 Dark Mode"]
-        N2["📊 Progress Tracking"]
-        N3["📱 Responsive Design"]
-        N4["✨ Animations"]
-        N5["🔊 Audio phát âm"]
+    subgraph "A2: Nice-to-have - Làm sau"
+        N1["⚙️ Bảng tùy biến Settings nổi"]
+        N2["🎵 Tích hợp iTunes API tải nhạc động"]
+        N3["🌅 Thay đổi ảnh nền bằng URL/Unsplash"]
+        N4["🌱 Vòng tròn thiền định nhịp thở SVG"]
+        N5["📊 Biểu đồ đóng góp Productivity Journal"]
     end
 
     style M1 fill:#dcfce7,stroke:#16a34a,color:#000
@@ -257,52 +249,49 @@ graph TD
     style N5 fill:#fef9c3,stroke:#ca8a04,color:#000
 ```
 
-> 💡 **Nguyên tắc:** Hoàn thành MVP trước, sau đó iterate thêm tính năng. Vibe Coding cho phép bạn thêm tính năng cực nhanh nên đừng lo!
+---
 
 ### 5.2 Tech Stack
 
 | Layer | Công nghệ | Lý do chọn |
 |-------|-----------|------------|
-| **Framework** | Next.js (App Router) | SSR, routing tốt, phổ biến |
-| **Language** | TypeScript | Type-safe, dễ maintain |
-| **Styling** | Tailwind CSS | Utility-first, nhanh, tương thích Stitch |
-| **UI Design** | Google Stitch | AI-powered design, MCP integration |
-| **Version Control** | GitHub | Standard, MCP hỗ trợ |
-| **Data** | Mock data (JSON/TS) | Đủ cho demo, dễ thay thế sau |
+| **Framework** | Next.js 14 (App Router) | Tối ưu hóa SEO, routing mạnh mẽ, phổ biến nhất |
+| **Language** | TypeScript | Kiểm soát chặt chẽ lỗi cú pháp, dễ bảo trì |
+| **Styling** | Tailwind CSS + Glassmorphism | Thiết kế giao diện trong suốt, viền neon mờ ảo, đáp ứng nhanh |
+| **UI Design** | Google Stitch | AI-powered design system, MCP integration tốt |
+| **Audio Processing** | Web Audio API / HTML5 Audio | Phát nhạc nền và trộn âm thanh đa kênh đồng thời |
+| **APIs** | **iTunes Search API** + **ZenQuotes API** | Gọi dữ liệu nhạc Lo-fi động và câu trích dẫn 100% miễn phí |
+| **State & Storage** | React State & LocalStorage | Quản lý trạng thái và lưu trữ lâu dài cấu hình người dùng |
+
+---
 
 ### 5.3 Cấu trúc dự án dự kiến
 
 ```
-english-practice-hub/
+vibespace-dashboard/
 ├── .stitch/
-│   └── DESIGN.md                 ← Design system (Stitch sinh)
+│   └── DESIGN.md                 ← Design system của Stitch
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx              ← Landing Page
-│   │   ├── layout.tsx            ← Root layout + Navigation
-│   │   ├── vocabulary/
-│   │   │   └── page.tsx          ← Vocabulary Practice
-│   │   ├── grammar/
-│   │   │   └── page.tsx          ← Grammar Quiz
-│   │   └── flashcards/
-│   │       └── page.tsx          ← Flashcard Review
+│   │   ├── page.tsx              ← Lobby Entrance
+│   │   ├── layout.tsx            ← Root layout + Global styling
+│   │   ├── space/
+│   │   │   └── page.tsx          ← Immersive Studio (Hợp nhất các Widget nổi)
+│   │   ├── journal/
+│   │   │   └── page.tsx          ← Productivity Journal
+│   │   └── settings/
+│   │       └── page.tsx          ← Settings cấu hình
 │   ├── components/
-│   │   ├── Header.tsx            ← Navigation bar
-│   │   ├── Footer.tsx            ← Footer
-│   │   ├── HeroSection.tsx       ← Hero section landing
-│   │   ├── FeatureCard.tsx       ← Feature highlight card
-│   │   ├── VocabularyCard.tsx    ← Hiển thị từ vựng
-│   │   ├── QuizCard.tsx          ← Câu hỏi quiz
-│   │   ├── FlashCard.tsx         ← Flashcard flip
-│   │   ├── ProgressBar.tsx       ← Thanh tiến trình
-│   │   └── ThemeToggle.tsx       ← Dark/Light mode
-│   ├── data/
-│   │   ├── vocabulary.ts         ← Mock data từ vựng
-│   │   ├── grammar-questions.ts  ← Mock data câu hỏi
-│   │   └── flashcards.ts         ← Mock data flashcard
+│   │   ├── PomodoroTimer.tsx     ← Widget đồng hồ
+│   │   ├── AmbientMixer.tsx      ← Widget trộn âm thanh thiên nhiên
+│   │   ├── LofiPlayer.tsx        ← Trình phát nhạc Lo-fi (iTunes API)
+│   │   ├── TodoChecklist.tsx     ← Bảng công việc cần làm
+│   │   ├── BreathingBubble.tsx   ← Vòng tròn nhịp thở SVG
+│   │   ├── SceneSelector.tsx     ← Bảng đổi hình nền
+│   │   └── ThemeToggle.tsx       ← Nút chỉnh theme màu hệ thống
 │   └── styles/
-│       └── globals.css           ← Global styles
-├── public/                        ← Static assets
+│       └── globals.css           ← Tailwind & Glassmorphism classes
+├── public/                       ← Chứa âm thanh lặp (.mp3) và ảnh tĩnh
 ├── package.json
 └── README.md
 ```
@@ -313,45 +302,45 @@ english-practice-hub/
 
 ### Thứ tự phát triển
 
-Dưới đây là roadmap phát triển mà chúng ta sẽ đi theo xuyên suốt Section 6:
+Roadmap phát triển mà chúng ta sẽ thực hành xuyên suốt Section 7:
 
 ```mermaid
 gantt
-    title Roadmap phat trien English Practice Hub
+    title Roadmap phát triển VibeSpace Studio
     dateFormat YYYY-MM-DD
     axisFormat %d
 
-    section Chuan bi
-    Cai dat Skills va Moi truong    :done, a1, 2026-01-01, 1d
-    Tao GitHub Repository           :done, a2, 2026-01-01, 1d
+    section Chuẩn bị
+    Cài đặt Skills và Môi trường     :done, a1, 2026-01-01, 1d
+    Tạo GitHub Repository            :done, a2, 2026-01-01, 1d
 
     section Design
-    Tao Design System               :active, b1, 2026-01-02, 1d
-    UI Landing Page                 :b2, 2026-01-03, 1d
-    UI Vocabulary Quiz Flashcard    :b3, 2026-01-04, 1d
+    Tạo Design System                :active, b1, 2026-01-02, 1d
+    UI Sảnh Chờ Lobby                :b2, 2026-01-03, 1d
+    UI Immersive Studio & Widgets    :b3, 2026-01-04, 1d
 
     section Code
-    Convert Design to React         :c1, 2026-01-05, 1d
-    Build NextJS Project            :c2, 2026-01-06, 1d
+    Convert Design to React          :c1, 2026-01-05, 1d
+    Build NextJS & Tích Hợp Audio    :c2, 2026-01-06, 1d
 
-    section Git va Iterate
-    Git Workflow Branch PR          :d1, 2026-01-07, 1d
-    Them Dark Mode Progress         :d2, 2026-01-08, 1d
+    section Git & Iterate
+    Git Workflow Branch PR           :d1, 2026-01-07, 1d
+    Thêm iTunes API & Mixer đa kênh  :d2, 2026-01-08, 1d
 
-    section Hoan thien
-    Responsive va Animations        :e1, 2026-01-09, 1d
-    Review va Tong ket              :e2, 2026-01-10, 1d
+    section Hoàn thiện
+    Polish Nhịp Thở & Chuyển Cảnh     :e1, 2026-01-09, 1d
+    Review và Tổng kết               :e2, 2026-01-10, 1d
 ```
 
 ### Từng giai đoạn chi tiết
 
 | Giai đoạn | Bài học | Việc cần làm | Công cụ |
 |-----------|---------|-------------|---------|
-| **1. Chuẩn bị** | Bài 1-2 | Lập kế hoạch, cài tools, tạo repo | Antigravity, GitHub MCP |
-| **2. Design** | Bài 3-5 | Tạo design system, thiết kế UI screens | Stitch MCP, Stitch Skills |
-| **3. Code** | Bài 6 | Convert design → React, build project | `react-components` skill |
-| **4. Git & Iterate** | Bài 7-8 | Branch workflow, thêm features | GitHub MCP |
-| **5. Polish** | Bài 9-10 | Responsive, animations, review | Antigravity |
+| **1. Chuẩn bị** | Bài 1-2 | Lên kế hoạch, cài tools, tạo repo `vibespace-dashboard` | Antigravity, GitHub MCP |
+| **2. Design** | Bài 3-5 | Tạo design system, thiết kế UI Lobby, Studio và các Widget | Stitch MCP, Stitch Skills |
+| **3. Code** | Bài 6 | Convert design → React, build project Next.js | `react-components` skill |
+| **4. Git & Iterate** | Bài 7-8 | Branch workflow, code gọi API iTunes & trộn nhạc nền | GitHub MCP, Audio Context |
+| **5. Polish** | Bài 9-10 | Nhịp thở thiền định SVG, responsive di động, SEO | Antigravity |
 
 ---
 
@@ -360,24 +349,24 @@ gantt
 ### 🧠 5 Nguyên tắc vàng
 
 #### 1. "Bạn là Product Manager, không phải Developer"
-Đừng nghĩ về code – hãy nghĩ về **sản phẩm**. AI Agent sẽ lo phần code.
+Đừng nghĩ về code – hãy nghĩ về **sản phẩm**. AI Agent sẽ lo phần viết mã nguồn chi tiết.
 
 #### 2. "Mô tả càng chi tiết, kết quả càng tốt"
 ```
-❌ Prompt mơ hồ:    "Tạo trang web học tiếng Anh"
-✅ Prompt chi tiết:  "Tạo landing page với hero section có tiêu đề 
-                      'Master English, Your Way', subtitle mô tả app, 
-                      3 feature cards, CTA button 'Start Learning'"
+❌ Prompt mơ hồ:    "Tạo trang web nghe nhạc thiền"
+✅ Prompt chi tiết:  "Tạo trang Studio tập trung toàn màn hình có hình nền phong cảnh, 
+                      có đồng hồ Pomodoro mờ kính bên phải, và bộ trộn âm lượng 
+                      tiếng mưa, tiếng lửa trại bên trái..."
 ```
 
 #### 3. "Design First, Code Later"
-Luôn bắt đầu từ thiết kế trên Stitch, sau đó mới convert sang code. Đừng nhảy vào code ngay!
+Luôn bắt đầu từ việc thiết kế các layer hình ảnh trên Stitch, sau đó mới convert sang code React. Đừng nhảy vào code ngay!
 
 #### 4. "Iterate, Don't Perfect"
-Vibe Coding là quy trình **lặp đi lặp lại**. Version 1 không cần hoàn hảo – bạn có thể cải thiện liên tục.
+Vibe Coding là quy trình **lặp đi lặp lại**. Phiên bản đầu tiên không cần hoàn hảo – bạn có thể thêm các tính năng nâng cao (như tùy biến URL ảnh nền) dần dần.
 
 #### 5. "Trust but Verify"
-AI rất mạnh nhưng không hoàn hảo. Luôn **review code** mà AI generate trước khi merge.
+AI rất mạnh nhưng có thể gặp lỗi khi xử lý luồng Audio đồng thời. Luôn **chạy thử** và review code mà AI generate trước khi merge branch.
 
 ---
 
@@ -387,17 +376,17 @@ AI rất mạnh nhưng không hoàn hảo. Luôn **review code** mà AI generate
 |-----------|---------------|
 | **Vibe Coding** | Lập trình bằng ngôn ngữ tự nhiên, AI Agent thực thi |
 | **Vai trò mới** | Developer = Product Manager + Architect |
-| **Workflow** | Ý tưởng → Design (Stitch) → Code → Git (GitHub MCP) → Iterate |
-| **Dự án** | English Practice Hub – Luyện tập tiếng Anh |
-| **MVP** | 4 trang: Landing, Vocabulary, Grammar Quiz, Flashcard |
-| **Nguyên tắc** | Design First, Mô tả chi tiết, Iterate liên tục |
+| **Workflow** | Ý tưởng → Design (Stitch) → Code → Git (GitHub MCP) → Lặp |
+| **Dự án** | VibeSpace Studio – Trạm tập trung chữa lành cho lập trình viên |
+| **MVP** | Lobby Entrance (`/`) & Focus Studio (`/space` với Widget hợp nhất) |
+| **Nguyên tắc** | Design First, Mô tả chi tiết, Lặp liên tục |
 
 ---
 
 ## ⏭️ Bài tiếp theo
 
-**Bài 2: Cài đặt Stitch Skills & Chuẩn bị môi trường** – Chúng ta sẽ cài đặt tất cả tools cần thiết và tạo GitHub repository cho dự án.
+**Bài 2: Cài đặt Stitch Skills & Chuẩn bị môi trường** – Chúng ta sẽ cài đặt tất cả các skills cần thiết và tạo GitHub repository cho dự án VibeSpace.
 
 ---
 
-*📚 Section 6 · Google Antigravity: Xây dựng AI Agent, AI App & Vibe Coding*
+*📚 Section 7 · Google Antigravity: Xây dựng AI Agent, AI App & Vibe Coding*

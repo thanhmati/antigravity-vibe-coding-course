@@ -17,30 +17,35 @@
 Sau section này, bạn sẽ:
 
 - ✅ Thành thạo **workflow Vibe Coding** từ ý tưởng → thiết kế → code → deploy
-- ✅ Sử dụng thành thạo **Stitch Skills** để thiết kế UI chuyên nghiệp
+- ✅ Sử dụng thành thạo **Stitch Skills** để thiết kế UI chuyên nghiệp và cá nhân hóa sâu sắc
 - ✅ Tự động hoá quy trình **Git** với GitHub MCP
-- ✅ Có **1 dự án hoàn chỉnh** trong portfolio
+- ✅ Có **1 dự án dashboard cực kỳ lộng lẫy và thực tế** trong portfolio
 
 ---
 
-## 🏗️ Dự án: English Practice Hub
+## 🏗️ Dự án: VibeSpace Studio
 
-> 🎓 Trang web luyện tập tiếng Anh với vocabulary, grammar quiz, và flashcards
+> 🧘‍♂️ Trạm tập trung và âm thanh chữa lành tích hợp đồng hồ Pomodoro, bộ trộn âm thanh thiên nhiên đa kênh, trình phát nhạc Lo-fi và phong cảnh động cá nhân hóa.
 
 ```mermaid
 graph TD
-    LP["🏠 Landing Page"] --> VP["📚 Vocabulary Practice"]
-    LP --> GQ["🧠 Grammar Quiz"]
-    LP --> FR["🗂️ Flashcard Review"]
-    VP --> PS["📊 Progress & Stats"]
-    GQ --> PS
-    FR --> PS
-
-    style LP fill:#3b82f6,stroke:#2563eb,color:#fff
-    style VP fill:#8b5cf6,stroke:#7c3aed,color:#fff
-    style GQ fill:#ec4899,stroke:#db2777,color:#fff
-    style FR fill:#f59e0b,stroke:#d97706,color:#fff
-    style PS fill:#10b981,stroke:#059669,color:#fff
+    LE["🏠 Sảnh chờ Lobby"] --> VS["🧘‍♂️ Immersive Studio /space"]
+    LE --> PJ["📊 Nhật ký Journal /journal"]
+    LE --> CS["⚙️ Tùy chỉnh Settings /settings"]
+    
+    VS --> AM["🎵 Ambient Mixer"]
+    VS --> PT["⏱️ Pomodoro Timer"]
+    VS --> DG["📋 Daily Goals"]
+    VS --> SS["🌅 Scene Switcher"]
+    
+    style LE fill:#3b82f6,stroke:#2563eb,color:#fff
+    style VS fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style PJ fill:#ec4899,stroke:#db2777,color:#fff
+    style CS fill:#f59e0b,stroke:#d97706,color:#fff
+    style AM fill:#10b981,stroke:#059669,color:#fff
+    style PT fill:#10b981,stroke:#059669,color:#fff
+    style DG fill:#10b981,stroke:#059669,color:#fff
+    style SS fill:#10b981,stroke:#059669,color:#fff
 ```
 
 ---
@@ -49,16 +54,16 @@ graph TD
 
 | # | Lecture | Mô tả | Thời lượng |
 |---|---------|--------|------------|
-| 7.1 | [**Tổng quan Vibe Coding & Lập kế hoạch**](lesson-01-vibe-coding-overview.md) | Mindset, workflow, project plan | ~35 phút |
-| 7.2 | **Cài đặt Stitch Skills & Chuẩn bị** | Setup môi trường dev đầy đủ | ~25 phút |
-| 7.3 | **Thiết kế Design System với Stitch** | Color, typography, shape, DESIGN.md | ~45 phút |
-| 7.4 | **Tạo UI Screens – Phần 1** | Landing page, navigation, header | ~50 phút |
-| 7.5 | **Tạo UI Screens – Phần 2** | Vocabulary, grammar quiz, flashcard | ~50 phút |
-| 7.6 | **Convert Design → React Code** | `react-components` skill, Next.js | ~55 phút |
-| 7.7 | **GitHub Workflow tự động** | Branch, commit, PR, merge | ~45 phút |
-| 7.8 | **Thêm tính năng & Fix bug** | Dark mode, progress tracking, iterative | ~45 phút |
-| 7.9 | **Polish UI, Responsive & Animation** | Mobile-first, micro-animations | ~45 phút |
-| 7.10 | **Review & Tổng kết** | Best practices, lessons learned | ~35 phút |
+| 7.1 | [**Tổng quan Vibe Coding & Lập kế hoạch**](lesson-01-vibe-coding-overview.md) | Mindset, workflow, project plan cho VibeSpace | ~35 phút |
+| 7.2 | **Cài đặt Stitch Skills & Chuẩn bị** | Setup môi trường dev đầy đủ cho dự án | ~25 phút |
+| 7.3 | **Thiết kế Design System với Stitch** | Màu sắc (Cyber-Zen), typography, shape, DESIGN.md | ~45 phút |
+| 7.4 | **Tạo UI Screens – Phần 1** | Thiết kế Sảnh chờ (Lobby) & Cấu trúc chính | ~50 phút |
+| 7.5 | **Tạo UI Screens – Phần 2** | Thiết kế Immersive Focus Studio với các Widget nổi | ~50 phút |
+| 7.6 | **Convert Design → React Code** | `react-components` skill, cấu trúc Next.js App Router | ~55 phút |
+| 7.7 | **GitHub Workflow tự động** | Quản lý repo workspaces, branch, commit, PR, merge | ~45 phút |
+| 7.8 | **Thêm tính năng & Fix bug** | Tích hợp iTunes API nhạc Lo-fi & Mixer đa kênh | ~45 phút |
+| 7.9 | **Polish UI, Responsive & Animation** | Nhịp thở SVG, lật thẻ, chuyển cảnh mượt mà | ~45 phút |
+| 7.10 | **Review & Tổng kết** | Best practices khi Vibe Coding với AI Agent | ~35 phút |
 
 ---
 
@@ -67,8 +72,8 @@ graph TD
 | File | Mô tả | Đối tượng |
 |------|--------|-----------|
 | [curriculum.md](curriculum.md) | Curriculum chi tiết 10 bài học | Giảng viên & Học viên |
-| [teaching-guide.md](teaching-guide.md) | Hướng dẫn giảng dạy chi tiết | Giảng viên |
-| [step-by-step-guide.md](step-by-step-guide.md) | Hướng dẫn từng bước với prompt mẫu | Học viên |
+| [teaching-guide.md](teaching-guide.md) | Hướng dẫn giảng dạy chi tiết với prompt mẫu | Giảng viên |
+| [step-by-step-guide.md](step-by-step-guide.md) | Hướng dẫn từng bước với prompt và tích hợp API | Học viên |
 
 ---
 
@@ -90,26 +95,27 @@ graph TD
 ## 📁 Cấu trúc dự án cuối cùng
 
 ```
-english-practice-hub/
+vibespace-dashboard/
 ├── .stitch/
 │   └── DESIGN.md              # Design system document
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx            # Landing page
+│   │   ├── page.tsx            # Lobby Entrance Page (Sảnh chờ)
 │   │   ├── layout.tsx          # Root layout
-│   │   ├── vocabulary/
-│   │   │   └── page.tsx        # Vocabulary practice
-│   │   ├── grammar/
-│   │   │   └── page.tsx        # Grammar quiz
-│   │   └── flashcards/
-│   │       └── page.tsx        # Flashcard review
+│   │   ├── space/
+│   │   │   └── page.tsx        # Immersive Focus Studio (Bảng điều khiển lõi)
+│   │   ├── journal/
+│   │   │   └── page.tsx        # Productivity Stats Journal
+│   │   └── settings/
+│   │       └── page.tsx        # Customize Timer & sound presets
 │   ├── components/
-│   │   ├── Header.tsx
-│   │   ├── Footer.tsx
-│   │   ├── QuizCard.tsx
-│   │   ├── FlashCard.tsx
-│   │   ├── ProgressBar.tsx
-│   │   └── ThemeToggle.tsx
+│   │   ├── PomodoroTimer.tsx   # Đồng hồ đếm ngược Pomodoro
+│   │   ├── AmbientMixer.tsx    # Bộ trộn âm thanh thiên nhiên đa kênh
+│   │   ├── LofiPlayer.tsx      # Trình phát nhạc Lo-fi (iTunes API)
+│   │   ├── TodoChecklist.tsx   # Danh sách mục tiêu trong ngày
+│   │   ├── BreathingBubble.tsx # Vòng tròn bong bóng tập thở SVG
+│   │   ├── SceneSelector.tsx   # Bộ chuyển đổi và tuỳ chỉnh ảnh nền
+│   │   └── ThemeToggle.tsx     # Customizer chuyển đổi theme màu
 │   └── styles/
 │       └── globals.css
 ├── public/

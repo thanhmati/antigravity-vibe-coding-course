@@ -276,7 +276,7 @@ flowchart LR
 | 7.9 | Polish UI, Responsive & Animation | Hoàn thiện sản phẩm |
 | 7.10 | Review & Tổng kết | Best practices |
 
-**🛠 Dự án thực tế:** English Practice Hub — Trang web luyện tập tiếng Anh
+**🛠 Dự án thực tế:** VibeSpace Studio — Trạm tập trung và âm thanh chữa lành
 
 </details>
 

@@ -1,6 +1,6 @@
-# 📖 Hướng Dẫn Giảng Dạy – Section 6: Vibe Coding Dự Án Thực Tế
+# 📖 Hướng Dẫn Giảng Dạy – Section 7: Vibe Coding Dự Án Thực Tế
 
-> Tài liệu dành cho giảng viên, hướng dẫn chi tiết cách dạy Section 6 với các lưu ý, tips, và kịch bản demo.
+> Tài liệu dành cho giảng viên, hướng dẫn chi tiết cách dạy Section 7 với các lưu ý, tips, và kịch bản demo cho dự án **VibeSpace Studio**.
 
 ---
 
@@ -8,9 +8,9 @@
 
 Sau section này, học viên sẽ:
 1. **Thành thạo workflow Vibe Coding** từ ý tưởng → thiết kế → code → deploy
-2. **Sử dụng thành thạo Stitch Skills** để thiết kế UI chuyên nghiệp
+2. **Sử dụng thành thạo Stitch Skills** để thiết kế giao diện Studio hợp nhất đa lớp (Glassmorphism)
 3. **Tự động hoá quy trình Git** với GitHub MCP
-4. **Có 1 dự án hoàn chỉnh** trong portfolio
+4. **Hiểu cách tích hợp API thực tế** (iTunes, ZenQuotes) và Web Audio API đa kênh trong React
 
 ---
 
@@ -21,13 +21,13 @@ Sau section này, học viên sẽ:
 - [ ] Stitch MCP Server đã kết nối
 - [ ] GitHub MCP Server đã kết nối
 - [ ] Tất cả Stitch Skills đã cài đặt (chạy trước để verify)
-- [ ] Tài khoản GitHub đã login
-- [ ] Mạng internet ổn định (Stitch cần kết nối API)
+- [ ] Tài khoản GitHub đã đăng nhập
+- [ ] Mạng internet ổn định (Stitch & iTunes API cần kết nối mạng)
 
 ### Chuẩn bị demo
-- Tạo sẵn 1 Stitch project mẫu với vài screens để demo nhanh
-- Chuẩn bị sẵn repo GitHub trống cho demo
-- Test thử toàn bộ prompts trong guide ít nhất 1 lần trước khi dạy
+- Tạo sẵn 1 Stitch project mẫu về VibeSpace để demo nhanh khi cần
+- Chuẩn bị sẵn một thư mục trống cho repo GitHub
+- Thử nghiệm trước các prompt trong guide ít nhất 1 lần
 
 ---
 
@@ -40,30 +40,26 @@ Sau section này, học viên sẽ:
 **🕐 Thời lượng:** 30-40 phút
 
 **Cách mở bài:**
-> "Các bạn đã học cách điều khiển AI Agent, viết prompt, kết nối MCP. Giờ là lúc kết hợp tất cả để build 1 sản phẩm thực tế – chỉ bằng cách mô tả ý tưởng."
+> "Các bạn đã học cách điều khiển AI Agent, viết prompt, kết nối MCP. Giờ là lúc kết hợp tất cả để build 1 sản phẩm thực tế – chỉ bằng cách mô tả ý tưởng. Hãy quên các dòng code đi và 'vibe' cùng sản phẩm!"
 
 **Nội dung giảng dạy:**
-
 1. **Vibe Coding là gì?** (10 phút)
-   - Định nghĩa: Lập trình bằng cách mô tả ý tưởng bằng ngôn ngữ tự nhiên
-   - AI Agent đóng vai "developer thực thi"
-   - Developer đóng vai "product manager + architect"
-   - Minh hoạ bằng diagram workflow
+   - Định nghĩa: Mô tả ý tưởng bằng ngôn ngữ tự nhiên, AI Agent thực thi.
+   - Trích dẫn mindset của Andrej Karpathy.
+   - Developer đóng vai trò Product Manager định hướng sản phẩm.
 
-2. **Giới thiệu dự án** (10 phút)
-   - Tên: **English Practice Hub**
-   - Mô tả: Trang web giúp người dùng luyện tập tiếng Anh qua vocabulary, grammar quiz, flashcards
-   - Tại sao chọn dự án này: UI phong phú, nhiều tính năng, thực tế
-   - Show mockup/wireframe đơn giản (có thể vẽ tay)
+2. **Giới thiệu dự án VibeSpace Studio** (10 phút)
+   - Tên: **VibeSpace**
+   - Ý nghĩa: Trạm tập trung và âm thanh chữa lành tích hợp đồng hồ Pomodoro, bộ trộn âm thanh thiên nhiên đa kênh, trình phát nhạc Lo-fi và phong cảnh động cá nhân hóa.
+   - Show sự hấp dẫn: Gần gũi với lập trình viên, giao diện tối mờ kính mượt mà, thực sự phát được nhạc và tự thay đổi phong cảnh theo thời gian.
 
-3. **Phân tích yêu cầu** (10 phút)
-   - Liệt kê tính năng với học viên
-   - Phân loại: MVP vs Nice-to-have
-   - Tạo task list trong Antigravity
+3. **Phân tích yêu cầu & MVP** (10 phút)
+   - Thiết lập các tính năng MVP: Sảnh chờ (`/`), Focus Studio toàn màn hình (`/space`) chứa Mixer, Pomodoro, Checklist.
+   - Lập kế hoạch phát triển (Project Plan) sử dụng Antigravity.
 
 **💡 Tips giảng dạy:**
-- Hỏi học viên: "Nếu bạn muốn build app gì?" để tạo engagement
-- Cho học viên thấy sự khác biệt: "Dự án này nếu code truyền thống mất 2-3 tuần, Vibe Coding chỉ cần vài giờ"
+- Hỏi học viên: "Bình thường khi code bạn có nghe nhạc lo-fi hay tiếng mưa không?" để tạo sự kết nối tự nhiên.
+- Nhấn mạnh: "Ứng dụng này có độ phức tạp cao về mặt UI và Audio, nếu tự code sẽ mất 2-3 tuần, nhưng với Vibe Coding, chúng ta sẽ hoàn thành chỉ trong vài giờ!"
 
 ---
 
@@ -72,14 +68,12 @@ Sau section này, học viên sẽ:
 **🕐 Thời lượng:** 20-30 phút
 
 **Nội dung giảng dạy:**
-
 1. **Giới thiệu Stitch Skills** (5 phút)
    - Repo: `google-labs-code/stitch-skills`
-   - Mỗi skill là 1 "siêu năng lực" cho AI Agent
-   - Tuân theo chuẩn Agent Skills open standard
+   - Giải thích vai trò của 5 skills chuyên biệt.
 
 2. **Cài đặt từng skill** (10 phút)
-   - Demo chạy từng lệnh cài đặt:
+   - Demo chạy các lệnh cài đặt trên terminal:
    ```bash
    npx skills add google-labs-code/stitch-skills --skill stitch-design --global
    npx skills add google-labs-code/stitch-skills --skill stitch-loop --global
@@ -87,17 +81,12 @@ Sau section này, học viên sẽ:
    npx skills add google-labs-code/stitch-skills --skill design-md --global
    npx skills add google-labs-code/stitch-skills --skill react:components --global
    ```
-   - Giải thích `--global` vs project-level
-   - Verify bằng cách list skills đã cài
+   - Xác minh việc cài đặt thành công.
 
 3. **Tạo GitHub repo** (5 phút)
-   - Demo tạo repo bằng GitHub MCP ngay trong Antigravity
+   - Tạo repo `vibespace-dashboard` qua GitHub MCP.
    - Prompt mẫu:
-   > "Tạo 1 GitHub repository mới tên 'english-practice-hub' với description 'A modern English practice web application', public, có README"
-
-**⚠️ Lưu ý:**
-- Một số học viên có thể gặp lỗi khi cài skills → chuẩn bị troubleshooting guide
-- Verify Stitch MCP connection trước khi đi tiếp
+   > "Tạo 1 GitHub repository mới tên 'vibespace-dashboard' với description 'A modern ambient focus station and lo-fi mixer built with Vibe Coding and Antigravity', public, có README"
 
 ---
 
@@ -105,93 +94,56 @@ Sau section này, học viên sẽ:
 
 **🕐 Thời lượng:** 40-50 phút
 
-**Đây là bài quan trọng nhất về design!**
-
 **Nội dung giảng dạy:**
-
-1. **Design System là gì?** (10 phút)
-   - Tập hợp các quy tắc thiết kế: màu sắc, font, bo góc, spacing
-   - Tại sao cần: đảm bảo UI nhất quán, tiết kiệm thời gian
-   - Ví dụ: Material Design, Apple HIG
+1. **Thiết kế phong cách Cyber-Zen** (10 phút)
+   - Giải thích lý do chọn theme tối màu (Dark Mode) cho trạm tập trung để chống mỏi mắt: Nền tối đậm (#0B0F19), kính mờ (glassmorphism), viền phát sáng nhẹ màu xanh mint (#10B981) và tím neon (#8B5CF6).
 
 2. **Tạo Stitch Project** (5 phút)
-   - Prompt mẫu sử dụng trong Antigravity:
-   > "Tạo 1 Stitch project mới tên 'English Practice Hub'"
-   - Cho học viên thấy project được tạo thành công
+   - Prompt mẫu:
+   > "Tạo 1 Stitch project mới tên 'VibeSpace'"
 
 3. **Tạo Design System** (15 phút)
    - Prompt mẫu:
-   > "Tạo design system cho project English Practice Hub với phong cách hiện đại, trẻ trung. Color palette: tông xanh dương (primary), trắng (background), xám nhạt (secondary). Font: Inter. Corner radius: medium. Mode: light."
-   - Demo thay đổi từng thuộc tính và xem kết quả
-   - Show sự khác biệt giữa các preset màu
+   > "Tạo design system cho project VibeSpace với phong cách Cyber-Zen tối giản, cực kỳ thư giãn. Color palette: màu nền tối đậm (#0B0F19), màu kính mờ (#1E293B với độ trong suốt nhẹ), màu nhấn xanh mint (#10B981) và tím neon (#8B5CF6). Font: Outfit hoặc Inter. Corner radius: large (12px). Mode: dark."
 
 4. **Tạo DESIGN.md** (10 phút)
-   - Kích hoạt skill `design-md`:
-   > "Sử dụng skill design-md để phân tích project Stitch hiện tại và tạo file DESIGN.md"
-   - Review file DESIGN.md được tạo ra
-   - Giải thích tại sao file này quan trọng cho Stitch generation
-
-**💡 Tips:**
-- Cho học viên tự chọn color palette khác nhau → mỗi người có design khác nhau
-- Demo live thay đổi design system → xem screens thay đổi theo
+   - Generate file thiết kế để AI ghi nhớ:
+   > "Sử dụng skill design-md để phân tích project Stitch hiện tại và tạo file DESIGN.md lưu vào thư mục .stitch/"
 
 ---
 
-### Bài 4: Tạo UI Screens – Phần 1 (Trang chủ & Navigation)
+### Bài 4: Tạo UI Screens – Phần 1 (Sảnh chờ Lobby)
 
 **🕐 Thời lượng:** 45-60 phút
 
 **Nội dung giảng dạy:**
-
-1. **Enhance Prompt trước khi design** (10 phút)
-   - Demo sự khác biệt giữa prompt thô vs enhanced:
-     - **Thô:** "Tạo trang chủ cho app học tiếng Anh"
-     - **Enhanced:** Sử dụng skill `enhance-prompt`
+1. **Tối ưu Prompt (Enhance Prompt)** (10 phút)
+   - Giải thích vai trò của `enhance-prompt` để tạo UI tinh xảo hơn.
    - Prompt kích hoạt:
-   > "Sử dụng skill enhance-prompt để tối ưu prompt sau: 'Tạo landing page cho ứng dụng luyện tập tiếng Anh với hero section, feature highlights, và call-to-action'"
-   - So sánh kết quả trước/sau enhance
+   > "Sử dụng skill enhance-prompt để tối ưu prompt sau: 'Tạo sảnh chờ Lobby chào đón người dùng vào VibeSpace. Có tiêu đề lớn, thống kê chuỗi ngày tập trung, và nút bắt đầu rực rỡ.'"
 
-2. **Tạo Landing Page** (20 phút)
+2. **Thiết kế sảnh chờ Lobby** (35 phút)
    - Prompt mẫu cho Stitch:
-   > "Tạo screen cho landing page: Hero section với tiêu đề 'Master English, Your Way' và subtitle mô tả app. 3 feature cards: Vocabulary Builder, Grammar Quiz, Flashcard Review. CTA button 'Start Learning'. Modern, clean, engaging design."
-   - Demo edit screen: thay đổi text, vị trí, màu sắc
-   - Tạo 2-3 variants để so sánh
-
-3. **Tạo Header/Navigation** (15 phút)
-   - Prompt mẫu:
-   > "Tạo screen cho navigation header: Logo 'EPH' bên trái, menu items: Home, Vocabulary, Grammar, Flashcards, bên phải có nút Dark Mode toggle và user avatar."
-
-**💡 Tips:**
-- Pause sau mỗi screen generation để phân tích kết quả
-- Hỏi học viên: "Bạn thấy cần sửa gì?" → demo edit
+   > "Tạo screen mới trong project VibeSpace cho Lobby Entrance. Layout gồm: Header mờ kính (Logo 'VibeSpace', menu: Home, Studio, Journal, Settings), Hero section với câu chào 'Your Space. Your Focus. Master Your Craft.', một thẻ lớn hiển thị Productivity Streak ('🔥 5 Days Streak - Keep it up!'), một nút CTA 'Enter Focus Space' phát sáng tím neon rực rỡ, và ở góc dưới cùng có một thanh hiển thị câu nói châm ngôn sống mờ ảo."
+   - Demo việc điều chỉnh vị trí, chỉnh font chữ trực quan.
 
 ---
 
-### Bài 5: Tạo UI Screens – Phần 2 (Tính năng chính)
+### Bài 5: Tạo UI Screens – Phần 2 (Immersive Focus Studio)
 
 **🕐 Thời lượng:** 45-60 phút
 
+**Đây là bài dạy đỉnh cao nhất về thiết kế giao diện Studio hợp nhất!**
+
 **Nội dung giảng dạy:**
-
-1. **Trang Vocabulary Practice** (15 phút)
+1. **Thiết kế Immersive Studio (`/space`)** (30 phút)
+   - Giải thích ý tưởng: Một hình nền phong cảnh thiên nhiên bao phủ toàn bộ màn hình, trên đó là các tiện ích kính mờ nổi (Floating Cards) lơ lửng.
    - Prompt mẫu:
-   > "Tạo screen cho trang Vocabulary Practice: Hiển thị 1 từ vựng lớn ở giữa, phiên âm IPA, nghĩa tiếng Việt, câu ví dụ. Có nút 'Đã biết', 'Chưa biết', 'Tiếp theo'. Progress bar ở trên. Card style với shadow nhẹ."
+   > "Tạo screen mới trong project VibeSpace cho Immersive Focus Studio. Hình nền là ảnh một căn phòng ấm cúng nhìn ra cửa sổ trời mưa. Trên nền đó, bố trí các floating glassmorphic cards mờ ảo: 1) Ở giữa: Đồng hồ Pomodoro Timer tròn tối giản; 2) Bên trái: Trình điều khiển Sound Mixer với 5 thanh trượt slider chỉnh âm lượng; 3) Bên phải: Bảng Todo Checklist ghi mục tiêu ngày; 4) Ở góc dưới: Trình phát nhạc Lo-fi nhỏ và nút Settings hình bánh răng."
 
-2. **Trang Grammar Quiz** (15 phút)
-   - Prompt mẫu:
-   > "Tạo screen cho trang Grammar Quiz: Hiển thị câu hỏi trắc nghiệm, 4 đáp án dạng card có thể click, timer đếm ngược, score counter, progress indicator. Style gamified với màu sắc sinh động."
-
-3. **Trang Flashcard Review** (10 phút)
-   - Prompt mẫu:
-   > "Tạo screen cho Flashcard Review: Card có thể flip giữa mặt trước (từ tiếng Anh) và mặt sau (nghĩa + ví dụ). Navigation arrows trái/phải. Counter '3/20'. Category tabs ở trên."
-
-4. **Sử dụng stitch-loop** (5 phút)
-   - Demo cách sinh nhiều trang đồng thời:
-   > "Sử dụng skill stitch-loop để tạo website hoàn chỉnh cho English Practice Hub gồm: landing page, vocabulary page, grammar quiz page, flashcard page"
-
-**⚠️ Lưu ý:**
-- Stitch generation có thể mất 1-2 phút → chuẩn bị nội dung nói trong lúc chờ
-- Nếu kết quả không như ý → demo cách edit để improve
+2. **Thiết kế các trang phụ với `stitch-loop`** (15 phút)
+   - Demo sinh các trang phụ đồng bộ:
+   > "Sử dụng skill stitch-loop để tạo website hoàn chỉnh cho VibeSpace gồm: trang chủ Lobby, trang Studio chính (/space), trang nhật ký năng suất (/journal), và trang cài đặt (/settings) theo đúng tông thiết kế Cyber-Zen."
 
 ---
 
@@ -199,30 +151,19 @@ Sau section này, học viên sẽ:
 
 **🕐 Thời lượng:** 50-60 phút
 
-**Đây là bài "magic moment" – biến design thành code!**
-
 **Nội dung giảng dạy:**
+1. **Khởi tạo Next.js Project** (10 phút)
+   - Tạo cấu trúc dự án Next.js 14 App Router:
+   > "Tạo project Next.js mới tên 'vibespace-dashboard' với App Router, TypeScript, và Tailwind CSS."
 
-1. **Khởi tạo project React/Next.js** (10 phút)
-   - Prompt trong Antigravity:
-   > "Tạo project Next.js mới cho English Practice Hub. Sử dụng App Router, TypeScript, và Tailwind CSS."
+2. **Convert UI với react-components skill** (25 phút)
+   - Kích hoạt skill convert:
+   > "Sử dụng skill react-components để convert tất cả Stitch screens trong VibeSpace thành các React components. Đảm bảo cấu trúc component tree gồm: PomodoroTimer.tsx, AmbientMixer.tsx, LofiPlayer.tsx, TodoChecklist.tsx, SceneSelector.tsx."
+   - Giải thích cách AI chuyển design tokens mờ kính sang Tailwind classes (ví dụ: `bg-white/10 backdrop-blur-md border border-white/20`).
 
-2. **Convert với react-components skill** (25 phút)
-   - Prompt kích hoạt:
-   > "Sử dụng skill react-components để convert tất cả Stitch screens trong project thành React components. Tạo component tree phù hợp với cấu trúc Next.js App Router."
-   - Walk through code được generate
-   - Giải thích cấu trúc components
-   - Show design tokens → CSS variables mapping
-
-3. **Tích hợp và chạy thử** (15 phút)
-   - Copy components vào project Next.js
-   - Fix import paths, dependencies
-   - `npm run dev` và xem kết quả
-   - So sánh code output vs Stitch design
-
-**💡 Tips:**
-- Code generated có thể cần sửa nhỏ → đây là cơ hội dạy về limitations
-- Nhấn mạnh: "AI generate 80%, bạn polish 20%"
+3. **Tích hợp & Chạy thử** (15 phút)
+   - Đưa các component vào Next.js, cấu trúc routing: `/` (Lobby), `/space` (Studio), `/journal` (Journal), `/settings` (Settings).
+   - Chạy lệnh `npm run dev` để verify giao diện hiển thị lộng lẫy đúng chuẩn.
 
 ---
 
@@ -231,53 +172,33 @@ Sau section này, học viên sẽ:
 **🕐 Thời lượng:** 40-50 phút
 
 **Nội dung giảng dạy:**
+1. **Tạo branch tính năng** (10 phút)
+   - Tạo branch `feature/immersive-studio` bằng GitHub MCP.
 
-1. **Tạo branch cho feature** (10 phút)
-   - Prompt mẫu:
-   > "Sử dụng GitHub MCP để tạo branch mới tên 'feature/landing-page' từ branch 'main' trong repo 'english-practice-hub'"
+2. **Push code & Tạo PR** (20 phút)
+   - Push code toàn bộ trang Studio lên branch mới và tạo Pull Request tự động với mô tả chi tiết:
+   > "Sử dụng GitHub MCP để tạo PR từ branch feature/immersive-studio vào main với tiêu đề 'feat: Implement full-bleed immersive workspace studio with floating widgets' và mô tả chi tiết các components đã thêm."
 
-2. **Push code & Tạo PR** (15 phút)
-   - Prompt mẫu:
-   > "Push tất cả files của landing page lên branch 'feature/landing-page'. Sau đó tạo Pull Request với title 'feat: Add landing page with hero section and feature cards', mô tả chi tiết những gì đã thêm."
-
-3. **Review PR** (10 phút)
-   - Demo đọc PR diff bằng GitHub MCP
-   - Prompt:
-   > "Review Pull Request #1 trong repo english-practice-hub. Kiểm tra code quality và cho nhận xét."
-
-4. **Merge & Cleanup** (5 phút)
-   - Demo merge PR bằng GitHub MCP
-   - Prompt:
-   > "Merge Pull Request #1 bằng squash merge."
-
-**💡 Tips:**
-- Nhấn mạnh đây là professional workflow, giống như làm ở công ty tech
-- Cho thấy history rõ ràng trên GitHub
+3. **Review & Merge** (15 phút)
+   - Đọc PR diff, review chất lượng code và tiến hành squash merge tự động.
 
 ---
 
-### Bài 8: Thêm tính năng & Fix bug
+### Bài 8: Thêm tính năng & Fix bug (Tích hợp Audio & APIs)
 
-**🕐 Thời lượng:** 40-50 phút
+**Thời lượng:** 40-50 phút
 
 **Nội dung giảng dạy:**
+1. **Tích hợp nhạc Lo-fi động từ iTunes API** (15 phút)
+   - Viết logic fetch nhạc không lời bằng API:
+   > "Cập nhật LofiPlayer.tsx để gọi iTunes API: fetch nhạc với từ khóa 'lofi chill', lấy ra previewUrl MP3 nghe thử và ảnh bìa album để phát trên trang web khi người dùng bấm Play."
 
-1. **Thêm Dark Mode** (15 phút)
-   - Workflow hoàn chỉnh: Stitch (update design) → Code → Branch → PR
-   - Prompt:
-   > "Thêm tính năng Dark Mode cho English Practice Hub. Cập nhật design system trên Stitch sang dark appearance. Sau đó implement toggle trong code. Tạo branch 'feature/dark-mode' và PR."
+2. **Viết trình trộn âm thanh thiên nhiên đa kênh** (15 phút)
+   - Cập nhật `AmbientMixer.tsx` để người dùng có thể phát đồng thời nhiều file tiếng mưa, lửa trại lặp đi lặp lại:
+   > "Cài đặt trình phát âm thanh đa kênh lặp (loop) cho AmbientMixer.tsx. Khi trượt volume slider, thay đổi thuộc tính volume của từng đối tượng Audio tương ứng. Lưu tất cả cấu hình âm lượng vào localStorage."
 
-2. **Thêm Progress Tracking** (15 phút)
-   - Prompt:
-   > "Thêm tính năng progress tracking: Lưu tiến trình học của user vào localStorage. Hiển thị statistics trên trang chủ: số từ đã học, quiz đã làm, streak days."
-
-3. **Fix Bug Demo** (10 phút)
-   - Cố tình tạo 1 bug hoặc dùng bug thực tế
-   - Demo workflow: Phát hiện → Branch 'fix/...' → Fix → PR → Merge
-
-**⚠️ Lưu ý:**
-- Mỗi feature/bugfix = 1 branch riêng biệt
-- Nhấn mạnh naming convention: `feature/xxx`, `fix/xxx`
+3. **Fix bug và tối ưu** (10 phút)
+   - Demo khắc phục các lỗi bất đồng bộ khi gọi API hoặc lỗi trình duyệt chặn autoplay.
 
 ---
 
@@ -286,20 +207,16 @@ Sau section này, học viên sẽ:
 **🕐 Thời lượng:** 40-50 phút
 
 **Nội dung giảng dạy:**
+1. **Thiết kế nhịp thở thiền định SVG** (15 phút)
+   - Tạo widget `BreathingBubble.tsx` chuyển động SVG mượt mà theo nhịp thở 4-4-4:
+   > "Tạo widget BreathingBubble.tsx hiển thị một hình tròn SVG mờ ảo phát sáng. Sử dụng CSS keyframes để animate hình tròn này: Phình to trong 4 giây (hít vào) -> Giữ nguyên trong 4 giây -> Co nhỏ trong 4 giây (thở ra)."
 
-1. **Responsive Design** (15 phút)
-   - Tạo variants cho mobile, tablet trên Stitch
-   - Implement responsive CSS/Tailwind
+2. **Đổi hình nền động bằng URL/Unsplash** (15 phút)
+   - Nâng cấp `SceneSelector.tsx` cho phép người dùng thay đổi background:
+   > "Cập nhật SceneSelector.tsx để cho phép người dùng dán link ảnh URL bất kỳ làm hình nền toàn màn hình, hoặc nhập từ khóa tìm kiếm ảnh thiên nhiên Unsplash. Lưu hình nền đã chọn vào localStorage để không bị mất khi tải lại trang."
 
-2. **Micro-animations** (15 phút)
-   - Thêm hover effects, page transitions, card flip animation
-   - Prompt mẫu:
-   > "Thêm animations cho English Practice Hub: Fade-in khi load page, hover scale trên cards, flip animation cho flashcards, smooth transition giữa các trang."
-
-3. **Final Polish** (10 phút)
-   - SEO meta tags
-   - Loading states
-   - Error handling cơ bản
+3. **Polish Responsive & Transitions** (10 phút)
+   - Tối ưu hóa giao diện di động và hiệu ứng chuyển cảnh mượt mà.
 
 ---
 
@@ -308,40 +225,22 @@ Sau section này, học viên sẽ:
 **🕐 Thời lượng:** 30-40 phút
 
 **Nội dung giảng dạy:**
+1. **Trải nghiệm sản phẩm hoàn chỉnh** (15 phút)
+   - Bật toàn màn hình VibeSpace Studio, vừa mở một bài nhạc chill, vừa trộn tiếng mưa rơi nhè nhẹ, chạy Pomodoro và hoàn thành Todo.
+   - Xem lại lịch sử Git vô cùng sạch sẽ và chuyên nghiệp.
 
-1. **Review dự án** (10 phút)
-   - Chạy demo sản phẩm hoàn chỉnh
-   - Xem lại Git history: bao nhiêu PRs, commits
-   - So sánh thời gian vs traditional coding
-
-2. **Best Practices** (10 phút)
-   - Luôn bắt đầu từ design system
-   - Prompt càng chi tiết → kết quả càng tốt
-   - Review code AI generate, đừng blind trust
-   - Git workflow chuyên nghiệp cho mọi thay đổi
-
-3. **Những lỗi thường gặp** (5 phút)
-   - Prompt quá mơ hồ
-   - Không review code output
-   - Skip design system → UI không nhất quán
-   - Không dùng branches → messy history
-
-4. **Next Steps** (5 phút)
-   - Áp dụng cho dự án cá nhân
-   - Explore thêm skills: `shadcn-ui`, `remotion`
-   - Tham gia community
+2. **Đúc kết Best Practices & Chia sẻ** (15 phút)
+   - Tinh thần "Design First, Code Later".
+   - Cách duy trì Context Documents lâu dài để AI không bị "quên".
+   - Hướng dẫn áp dụng Vibe Coding để tạo ra các ứng dụng SaaS kiếm tiền trong thế giới thực.
 
 ---
 
 ## 🎨 Phong cách giảng dạy khuyến nghị
 
-| Aspect | Gợi ý |
-|--------|-------|
-| **Pace** | Vừa demo vừa giải thích, pause để học viên theo kịp |
-| **Interaction** | Hỏi học viên chọn design preferences, vote variant |
-| **Error Handling** | Khi AI cho kết quả sai → biến thành teaching moment |
-| **Live Coding** | 70% demo live, 30% slides/giải thích |
-| **Breakpoints** | Cho 5 phút break sau mỗi 2 bài |
+- **Live Demo Trải Nghiệm**: Trực tiếp mở nhạc và âm thanh mưa rơi ngay trên lớp để tạo ra hiệu ứng âm thanh thư thái, thu hút sự chú ý tuyệt đối của học viên.
+- **Biến Lỗi Thành Cơ Hội**: Khi AI code gặp lỗi về thẻ Audio hoặc local storage, hãy vui vẻ biến đó thành bài học hướng dẫn học viên cách viết prompt bổ sung để Agent sửa lỗi.
+- **Tập Trung Vào Sản Phẩm**: Không dạy sâu về cú pháp code React mà tập trung vào tư duy sắp xếp layout, trải nghiệm người dùng và cách phối hợp với AI Agent.
 
 ---
 
@@ -349,6 +248,6 @@ Sau section này, học viên sẽ:
 
 | File | Mô tả |
 |------|-------|
-| `section-6-curriculum.md` | Curriculum chi tiết |
-| `step-by-step-guide.md` | Hướng dẫn step-by-step với prompt mẫu |
-| `teaching-guide.md` | File này – hướng dẫn giảng dạy |
+| `curriculum.md` | Chương trình học chi tiết |
+| `step-by-step-guide.md` | Tài liệu thực hành A-Z với prompt mẫu |
+| `teaching-guide.md` | File này – Hướng dẫn cho giảng viên |
