@@ -85,10 +85,12 @@
 
 📂 [Section README](section-05-multi-agent/README.md)
 
-- 5.1 · Multi-Agent System trong AI là gì?
-- 5.2 · Thiết kế Orchestrator cho Multi-Agent System
-- 5.3 · Thiết kế Planner: Phân rã task trong Multi-Agent System
-- 5.4 · Parallel Agent Execution với Agent Manager
+- 5.1 · [Multi-Agent System là gì? Từ Single Agent → Multi-Agent](section-05-multi-agent/lesson-01-what-is-multi-agent.md)
+- 5.2 · [Kiến trúc Multi-Agent trong Antigravity 2.0](section-05-multi-agent/lesson-02-architecture-in-antigravity.md)
+- 5.3 · [Demo: Subagents — Ủy quyền task cho Agent con](section-05-multi-agent/lesson-03-demo-subagents.md)
+- 5.4 · [Demo: /goal và /grill-me — Orchestration thực chiến](section-05-multi-agent/lesson-04-demo-slash-commands.md)
+- 5.5 · [Parallel Execution & Background Tasks](section-05-multi-agent/lesson-05-parallel-execution-background-tasks.md)
+- 5.6 · [Workshop: Build feature phức tạp với Multi-Agent](section-05-multi-agent/lesson-06-workshop-multi-agent-feature.md)
 
 ---
 
