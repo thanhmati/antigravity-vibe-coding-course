@@ -18,7 +18,7 @@ graph TD
 
     S3 --> S4["🧠 Section 4: Context Engineering\n━━━━━━━━━━━━━━\n• Context docs & memory\n• Token optimization\n• 7+ lectures · ~4-5h"]
 
-    S4 --> S5["🤖 Section 5: Multi-Agent\n━━━━━━━━━━━━━━\n• Orchestrator & Planner\n• Parallel execution\n• 4 lectures · ~3h"]
+    S4 --> S5["🤖 Section 5: Multi-Agent\n━━━━━━━━━━━━━━\n• Subagents & Orchestration\n• /goal, /grill-me, /schedule\n• 6 lectures · ~3-4h"]
 
     S5 --> S6["🔌 Section 6: MCP\n━━━━━━━━━━━━━━\n• Kết nối external systems\n• Stitch & GitHub MCP\n• 6 lectures · ~3h"]
 
@@ -104,7 +104,7 @@ graph TD
 | Section 2: Core Concepts | ~4 giờ | 6 giờ |
 | Section 3: Prompt Engineering | ~2 giờ | 8 giờ |
 | Section 4: Context Engineering | ~4-5 giờ | 12-13 giờ |
-| Section 5: Multi-Agent | ~3 giờ | 15-16 giờ |
+| Section 5: Multi-Agent | ~3-4 giờ | 15-17 giờ |
 | Section 6: MCP | ~3 giờ | 18-19 giờ |
 | Section 7: Vibe Coding | ~6-8 giờ | **24-27 giờ** |
 

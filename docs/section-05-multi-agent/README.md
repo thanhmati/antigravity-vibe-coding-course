@@ -2,12 +2,12 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Section-5_of_7-10b981?style=for-the-badge" alt="Section 5" />
-  <img src="https://img.shields.io/badge/Lectures-4-blue?style=for-the-badge" alt="4 Lectures" />
-  <img src="https://img.shields.io/badge/Duration-~3_hours-green?style=for-the-badge" alt="~3 hours" />
+  <img src="https://img.shields.io/badge/Lectures-6-blue?style=for-the-badge" alt="6 Lectures" />
+  <img src="https://img.shields.io/badge/Duration-~3--4_hours-green?style=for-the-badge" alt="~3-4 hours" />
   <img src="https://img.shields.io/badge/Level-Advanced-red?style=for-the-badge" alt="Advanced" />
 </p>
 
-> **Thiết kế hệ thống nhiều Agent phối hợp giải quyết bài toán phức tạp**
+> **Thiết kế hệ thống nhiều Agent phối hợp giải quyết bài toán phức tạp — Tận dụng sức mạnh Multi-Agent của Antigravity 2.0**
 
 ---
 
@@ -16,20 +16,35 @@
 Sau section này, bạn sẽ:
 
 - ✅ Hiểu cách nhiều **AI Agents phối hợp** để giải quyết bài toán phức tạp
-- ✅ Biết cách thiết kế **Orchestrator** để điều phối agents
-- ✅ Nắm được cách **Planner** phân rã task và xác định dependency
-- ✅ Hiểu **Parallel Agent Execution** — chạy nhiều agents song song
+- ✅ Nắm kiến trúc **Subagents** trong Antigravity 2.0 — `invoke_subagent` spawn Agent con
+- ✅ Hiểu **Artifacts System** — Agent giao tiếp kết quả qua plan.md, task.md, walkthrough.md
+- ✅ Sử dụng **`/goal`**, **`/grill-me`** và **`/browser`** để orchestrate agents thực chiến
+- ✅ Biết cách chạy **Parallel Execution & Background Tasks** song song
+- ✅ Thực hành **build feature phức tạp** với Multi-Agent workflow
+
+---
+
+## 🧩 Vấn đề thực tế mà Section này giải quyết
+
+| Vấn đề | Biểu hiện | Giải pháp |
+|--------|----------|-----------|
+| Task quá phức tạp cho 1 Agent | Context window đầy, Agent quên bước trước | Chia thành Subagents — mỗi agent xử lý 1 phần |
+| Agent không có plan rõ ràng | Code lung tung, không theo kiến trúc | Planning Mode → Implementation Plan → Approve |
+| Chờ Agent lâu, từng task một | Mất thời gian, không tận dụng được parallelism | Parallel Execution & Background Tasks |
+| Không track được Agent đang làm gì | Mất kiểm soát, khó review | Artifacts System — plan.md, task.md, walkthrough.md |
 
 ---
 
 ## 📚 Lectures
 
-| # | Lecture | Mô tả | Thời lượng |
-|---|---------|--------|------------|
-| 5.1 | **Multi-Agent System là gì?** | Hiểu cách nhiều AI agents phối hợp với nhau. | ~30 phút |
-| 5.2 | **Thiết kế Orchestrator** | Xây dựng Orchestrator điều phối agents, quản lý workflow và tổng hợp kết quả. | ~45 phút |
-| 5.3 | **Thiết kế Planner** | Phân tích yêu cầu, chia nhỏ thành tasks, xác định dependency, phân công agent. | ~45 phút |
-| 5.4 | **Parallel Agent Execution** | Agent Manager — chạy nhiều agents song song. | ~30 phút |
+| # | Lecture | Loại | Mô tả | Thời lượng |
+|---|---------|------|--------|------------|
+| 5.1 | **Multi-Agent System là gì?** | 📖 Theory | Từ Single Agent → Multi-Agent. Các patterns phổ biến. | ~30 phút |
+| 5.2 | **Kiến trúc Multi-Agent trong Antigravity 2.0** | 📖 Theory | `invoke_subagent`, Local vs Worktree Mode, `/agents` panel. | ~35 phút |
+| 5.3 | **Demo: Subagents — Ủy quyền task cho Agent con** | 🎬 Demo | Spawn subagent, review artifacts, approve plan, `/agents` panel. | ~40 phút |
+| 5.4 | **Demo: Slash Commands — `/goal`, `/grill-me` & `/browser`** | 🎬 Demo | `/goal` autonomous, `/grill-me` align requirements, `/browser` testing. | ~45 phút |
+| 5.5 | **Parallel Execution & Background Tasks** | 📖 Theory | Async execution, `/schedule`, error handling. | ~25 phút |
+| 5.6 | **Workshop: Build feature phức tạp với Multi-Agent** | 🛠 Workshop | Bài tập end-to-end: Subagents + /goal + Background Tasks. | ~50 phút |
 
 ---
 
@@ -37,28 +52,56 @@ Sau section này, bạn sẽ:
 
 ```mermaid
 graph TD
-    O["🎯 Orchestrator\nĐiều phối tổng thể"]
-    O --> P["📋 Planner\nPhân rã task"]
-    P --> A1["🤖 Agent 1\nFrontend"]
-    P --> A2["🤖 Agent 2\nBackend"]
-    P --> A3["🤖 Agent 3\nTesting"]
-    A1 --> R["📊 Result Aggregator"]
-    A2 --> R
-    A3 --> R
+    U["👤 User\n/goal · /grill-me · /browser"]
+    U --> PA["🎯 Parent Agent\nOrchestrator"]
 
-    style O fill:#10b981,stroke:#059669,color:#fff
-    style P fill:#f59e0b,stroke:#d97706,color:#000
-    style A1 fill:#3b82f6,stroke:#2563eb,color:#fff
-    style A2 fill:#8b5cf6,stroke:#7c3aed,color:#fff
-    style A3 fill:#ec4899,stroke:#db2777,color:#fff
-    style R fill:#06b6d4,stroke:#0891b2,color:#fff
+    PA -->|invoke_subagent| SA1["🤖 Subagent 1\nPlanning"]
+    PA -->|invoke_subagent| SA2["🤖 Subagent 2\nCode Execution"]
+    PA -->|invoke_subagent| SA3["🤖 Subagent 3\nTesting"]
+
+    SA1 --> ART["📋 Artifacts\nimplementation_plan.md · task.md · walkthrough.md"]
+    SA2 --> ART
+    SA3 --> ART
+
+    ART --> AP["/agents Panel\nMonitor · Logs · Kill"]
+    AP --> U
+
+    style U fill:#fbbf24,stroke:#f59e0b,color:#000
+    style PA fill:#10b981,stroke:#059669,color:#fff
+    style SA1 fill:#3b82f6,stroke:#2563eb,color:#fff
+    style SA2 fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style SA3 fill:#ec4899,stroke:#db2777,color:#fff
+    style ART fill:#f59e0b,stroke:#d97706,color:#000
+    style AP fill:#06b6d4,stroke:#0891b2,color:#fff
 ```
+
+---
+
+## 🚀 Antigravity 2.0 Features trong Section này
+
+| Feature | Mô tả | Lesson |
+|---------|--------|--------|
+| **`invoke_subagent`** | Parent agent spawn child agents, context isolation, nesting 10 levels | 5.2, 5.3 |
+| **Local vs Worktree Mode** | Local Mode: làm việc trực tiếp trên folder. Worktree Mode: isolated Git worktree | 5.2 |
+| **Artifacts System** | `implementation_plan.md`, `task.md`, `walkthrough.md` — Google Docs-style comments | 5.3 |
+| **`/goal`** | Chạy autonomous đến khi xong, không hỏi intermediate input | 5.4 |
+| **`/grill-me`** | Hỏi clarifying questions để align trước khi implement | 5.4 |
+| **`/browser`** | Agent sử dụng browser primitives để test & verify (cần Chrome) | 5.4 |
+| **`/schedule`** | One-time timer hoặc recurring cron schedule | 5.5 |
+| **`/agents` panel** | Monitor subagents — xem logs, tool calls, kill agents | 5.2, 5.3 |
 
 ---
 
 ## 📋 Prerequisites
 
 - ✅ Hoàn thành **Section 1-4** — Đặc biệt Context Engineering
+- ✅ Cài đặt **Antigravity 2.0** (standalone app hoặc IDE extension)
+
+---
+
+## 📖 Tài liệu bổ sung
+
+- [Curriculum chi tiết](curriculum.md)
 
 ---
 
