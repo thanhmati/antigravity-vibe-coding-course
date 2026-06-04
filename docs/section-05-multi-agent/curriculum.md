@@ -23,9 +23,9 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 
 | Thông tin | Chi tiết |
 |-----------|----------|
-| **Số bài học** | 6 bài (3 Theory + 2 Demo + 1 Workshop) |
+| **Số bài học** | 5 bài (2 Theory + 2 Demo + 1 Workshop) |
 | **Thời lượng ước tính** | 3-4 giờ |
-| **Trọng tâm** | Subagents, Parallel Execution, Orchestration Commands |
+| **Trọng tâm** | Subagents, Orchestration Commands |
 | **Kết quả cuối** | Thành thạo Multi-Agent workflow trong Antigravity 2.0 |
 | **Yêu cầu trước** | Section 1-4 (Agent basics, Rules, Prompt & Context Engineering) |
 
@@ -163,116 +163,43 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 
 ---
 
-### Bài 4: Demo — /goal và /grill-me: Orchestration thực chiến
+### Bài 4: Demo — Slash Commands: /goal, /grill-me, /browser & /schedule
 **Thời lượng:** 40-45 phút  
 **Loại:** 🎬 Demo
 
-**Demo A — `/goal` command (20 phút):**
-
-*Mục đích: Chạy task dài, Agent tự plan → execute → verify liên tục*
-
-1. **Setup** (3 phút)
-   - Giải thích: `/goal` = "fire and forget" — đặt mục tiêu, Agent tự chạy đến khi xong
-   - Khác với chat thường: Agent không dừng hỏi, tự quyết định next steps
-
-2. **Chạy /goal** (7 phút)
-   - Command: `/goal Refactor toàn bộ API layer — thêm error handling, input validation, và API documentation cho mọi endpoints`
-   - Quan sát: Agent tự tạo plan → execute từng step → verify → tiếp tục
-
-3. **Quan sát autonomous loop** (5 phút)
-   - Agent tự quyết: Endpoint nào trước? Cần sửa gì?
-   - Auto-verify: Chạy tests sau mỗi thay đổi
-   - Nếu test fail → Agent tự debug và retry
-
-4. **Review kết quả** (5 phút)
-   - Xem `walkthrough.md` — tổng kết mọi thay đổi
-   - So sánh: Manual chat-by-chat vs `/goal` autonomous
-
-**Demo B — `/grill-me` command (15 phút):**
-
-*Mục đích: Align yêu cầu và làm rõ thiết kế trước khi thực thi*
-
-1. **Setup** (3 phút)
-   - Giải thích: `/grill-me` = "interview mode" — Agent sẽ chủ động phỏng vấn ngược lại user để làm rõ những điểm mơ hồ hoặc thiếu sót trong đề bài.
-   - Khác với chat thông thường: Agent đặt câu hỏi thông minh, chuyên sâu để hạn chế tối đa việc hiểu sai yêu cầu.
-
-2. **Chạy /grill-me** (5 phút)
-   - Task: "Thêm tính năng reset password cho người dùng."
-   - Quan sát: Agent không code ngay mà đưa ra danh sách câu hỏi: "Có gửi mã OTP qua email hay SMS? Mã expire sau bao lâu? Cần giao diện đổi mật khẩu riêng hay dùng modal?"
-
-3. **Trả lời và align** (5 phút)
-   - Học viên trả lời các câu hỏi hoặc cung cấp thêm context.
-   - Agent tổng hợp câu trả lời, cập nhật Implementation Plan chuẩn xác nhất.
-
-4. **Đánh giá** (2 phút)
-   - Nhấn mạnh: Giúp giảm thiểu lỗi và tiết kiệm thời gian chỉnh sửa code về sau.
-
-**Demo C — `/schedule` command (10 phút):**
-
-1. **Schedule recurring task** (5 phút)
-   - Command: `/schedule` — đặt chạy test suite mỗi 30 phút
-   - Quan sát: Agent tự chạy background
-
-2. **One-shot timer** (5 phút)
-   - Đặt reminder: "Check deployment status sau 5 phút"
-   - Quan sát notification khi timer fire
-
-**Kết quả bài học:**
-- Biết khi nào dùng `/goal` vs `/grill-me` vs chat thường
-- Thấy trực quan sức mạnh orchestration của Antigravity 2.0
-- Hiểu async/background execution
-
----
-
-### Bài 5: Parallel Execution & Background Tasks
-**Thời lượng:** 20-25 phút  
-**Loại:** 📖 Theory
-
 **Nội dung:**
 
-- **Async Execution — Fire-and-Forget patterns:**
-  - User không cần chờ Agent hoàn thành
-  - Agent chạy background, thông báo khi xong
-  - Ví dụ: Chạy test suite, generate docs, lint codebase
+- **Demo A — `/goal` command (10 phút):**
+  - *Mục đích:* Chạy tác vụ dài hạn, Agent tự trị hoàn toàn (autonomous loop): lập kế hoạch ──▶ thực thi ──▶ test ──▶ tự debug.
+  - *Kịch bản:* `/goal Refactor API layer, thêm validation và tests.`
+  - *Kết quả:* Agent tự chạy ngầm và tạo PR hoàn chỉnh.
 
-- **Background Task Management:**
-  - `manage_task` — list, status, kill, send_input
-  - Xem task đang chạy, cancel task nếu cần
-  - Send input cho task đang chờ
+- **Demo B — `/grill-me` command (10 phút):**
+  - *Mục đích:* Phỏng vấn thiết kế, làm rõ yêu cầu mơ hồ trước khi viết code.
+  - *Kịch bản:* `/grill-me Thêm tính năng Reset Password.`
+  - *Kết quả:* Agent hỏi ngược lại user để align yêu cầu và tạo implementation plan chính xác.
 
-- **`/schedule` command chi tiết:**
-  - One-shot timer: Reminder sau N giây
-  - Recurring cron: Chạy lặp lại theo schedule
-  - Use cases: Auto-test, health check, deployment monitoring
+- **Demo C — `/browser` command (10 phút):**
+  - *Mục đích:* Tự động hóa kiểm thử giao diện trực quan (Visual QA) bằng Chrome.
+  - *Kịch bản:* Agent tự mở Chrome ngầm, tương tác login và chụp ảnh màn hình để QA layout.
+  - *Kết quả:* Agent phát hiện lỗi vỡ layout trên mobile và tự sửa CSS.
 
-- **Parallel Agent Coordination — Tránh xung đột:**
-
-  | Vấn đề | Giải pháp |
-  |--------|-----------|
-  | 2 agents sửa cùng file | Workspace isolation, scope rõ ràng |
-  | Agent B cần output Agent A | Dependency management, artifacts |
-  | 1 agent fail giữa chừng | Auto-retry, error recovery |
-  | Race condition | Orchestrator quản lý thứ tự |
-
-- **Trade-offs: Speed vs Safety:**
-  - Parallel = nhanh hơn nhưng khó kiểm soát hơn
-  - Sequential = chậm hơn nhưng dễ review từng step
-  - Recommended: Parallel cho independent tasks, Sequential cho dependent tasks
-
-- **Error Handling Patterns:**
-  - Retry with backoff
-  - Graceful degradation — skip non-critical tasks
-  - Rollback — revert nếu critical task fail
-  - Human escalation — hỏi user khi không tự giải quyết được
+- **Demo D — `/schedule` command (10 phút):**
+  - *Mục đích:* Hẹn giờ chạy 1 lần (one-shot timer) hoặc lên lịch lặp lại định kỳ (cron job).
+  - *Kịch bản 1:* `/schedule DurationSeconds=300, Prompt="Check deployment status"`
+  - *Kịch bản 2:* `/schedule CronExpression="*/15 * * * *", Prompt="Chạy unit tests và linter"`
+  - *Kết quả:* Tác vụ chạy ngầm tự động nhắc nhở hoặc kiểm tra codebase định kỳ.
 
 **Kết quả bài học:**
-- Biết cách quản lý background tasks
-- Hiểu trade-offs khi chạy parallel vs sequential
-- Nắm error handling patterns
+- Làm chủ 4 slash commands cốt lõi của Antigravity Pro.
+- Biết cách tự động hóa kiểm thử (giao diện, logic) và đặt lịch tác vụ ngầm.
+- Hiểu cách tối ưu hóa sự tương tác giữa User và Agent.
 
 ---
 
-### Bài 6: Workshop — Build feature phức tạp với Multi-Agent
+
+
+### Bài 5: Workshop — Build feature phức tạp với Multi-Agent
 **Thời lượng:** 45-50 phút  
 **Loại:** 🛠 Workshop
 
@@ -305,14 +232,13 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 3. Quan sát: Agent tự plan → execute → test → continue
 4. Review `walkthrough.md` khi hoàn thành
 
----
+**Phần 3: Thực hành /schedule** (10 phút)
 
-**Phần 3: Thực hành Background Tasks** (10 phút)
-
-1. Schedule task recurring:
-   - Ví dụ: `/schedule` chạy linter mỗi 10 phút
-2. Chạy 1 task foreground + 1 task background đồng thời
-3. Dùng `manage_task` để monitor
+1. Thiết lập timer một lần (one-shot timer):
+   - Ví dụ: `/schedule DurationSeconds=60, Prompt="Nhắc nhở check status của task UI"`
+2. Thiết lập lịch chạy kiểm thử lặp lại (cron):
+   - Ví dụ: `/schedule CronExpression="*/10 * * * *", Prompt="Chạy streak.test.ts"`
+3. Theo dõi và quản lý lịch trình đã đặt trong IDE.
 
 ---
 
@@ -331,12 +257,12 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 - Khi nào nên dùng Multi-Agent vs Single Agent?
 - Task nào phù hợp `/goal`? Task nào nên manual chat?
 - Artifacts giúp gì trong workflow của bạn?
-- Parallel execution có rủi ro gì cần lưu ý?
+- Khi nào nên sử dụng `/schedule` để hẹn giờ và đặt lịch tác vụ?
 
 **Kết quả bài học:**
 - Thành thạo Multi-Agent workflow end-to-end
 - Biết chọn đúng tool cho đúng tình huống
-- Có kinh nghiệm thực tế với Subagents, /goal, Background Tasks
+- Có kinh nghiệm thực tế với Subagents, `/goal`, `/browser` và `/schedule`
 
 ---
 
@@ -348,9 +274,8 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 | **Artifacts** | Không track được progress | plan.md, task.md, walkthrough.md | Bài 3 |
 | **`/goal`** | Task dài cần autonomous | Fire-and-forget long tasks | Bài 4 |
 | **`/grill-me`** | Hỏi để align yêu cầu | Interactive design interview | Bài 4 |
-| **`/schedule`** | Task recurring, monitoring | Cron jobs, one-shot timers | Bài 4, 5 |
-| **Background Tasks** | Chờ agent blocking | Async execution, task management | Bài 5 |
-| **Parallel Execution** | Chạy tuần tự chậm | Multiple agents simultaneously | Bài 5 |
+| **`/browser`** | Kiểm thử giao diện trực quan | Chrome automation & Vision QA | Bài 4 |
+| **`/schedule`** | Task recurring, monitoring | Cron jobs, one-shot timers | Bài 4 |
 
 ---
 

@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Section-5_of_7-10b981?style=for-the-badge" alt="Section 5" />
-  <img src="https://img.shields.io/badge/Lectures-6-blue?style=for-the-badge" alt="6 Lectures" />
+  <img src="https://img.shields.io/badge/Lectures-5-blue?style=for-the-badge" alt="5 Lectures" />
   <img src="https://img.shields.io/badge/Duration-~3--4_hours-green?style=for-the-badge" alt="~3-4 hours" />
   <img src="https://img.shields.io/badge/Level-Advanced-red?style=for-the-badge" alt="Advanced" />
 </p>
@@ -18,8 +18,7 @@ Sau section này, bạn sẽ:
 - ✅ Hiểu cách nhiều **AI Agents phối hợp** để giải quyết bài toán phức tạp
 - ✅ Nắm kiến trúc **Subagents** trong Antigravity 2.0 — `invoke_subagent` spawn Agent con
 - ✅ Hiểu **Artifacts System** — Agent giao tiếp kết quả qua plan.md, task.md, walkthrough.md
-- ✅ Sử dụng **`/goal`**, **`/grill-me`** và **`/browser`** để orchestrate agents thực chiến
-- ✅ Biết cách chạy **Parallel Execution & Background Tasks** song song
+- ✅ Sử dụng **`/goal`**, **`/grill-me`**, **`/browser`** và **`/schedule`** để orchestrate agents thực chiến
 - ✅ Thực hành **build feature phức tạp** với Multi-Agent workflow
 
 ---
@@ -30,7 +29,7 @@ Sau section này, bạn sẽ:
 |--------|----------|-----------|
 | Task quá phức tạp cho 1 Agent | Context window đầy, Agent quên bước trước | Chia thành Subagents — mỗi agent xử lý 1 phần |
 | Agent không có plan rõ ràng | Code lung tung, không theo kiến trúc | Planning Mode → Implementation Plan → Approve |
-| Chờ Agent lâu, từng task một | Mất thời gian, không tận dụng được parallelism | Parallel Execution & Background Tasks |
+| Quên chạy test hoặc lặp lại thủ công | Dễ sinh bug mới khi thay đổi code liên tục | Thiết lập lịch tự động với `/schedule` |
 | Không track được Agent đang làm gì | Mất kiểm soát, khó review | Artifacts System — plan.md, task.md, walkthrough.md |
 
 ---
@@ -42,9 +41,8 @@ Sau section này, bạn sẽ:
 | 5.1 | **Multi-Agent System là gì?** | 📖 Theory | Từ Single Agent → Multi-Agent. Các patterns phổ biến. | ~30 phút |
 | 5.2 | **Kiến trúc Multi-Agent trong Antigravity 2.0** | 📖 Theory | `invoke_subagent`, Local vs Worktree Mode, `/agents` panel. | ~35 phút |
 | 5.3 | **Demo: Subagents — Ủy quyền task cho Agent con** | 🎬 Demo | Spawn subagent, review artifacts, approve plan, `/agents` panel. | ~40 phút |
-| 5.4 | **Demo: Slash Commands — `/goal`, `/grill-me` & `/browser`** | 🎬 Demo | `/goal` autonomous, `/grill-me` align requirements, `/browser` testing. | ~45 phút |
-| 5.5 | **Parallel Execution & Background Tasks** | 📖 Theory | Async execution, `/schedule`, error handling. | ~25 phút |
-| 5.6 | **Workshop: Build feature phức tạp với Multi-Agent** | 🛠 Workshop | Bài tập end-to-end: Subagents + /goal + Background Tasks. | ~50 phút |
+| 5.4 | **Demo: Slash Commands — `/goal`, `/grill-me`, `/browser` & `/schedule`** | 🎬 Demo | `/goal` autonomous, `/grill-me` align, `/browser` test, `/schedule` timer/cron. | ~45 phút |
+| 5.5 | **Workshop: Build feature phức tạp với Multi-Agent** | 🛠 Workshop | Bài tập end-to-end: Subagents + `/goal` + `/schedule`. | ~50 phút |
 
 ---
 
@@ -87,7 +85,7 @@ graph TD
 | **`/goal`** | Chạy autonomous đến khi xong, không hỏi intermediate input | 5.4 |
 | **`/grill-me`** | Hỏi clarifying questions để align trước khi implement | 5.4 |
 | **`/browser`** | Agent sử dụng browser primitives để test & verify (cần Chrome) | 5.4 |
-| **`/schedule`** | One-time timer hoặc recurring cron schedule | 5.5 |
+| **`/schedule`** | One-time timer hoặc recurring cron schedule | 5.4 |
 | **`/agents` panel** | Monitor subagents — xem logs, tool calls, kill agents | 5.2, 5.3 |
 
 ---

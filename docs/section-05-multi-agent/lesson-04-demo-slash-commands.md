@@ -1,4 +1,4 @@
-# 🎬 Bài 4: Demo — Slash Commands: `/goal`, `/grill-me` & `/browser`
+# 🎬 Bài 4: Demo — Slash Commands: `/goal`, `/grill-me`, `/browser` & `/schedule`
 
 > **Section:** Multi-Agent Systems & Orchestration — Hệ thống nhiều Agent phối hợp  
 > **Thời lượng:** 40-45 phút  
@@ -11,10 +11,11 @@
 
 Sau bài thực hành này, bạn sẽ:
 
-- ✅ Làm chủ bộ ba Slash Commands mạnh mẽ nhất của Antigravity 2.0 dành cho gói Pro: **`/goal`**, **`/grill-me`**, và **`/browser`**
+- ✅ Làm chủ bộ bốn Slash Commands mạnh mẽ nhất của Antigravity 2.0 dành cho gói Pro: **`/goal`**, **`/grill-me`**, **`/browser`**, và **`/schedule`**
 - ✅ Biết cách chạy một tác vụ hoàn toàn tự động (autonomous) không gián đoạn bằng **`/goal`**
 - ✅ Hiểu cách dùng **`/grill-me`** để thiết lập quy chuẩn và làm rõ yêu cầu, hạn chế tối đa việc hiểu sai đề bài
 - ✅ Ứng dụng công cụ **`/browser`** để Agent tự tương tác và kiểm thử giao diện trực quan trên trình duyệt Chrome
+- ✅ Thiết lập được lịch trình tự động bằng lệnh **`/schedule`** (chạy một lần hoặc lặp lại theo cron)
 
 ---
 
@@ -52,7 +53,7 @@ Bạn gõ vào thanh chat:
 
 ## 2. `/grill-me` — Phỏng vấn Thiết kế & Align yêu cầu
 
-Có bao giờ bạn đưa ra một yêu cầu quá ngắn gọn và Agent tự viết code theo ý nó, dẫn tới kết quả không đúng mong muốn của bạn chưa? Để khắc phục điều đó, hãy dùng `/grill-me` trước khi code.
+Có bao giờ bạn đưa ra một yêu cầu quá ngắn gọn và Agent tự viết code theo ý nó, dẫn tới kết quả không đúng mong muốn của bạn chưa? Để khắc phục đó, hãy dùng `/grill-me` trước khi code.
 
 > **`/grill-me` (Phỏng vấn tôi đi!)** đặt Agent vào trạng thái "chủ động đặt câu hỏi". Nó sẽ từ chối viết code ngay lập tức, thay vào đó phân tích các điểm mơ hồ trong đề bài của bạn và đưa ra một danh sách các câu hỏi sâu sắc để hai bên cùng thống nhất.
 
@@ -104,6 +105,24 @@ Viết code backend hay test logic thì dễ, nhưng làm thế nào để AI bi
 
 ---
 
+## 4. `/schedule` — Hẹn giờ & Lên lịch trình tự động
+
+Một tính năng cực kỳ mạnh mẽ dành cho các tác vụ lặp đi lặp lại hoặc giám sát hệ thống là **`/schedule`** (Hẹn giờ/Đặt lịch). Lệnh này giúp bạn thiết lập các công việc chạy ngầm theo thời gian mà không cần can thiệp thủ công.
+
+Nó hỗ trợ 2 chế độ hoạt động chính:
+
+### Chế độ 1: One-shot timer (Hẹn giờ chạy 1 lần)
+Sử dụng khi bạn muốn hẹn giờ một công việc diễn ra sau một khoảng thời gian chờ đợi (ví dụ: đợi build code hoặc kiểm tra deploy).
+- **Cú pháp:** `/schedule DurationSeconds=300, Prompt="Hãy check xem trang web đã deploy xong chưa và báo cáo lại."`
+- **Hoạt động:** Sau 300 giây (5 phút), Agent sẽ được đánh thức để thực thi prompt được giao.
+
+### Chế độ 2: Recurring cron (Chạy định kỳ lặp lại)
+Sử dụng cú pháp tiêu chuẩn 5 trường của Cron (phút, giờ, ngày, tháng, thứ) để tự động hóa các tác vụ lặp đi lặp lại.
+- **Cú pháp:** `/schedule CronExpression="*/15 * * * *", Prompt="Chạy linter và unit tests để kiểm tra xem có lỗi cú pháp nào mới không."`
+- **Hoạt động:** Hệ thống sẽ tự động kích hoạt Agent chạy ngầm tác vụ này mỗi 15 phút.
+
+---
+
 ## 📊 Bảng so sánh: Chọn lệnh nào cho tình huống nào?
 
 | Bạn muốn làm gì? | Lệnh phù hợp | Cơ chế hoạt động |
@@ -112,6 +131,7 @@ Viết code backend hay test logic thì dễ, nhưng làm thế nào để AI bi
 | **Giao việc lớn, tự chạy tự debug khi bạn bận** | **`/goal`** | Chạy lặp liên tục (autonomous loop) cho đến khi hoàn thành mục tiêu. |
 | **Làm rõ yêu cầu, thống nhất thiết kế trước khi code** | **`/grill-me`** | Phỏng vấn ngược lại user để xóa bỏ mọi điểm mơ hồ trong đề bài. |
 | **Kiểm tra xem giao diện web hiển thị có chuẩn không** | **`/browser`** | Mở trình duyệt Chrome, tương tác và chụp ảnh màn hình để QA. |
+| **Hẹn giờ hoặc chạy lặp lại định kỳ** | **`/schedule`** | Đặt one-shot timer hoặc recurring cron để chạy tác vụ tự động. |
 
 ---
 
@@ -120,12 +140,13 @@ Viết code backend hay test logic thì dễ, nhưng làm thế nào để AI bi
 - **`/goal`** là công cụ tối thượng cho tự động hóa (Autonomous Coding), tiết kiệm thời gian ngồi canh Agent.
 - **`/grill-me`** giúp align tư duy giữa người và máy trước khi code, giảm 90% lỗi do hiểu nhầm đề bài.
 - **`/browser`** mang lại khả năng "nhìn" cho Agent, giúp kiểm thử giao diện thực tế một cách trực quan sinh động.
+- **`/schedule`** giúp hẹn giờ hoặc thiết lập lịch định kỳ (cron) để tự động hóa các tác vụ lặp đi lặp lại hoặc kiểm tra hệ thống.
 
 ---
 
 ## ⏭️ Bài tiếp theo
 
-**[Bài 5: Parallel Execution & Background Tasks](lesson-05-parallel-execution-background-tasks.md)** — Tìm hiểu cách chạy song song nhiều Agent cùng lúc, cách quản lý các tiến trình chạy ngầm thông qua công cụ `manage_task` để tối ưu hóa tối đa thời gian phát triển dự án.
+**[Bài 5: Workshop — Build feature phức tạp với Multi-Agent](lesson-05-workshop-multi-agent-feature.md)** — Bài học thực hành cuối cùng của Section! Bạn sẽ áp dụng toàn bộ kiến thức về Subagents, `/goal`, `/grill-me`, `/browser`, và `/schedule` để xây dựng một tính năng hoàn chỉnh từ A-Z.
 
 ---
 
