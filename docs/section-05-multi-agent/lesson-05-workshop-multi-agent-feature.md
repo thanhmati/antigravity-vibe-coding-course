@@ -1,9 +1,9 @@
-# 🛠 Bài 6: Workshop — Build feature phức tạp với Multi-Agent
+# 🛠 Bài 5: Workshop — Build feature phức tạp với Multi-Agent
 
 > **Section:** Multi-Agent Systems & Orchestration — Hệ thống nhiều Agent phối hợp  
 > **Thời lượng:** 45-50 phút  
 > **Loại:** 🛠 Thực hành / Workshop tổng hợp  
-> **Yêu cầu:** Đã hoàn thành Bài 1 đến Bài 5
+> **Yêu cầu:** Đã hoàn thành Bài 1 đến Bài 4
 
 ---
 
@@ -118,7 +118,7 @@ Sau khi hoàn thành bài Workshop, hãy cùng so sánh kết quả so với vi�
 
 1. Điểm khác biệt lớn nhất khi bạn giao việc bằng lệnh `/goal` so với khi chat thông thường là gì?
 2. Tại sao việc chia nhỏ tính năng Progress Tracking cho các Subagents lại giúp tiết kiệm token hơn so với việc để 1 Agent làm toàn bộ cuộc hội thoại?
-3. Nếu bạn phát hiện Subagent code sai hướng khi đang chạy ngầm, bạn sẽ làm thế nào để can thiệp kịp thời? (Gợi ý: Sử dụng `/agents` panel hoặc công cụ `manage_task`).
+3. Nếu bạn phát hiện Subagent code sai hướng khi đang chạy ngầm, bạn sẽ làm thế nào để can thiệp kịp thời? (Gợi ý: Sử dụng `/agents` panel để theo dõi hoặc hủy/dừng Subagent).
 
 ---
 
