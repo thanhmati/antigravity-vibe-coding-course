@@ -66,6 +66,7 @@ Sau 1 giờ:
 ```
 
 **3 hệ quả:**
+
 1. **Quên decision cũ:** Lúc đầu quyết định dùng `useState`, sau lại tạo Redux store
 2. **Lặp lại code:** Viết hàm `formatDate()` ở file mới dù đã có sẵn
 3. **Hallucinate:** Tham chiếu đến file/function không tồn tại
@@ -92,12 +93,12 @@ flowchart LR
 
 ### 2.2 Khi nào cần Compact?
 
-| Dấu hiệu | Hành động |
-|----------|----------|
-| Conversation đã dài hơn 30 phút | Nên compact |
-| Agent bắt đầu quên chi tiết trước đó | Compact ngay |
-| Sắp chuyển sang feature khác | Compact trước khi chuyển |
-| Agent respond chậm hơn bình thường | Context window gần đầy, compact ngay |
+| Dấu hiệu                             | Hành động                            |
+| ------------------------------------ | ------------------------------------ |
+| Conversation đã dài hơn 30 phút      | Nên compact                          |
+| Agent bắt đầu quên chi tiết trước đó | Compact ngay                         |
+| Sắp chuyển sang feature khác         | Compact trước khi chuyển             |
+| Agent respond chậm hơn bình thường   | Context window gần đầy, compact ngay |
 
 ### 2.3 Prompt mẫu: Compact Context
 
@@ -124,20 +125,24 @@ Hãy tóm tắt toàn bộ phiên làm việc hiện tại theo format sau:
 
 ```markdown
 ## Những gì đã hoàn thành
+
 - Tạo QuizCard component với 4 đáp án
 - Tạo mock data 20 câu hỏi grammar
 - Implement logic chọn đáp án đúng/sai
 
-## Decisions đã đưa ra  
+## Decisions đã đưa ra
+
 - Dùng useState cho quiz state (không Redux vì scope nhỏ)
 - Timer dùng useEffect + setInterval
 - Score lưu trong component state, không persist
 
 ## Trạng thái hiện tại
+
 - Đang làm dở: Timer countdown component
 - File đã thay đổi: QuizCard.tsx, grammar-questions.ts, GrammarPage.tsx
 
 ## Vấn đề còn tồn tại
+
 - Timer chưa dừng khi chọn đáp án
 - Chưa có UI cho kết quả cuối quiz
 ```
@@ -180,12 +185,12 @@ flowchart LR
 
 ### 3.2 Khác gì Context Compaction?
 
-| | Context Compaction | Handoff Document |
-|---|---|---|
-| **Khi nào dùng** | Giữa phiên, khi cần "nén" lại | Cuối phiên, trước khi đóng |
-| **Mục đích** | Giảm tokens trong phiên hiện tại | Bàn giao context cho phiên sau |
-| **Lưu ở đâu** | Paste trong conversation | Lưu thành file `.md` trong dự án |
-| **Ai đọc** | Agent trong phiên hiện tại | Agent trong phiên mới |
+|                  | Context Compaction               | Handoff Document                 |
+| ---------------- | -------------------------------- | -------------------------------- |
+| **Khi nào dùng** | Giữa phiên, khi cần "nén" lại    | Cuối phiên, trước khi đóng       |
+| **Mục đích**     | Giảm tokens trong phiên hiện tại | Bàn giao context cho phiên sau   |
+| **Lưu ở đâu**    | Paste trong conversation         | Lưu thành file `.md` trong dự án |
+| **Ai đọc**       | Agent trong phiên hiện tại       | Agent trong phiên mới            |
 
 ### 3.3 Prompt mẫu: Tạo Handoff Document
 
@@ -202,7 +207,7 @@ Trước khi kết thúc, hãy tạo file handoff.md với nội dung sau:
 ## Completed Tasks
 - (Liệt kê tasks đã hoàn thành)
 
-## Work in Progress  
+## Work in Progress
 - (Task đang dở + trạng thái cụ thể)
 - (File nào đã sửa, đang sửa)
 
@@ -236,21 +241,21 @@ Bắt đầu với task ưu tiên cao nhất trong "Next Steps".
 ```mermaid
 flowchart TD
     A["🌅 Bắt đầu phiên mới"] --> B{"Có handoff.md<br/>từ phiên trước?"}
-    
+
     B -->|"Có"| C["📖 Đọc AGENTS.md<br/>+ handoff.md"]
     B -->|"Không"| D["📖 Đọc AGENTS.md<br/>+ PLAN.md"]
-    
+
     C --> E["🔨 Tiếp tục task<br/>từ Next Steps"]
     D --> E
-    
+
     E --> F["Làm việc bình thường..."]
     F --> G{"Kết thúc phiên?"}
-    
+
     G -->|"Chưa"| H{"Context dài?<br/>>30 phút?"}
     H -->|"Có"| I["📝 Compact context<br/>(Kỹ thuật 1)"]
     I --> F
     H -->|"Chưa"| F
-    
+
     G -->|"Rồi"| J["📝 Tạo handoff.md mới"]
     J --> K["🌙 Đóng phiên"]
 
@@ -261,6 +266,7 @@ flowchart TD
 ```
 
 > 💡 **Mẹo:** Lưu handoff files theo ngày trong thư mục `.handoff/` để có lịch sử:
+>
 > ```
 > .handoff/
 > ├── 2026-04-25.md
@@ -275,6 +281,7 @@ flowchart TD
 ### 4.1 Ý tưởng
 
 Thay vì giữ **toàn bộ** lịch sử conversation (rất tốn token), chỉ giữ:
+
 - **N tin nhắn gần nhất** (chi tiết đầy đủ)
 - **Summary** của các tin nhắn cũ hơn
 
@@ -317,13 +324,13 @@ Sau đó tiếp tục task hiện tại.
 
 ### 4.3 Nguyên tắc: Giữ gì, bỏ gì?
 
-| ✅ Giữ lại | ❌ Bỏ đi |
-|-----------|---------|
-| Decisions quan trọng (tech choices) | Các bước debug trung gian |
-| Trạng thái hiện tại | Code cũ đã bị thay thế |
-| Files đã thay đổi | Tool outputs dài (scan results) |
-| Bugs/issues chưa fix | Conversations thăm dò không dẫn đến kết quả |
-| Convention đã thống nhất | Giải thích lý thuyết đã hiểu |
+| ✅ Giữ lại                          | ❌ Bỏ đi                                    |
+| ----------------------------------- | ------------------------------------------- |
+| Decisions quan trọng (tech choices) | Các bước debug trung gian                   |
+| Trạng thái hiện tại                 | Code cũ đã bị thay thế                      |
+| Files đã thay đổi                   | Tool outputs dài (scan results)             |
+| Bugs/issues chưa fix                | Conversations thăm dò không dẫn đến kết quả |
+| Convention đã thống nhất            | Giải thích lý thuyết đã hiểu                |
 
 ---
 
@@ -348,13 +355,13 @@ flowchart TD
 
 ### 5.2 Dấu hiệu nhận biết Context Poisoning
 
-| 🚩 Dấu hiệu | Ví dụ |
-|-------------|-------|
-| Agent lặp lại cùng một lỗi dù đã sửa | Fix xong bug A, làm feature mới lại mắc bug A |
-| Agent tham chiếu file/function không tồn tại | "Tôi sẽ import từ `utils/helpers.ts`" (file này không có) |
-| Agent trộn lẫn 2 approaches | Lúc dùng Tailwind, lúc dùng CSS Modules trong cùng component |
-| Agent "quên" quyết định gần đây | Bạn vừa nói "dùng useState", Agent tạo Redux store |
-| Agent sinh code ngày càng kém | Quality giảm dần theo thời gian conversation |
+| 🚩 Dấu hiệu                                  | Ví dụ                                                        |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| Agent lặp lại cùng một lỗi dù đã sửa         | Fix xong bug A, làm feature mới lại mắc bug A                |
+| Agent tham chiếu file/function không tồn tại | "Tôi sẽ import từ `utils/helpers.ts`" (file này không có)    |
+| Agent trộn lẫn 2 approaches                  | Lúc dùng Tailwind, lúc dùng CSS Modules trong cùng component |
+| Agent "quên" quyết định gần đây              | Bạn vừa nói "dùng useState", Agent tạo Redux store           |
+| Agent sinh code ngày càng kém                | Quality giảm dần theo thời gian conversation                 |
 
 ### 5.3 Cách xử lý: Context Quarantine
 
@@ -390,15 +397,15 @@ Tiếp tục với task: [task cụ thể]
 ```mermaid
 flowchart TD
     A["Agent cho kết quả<br/>không tốt"] --> B{"Agent sửa được<br/>khi bạn nhắc?"}
-    
+
     B -->|"Có, sửa đúng"| C["✅ Chỉ cần nhắc lại<br/>Tiếp tục bình thường"]
-    
+
     B -->|"Không, lặp lại lỗi"| D{"Lỗi cùng loại<br/>lặp lại >2 lần?"}
-    
+
     D -->|"Không"| E["📝 Compact context<br/>(Kỹ thuật 1)"]
-    
+
     D -->|"Có, >2 lần"| F["🔴 Context bị poisoned!<br/>→ QUARANTINE"]
-    
+
     F --> G["1. Tạo clean summary"]
     G --> H["2. Mở conversation MỚI"]
     H --> I["3. Inject clean context"]
@@ -417,23 +424,23 @@ flowchart TD
 ```mermaid
 flowchart TD
     START["🤔 Tình huống?"] --> Q1{"Bắt đầu<br/>phiên mới?"}
-    
+
     Q1 -->|"Có"| A1["📖 Đọc handoff.md<br/>+ AGENTS.md"]
-    
+
     Q1 -->|"Không"| Q2{"Conversation<br/>đã dài >30 phút?"}
-    
+
     Q2 -->|"Chưa"| A2["✅ Tiếp tục<br/>bình thường"]
-    
+
     Q2 -->|"Rồi"| Q3{"Agent còn<br/>chính xác?"}
-    
+
     Q3 -->|"Có"| A3["📝 Compact context<br/>Tiếp tục phiên"]
-    
+
     Q3 -->|"Không"| Q4{"Lỗi lặp lại<br/>>2 lần?"}
-    
+
     Q4 -->|"Không"| A3
-    
+
     Q4 -->|"Có"| A4["🔴 Quarantine!<br/>Mở phiên mới"]
-    
+
     Q1 -.->|"Kết thúc phiên"| A5["📝 Tạo handoff.md"]
 
     style A1 fill:#10b981,stroke:#059669,color:#fff
@@ -444,12 +451,12 @@ flowchart TD
 
 ### Bảng tóm tắt 4 kỹ thuật
 
-| Kỹ thuật | Khi nào dùng | Prompt mẫu | Token tiết kiệm |
-|----------|-------------|-----------|-----------------|
-| **Compaction** | Phiên dài >30 phút | "Tóm tắt phiên làm việc..." | ~50% |
-| **Handoff** | Cuối phiên / đầu phiên mới | "Tạo handoff.md..." | ~60% |
-| **Sliding Window** | Conversation >20 messages | "Tóm tắt msgs cũ, giữ msgs mới..." | ~70% |
-| **Quarantine** | Agent lặp lỗi, hallucinate | Mở conversation mới + clean context | ~90% |
+| Kỹ thuật           | Khi nào dùng               | Prompt mẫu                          | Token tiết kiệm |
+| ------------------ | -------------------------- | ----------------------------------- | --------------- |
+| **Compaction**     | Phiên dài >30 phút         | "Tóm tắt phiên làm việc..."         | ~50%            |
+| **Handoff**        | Cuối phiên / đầu phiên mới | "Tạo handoff.md..."                 | ~60%            |
+| **Sliding Window** | Conversation >20 messages  | "Tóm tắt msgs cũ, giữ msgs mới..."  | ~70%            |
+| **Quarantine**     | Agent lặp lỗi, hallucinate | Mở conversation mới + clean context | ~90%            |
 
 ---
 
@@ -458,15 +465,18 @@ flowchart TD
 ### Checklist cho mỗi phiên
 
 **🌅 Bắt đầu phiên:**
+
 - [ ] Đọc `handoff.md` (nếu có) hoặc `PLAN.md`
 - [ ] Prompt: "Đọc AGENTS.md và handoff.md, tiếp tục..."
 
 **🔨 Trong phiên:**
+
 - [ ] Mỗi 30 phút: Đánh giá Agent có còn chính xác không
 - [ ] Nếu context dài: Compact lại
 - [ ] Nếu Agent lỗi lặp: Quarantine ngay
 
 **🌙 Kết thúc phiên:**
+
 - [ ] Tạo `handoff.md` mới
 - [ ] Cập nhật `PLAN.md` (đánh dấu tasks done)
 - [ ] Cập nhật `AGENTS.md` nếu có convention mới
@@ -504,12 +514,12 @@ flowchart TD
 
 ## 📝 Tóm tắt bài học
 
-| Kỹ thuật | Ý tưởng cốt lõi | Khi nào dùng |
-|----------|-----------------|-------------|
-| **Compaction** | "Nén" conversation thành summary ngắn | Phiên dài >30 phút |
-| **Handoff** | Bàn giao context giữa các phiên | Cuối phiên → đầu phiên mới |
-| **Sliding Window** | Giữ msgs mới + summary msgs cũ | Conversation >20 messages |
-| **Quarantine** | Mở phiên mới khi context bị "nhiễm" | Agent lặp lỗi >2 lần |
+| Kỹ thuật           | Ý tưởng cốt lõi                       | Khi nào dùng               |
+| ------------------ | ------------------------------------- | -------------------------- |
+| **Compaction**     | "Nén" conversation thành summary ngắn | Phiên dài >30 phút         |
+| **Handoff**        | Bàn giao context giữa các phiên       | Cuối phiên → đầu phiên mới |
+| **Sliding Window** | Giữ msgs mới + summary msgs cũ        | Conversation >20 messages  |
+| **Quarantine**     | Mở phiên mới khi context bị "nhiễm"   | Agent lặp lỗi >2 lần       |
 
 **Nguyên tắc chung:** Đừng đợi Agent "quên" rồi mới xử lý. **Chủ động** compact và handoff **trước** khi vấn đề xảy ra.
 
@@ -517,8 +527,8 @@ flowchart TD
 
 ## ⏭️ Bài tiếp theo
 
-**Bài 4: Just-in-Time Context – Chỉ cho Agent biết điều cần biết** — Bạn sẽ học cách giảm 80% token bằng Targeted File References, Layered Context, và Smart Prompting.
+[**Bài 4: Just-in-Time Context – Chỉ cho Agent biết điều cần biết**](lesson-04-just-in-time-context.md) — Bạn sẽ học cách giảm 80% token bằng Targeted File References, Layered Context, và Smart Prompting.
 
 ---
 
-*📚 Context Engineering · Google Antigravity: Xây dựng AI Agent, AI App & Vibe Coding*
+_📚 Context Engineering · Google Antigravity: Xây dựng AI Agent, AI App & Vibe Coding_

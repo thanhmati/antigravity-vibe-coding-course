@@ -48,6 +48,10 @@ Sau section này, bạn sẽ:
 | 4.8 | **PLAN.md – Trạng thái dự án** | Task list & priorities | ~15 phút |
 | 4.9 | [**Kỹ thuật Summarize Context**](lesson-03-summarize-context-techniques.md) | Giữ Agent "tỉnh táo" phiên dài | ~40 phút |
 | 4.10 | **Context Compaction** | "Nén" conversation, handoff documents | ~30 phút |
+| 4.11 | [**Just-in-Time Context**](lesson-04-just-in-time-context.md) | Chỉ cho Agent biết điều cần biết, tối ưu token. | ~40 phút |
+| 4.12 | **Targeted References** | Chỉ định chính xác file và khoảng dòng code. | ~20 phút |
+| 4.13 | **Layered Context** | Phân tầng thông tin thành 3 lớp. | ~20 phút |
+| 4.14 | **Rules & Smart Prompting** | Tiết kiệm token bằng system rules. | ~20 phút |
 
 ---
 

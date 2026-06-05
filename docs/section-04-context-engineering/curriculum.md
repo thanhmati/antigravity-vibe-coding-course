@@ -8,12 +8,12 @@
 
 Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sau:
 
-| Vấn đề | Biểu hiện | Hậu quả |
-|--------|----------|---------|
-| **Agent quên context** | Code xung đột, tạo file trùng, không theo convention | Phải giải thích lại từ đầu |
-| **Token bùng nổ** | Agent analyze cả source code mỗi lần hỏi | Tốn tiền, chậm, hay bị giới hạn |
-| **Mất liên tục giữa các phiên** | Mở conversation mới → Agent không biết gì về dự án | Phải paste lại toàn bộ context |
-| **Context rot** | Thông tin cũ, lỗi thời trong conversation dài | Agent sinh code dựa trên data sai |
+| Vấn đề                          | Biểu hiện                                            | Hậu quả                           |
+| ------------------------------- | ---------------------------------------------------- | --------------------------------- |
+| **Agent quên context**          | Code xung đột, tạo file trùng, không theo convention | Phải giải thích lại từ đầu        |
+| **Token bùng nổ**               | Agent analyze cả source code mỗi lần hỏi             | Tốn tiền, chậm, hay bị giới hạn   |
+| **Mất liên tục giữa các phiên** | Mở conversation mới → Agent không biết gì về dự án   | Phải paste lại toàn bộ context    |
+| **Context rot**                 | Thông tin cũ, lỗi thời trong conversation dài        | Agent sinh code dựa trên data sai |
 
 **Section này dạy cách giải quyết triệt để các vấn đề trên.**
 
@@ -21,13 +21,13 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 
 ## 📋 Tổng quan Section
 
-| Thông tin | Chi tiết |
-|-----------|----------|
-| **Số bài học** | 7 bài |
-| **Thời lượng ước tính** | 4-5 giờ |
-| **Trọng tâm** | Context management, Memory, Token optimization |
-| **Kết quả cuối** | Bộ context documents hoàn chỉnh + workflow tối ưu token |
-| **Yêu cầu trước** | Section 1-3 (Agent basics, Rules, Prompt Engineering) |
+| Thông tin               | Chi tiết                                                |
+| ----------------------- | ------------------------------------------------------- |
+| **Số bài học**          | 7 bài                                                   |
+| **Thời lượng ước tính** | 4-5 giờ                                                 |
+| **Trọng tâm**           | Context management, Memory, Token optimization          |
+| **Kết quả cuối**        | Bộ context documents hoàn chỉnh + workflow tối ưu token |
+| **Yêu cầu trước**       | Section 1-3 (Agent basics, Rules, Prompt Engineering)   |
 
 ---
 
@@ -36,9 +36,11 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 ---
 
 ### Bài 1: Context Engineering là gì? Tại sao Agent hay "quên"?
+
 **Thời lượng:** 30-40 phút
 
 **Nội dung:**
+
 - **Vấn đề thực tế:** Demo Agent "quên" context giữa các phiên làm việc
 - **Context Engineering là gì?** — Sự tiến hoá từ Prompt Engineering
   - Prompt Engineering = "Viết brief hay"
@@ -54,15 +56,18 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 - **Token là gì? Tại sao quan trọng?** — Giải thích chi phí token, context window limit
 
 **Kết quả bài học:**
+
 - Hiểu tại sao Agent quên và cách phòng tránh
 - Nắm 5 trụ cột Context Engineering
 
 ---
 
 ### Bài 2: Project Context Documents – "Bộ nhớ ngoài" cho Agent
+
 **Thời lượng:** 40-50 phút
 
 **Nội dung:**
+
 - **Vấn đề:** Agent không biết gì về dự án → phải analyze cả source → tốn token
 - **Giải pháp: Tạo "bộ nhớ ngoài" bằng các file context documents**
 - **Hệ thống file context:**
@@ -77,15 +82,18 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 - **Nguyên tắc:** Ngắn gọn, chỉ thị rõ ràng, cập nhật thường xuyên
 
 **Kết quả bài học:**
+
 - Tạo được bộ context documents hoàn chỉnh cho dự án
 - Agent hiểu dự án ngay từ đầu mà không cần scan toàn bộ code
 
 ---
 
 ### Bài 3: Kỹ thuật Summarize Context – Giữ Agent "tỉnh táo" trong phiên dài
+
 **Thời lượng:** 40-50 phút
 
 **Nội dung:**
+
 - **Vấn đề:** Conversation dài → context window đầy → Agent bắt đầu quên hoặc hallucinate
 - **Kỹ thuật 1: Context Compaction**
   - Yêu cầu Agent tóm tắt lại toàn bộ conversation hiện tại
@@ -105,15 +113,18 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 - **Demo: So sánh token usage trước và sau khi áp dụng các kỹ thuật**
 
 **Kết quả bài học:**
+
 - Biết cách giữ Agent hiệu quả trong phiên làm việc dài
 - Biết khi nào cần compact, khi nào cần mở phiên mới
 
 ---
 
 ### Bài 4: Just-in-Time Context – Chỉ cho Agent biết điều cần biết
+
 **Thời lượng:** 35-45 phút
 
 **Nội dung:**
+
 - **Vấn đề:** Dump toàn bộ source code vào context → tốn token, Agent bị nhiễu
 - **Nguyên tắc vàng: "Minimal Viable Context"** — Ít nhưng đúng
 - **Kỹ thuật 1: Targeted File References**
@@ -136,15 +147,18 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
   - Tiết kiệm **~80% tokens** chỉ bằng cách cung cấp context đúng
 
 **Kết quả bài học:**
+
 - Biết cách prompt để Agent chỉ đọc file cần thiết
 - Giảm 50-80% token usage so với cách thông thường
 
 ---
 
 ### Bài 5: Knowledge Items & Memory – Bộ nhớ dài hạn trong Antigravity
+
 **Thời lượng:** 35-45 phút
 
 **Nội dung:**
+
 - **Knowledge Items (KI) là gì?**
   - Bộ nhớ dài hạn của Antigravity, tồn tại xuyên conversations
   - Chứa kiến thức đã được distill từ các phiên trước
@@ -170,15 +184,18 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
   - Quá nhiều KI → Agent bị confused
 
 **Kết quả bài học:**
+
 - Biết cách tận dụng Knowledge Items cho dự án dài hạn
 - Phân biệt khi nào dùng KI, khi nào dùng handoff
 
 ---
 
 ### Bài 6: Token Budget – Đo lường, Giám sát & Tối ưu chi phí
+
 **Thời lượng:** 30-40 phút
 
 **Nội dung:**
+
 - **Hiểu chi phí token thực tế**
   - Input tokens vs Output tokens — cái nào tốn hơn?
   - Pricing các model: Gemini, Claude, GPT
@@ -189,11 +206,11 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
   - File 100 dòng code ≈ 500-800 tokens
 - **Chiến lược chọn Model theo task:**
 
-  | Task | Model phù hợp | Lý do |
-  |------|---------------|-------|
-  | Generate code phức tạp | Large (Claude Opus, Gemini Pro) | Cần reasoning mạnh |
-  | Fix bug đơn giản | Medium (Claude Sonnet, Gemini Flash) | Đủ khả năng, rẻ hơn |
-  | Format code, rename | Small (Flash) | Task đơn giản, tiết kiệm |
+  | Task                   | Model phù hợp                        | Lý do                    |
+  | ---------------------- | ------------------------------------ | ------------------------ |
+  | Generate code phức tạp | Large (Claude Opus, Gemini Pro)      | Cần reasoning mạnh       |
+  | Fix bug đơn giản       | Medium (Claude Sonnet, Gemini Flash) | Đủ khả năng, rẻ hơn      |
+  | Format code, rename    | Small (Flash)                        | Task đơn giản, tiết kiệm |
 
 - **Checklist tối ưu token cho mỗi prompt:**
   - [ ] Đã chỉ rõ file cần sửa? (tránh full scan)
@@ -206,15 +223,18 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
   - Mục tiêu: Giảm 50%+ token usage
 
 **Kết quả bài học:**
+
 - Biết ước tính chi phí token
 - Có checklist tối ưu token cho mỗi prompt
 
 ---
 
 ### Bài 7: Workshop – Xây dựng Context Architecture cho dự án thực tế
+
 **Thời lượng:** 45-60 phút
 
 **Nội dung:**
+
 - **Bài tập thực hành end-to-end:**
   - Lấy dự án English Practice Hub (Section 6) hoặc dự án tự chọn
   - Tạo bộ context documents hoàn chỉnh:
@@ -237,6 +257,7 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
   - Workflow handoff mượt mà giữa các phiên
 
 **Kết quả bài học:**
+
 - Có bộ context documents hoàn chỉnh cho dự án thực tế
 - Thành thạo workflow Context Engineering trong Vibe Coding
 
@@ -244,16 +265,16 @@ Khi Vibe Coding một dự án thực tế, bạn sẽ gặp các vấn đề sa
 
 ## 🛠 Tổng hợp kỹ thuật Context Engineering
 
-| Kỹ thuật | Vấn đề giải quyết | Token tiết kiệm | Bài học |
-|----------|-------------------|-----------------|--------|
-| **AGENTS.md** | Agent không biết convention | ~30% | Bài 2 |
-| **ARCHITECTURE.md** | Agent scan toàn bộ source | ~40% | Bài 2 |
-| **Handoff Document** | Mất context giữa các phiên | ~60% | Bài 3 |
-| **Context Compaction** | Conversation dài bị quên | ~50% | Bài 3 |
-| **Targeted References** | Agent đọc file không liên quan | ~70% | Bài 4 |
-| **Layered Context** | Dump toàn bộ info vào prompt | ~80% | Bài 4 |
-| **Knowledge Items** | Phải giải thích lại dự án | ~90% | Bài 5 |
-| **Smart Model Selection** | Dùng model đắt cho task đơn giản | ~50% cost | Bài 6 |
+| Kỹ thuật                  | Vấn đề giải quyết                | Token tiết kiệm | Bài học |
+| ------------------------- | -------------------------------- | --------------- | ------- |
+| **AGENTS.md**             | Agent không biết convention      | ~30%            | Bài 2   |
+| **ARCHITECTURE.md**       | Agent scan toàn bộ source        | ~40%            | Bài 2   |
+| **Handoff Document**      | Mất context giữa các phiên       | ~60%            | Bài 3   |
+| **Context Compaction**    | Conversation dài bị quên         | ~50%            | Bài 3   |
+| **Targeted References**   | Agent đọc file không liên quan   | ~70%            | Bài 4   |
+| **Layered Context**       | Dump toàn bộ info vào prompt     | ~80%            | Bài 4   |
+| **Knowledge Items**       | Phải giải thích lại dự án        | ~90%            | Bài 5   |
+| **Smart Model Selection** | Dùng model đắt cho task đơn giản | ~50% cost       | Bài 6   |
 
 ---
 
