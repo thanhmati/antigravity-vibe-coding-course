@@ -1,9 +1,9 @@
-# 🎬 Bài 3: Demo — Subagents: Quy trình phối hợp của một Software Team 4 vai trò
+# 🎬 Bài 5: Demo: Subagents — Quy Trình Phối Hợp Của Một AI Software Team
 
 > **Section:** Multi-Agent Systems & Orchestration — Hệ thống nhiều Agent phối hợp  
 > **Thời lượng:** 35-40 phút  
 > **Loại:** 🎬 Thực hành / Demo  
-> **Yêu cầu:** Đã hoàn thành Bài 1 và 2
+> **Yêu cầu:** Đã hoàn thành Bài 4
 
 ---
 
@@ -145,7 +145,7 @@ Một điểm cực kỳ thú vị khi làm việc với Multi-Agent Team là kh
 
 ## ⏭️ Bài tiếp theo
 
-**[Bài 4: Demo — Slash Commands: `/goal`, `/grill-me` & `/browser`](lesson-04-demo-slash-commands.md)** — Tìm hiểu bộ ba lệnh slash command quyền lực nhất trong Antigravity để tự động hóa kiểm thử giao diện trực tiếp trên trình duyệt Chrome và phỏng vấn làm rõ ý đồ thiết kế.
+**[Bài 6: Demo — Slash Commands: /goal, /grill-me, /browser](lesson-06-demo-slash-commands.md)** — Tìm hiểu bộ ba lệnh slash command quyền lực nhất trong Antigravity để tự động hóa kiểm thử giao diện trực tiếp trên trình duyệt Chrome và phỏng vấn làm rõ ý đồ thiết kế.
 
 ---
 

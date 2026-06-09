@@ -1,8 +1,8 @@
-# 📘 Bài 1: Multi-Agent System là gì? Từ Single Agent → Multi-Agent
+# 📘 Bài 3: Multi-Agent System là gì? Từ Single Agent → Multi-Agent
 
 > **Section:** Multi-Agent Systems & Orchestration — Hệ thống nhiều Agent phối hợp  
 > **Thời lượng:** 25-30 phút  
-> **Yêu cầu:** Đã hoàn thành Section 1-4
+> **Yêu cầu:** Đã hoàn thành Bài 2
 
 ---
 
@@ -184,7 +184,7 @@ Antigravity 2.0 được thiết kế quanh pattern **Orchestrator-Worker (Paren
 
 ## ⏭️ Bài tiếp theo
 
-**[Bài 2: Kiến trúc Multi-Agent trong Antigravity 2.0](lesson-02-architecture-in-antigravity.md)** — Chúng ta sẽ đi sâu vào cơ chế hoạt động thực sự dưới nắp máy của Antigravity 2.0: Cách subagents được cách ly context, sự khác biệt giữa Local Mode và New Worktree Mode, và cách giám sát qua `/agents` panel.
+**[Bài 4: Trái tim của hệ thống: Subagents Spawning](lesson-04-subagents-spawning.md)** — Chúng ta sẽ đi sâu vào cơ chế hoạt động thực sự dưới nắp máy của Antigravity 2.0: Cách subagents được cách ly context, sự khác biệt giữa Local Mode và New Worktree Mode, và cách giám sát qua `/agents` panel.
 
 ---
 

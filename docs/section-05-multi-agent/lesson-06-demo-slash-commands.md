@@ -1,9 +1,9 @@
-# 🎬 Bài 4: Demo — Slash Commands: `/goal`, `/grill-me`, `/browser` & `/schedule`
+# 🎬 Bài 6: Demo — Slash Commands: /goal, /grill-me, /browser
 
 > **Section:** Multi-Agent Systems & Orchestration — Hệ thống nhiều Agent phối hợp  
 > **Thời lượng:** 40-45 phút  
 > **Loại:** 🎬 Thực hành / Demo  
-> **Yêu cầu:** Đã hoàn thành Bài 3
+> **Yêu cầu:** Đã hoàn thành Bài 5
 
 ---
 
@@ -144,9 +144,9 @@ Sử dụng cú pháp tiêu chuẩn 5 trường của Cron (phút, giờ, ngày,
 
 ---
 
-## ⏭️ Bài tiếp theo
+## ⏭️ Section tiếp theo
 
-**[Bài 5: Workshop — Build feature phức tạp với Multi-Agent](lesson-05-workshop-multi-agent-feature.md)** — Bài học thực hành cuối cùng của Section! Bạn sẽ áp dụng toàn bộ kiến thức về Subagents, `/goal`, `/grill-me`, `/browser`, và `/schedule` để xây dựng một tính năng hoàn chỉnh từ A-Z.
+**[Section 6: Model Context Protocol (MCP) — Kết nối AI Agents với External System](../section-06-mcp/README.md)** — Bạn sẽ được tìm hiểu về giao thức MCP (Model Context Protocol), giúp mở rộng khả năng của AI Agent để gọi tool, kết nối database và các API bên ngoài.
 
 ---
 

@@ -216,7 +216,7 @@ Curriculum
 [lecture] Context Compaction – "Nén" lại conversation
 - Description: 
 
-[chapter] Multi-Agent Systems & Orchestration
+[chapter] Multi-Agent Systems & Orchestration - Antigravity 2.0
 - Description: 
 
 [lecture] Antigravity 2.0 - Agent first

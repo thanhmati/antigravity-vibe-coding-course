@@ -1,8 +1,8 @@
-# 📘 Bài 2: Kiến trúc Multi-Agent trong Antigravity 2.0
+# 📘 Bài 4: Trái tim của hệ thống: Subagents Spawning
 
 > **Section:** Multi-Agent Systems & Orchestration — Hệ thống nhiều Agent phối hợp  
 > **Thời lượng:** 30-35 phút  
-> **Yêu cầu:** Đã hoàn thành Bài 1
+> **Yêu cầu:** Đã hoàn thành Bài 3
 
 ---
 
@@ -136,7 +136,7 @@ graph LR
 
 ## ⏭️ Bài tiếp theo
 
-**[Bài 3: Demo — Subagents: Ủy quyền task cho Agent con](lesson-03-demo-subagents.md)** — Chúng ta sẽ bắt tay vào thực hành! Bạn sẽ quan sát cách giao một task siêu lớn cho Agent, xem cách nó tự động phân chia công việc thành các Subagents, cách nó tạo ra các Artifacts (`implementation_plan.md`, `task.md`) và cách bạn phê duyệt kế hoạch đó.
+**[Bài 5: Demo: Subagents — Quy Trình Phối Hợp Của Một AI Software Team](lesson-05-demo-subagents.md)** — Chúng ta sẽ bắt tay vào thực hành! Bạn sẽ quan sát cách giao một task siêu lớn cho Agent, xem cách nó tự động phân chia công việc thành các Subagents, cách nó tạo ra các Artifacts (`implementation_plan.md`, `task.md`) và cách bạn phê duyệt kế hoạch đó.
 
 ---
 

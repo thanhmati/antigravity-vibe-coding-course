@@ -15,6 +15,22 @@
 
 ---
 
+## 🧭 Introduction · Giới thiệu khóa học & định hướng
+
+> Làm quen, tương tác và chuẩn bị trước khi bắt đầu
+
+📂 [Course Information Detail](udemy-course-info.txt)
+
+- 0.1 · Mua khoá học với giá ưu đãi như nào?
+- 0.2 · Lời cảm ơn
+- 0.3 · About me
+- 0.4 · Đối tượng học viên & điều kiện cần để tham gia khoá học
+- 0.5 · Tương tác với giảng viên như thế nào
+- 0.6 · Truy cập tài nguyên của khoá học như nào? — QUAN TRỌNG
+- 0.7 · Hướng dẫn đặt câu hỏi cho giảng viên — QUAN TRỌNG
+
+---
+
 ## Section 1 · 🧱 Foundation: AI Agent & Antigravity Basics
 
 > Xây nền tảng từ concept → setup → làm quen công cụ
@@ -89,11 +105,12 @@
 
 📂 [Section README](section-05-multi-agent/README.md)
 
-- 5.1 · [Multi-Agent System là gì? Từ Single Agent → Multi-Agent](section-05-multi-agent/lesson-01-what-is-multi-agent.md)
-- 5.2 · [Kiến trúc Multi-Agent trong Antigravity 2.0](section-05-multi-agent/lesson-02-architecture-in-antigravity.md)
-- 5.3 · [Demo: Subagents — Ủy quyền task cho Agent con](section-05-multi-agent/lesson-03-demo-subagents.md)
-- 5.4 · [Demo: /goal, /grill-me, /browser & /schedule — Orchestration thực chiến](section-05-multi-agent/lesson-04-demo-slash-commands.md)
-- 5.5 · [Workshop: Build feature phức tạp với Multi-Agent](section-05-multi-agent/lesson-05-workshop-multi-agent-feature.md)
+- 5.1 · [Antigravity 2.0 — Triết lý Agent-First](section-05-multi-agent/lesson-01-agent-first.md)
+- 5.2 · [Antigravity 2.0 — Giao diện & Thành phần](section-05-multi-agent/lesson-02-interface-and-components.md)
+- 5.3 · [Multi-Agent System là gì? Từ Single Agent → Multi-Agent](section-05-multi-agent/lesson-03-what-is-multi-agent.md)
+- 5.4 · [Trái tim của hệ thống: Subagents Spawning](section-05-multi-agent/lesson-04-subagents-spawning.md)
+- 5.5 · [Demo: Subagents — Quy Trình Phối Hợp Của Một AI Software Team](section-05-multi-agent/lesson-05-demo-subagents.md)
+- 5.6 · [Demo — Slash Commands: /goal, /grill-me, /browser](section-05-multi-agent/lesson-06-demo-slash-commands.md)
 
 ---
 

@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="#-curriculum"><img src="https://img.shields.io/badge/📚_Sections-7-blueviolet?style=for-the-badge" alt="Sections" /></a>
-  <a href="#-curriculum"><img src="https://img.shields.io/badge/🎓_Lectures-30+-blue?style=for-the-badge" alt="Lectures" /></a>
+  <a href="#-curriculum"><img src="https://img.shields.io/badge/🎓_Lectures-40+-blue?style=for-the-badge" alt="Lectures" /></a>
   <a href="#-tech-stack"><img src="https://img.shields.io/badge/🤖_Antigravity-Powered-brightgreen?style=for-the-badge" alt="Antigravity" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/📄_License-CC_BY--NC--SA_4.0-orange?style=for-the-badge" alt="License" /></a>
 </p>
@@ -102,7 +102,7 @@ Nếu bạn cần hỗ trợ hoặc muốn kết nối thêm ngoài khóa học,
 
 ## 📚 Curriculum
 
-> **7 Sections • 30+ Lectures • Từ Zero → Production**
+> **7 Sections • 40+ Lectures • Từ Zero → Production**
 
 ```mermaid
 flowchart LR
@@ -219,14 +219,16 @@ flowchart LR
 > 🤖 Thiết kế hệ thống nhiều Agent phối hợp giải quyết bài toán phức tạp
 
 <details>
-<summary><b>📋 4 Lectures — Xem chi tiết</b></summary>
+<summary><b>📋 6 Lectures — Xem chi tiết</b></summary>
 
 | # | Lecture | Mô tả |
 |---|---------|--------|
-| 5.1 | Multi-Agent System là gì? | Nhiều agents phối hợp |
-| 5.2 | Thiết kế Orchestrator | Điều phối agents & workflow |
-| 5.3 | Thiết kế Planner | Phân rã task & xác định dependency |
-| 5.4 | Parallel Agent Execution | Agent Manager |
+| 5.1 | Antigravity 2.0 — Triết lý Agent-First | Triết lý Agent-first và sự dịch chuyển sang Agent tự trị |
+| 5.2 | Antigravity 2.0 — Giao diện & Thành phần | Làm quen chat panel, /agents panel, inbox và artifacts |
+| 5.3 | Multi-Agent System là gì? | Từ Single Agent sang Multi-Agent và các patterns phổ biến |
+| 5.4 | Trái tim của hệ thống: Subagents Spawning | invoke_subagent, Context Isolation và Local/Worktree Mode |
+| 5.5 | Demo: Subagents — Quy Trình Phối Hợp | Phối hợp UX/UI, Backend, Frontend và Tester |
+| 5.6 | Demo — Slash Commands: /goal, /grill-me, /browser | Thực hành bộ ba lệnh điều phối agents mạnh mẽ nhất |
 
 </details>
 
@@ -293,7 +295,7 @@ graph TD
     S1["🧱 Section 1\nFoundation\n5 lectures"] --> S2["⚙️ Section 2\nCore Concepts\n7 lectures"]
     S2 --> S3["✍️ Section 3\nPrompt Engineering\n4 lectures"]
     S3 --> S4["🧠 Section 4\nContext Engineering\n7 lectures"]
-    S4 --> S5["🤖 Section 5\nMulti-Agent\n4 lectures"]
+    S4 --> S5["🤖 Section 5\nMulti-Agent\n6 lectures"]
     S5 --> S6["🔌 Section 6\nMCP\n6 lectures"]
     S6 --> S7["🎨 Section 7\nVibe Coding Project\n10 lectures"]
 
