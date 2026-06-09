@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Antigravity Course Introduction Slides</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Controls overlay -->
+  <div class="controls-overlay">
+    <button id="prev-btn" class="nav-btn" aria-label="Slide trước">←</button>
+    <button id="next-btn" class="nav-btn" aria-label="Slide tiếp theo">→</button>
+    <button id="fullscreen-btn" class="nav-btn" aria-label="Toàn màn hình">⛶</button>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!-- Main slider wrapper -->
+  <div class="slider-container">
+
+    <!-- Slide 1: Hook -->
+    <section class="slide active" id="slide-1">
+      <div class="glow-bg glow-purple"></div>
+      <div class="slide-content">
+        <h3 class="badge">🔥 MINDSET SHIFT</h3>
+        <h1 class="neon-text-red">Prompting là chưa đủ!</h1>
+        <h2 class="sub-heading">Chúng ta cần <span>Agentic Workflow</span></h2>
+        <p class="desc">Dịch chuyển từ việc copy-paste code từ Chatbot sang ủy quyền cho hệ thống Agent tự trị.</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: Tech Logo -->
+    <section class="slide" id="slide-2">
+      <div class="glow-bg glow-blue"></div>
+      <div class="slide-content">
+        <h3 class="badge">🚀 CÔNG NGHỆ ĐẮT GIÁ</h3>
+        <h1 class="neon-text-blue">Google Antigravity & Stitch</h1>
+        <div class="glass-card tech-stack-grid">
+          <div class="tech-item">
+            <div class="tech-icon">🤖</div>
+            <h3>Antigravity 2.0</h3>
+            <p>Nền tảng IDE chuyên dụng thiết kế hệ thống Agent-first</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">🎨</div>
+            <h3>Google Stitch</h3>
+            <p>MCP server giúp thiết kế UI/UX và Vibe Coding tốc độ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Instructor -->
+    <section class="slide" id="slide-3">
+      <div class="glow-bg glow-green"></div>
+      <div class="slide-content profile-layout">
+        <div class="profile-card glass-card">
+          <div class="avatar">👨‍💻</div>
+          <h2>Đỗ Tấn Thành</h2>
+          <p class="role">Instructor & Fullstack Developer</p>
+          <div class="stats">
+            <div class="stat-box"><strong>5+</strong><span>Năm exp</span></div>
+            <div class="stat-box"><strong>YouTube</strong><span>@laptrinhfullstack</span></div>
+          </div>
+        </div>
+        <div class="profile-info">
+          <h3 class="badge">👨‍🏫 GIẢNG VIÊN</h3>
+          <h1>Người đồng hành cùng bạn</h1>
+          <ul class="bullet-list">
+            <li>Founder kênh **Lập Trình Fullstack** chia sẻ lập trình thực chiến.</li>
+            <li>Hơn 5 năm kinh nghiệm thiết kế sản phẩm và phát triển hệ thống.</li>
+            <li>Đam mê nghiên cứu các mô hình tự động hóa AI và Agentic Workflow.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Course Vision -->
+    <section class="slide" id="slide-4">
+      <div class="glow-bg glow-purple"></div>
+      <div class="slide-content">
+        <h3 class="badge">🎯 ĐỊNH HƯỚNG KHÓA HỌC</h3>
+        <h1 class="neon-text-purple">Học Thực Chiến — Mindset Production</h1>
+        <div class="grid-three">
+          <div class="glass-card feature-card">
+            <div class="card-icon">❌</div>
+            <h3>Không học lý thuyết suông</h3>
+            <p>Mỗi bài học đều gắn với một ca sử dụng thực tế và bài tập thực hành.</p>
+          </div>
+          <div class="glass-card feature-card">
+            <div class="card-icon">🏗️</div>
+            <h3>Agent Engineering</h3>
+            <p>Làm chủ Model settings, Rules, Workflows để kiểm soát hành vi Agent.</p>
+          </div>
+          <div class="glass-card feature-card">
+            <div class="card-icon">⚡</div>
+            <h3>Production Ready</h3>
+            <p>Tối ưu hóa chi phí Token, quản lý bộ nhớ và deploy ứng dụng thực tế.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Roadmap Chặng 1 -->
+    <section class="slide" id="slide-5">
+      <div class="glow-bg glow-blue"></div>
+      <div class="slide-content roadmap-layout">
+        <div class="roadmap-header">
+          <h3 class="badge">🗺️ LỘ TRÌNH HỌC — CHẶNG 1</h3>
+          <h1>Nền Tảng & Khái Niệm Cốt Lõi</h1>
+        </div>
+        <div class="roadmap-grid">
+          <div class="roadmap-step glass-card active">
+            <div class="step-num">S1</div>
+            <h3>Foundation</h3>
+            <p>Hiểu về Agentic AI, cài đặt Antigravity IDE chuyên nghiệp từ A-Z.</p>
+          </div>
+          <div class="roadmap-step glass-card">
+            <div class="step-num">S2</div>
+            <h3>Core Concepts</h3>
+            <p>Làm chủ Reasoning Models, cấu hình Rules và thiết lập Workflows tự động.</p>
+          </div>
+          <div class="roadmap-step glass-card">
+            <div class="step-num">S3</div>
+            <h3>Prompt Engineering</h3>
+            <p>Thiết kế System Prompt, debug prompt với Antigravity Kit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Roadmap Chặng 2 -->
+    <section class="slide" id="slide-6">
+      <div class="glow-bg glow-green"></div>
+      <div class="slide-content roadmap-layout">
+        <div class="roadmap-header">
+          <h3 class="badge">🗺️ LỘ TRÌNH HỌC — CHẶNG 2</h3>
+          <h1>Context Engineering</h1>
+        </div>
+        <div class="roadmap-grid">
+          <div class="roadmap-step glass-card active">
+            <div class="step-num">S4</div>
+            <h3>Context Engineering</h3>
+            <p>Kỹ thuật quản lý Context Window. Tạo AGENTS.md, PLAN.md để AI không bị "quên" dự án dài.</p>
+          </div>
+          <div class="roadmap-step glass-card">
+            <div class="step-num">S4.1</div>
+            <h3>Token Optimization</h3>
+            <p>Giảm thiểu tối đa token dư thừa bằng Just-In-Time context, tiết kiệm 80% chi phí.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Roadmap Chặng 3 -->
+    <section class="slide" id="slide-7">
+      <div class="glow-bg glow-purple"></div>
+      <div class="slide-content roadmap-layout">
+        <div class="roadmap-header">
+          <h3 class="badge">🗺️ LỘ TRÌNH HỌC — CHẶNG NÂNG CAO</h3>
+          <h1>Multi-Agent & MCP</h1>
+        </div>
+        <div class="roadmap-grid">
+          <div class="roadmap-step glass-card active">
+            <div class="step-num">S5</div>
+            <h3>Multi-Agent Systems</h3>
+            <p>Spawn subagents chạy song song. Điều phối bằng lệnh /goal, phỏng vấn bằng /grill-me.</p>
+          </div>
+          <div class="roadmap-step glass-card">
+            <div class="step-num">S6</div>
+            <h3>Model Context Protocol</h3>
+            <p>Kết nối AI Agent với Database, GitHub API và Google Stitch thiết kế UI/UX.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Real-world project -->
+    <section class="slide" id="slide-8">
+      <div class="glow-bg glow-blue"></div>
+      <div class="slide-content vibe-coding-layout">
+        <div class="vibe-text">
+          <h3 class="badge">🎨 DỰ ÁN THỰC TẾ</h3>
+          <h1>VibeSpace Studio</h1>
+          <p class="vibe-subtitle">Trạm tập trung và âm thanh chữa lành</p>
+          <ul class="bullet-list">
+            <li>Xây dựng specs PRD & Tech specs chuyên nghiệp dẫn đường cho Agent.</li>
+            <li>Thiết kế Design System mượt mà, responsive, hỗ trợ Dark/Light mode bằng Stitch.</li>
+            <li>Convert UI sang React, tự động tạo GitHub Pull Request và deploy lên staging.</li>
+          </ul>
+        </div>
+        <div class="vibe-preview glass-card">
+          <div class="mockup-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="title">vibespace.studio</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mock-hero">
+              <h2>Sound Healing Station</h2>
+              <p>Trải nghiệm âm thanh thư giãn thiết kế bằng Vibe Coding</p>
+              <button class="mock-btn">Khám phá ngay</button>
+            </div>
+            <div class="mock-grid">
+              <div class="mock-card">🎵 Rain Sounds</div>
+              <div class="mock-card">🌊 Ocean Waves</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: CTA -->
+    <section class="slide" id="slide-9">
+      <div class="glow-bg glow-green"></div>
+      <div class="slide-content">
+        <h3 class="badge">🚀 BẮT ĐẦU NGAY HÔM NAY</h3>
+        <h1 class="neon-text-green">Làm Chủ Vibe Coding & Agentic AI</h1>
+        <p class="desc">Trở thành lập trình viên dẫn đầu xu hướng công nghệ mới.</p>
+        
+        <div class="contact-grid">
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email Hỗ Trợ</h3>
+            <p>dotanthanhvlog@gmail.com</p>
+          </div>
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📺</div>
+            <h3>Kênh YouTube</h3>
+            <p>Lập Trình Fullstack</p>
+          </div>
+          <div class="contact-card glass-card">
+            <div class="contact-icon">💬</div>
+            <h3>Zalo Tư Vấn</h3>
+            <p>0762216048</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
