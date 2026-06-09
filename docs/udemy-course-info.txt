@@ -108,6 +108,18 @@ Curriculum
 [lecture] About me
 - Description: 
 
+[lecture] Đối tượng học viên & điều kiện cần để tham gia khoá học
+- Description:
+
+[lecture] Tương tác với giảng viên như thế nào
+- Description: 
+
+[lecture] Truy cập tài nguyên của khoá học như nào ? - QUAN TRỌNG
+- Description: 
+
+[lecture] Hướng dẫn đặt câu hỏi cho giảng viên - QUAN TRỌNG
+- Description: 
+
 [chapter] Foundation: AI Agent & Antigravity Basics
 - Description: Xây nền tảng từ concept → setup → làm quen công cụ
 
@@ -207,15 +219,23 @@ Curriculum
 [chapter] Multi-Agent Systems & Orchestration
 - Description: 
 
-[lecture] Multi-Agent System trong AI là gì?
+[lecture] Antigravity 2.0 - Agent first
+- Description: 
+
+[lecture] Antigravity 2.0: Làm quen giao diện & các thành phần chính
+- Description: 
+
+[lecture] Multi-Agent System là gì? Từ Single Agent → Multi-Agent
 - Description: Hiểu cách nhiều AI agents phối hợp với nhau để giải quyết bài toán phức tạp.
 
-[lecture] Thiết kế Orchestrator cho Multi-Agent System
-- Description: Tìm hiểu cách xây dựng Orchestrator để điều phối agents, quản lý workflow và tổng hợp kết quả.
+[lecture] Trái tim của hệ thống: Subagents Spawning
+- Description: 
 
-[lecture] Thiết kế Planner: Phân rã task trong Multi-Agent System
-- Description: Hiểu cách Planner Agent phân tích yêu cầu, chia nhỏ thành các task rõ ràng, xác định dependency và phân công đúng agent để đảm bảo hệ thống hoạt động hiệu quả và có thể scale.
+[lecture] Demo: Subagents — Quy Trình Phối Hợp Của Một AI Software Team
+- Description: 
 
+[lecture] Demo — Slash Commands: /goal, /grill-me, /browser
+- Description: 
 
 [chapter] Model Context Protocol (MCP): Kết nối AI Agents với External System
 - Description: Sau section này, học viên sẽ hiểu rõ MCP và vai trò của nó trong việc xây dựng AI Agents, biết cách kết nối AI với MCP để gọi tool và sử dụng dữ liệu thực tế.
