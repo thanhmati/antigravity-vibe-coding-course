@@ -11,7 +11,7 @@
 | **Số bài học** | 11 bài |
 | **Thời lượng ước tính** | 6-8 giờ |
 | **Dự án thực tế** | **VibeSpace** – Studio tập trung & âm thanh chữa lành tích hợp |
-| **Công nghệ sử dụng** | Antigravity, Stitch MCP, GitHub MCP, Stitch Skills, React/Next.js |
+| **Công nghệ sử dụng** | Antigravity, Stitch MCP, GitHub MCP, Stitch Skills, ReactJS (Vite), Supabase |
 | **Yêu cầu trước** | Hoàn thành Section 1-6 |
 
 ---
@@ -40,7 +40,7 @@
 **Nội dung:**
 - Triết lý **Specs-Driven Development** (Phát triển hướng Đặc tả) và lý do nó là cứu tinh của Vibe Coding.
 - Soạn thảo và phân tích tài liệu **PRD (Product Requirement Document)** hoàn chỉnh của VibeSpace Studio (User Stories, Flow, MVP vs Nice-to-have).
-- Xây dựng tài liệu **Tech Specs (Đặc tả kỹ thuật)**: Routing Next.js 14, LocalStorage State Schema, Audio Engine (Singleton/Ref Pattern).
+- Xây dựng tài liệu **Tech Specs (Đặc tả kỹ thuật)**: Routing React Router (Vite), Supabase Database Table Schema, Audio Engine (Singleton/Ref Pattern).
 - Kỹ thuật Prompt Engineering để tự động tạo PRD & Tech Specs cho các ý tưởng dự án cá nhân.
 - Lên kế hoạch phát triển MVP và phân rã các Task nhỏ thông qua file `PLAN.md`.
 
@@ -60,7 +60,7 @@
 - Tạo GitHub repo mới `vibespace-dashboard` bằng GitHub MCP.
 - **Tầm quan trọng của Context Engineering** trong Vibe Coding.
 - Thiết lập bộ 3 file context documents tại root của dự án VibeSpace:
-  - `AGENTS.md` (Tech stack, coding conventions, rules cho Audio & LocalStorage)
+  - `AGENTS.md` (Tech stack, coding conventions, rules cho Audio & Supabase)
   - `ARCHITECTURE.md` (Phân mảnh component, State flow, định tuyến)
   - `PLAN.md` (Task list ban đầu của MVP)
 
@@ -126,12 +126,12 @@
 - Sử dụng skill `react-components` để convert screens → React code
 - Cấu trúc component tree (các widget tách biệt: Pomodoro, Mixer, Todo)
 - Xử lý design tokens → CSS variables / Tailwind config với hiệu ứng mờ kính
-- Khởi tạo project Next.js và tích hợp components
-- Giải quyết lỗi import và import paths trong App Router
+- Khởi tạo project ReactJS (Vite) và tích hợp các components
+- Thiết lập hệ thống định tuyến (Routing) bằng React Router
 
 **Kết quả bài học:**
 - Bộ React components từ design Stitch
-- Project Next.js chạy được với cấu trúc UI mờ kính từ Stitch
+- Project ReactJS (Vite) chạy được với cấu trúc UI mờ kính từ Stitch và hệ thống định tuyến hoàn chỉnh
 
 ---
 
@@ -156,13 +156,13 @@
 **Nội dung:**
 - Thêm tính năng: Gọi iTunes Search API để người dùng thay đổi thể loại nhạc lo-fi theo keyword
 - Thêm tính năng: Thiết lập trình trộn âm thanh thiên nhiên đa kênh (Rain, Campfire, Waves) hoạt động song song
-- Thêm tính năng: Lưu trữ cấu hình nhạc và checklist Todo vào `localStorage`
+- Thêm tính năng: Lưu trữ cấu hình nhạc, checklist Todo và đồng hồ vào cơ sở dữ liệu Supabase
 - Phát hiện và fix bug bất đồng bộ khi gọi API bằng Antigravity
 - Tạo branch, PR cho các tính năng audio bằng GitHub MCP
 
 **Kết quả bài học:**
 - Ứng dụng thực sự phát được nhạc và trộn âm thanh đa kênh
-- Trạng thái người dùng được ghi nhớ hoàn hảo khi tải lại trang
+- Trạng thái người dùng được lưu trữ đồng bộ thời gian thực trên đám mây với Supabase
 
 ---
 
@@ -190,7 +190,7 @@
 - Review toàn bộ workflow Vibe Coding đã thực hiện cho VibeSpace
 - Thống kê: thời gian tiết kiệm vs coding truyền thống
 - Best practices khi Vibe Coding với AI Agent
-- Những lỗi phổ biến (quên local storage, xử lý audio lặp) và cách tránh
+- Những lỗi phổ biến (đồng bộ database, xử lý audio lặp) và cách tránh
 - Q&A và hướng dẫn áp dụng Vibe Coding vào bất kỳ dự án SaaS nào khác
 
 **Kết quả bài học:**
@@ -221,15 +221,6 @@ vibespace-dashboard/
 ├── .stitch/
 │   └── DESIGN.md              # Design system document
 ├── src/
-│   ├── app/
-│   │   ├── page.tsx            # Lobby Entrance Page (Sảnh chờ)
-│   │   ├── layout.tsx          # Root layout
-│   │   ├── space/
-│   │   │   └── page.tsx        # Immersive Focus Studio (Bảng điều khiển lõi)
-│   │   ├── journal/
-│   │   │   └── page.tsx        # Productivity Stats Journal
-│   │   └── settings/
-│   │       └── page.tsx        # Customize Timer & sound presets
 │   ├── components/
 │   │   ├── PomodoroTimer.tsx   # Đồng hồ đếm ngược Pomodoro
 │   │   ├── AmbientMixer.tsx    # Bộ trộn âm thanh thiên nhiên đa kênh
@@ -238,9 +229,17 @@ vibespace-dashboard/
 │   │   ├── BreathingBubble.tsx # Vòng tròn bong bóng tập thở SVG
 │   │   ├── SceneSelector.tsx   # Bộ chuyển đổi và tuỳ chỉnh ảnh nền
 │   │   └── ThemeToggle.tsx     # Customizer chuyển đổi theme màu
-│   └── styles/
-│       └── globals.css
+│   ├── pages/
+│   │   ├── Lobby.tsx           # Lobby Entrance Page (Sảnh chờ)
+│   │   ├── Space.tsx           # Immersive Focus Studio (Bảng điều khiển lõi)
+│   │   ├── Journal.tsx         # Productivity Stats Journal
+│   │   └── Settings.tsx        # Customize Timer & sound presets
+│   ├── App.tsx                 # Cấu hình Routing chính cho ứng dụng
+│   ├── main.tsx                # Khởi tạo React & Mount DOM
+│   └── index.css               # CSS & Glassmorphism styles
 ├── public/
+├── index.html
 ├── package.json
+├── vite.config.ts
 └── README.md
 ```

@@ -1,7 +1,7 @@
 # 🚀 Hướng Dẫn Step-by-Step: Từ Ý Tưởng → Trạm Tập Trung VibeSpace Studio Hoàn Chỉnh
 
 > **Dự án:** VibeSpace Studio – Trạm tập trung và âm thanh chữa lành tích hợp đồng hồ Pomodoro, bộ trộn âm thanh thiên nhiên đa kênh, trình phát nhạc Lo-fi (iTunes API) và phong cảnh động cá nhân hóa.
-> **Công cụ:** Antigravity + Stitch MCP + GitHub MCP + Stitch Skills + Next.js 14 App Router
+> **Công cụ:** Antigravity + Stitch MCP + GitHub MCP + Stitch Skills + ReactJS (Vite + React Router)
 > **Thời gian ước tính:** 4-5 giờ
 
 ---
@@ -16,7 +16,7 @@
 6. [Step 6: Thiết kế các trang chính (Immersive Studio, Stats Journal, Settings)](#step-6)
 7. [Step 7: Tạo DESIGN.md Document (Design Specs)](#step-7)
 8. [Step 8: Convert Design → React Code sử dụng react-components skill](#step-8)
-9. [Step 9: Khởi tạo Project Next.js & Tích hợp cấu trúc định tuyến (App Router)](#step-9)
+9. [Step 9: Khởi tạo Project ReactJS (Vite) & Tích hợp cấu trúc định tuyến (React Router)](#step-9)
 10. [Step 10: GitHub Workflow – Branch & Pull Request tự động](#step-10)
 11. [Step 11: Tích hợp âm thanh đa kênh & APIs (iTunes Lo-fi, Ambient Mixer, ZenQuotes)](#step-11)
 12. [Step 12: Polish UI, Responsive & Animations (Breathing Bubble, Scene Selector, deploy)](#step-12)
@@ -35,15 +35,15 @@ Mở **Antigravity** và nhập prompt có cấu trúc sau để Agent cùng b�
 
 ```text
 [BỐI CẢNH / CONTEXT]
-Tôi chuẩn bị phát triển một dự án Focus Station (Trạm tập trung làm việc & âm thanh thiền định) có tên là "VibeSpace Studio" bằng phương pháp Vibe Coding (sử dụng Next.js 14, Tailwind CSS, TypeScript).
+Tôi chuẩn bị phát triển một dự án Focus Station (Trạm tập trung làm việc & âm thanh thiền định) có tên là "VibeSpace Studio" bằng phương pháp Vibe Coding (sử dụng ReactJS (Vite), Tailwind CSS, TypeScript).
 
 [VAI TRÒ / ROLE]
 Bạn là một Giám đốc Sản phẩm (Product Manager) kiêm Kiến trúc sư Phần mềm (Software Architect) cấp cao.
 
 [NHIỆM VỤ / INSTRUCTIONS]
-Hãy cùng tôi soạn thảo 2 tài liệu đặc tả chuẩn hóa thế giới thực bao gồm:
+Hãy cùng tôi soạn thảo 2 tài liệu đặc tả chuẩn hóa thế việc thực bao gồm:
 1. PRD (Product Requirement Document) chi tiết: Định nghĩa rõ mục tiêu sản phẩm, đối tượng người dùng, sơ đồ tính năng MVP (Lobby, Focus Space với 4 Widgets: Pomodoro, Sound Mixer, Lofi Player từ iTunes API, Todo Checklist), Breathing thiền thở, và trang Productivity Journal (GitHub Grid).
-2. Tech Specs (Technical Specifications): Định nghĩa chi tiết routing Next.js 14 App Router, cấu trúc cơ sở dữ liệu lưu trong localStorage (lược đồ typescript cho Volume, Goals, Settings, Sessions), và đặc tả Audio Engine (sử dụng singleton useRef để chống tràn âm thanh khi re-render).
+2. Tech Specs (Technical Specifications): Định nghĩa chi tiết routing bằng React Router, cấu trúc cơ sở dữ liệu lưu trực tiếp trong Supabase (định nghĩa bảng PostgreSQL cho preferences, todos, focus_sessions), và đặc tả Audio Engine (sử dụng singleton useRef để chống tràn âm thanh khi re-render).
 
 [RÀNG BUỘC KỸ THUẬT / CONSTRAINTS]
 Tài liệu cần cực kỳ chuyên nghiệp, trình bày rõ ràng bằng Markdown, có sơ đồ Mermaid trực quan để bất kỳ AI Agent nào đọc vào cũng có thể thực thi chính xác.
@@ -82,6 +82,9 @@ npx skills add google-labs-code/stitch-skills --skill design-md --global
 
 # Cài đặt công cụ convert layout thiết kế sang React component
 npx skills add google-labs-code/stitch-skills --skill react:components --global
+
+# Cài đặt client SDK Supabase trong dự án của bạn
+npm install @supabase/supabase-js
 ```
 
 ### 📝 Prompt mẫu – Tạo GitHub Repository bằng GitHub MCP
@@ -98,7 +101,7 @@ Bạn là một DevOps Engineer và Git Administrator.
 [NHIỆM VỤ / INSTRUCTIONS]
 Hãy sử dụng công cụ GitHub MCP Server để tạo một repository mới trên GitHub cá nhân của tôi với các thông số sau:
 - Tên repo: vibespace-studio
-- Mô tả: "🧘‍♂️ A premium dark-cyberpunk Focus Station with dynamic audio mixing, iTunes Lo-fi integration, and glassmorphic aesthetics. Built using Antigravity, Stitch, and Next.js 14."
+- Mô tả: "🧘‍♂️ A premium dark-cyberpunk Focus Station with dynamic audio mixing, iTunes Lo-fi integration, and glassmorphic aesthetics. Built using Antigravity, Stitch, and ReactJS (Vite) with Supabase Database."
 - Trạng thái: Public
 - Khởi tạo cùng file README.md mặc định.
 
@@ -130,23 +133,16 @@ Tạo file [AGENTS.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-
 - **Status:** Development (Vibe Coding Workshop)
 
 ## 🛠️ Tech Stack
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** ReactJS (Vite)
 - **Language:** TypeScript (Strict Mode)
 - **Styling:** Tailwind CSS (Cyber-Zen Dark Mode & Neon accents) + Glassmorphism
 - **Audio Engine:** Web Audio API & HTML5 Audio
 - **State Management:** React Context + React Hooks (`useState`, `useReducer`, `useRef`)
-- **Persistence:** Browser `localStorage`
+- **Database:** Supabase BaaS (PostgreSQL) - Accessed directly via `@supabase/supabase-js`
+- **Routing:** React Router (`react-router-dom`)
 
 ## 📂 Project Structure
 src/
-├── app/               # Next.js App Router Pages
-│   ├── page.tsx       # Lobby Entrance Page (Sảnh chờ)
-│   ├── space/         # Immersive Studio
-│   │   └── page.tsx   # Core Immersive Interface
-│   ├── journal/       # Productivity Journal
-│   │   └── page.tsx   # Contribution Grid & Stats
-│   └── settings/      # Settings Page
-│       └── page.tsx   # Configurations & Shortcuts
 ├── components/        # Isolated & Reusable Components
 │   ├── PomodoroTimer.tsx   # Pomodoro widget
 │   ├── AmbientMixer.tsx    # White noise audio mixer
@@ -155,8 +151,14 @@ src/
 │   ├── BreathingBubble.tsx # Breathing visualizer (SVG)
 │   ├── SceneSelector.tsx   # Background switcher
 │   └── Header.tsx          # Navigation (hidden on /space)
-└── styles/
-    └── globals.css    # Custom Glassmorphism styles
+├── pages/             # Page Components (Views)
+│   ├── Lobby.tsx           # Lobby Entrance Page (Sảnh chờ)
+│   ├── Space.tsx           # Immersive Focus Studio (Bảng điều khiển)
+│   ├── Journal.tsx         # Productivity Journal (Contribution Grid)
+│   └── Settings.tsx        # Settings page
+├── App.tsx            # Main application layout & Routing config
+├── main.tsx           # React entry point
+└── index.css          # Custom Glassmorphism & Tailwind styles
 
 ## 📜 Coding Conventions & Rules
 - **TypeScript:** Strict Mode. **NO `any` type.** Every function parameter and return type must be explicitly typed.
@@ -168,7 +170,10 @@ src/
   - All Audio instances must be managed using React `useRef` as a singleton (e.g., `const audioRef = useRef<HTMLAudioElement | null>(null)`).
   - You must never instantiate new Audio objects during React render cycles as this triggers massive memory leaks and overlapping sound streams.
   - Implement a clean-up function inside `useEffect` return block to pause and destroy audio streams on component unmount.
-- **State Persistence:** Whenever updating Pomodoro session status, goals, or volume configurations, immediately synchronize the state to `localStorage` under keys `vibespace_volume`, `vibespace_goals`, `vibespace_settings`, and `vibespace_sessions`.
+- **State Persistence (Supabase Sync):**
+  - Sync all user preferences (theme, current scene, timers, volumes) to table `user_preferences`.
+  - Sync tasks to table `todos` (insert, update, delete).
+  - Record completed focus sessions into table `focus_sessions` immediately on timer complete.
 ```
 
 #### 2️⃣ File `ARCHITECTURE.md` (Bản đồ kiến trúc dự án)
@@ -178,11 +183,11 @@ Tạo file [ARCHITECTURE.md](file:///Users/thanhdo/Documents/Project/antigravity
 # ARCHITECTURE.md
 
 ## 🏗️ Routing & Page Architecture
-VibeSpace is constructed as a Next.js 14 App Router application with 4 views:
+VibeSpace is constructed as a React Single Page Application (SPA) using React Router with 4 views:
 
 ```mermaid
 graph TD
-    A[Root /] -->|Enter Studio| B[/space - Focus Studio]
+    A[Lobby /] -->|Enter Studio| B[/space - Focus Studio]
     A -->|View Stats| C[/journal - Productivity Stats]
     A -->|Configure| D[/settings - Configurations]
     
@@ -196,13 +201,14 @@ graph TD
 ```
 
 - **Navigation Visibility:**
-  - Trang `/space` (Immersive Studio) là môi trường tập trung tuyệt đối. **Ẩn hoàn toàn Header/Footer** bằng cách kiểm tra hook `usePathname`.
+  - Trang `/space` (Immersive Studio) là môi trường tập trung tuyệt đối. **Ẩn hoàn toàn Header/Footer** bằng cách kiểm tra hook `useLocation()` từ `react-router-dom`.
   - Các trang `/`, `/journal`, `/settings` hiển thị `Header` chung để điều hướng linh hoạt.
 
-## 🔄 State Synchronization Flow
-1. **Audio State:** Managed locally within `AmbientMixer` and `LofiPlayer` but stored globally in `localStorage` to preserve user volume mixes across tabs and reload cycles.
-2. **Productivity History Grid:** Triggered on Pomodoro Timer complete. A session item is pushed to `localStorage` under `vibespace_sessions`. The `/journal` page reads this array to draw a GitHub-style Contribution Grid and a timeline.
-3. **Daily Goals:** Synced under `vibespace_goals`. Fully interactive in both the Focus Studio widget and the settings page.
+## 🔄 State Synchronization Flow (Supabase BaaS)
+1. **Supabase Client:** Initialized once in `src/supabaseClient.ts`.
+2. **Audio State & Preferences:** Local changes to volumes or active scene are immediately pushed to `user_preferences` table in Supabase via an upsert query.
+3. **Productivity History Grid:** Triggered on Pomodoro Timer complete. A new session row is inserted into `focus_sessions` table in Supabase. The `/journal` page fetches this table to draw the GitHub-style contribution grid.
+4. **Daily Goals:** Fetched from `todos` table in Supabase on app load, synced instantly on create/check/delete.
 ```
 
 #### 3️⃣ File `PLAN.md` (Theo dõi tiến độ phát triển)
@@ -225,15 +231,17 @@ Tạo file [PLAN.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-co
 
 ## ⚛️ Phase 3: Code Conversion & App Scaffold [Planned]
 - [ ] Run `react-components` skill to generate TSX
-- [ ] Initialize Next.js 14 App Router boilerplate
-- [ ] Map routing `/`, `/space`, `/journal`, `/settings`
-- [ ] Add Custom Glassmorphic classes to `globals.css`
+- [ ] Initialize ReactJS project using Vite and React Router
+- [ ] Map routing `/`, `/space`, `/journal`, `/settings` in App.tsx
+- [ ] Add Custom Glassmorphic classes to `index.css`
 
-## 🎵 Phase 4: Core Engine Integration [Planned]
+## 🎵 Phase 4: Core Engine & Supabase Integration [Planned]
+- [ ] Setup Supabase Client and create DB tables (`user_preferences`, `todos`, `focus_sessions`)
 - [ ] Implement multi-channel sound mixing inside `AmbientMixer` (Rain, Waves, Fire, Cafe)
 - [ ] Program `LofiPlayer` with iTunes Search API integration (dynamic search, CD spin)
-- [ ] Program `PomodoroTimer` with local storage and audio completion alarm
-- [ ] Build GitHub-style Contribution Grid visualizer on `/journal`
+- [ ] Program `PomodoroTimer` and insert focus sessions to Supabase on complete
+- [ ] Sync Todos and Preferences dynamically with Supabase tables
+- [ ] Build GitHub-style Contribution Grid visualizer on `/journal` from Supabase data
 
 ## ✨ Phase 5: Polish & Animations [Planned]
 - [ ] Code Breathing Bubble (SVG stretching animation)
@@ -400,7 +408,7 @@ Hãy sử dụng công cụ `stitch-loop` để tạo thêm 2 trang phụ đồn
 2. Trang Quick Settings (/settings):
    - Khu vực tuỳ chỉnh thời gian đếm ngược Pomodoro (Focus Time: 15/25/45m, Break Time: 5/10m).
    - Bộ chọn hình nền nhanh (Scene Selection) hoặc ô Input dán đường dẫn URL phong cảnh tùy chọn từ internet.
-   - Nút khẩn cấp: "Reset All Cache Data" màu đỏ mờ để xoá sạch localStorage.
+   - Nút khẩn cấp: "Reset All Database Data" màu đỏ mờ để xoá sạch các bản ghi cấu hình tùy chọn trong Supabase database.
 ```
 
 ---
@@ -444,7 +452,7 @@ Gửi prompt cấu trúc cao sau tới Antigravity:
 
 ```text
 [BỐI CẢNH / CONTEXT]
-Tôi đã có tài liệu đặc tả thiết kế `.stitch/DESIGN.md` và các trang màn hình vẽ trên Stitch. Tôi cần đưa giao diện này vào dự án code Next.js 14.
+Tôi đã có tài liệu đặc tả thiết kế `.stitch/DESIGN.md` và các trang màn hình vẽ trên Stitch. Tôi cần đưa giao diện này vào dự án code ReactJS (Vite).
 
 [VAI TRÒ / ROLE]
 Bạn là một Senior Frontend Engineer chuyên sâu về React, Tailwind CSS và TypeScript.
@@ -467,40 +475,45 @@ Hãy chạy công cụ `react-components` skill để phân tích 4 screens trê
 ---
 
 <a id="step-9"></a>
-## Step 9: Khởi tạo Project Next.js & Tích hợp cấu trúc định tuyến
+## Step 9: Khởi tạo Project ReactJS (Vite) & Tích hợp cấu trúc định tuyến
 
 ### 🎯 Mục tiêu
-Khởi tạo cấu trúc dự án Next.js 14 App Router chuẩn hóa và dựng bản đồ định tuyến `/`, `/space`, `/journal`, `/settings` lồng ghép các component đã convert.
+Khởi tạo cấu trúc dự án React + Vite + TypeScript chuẩn hóa và dựng bản đồ định tuyến `/`, `/space`, `/journal`, `/settings` sử dụng React Router (`react-router-dom`) lồng ghép các component đã convert.
 
-### 📝 Prompt mẫu – Khởi tạo dự án Next.js bằng Terminal CLI
+### 📝 Prompt mẫu – Khởi tạo dự án Vite React bằng Terminal CLI
 
-Gõ câu lệnh sau trong Terminal để khởi tạo project không tương tác:
+Gõ các câu lệnh sau trong Terminal để khởi tạo project và cài đặt router:
 
 ```bash
-npx -y create-next-app@latest ./ --typescript --eslint --tailwind --src-dir --app --import-alias "@/*"
+# Khởi tạo React + Vite + TypeScript trong thư mục hiện tại
+npx -y create-vite@latest ./ --template react-ts
+
+# Cài đặt thư viện định tuyến react-router-dom
+npm install react-router-dom
 ```
 
 ### 📝 Prompt mẫu – Tích hợp Route và Global Style
 
-Sau khi khởi tạo xong Next.js, hãy gửi prompt có cấu trúc sau tới Antigravity để Agent tự động dọn dẹp và cấu hình định tuyến:
+Sau khi khởi tạo xong Vite React, hãy gửi prompt có cấu trúc sau tới Antigravity để Agent tự động dọn dẹp và cấu hình định tuyến:
 
 ```text
 [BỐI CẢNH / CONTEXT]
-Tôi vừa khởi tạo thành công project Next.js 14 App Router trắng trong workspace. Tôi muốn thiết lập hệ thống trang theo đúng ARCHITECTURE.md.
+Tôi vừa khởi tạo thành công project React + Vite + TypeScript trắng trong workspace và cài đặt react-router-dom. Tôi muốn thiết lập hệ thống trang theo đúng ARCHITECTURE.md.
 
 [VAI TRÒ / ROLE]
-Bạn là một Next.js Architect.
+Bạn là một React Router Architect.
 
 [NHIỆM VỤ / INSTRUCTIONS]
 Hãy thực hiện dọn dẹp và cấu hình định tuyến cho dự án VibeSpace Studio:
-1. Làm sạch file `src/app/page.tsx` và viết giao diện Sảnh chờ Lobby tuyệt đẹp sử dụng card kính mờ và nút chuyển trang sang `/space`.
-2. Tạo các thư mục page App Router tương ứng:
-   - `src/app/space/page.tsx` (Trang Immersive Focus Studio chính: bọc toàn trang trong hình nền phong cảnh động, chứa 4 widget nổi và Breathing Bubble).
-   - `src/app/journal/page.tsx` (Trang Nhật ký năng suất chứa Contribution Grid).
-   - `src/app/settings/page.tsx` (Trang cài đặt Timer và custom URL background).
-3. Tạo thanh điều hướng Header chung tại `src/components/Header.tsx` (Hiển thị link Lobby, Journal, Settings). 
-   - LƯU Ý QUAN TRỌNG: Sử dụng hook `usePathname` để ẩn hoàn toàn Header này khi người dùng truy cập vào trang `/space` nhằm mang lại trải nghiệm làm việc tập trung không xao nhãng.
-4. Cập nhật file `src/app/globals.css` để định nghĩa các hiệu ứng kính mờ và hoạt ảnh spin chậm phục vụ đĩa CD:
+1. Tạo các trang trong thư mục `src/pages/`:
+   - `Lobby.tsx` (Trang sảnh chờ: hiển thị card kính mờ giới thiệu và nút CTA chuyển sang trang `/space`).
+   - `Space.tsx` (Trang Immersive Focus Studio chính: bọc toàn trang trong hình nền phong cảnh động, chứa 4 widget nổi và Breathing Bubble).
+   - `Journal.tsx` (Trang Nhật ký năng suất chứa Contribution Grid).
+   - `Settings.tsx` (Trang cài đặt Timer và custom URL background).
+2. Tạo thanh điều hướng Header chung tại `src/components/Header.tsx` (Hiển thị link Lobby, Journal, Settings). 
+   - LƯU Ý QUAN TRỌNG: Sử dụng hook `useLocation` từ `react-router-dom` để ẩn hoàn toàn Header này khi người dùng truy cập vào trang `/space` nhằm mang lại trải nghiệm làm việc tập trung không xao nhãng.
+3. Định nghĩa định tuyến ở `src/App.tsx` sử dụng BrowserRouter, Routes, và Route để ánh xạ các page trên tới các path tương ứng `/`, `/space`, `/journal`, `/settings`.
+4. Cập nhật file `src/index.css` để định nghĩa các hiệu ứng kính mờ và hoạt ảnh spin chậm phục vụ đĩa CD:
    ```css
    @keyframes spin-slow {
      from { transform: rotate(0deg); }
@@ -518,7 +531,7 @@ Hãy thực hiện dọn dẹp và cấu hình định tuyến cho dự án Vibe
    ```
 
 [ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
-Xác nhận cấu trúc routing Next.js đã chạy thử thành công với lệnh `npm run dev` không phát sinh lỗi.
+Xác nhận cấu trúc routing React Router đã chạy thử thành công với lệnh `npm run dev` không phát sinh lỗi.
 ```
 
 ---
@@ -535,7 +548,7 @@ Gửi prompt sau tới Antigravity:
 
 ```text
 [BỐI CẢNH / CONTEXT]
-Tôi đã xây dựng xong cấu trúc thư mục định tuyến Next.js và giao diện thô mờ kính cho VibeSpace Studio. Tôi cần đẩy phần code nền tảng này lên GitHub.
+Tôi đã xây dựng xong cấu trúc định tuyến React Router và giao diện thô mờ kính cho VibeSpace Studio. Tôi cần đẩy phần code nền tảng này lên GitHub.
 
 [VAI TRÒ / ROLE]
 Bạn là một DevOps Engineer và Git Administrator.
@@ -543,10 +556,10 @@ Bạn là một DevOps Engineer và Git Administrator.
 [NHIỆM VỤ / INSTRUCTIONS]
 Hãy sử dụng công cụ GitHub MCP Server để thực hiện quy trình Git tự động hóa sau:
 1. Tạo một nhánh (branch) mới có tên là `feature/vibespace-core` tách từ branch `main`.
-2. Commit toàn bộ cấu trúc file Next.js, components, và file globals.css vừa được tạo lên branch này.
+2. Commit toàn bộ cấu trúc file ReactJS (Vite), components, và file index.css vừa được tạo lên branch này.
 3. Tạo một Pull Request (PR) từ nhánh `feature/vibespace-core` vào nhánh chính `main` trên repository GitHub:
    - Tiêu đề PR: "feat: Initialize VibeSpace Studio core dashboard, routing, and glassmorphic UI layout"
-   - Mô tả PR: Mô tả chi tiết việc xây dựng cấu trúc định tuyến 4 trang chính bằng App Router, lồng ghép các widgets tĩnh kính mờ phong cách Cyber-Zen, và cấu hình ẩn Header tại trang focus `/space` để loại bỏ xao nhãng.
+   - Mô tả PR: Mô tả chi tiết việc xây dựng cấu trúc định tuyến 4 trang chính bằng React Router, lồng ghép các widgets tĩnh kính mờ phong cách Cyber-Zen, và cấu hình ẩn Header tại trang focus `/space` để loại bỏ xao nhãng.
 
 [ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
 Đường dẫn liên kết trực tiếp tới Pull Request vừa được tạo trên GitHub của bạn.
@@ -558,7 +571,7 @@ Hãy sử dụng công cụ GitHub MCP Server để thực hiện quy trình Git
 ## Step 11: Tích hợp âm thanh đa kênh & APIs (iTunes Lo-fi, Ambient Mixer, ZenQuotes)
 
 ### 🎯 Mục tiêu
-Biến ứng dụng tĩnh thành một ứng dụng sống động bằng việc tích hợp các API thực tế và lập trình audio đa kênh hoạt động song song mượt mà, lưu trữ trạng thái người dùng vào `localStorage`.
+Biến ứng dụng tĩnh thành một ứng dụng sống động bằng việc tích hợp các API thực tế, lập trình audio đa kênh hoạt động song song mượt mà, và đồng bộ cơ sở dữ liệu thời gian thực với Supabase.
 
 ### 📝 Prompt mẫu – Tích hợp LofiPlayer & iTunes API
 
@@ -586,7 +599,7 @@ Hãy viết logic chi tiết cho component `LofiPlayer.tsx` đáp ứng các yê
    - Khi bài hát đang phát (`isPlaying`), ảnh bìa album sẽ xoay tròn chậm rãi bằng class `animate-spin-slow`, khi pause thì dừng xoay.
 
 [RÀNG BUỘC / CONSTRAINTS]
-Sử dụng TypeScript strict mode. Không sử dụng kiểu dữ liệu `any`. Tránh trùng lặp âm lượng bằng cách đọc/ghi giá trị volume vào `localStorage` dưới key `vibespace_lofi_volume`.
+Sử dụng TypeScript strict mode. Không sử dụng kiểu dữ liệu `any`. Thay đổi âm lượng của luồng nhạc Lo-fi bằng cách cập nhật trường `lofi_volume` trong bảng `user_preferences` của Supabase thông qua một query update/upsert.
 ```
 
 > 💡 **Mã nguồn tham khảo chuẩn cho LofiPlayer.tsx:**
@@ -612,7 +625,7 @@ Hãy lập trình logic điều phối âm thanh đa kênh lặp vòng cho `Ambi
    - ☕ Cafe (Quán cafe xôn xao): `https://assets.mixkit.co/active_storage/sfx/1074/1074-500.wav`
 2. Thiết lập thuộc tính `loop = true` cho tất cả các đối tượng Audio này để âm thanh lặp lại vô tận mượt mà.
 3. Thiết kế 4 thanh trượt slider tương ứng với mỗi kênh âm thanh, cho phép kéo chỉnh volume độc lập từ 0% đến 100% (tương đương 0.0 đến 1.0 của đối tượng Audio). Có nút Mute/Unmute nhanh cho từng kênh.
-4. Đồng bộ hóa cấu hình âm lượng: Mỗi khi người dùng thay đổi âm lượng của một kênh bất kỳ, hãy cập nhật âm lượng đối tượng Audio thực tế và tự động lưu cấu hình Object âm lượng này vào `localStorage` dưới key `vibespace_ambient_volume`. Khi người dùng tải lại trang, hãy tự động đọc từ cache để phục hồi đúng tỷ lệ hòa âm yêu thích của họ!
+4. Đồng bộ hóa cấu hình âm lượng: Mỗi khi người dùng thay đổi âm lượng của một kênh bất kỳ, hãy cập nhật âm lượng đối tượng Audio thực tế và tự động đồng bộ các giá trị âm lượng (rain_volume, campfire_volume, waves_volume, wind_volume) lên bảng `user_preferences` của Supabase. Khi người dùng tải lại trang, hãy truy vấn từ Supabase để phục hồi đúng tỷ lệ hòa âm yêu thích của họ!
 
 [RÀNG BUỘC / CONSTRAINTS]
 TypeScript strict mode. Xử lý triệt để việc huỷ phát âm thanh trong hook useEffect return để tránh rò rỉ âm thanh khi chuyển trang.
@@ -632,9 +645,9 @@ Hãy viết logic cho đồng hồ đếm ngược Pomodoro:
 1. Đồng hồ đếm ngược hoạt động với 3 chế độ luân phiên: 'focus' (Mặc định 25 phút), 'short_break' (5 phút), và 'long_break' (15 phút).
 2. Khi đồng hồ đếm ngược chạy về 0:00:
    - Tự động phát một tiếng chuông báo sfx nhẹ nhàng (ví dụ: `https://assets.mixkit.co/active_storage/sfx/911/911-500.wav`).
-   - Tự động ghi nhận 1 phiên làm việc thành công vào mảng lịch sử tập trung trong `localStorage` dưới dạng một object chứa ngày hiện tại `{ date: 'YYYY-MM-DD', minutes: 25 }` (Dữ liệu này sẽ được trang `/journal` đọc để vẽ Contribution Grid).
+   - Tự động ghi nhận 1 phiên làm việc thành công bằng cách chèn một bản ghi mới (insert row) vào bảng `focus_sessions` trên Supabase gồm `user_id` và `minutes_focused` (Dữ liệu này sẽ được trang `/journal` truy vấn để vẽ Contribution Grid).
    - Tự động chuyển đổi sang phiên tiếp theo (ví dụ từ focus sang short_break).
-3. Lắng nghe và đồng bộ cấu hình thời gian Pomodoro tuỳ chỉnh (Focus Time, Break Time) được lưu trong `localStorage` dưới key `vibespace_settings` (do trang `/settings` ghi vào).
+3. Lắng nghe và đồng bộ cấu hình thời gian Pomodoro tuỳ chỉnh (work_time, short_break, long_break) từ bảng `user_preferences` trên Supabase.
 ```
 
 ---
@@ -685,7 +698,7 @@ Hãy cập nhật component `SceneSelector.tsx` và tích hợp với trang `/sp
 2. Thiết kế một ô Input thông minh cho phép người dùng:
    - Dán một đường dẫn URL hình ảnh tĩnh hoặc ảnh động GIF bất kỳ từ internet làm hình nền cá nhân.
    - Hoặc nhập một từ khóa tìm ảnh nhanh (ví dụ: "cyberpunk", "autumn", "zen") và bấm Go để hệ thống tự động tìm và tải ảnh nền tuyệt đẹp từ Unsplash về.
-3. Lưu hình nền đang hoạt động của người dùng vào `localStorage` dưới key `vibespace_active_background` để khi họ truy cập lại vào Focus Space lần sau, không gian cá nhân của họ lập tức hiển thị mà không cần cài đặt lại!
+3. Lưu hình nền đang hoạt động của người dùng vào trường `current_scene` trong bảng `user_preferences` của Supabase để khi họ truy cập lại vào Focus Space lần sau, không gian cá nhân của họ lập tức hiển thị mà không cần cài đặt lại!
 ```
 
 ### 📝 Prompt mẫu – Tối ưu hóa Responsive Mobile & Deploy dự án
@@ -701,7 +714,7 @@ Bạn là một Senior Frontend Developer kiêm DevOps Engineer.
 1. Hãy tối ưu CSS Responsive cho trang Immersive Studio `/space` trên thiết bị di động (màn hình < 768px):
    - Thay vì xếp đè các floating card gây chật chội, hãy ẩn 4 widget lớn và thay thế bằng một thanh điều hướng tab nhỏ gọn ở đáy màn hình di động: [⏱️ Pomodoro] - [🎵 Mixer] - [🎧 Lofi] - [📋 Goals]. Người dùng nhấn vào tab nào thì chỉ hiển thị nổi duy nhất Widget đó lên màn hình trên nền phong cảnh.
    - Vòng tròn thiền thở được thu nhỏ tối đa đặt tại một góc hoặc ẩn đi để tiết kiệm không gian.
-2. Thiết lập SEO cơ bản cho dự án Next.js: Cấu hình title tags "VibeSpace Studio - Ultimate Deep Work & Cyber-Zen Focus Station", thẻ meta description hấp dẫn để chia sẻ lên các mạng xã hội.
+2. Thiết lập SEO cơ bản cho dự án ReactJS (Vite): Cấu hình thẻ title tag "VibeSpace Studio - Ultimate Deep Work & Cyber-Zen Focus Station" và meta description trong file `index.html`.
 3. Hướng dẫn tôi các bước kiểm thử build cuối cùng (`npm run build`) để kiểm tra toàn bộ lỗi biên dịch TypeScript, và hướng dẫn đẩy code lên GitHub tự động merge PR để deploy trực tiếp lên Vercel chỉ trong 1 click.
 ```
 

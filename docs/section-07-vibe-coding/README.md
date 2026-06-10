@@ -56,13 +56,13 @@ graph TD
 |---|---------|--------|------------|
 | 7.1 | [**Tổng quan Vibe Coding & Giới thiệu VibeSpace**](lesson-01-vibe-coding-overview.md) | Mindset, workflow, giới thiệu dự án VibeSpace | ~30 phút |
 | 7.2 | [**Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch**](lesson-02-prd-and-project-planning.md) | Viết PRD, Tech Specs, và lập kế hoạch PLAN.md | ~35 phút |
-| 7.3 | **Cài đặt Stitch Skills & Setup Context Engineering** | Setup môi trường dev, cài đặt skills, khởi tạo context docs | ~30 phút |
+| 7.3 | [**Cài đặt Stitch Skills & Setup Context Engineering**](lesson-03-setup-context-engineering.md) | Setup môi trường dev, cài đặt skills, khởi tạo context docs | ~30 phút |
 | 7.4 | **Thiết kế Design System với Stitch** | Màu sắc (Cyber-Zen), typography, shape, DESIGN.md | ~45 phút |
 | 7.5 | **Tạo UI Screens – Phần 1** | Thiết kế Sảnh chờ (Lobby) & Cấu trúc chính | ~50 phút |
 | 7.6 | **Tạo UI Screens – Phần 2** | Thiết kế Immersive Focus Studio với các Widget nổi | ~50 phút |
-| 7.7 | **Convert Design → React Code** | `react-components` skill, cấu trúc Next.js App Router | ~55 phút |
+| 7.7 | **Convert Design → React Code** | `react-components` skill, cấu trúc ReactJS (Vite) & Routing | ~55 phút |
 | 7.8 | **GitHub Workflow tự động** | Quản lý repo workspaces, branch, commit, PR, merge | ~45 phút |
-| 7.9 | **Thêm tính năng & Fix bug** | Tích hợp iTunes API nhạc Lo-fi & Mixer đa kênh | ~45 phút |
+| 7.9 | **Thêm tính năng & Fix bug** | Tích hợp iTunes API, Supabase DB, và Mixer đa kênh | ~45 phút |
 | 7.10 | **Polish UI, Responsive & Animation** | Nhịp thở SVG, lật thẻ, chuyển cảnh mượt mà | ~45 phút |
 | 7.11 | **Review & Tổng kết** | Best practices khi Vibe Coding với AI Agent | ~35 phút |
 
@@ -85,6 +85,7 @@ graph TD
 | **Antigravity IDE** | AI Coding Agent chính | Tất cả |
 | **Stitch MCP Server** | Thiết kế UI, tạo screens | 4, 5, 6, 10 |
 | **GitHub MCP Server** | Quản lý repo, branches, PRs | 3, 8, 9 |
+| **Supabase Client** | SDK kết nối trực tiếp database trên đám mây | 2, 3, 9 |
 | `stitch-design` | Thiết kế tổng thể | 4, 5, 6 |
 | `stitch-loop` | Sinh multi-page website | 6 |
 | `enhance-prompt` | Tối ưu prompt cho Stitch | 5, 6 |
@@ -100,15 +101,6 @@ vibespace-dashboard/
 ├── .stitch/
 │   └── DESIGN.md              # Design system document
 ├── src/
-│   ├── app/
-│   │   ├── page.tsx            # Lobby Entrance Page (Sảnh chờ)
-│   │   ├── layout.tsx          # Root layout
-│   │   ├── space/
-│   │   │   └── page.tsx        # Immersive Focus Studio (Bảng điều khiển lõi)
-│   │   ├── journal/
-│   │   │   └── page.tsx        # Productivity Stats Journal
-│   │   └── settings/
-│   │       └── page.tsx        # Customize Timer & sound presets
 │   ├── components/
 │   │   ├── PomodoroTimer.tsx   # Đồng hồ đếm ngược Pomodoro
 │   │   ├── AmbientMixer.tsx    # Bộ trộn âm thanh thiên nhiên đa kênh
@@ -117,10 +109,19 @@ vibespace-dashboard/
 │   │   ├── BreathingBubble.tsx # Vòng tròn bong bóng tập thở SVG
 │   │   ├── SceneSelector.tsx   # Bộ chuyển đổi và tuỳ chỉnh ảnh nền
 │   │   └── ThemeToggle.tsx     # Customizer chuyển đổi theme màu
-│   └── styles/
-│       └── globals.css
+│   ├── pages/
+│   │   ├── Lobby.tsx           # Lobby Entrance Page (Sảnh chờ)
+│   │   ├── Space.tsx           # Immersive Focus Studio (Bảng điều khiển lõi)
+│   │   ├── Journal.tsx         # Productivity Stats Journal
+│   │   └── Settings.tsx        # Customize Timer & sound presets
+│   ├── App.tsx                 # Cấu hình Routing chính cho ứng dụng
+│   ├── main.tsx                # Khởi tạo React & Mount DOM
+│   └── index.css               # CSS & Glassmorphism styles
 ├── public/
+├── .env                       # Cấu hình API keys của Supabase (URL, Anon Key)
+├── index.html
 ├── package.json
+├── vite.config.ts
 └── README.md
 ```
 

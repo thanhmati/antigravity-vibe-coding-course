@@ -170,7 +170,7 @@ graph TD
 **Tại sao chọn dự án này?**
 - 📱 **UI cực kỳ lộng lẫy** – Thiết kế dạng thẻ kính mờ (Glassmorphism) nổi trên nền phong cảnh động.
 - 🎮 **Tương tác rất mạnh** – Trình phát nhạc iTunes API thực tế, bộ trộn âm thanh (mixer) đa kênh chạy song song, đồng hồ đếm ngược Pomodoro và bảng việc cần làm.
-- 🎨 **Cá nhân hóa sâu sắc** – Cho phép người dùng tùy chọn chủ đề nhạc lo-fi theo từ khóa, đổi ảnh phong cảnh nền bằng URL bất kỳ hoặc qua từ khóa Unsplash, và lưu thiết lập vào `localStorage`.
+- 🎨 **Cá nhân hóa sâu sắc** – Cho phép người dùng tùy chọn chủ đề nhạc lo-fi theo từ khóa, đổi ảnh phong cảnh nền bằng URL bất kỳ hoặc qua từ khóa Unsplash, và lưu thiết lập đồng bộ thời gian thực vào `Supabase Database`.
 - 🌍 **Đời sống gần gũi** – Hỗ trợ đắc lực cho các lập trình viên rèn luyện lối sống tập trung, giảm stress mỗi ngày.
 
 ### 4.2 Các trang của ứng dụng
@@ -205,7 +205,7 @@ graph TD
 
 #### 📋 Daily Focus Goals
 - Bảng Checklist ghi chú nhanh các công việc cần hoàn thành trong ngày.
-- Hỗ trợ lưu trữ tự động vào `localStorage` kèm thanh tiến độ hoàn thành (Progress Bar).
+- Hỗ trợ lưu trữ và đồng bộ hóa tự động vào bảng `todos` trên `Supabase` kèm thanh tiến độ hoàn thành (Progress Bar).
 
 #### 🌅 Scene Selector & dynamic backgrounds
 - Cung cấp danh sách các cảnh đẹp tuyển chọn (ảnh chất lượng cao / ảnh động).
@@ -226,7 +226,7 @@ graph TD
         M2["Immersive Studio với layout Widget nổi"]
         M3["Trình trộn âm thanh Ambient Mixer"]
         M4["Đồng hồ Pomodoro cơ bản"]
-        M5["Checklist Todo lưu localStorage"]
+        M5["Checklist Todo đồng bộ Supabase"]
     end
 
     subgraph "A2: Nice-to-have - Làm sau"
@@ -255,13 +255,13 @@ graph TD
 
 | Layer | Công nghệ | Lý do chọn |
 |-------|-----------|------------|
-| **Framework** | Next.js 14 (App Router) | Tối ưu hóa SEO, routing mạnh mẽ, phổ biến nhất |
+| **Framework** | ReactJS (Vite) | Nhẹ, khởi động cực nhanh, quản lý routing linh hoạt với React Router |
 | **Language** | TypeScript | Kiểm soát chặt chẽ lỗi cú pháp, dễ bảo trì |
 | **Styling** | Tailwind CSS + Glassmorphism | Thiết kế giao diện trong suốt, viền neon mờ ảo, đáp ứng nhanh |
 | **UI Design** | Google Stitch | AI-powered design system, MCP integration tốt |
 | **Audio Processing** | Web Audio API / HTML5 Audio | Phát nhạc nền và trộn âm thanh đa kênh đồng thời |
 | **APIs** | **iTunes Search API** + **ZenQuotes API** | Gọi dữ liệu nhạc Lo-fi động và câu trích dẫn 100% miễn phí |
-| **State & Storage** | React State & LocalStorage | Quản lý trạng thái và lưu trữ lâu dài cấu hình người dùng |
+| **Database & Storage** | Supabase BaaS (Postgres) | Đồng bộ trạng thái và cơ sở dữ liệu thời gian thực trên đám mây |
 
 ---
 
@@ -272,15 +272,6 @@ vibespace-dashboard/
 ├── .stitch/
 │   └── DESIGN.md                 ← Design system của Stitch
 ├── src/
-│   ├── app/
-│   │   ├── page.tsx              ← Lobby Entrance
-│   │   ├── layout.tsx            ← Root layout + Global styling
-│   │   ├── space/
-│   │   │   └── page.tsx          ← Immersive Studio (Hợp nhất các Widget nổi)
-│   │   ├── journal/
-│   │   │   └── page.tsx          ← Productivity Journal
-│   │   └── settings/
-│   │       └── page.tsx          ← Settings cấu hình
 │   ├── components/
 │   │   ├── PomodoroTimer.tsx     ← Widget đồng hồ
 │   │   ├── AmbientMixer.tsx      ← Widget trộn âm thanh thiên nhiên
@@ -289,10 +280,19 @@ vibespace-dashboard/
 │   │   ├── BreathingBubble.tsx   ← Vòng tròn nhịp thở SVG
 │   │   ├── SceneSelector.tsx     ← Bảng đổi hình nền
 │   │   └── ThemeToggle.tsx       ← Nút chỉnh theme màu hệ thống
-│   └── styles/
-│       └── globals.css           ← Tailwind & Glassmorphism classes
+│   ├── pages/
+│   │   ├── Lobby.tsx             ← Lobby Entrance (Sảnh chờ)
+│   │   ├── Space.tsx             ← Immersive Studio (Hợp nhất các Widget nổi)
+│   │   ├── Journal.tsx           ← Productivity Journal
+│   │   └── Settings.tsx          ← Settings cấu hình
+│   ├── App.tsx                   ← File định cấu hình React Router
+│   ├── main.tsx                  ← File khởi chạy ứng dụng React
+│   └── index.css                 ← Tailwind & Glassmorphism classes
 ├── public/                       ← Chứa âm thanh lặp (.mp3) và ảnh tĩnh
+├── .env                          ← Cấu hình API keys của Supabase (URL, Anon Key)
+├── index.html
 ├── package.json
+├── vite.config.ts
 └── README.md
 ```
 

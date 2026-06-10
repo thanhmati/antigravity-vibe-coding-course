@@ -24,7 +24,7 @@ Trong lập trình truyền thống, bạn thường mở trình soạn thảo m
 
 1. **Khắc chế hiện tượng ảo giác (Hallucination)**: AI rất mạnh trong việc tạo code, nhưng nếu bạn không giới hạn phạm vi, AI sẽ tự "phỏng đoán" cấu trúc dữ liệu, tên API, hoặc cách đặt tên component. Specs chính là đường ray giữ cho AI đi đúng hướng.
 2. **Tiết kiệm Token & Chi phí**: Việc sửa một lỗi logic do AI hiểu sai cấu trúc dữ liệu ở giai đoạn cuối sẽ tiêu tốn lượng token gấp 10-20 lần so với việc đưa cho AI một file cấu trúc dữ liệu chuẩn ngay từ đầu.
-3. **Đảm bảo tính nhất quán (Consistency)**: Khi dự án lớn lên với hàng chục component và nhiều trang, Specs giúp các component (ví dụ: bộ trộn âm Mixer và trình phát nhạc Lofi) chia sẻ chung một cấu trúc dữ liệu (`localStorage` state) mà không bị lệch kiểu (type mismatch).
+3. **Đảm bảo tính nhất quán (Consistency)**: Khi dự án lớn lên với hàng chục component và nhiều trang, Specs giúp các component (ví dụ: bộ trộn âm Mixer, Pomodoro và Todo Checklist) chia sẻ chung một cấu trúc dữ liệu cơ sở trên Supabase mà không bị lệch kiểu (type mismatch).
 
 ---
 
@@ -56,7 +56,7 @@ Dưới đây là tài liệu đặc tả sản phẩm hoàn chỉnh của **Vib
 1. **Sảnh chờ Lobby (`/`)**: 
    - Giao diện chào đón tối giản, sang trọng.
    - Nút "Enter Studio" nổi bật để chuyển sang không gian làm việc.
-   - Hiển thị thống kê chuỗi ngày tập trung liên tục (Streaks) được lưu trữ.
+   - Hiển thị thống kê chuỗi ngày tập trung liên tục (Streaks) lấy từ DB.
    - Hiển thị một câu châm ngôn ngẫu nhiên (Zen Quotes) để tạo động lực.
 2. **Không gian làm việc lõi Immersive Studio (`/space`)**:
    - Giao diện toàn màn hình (Full viewport) với ảnh nền phong cảnh mượt mà.
@@ -103,8 +103,8 @@ graph TD
     Studio -->|Bấm đổi cài đặt| Settings[Settings Panel: /settings]
     Studio -->|Xem lịch sử| Journal[Productivity Journal: /journal]
     
-    Widget1 -->|Hoàn thành phiên| LocalStorage[(Đồng bộ & Lưu State vào LocalStorage)]
-    Widget4 -->|Check/Uncheck Todo| LocalStorage
+    Widget1 -->|Hoàn thành phiên| Supabase[(Đồng bộ & Lưu vào Supabase Database)]
+    Widget4 -->|Check/Uncheck Todo| Supabase
     Widget2 -->|Trộn âm lượng| AudioEngine[Web Audio / HTML5 Engine]
 ```
 
@@ -118,69 +118,93 @@ Tài liệu Đặc tả kỹ thuật dưới đây định nghĩa rõ kiến tr�
 
 ### 💻 TECHNICAL SPECIFICATIONS (TECH SPECS)
 **Mã dự án:** VIBESPACE-01
-**Kiến trúc:** Next.js 14 App Router, React, Tailwind CSS, TypeScript
-**Lưu trữ:** Clientside LocalStorage Stateful Engine
+**Kiến trúc:** ReactJS (Vite), React Router, Tailwind CSS, TypeScript
+**Lưu trữ:** Supabase Database (BaaS) Serverless Engine
 
 #### 3.1 Cấu trúc Định tuyến (Routing Architecture)
-Ứng dụng sẽ tuân thủ cấu trúc định tuyến App Router của Next.js 14 với các trang sau:
-- `/` (src/app/page.tsx): Lobby Entrance (Trang giới thiệu, thống kê streak và nút khởi động).
-- `/space` (src/app/space/page.tsx): Immersive Focus Studio (Bảng điều khiển tập trung chứa các widget nổi mờ kính).
-- `/journal` (src/app/journal/page.tsx): Trang hiển thị biểu đồ đóng góp thời gian tập trung (Productivity Grid).
-- `/settings` (src/app/settings/page.tsx): Trang hoặc bảng cấu hình tùy chọn thời gian Pomodoro và preset âm thanh.
+Ứng dụng sử dụng React Router để cấu hình định tuyến cho các component trang (pages):
+- `/` (src/pages/Lobby.tsx): Lobby Entrance (Trang giới thiệu, thống kê streak và nút khởi động).
+- `/space` (src/pages/Space.tsx): Immersive Focus Studio (Bảng điều khiển tập trung chứa các widget nổi mờ kính).
+- `/journal` (src/pages/Journal.tsx): Trang hiển thị biểu đồ đóng góp thời gian tập trung (Productivity Grid).
+- `/settings` (src/pages/Settings.tsx): Trang hoặc bảng cấu hình tùy chọn thời gian Pomodoro và preset âm thanh.
 
-#### 3.2 Lược đồ dữ liệu State lưu trong LocalStorage (State Schema)
-Toàn bộ trạng thái làm việc của người dùng phải được lưu và đồng bộ tự động xuống `localStorage` dưới một key duy nhất là `vibespace_state_v1` để tránh xung đột dữ liệu.
+#### 3.2 Lược đồ cơ sở dữ liệu Supabase (Supabase Table Schema)
 
-Dưới đây là khai báo TypeScript Interface chuẩn cho State Schema của ứng dụng:
+Toàn bộ dữ liệu của người dùng sẽ được lưu trữ trực tiếp trong cơ sở dữ liệu Supabase (PostgreSQL) để đồng bộ thời gian thực trên đám mây. Chúng ta sẽ tạo các bảng tương ứng trên Supabase.
+
+Dưới đây là các câu lệnh SQL để khởi tạo các bảng (SQL DDL Schema) và các TypeScript Interface tương ứng ở phía Client:
+
+```sql
+-- 1. Bảng lưu trữ cấu hình & tùy chọn của người dùng (Preferences)
+create table user_preferences (
+  user_id uuid primary key,               -- UUID của người dùng (từ auth.users)
+  theme text default 'cyber-zen',         -- 'cyber-zen' | 'forest-mist' | 'sunset-glow'
+  current_scene text default 'forest-rain', -- Tên hoặc URL ảnh nền
+  work_time integer default 25,           -- Thời gian làm việc Pomodoro (phút)
+  short_break integer default 5,          -- Nghỉ ngắn (phút)
+  long_break integer default 15,          -- Nghỉ dài (phút)
+  rain_volume float default 0.5,          -- Tiếng mưa (0.0 -> 1.0)
+  campfire_volume float default 0.0,       -- Tiếng lửa trại (0.0 -> 1.0)
+  waves_volume float default 0.0,         -- Tiếng sóng (0.0 -> 1.0)
+  wind_volume float default 0.0,          -- Tiếng gió (0.0 -> 1.0)
+  lofi_volume float default 0.5,          -- Tiếng nhạc Lo-fi (0.0 -> 1.0)
+  current_lofi_genre text default 'chill', -- Thể loại nhạc Lo-fi mặc định
+  updated_at timestamptz default now()
+);
+
+-- 2. Bảng lưu trữ danh sách công việc (Todos)
+create table todos (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid not null,
+  text text not null,
+  completed boolean default false,
+  created_at timestamptz default now()
+);
+
+-- 3. Bảng lưu trữ lịch sử các phiên tập trung (Focus Sessions)
+create table focus_sessions (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid not null,
+  minutes_focused integer not null,
+  created_at timestamptz default now()
+);
+```
+
+TypeScript Interfaces tương ứng sử dụng ở Client ReactJS:
 
 ```typescript
+export interface UserPreferences {
+  user_id: string;
+  theme: 'cyber-zen' | 'forest-mist' | 'sunset-glow';
+  current_scene: string;
+  work_time: number;
+  short_break: number;
+  long_break: number;
+  rain_volume: number;
+  campfire_volume: number;
+  waves_volume: number;
+  wind_volume: number;
+  lofi_volume: number;
+  current_lofi_genre: string;
+}
+
 export interface TodoItem {
   id: string;
+  user_id: string;
   text: string;
   completed: boolean;
-  createdAt: string;
-}
-
-export interface PomodoroConfig {
-  workTime: number;       // Thời gian tập trung (phút) - Mặc định: 25
-  shortBreak: number;     // Thời gian nghỉ ngắn (phút) - Mặc định: 5
-  longBreak: number;      // Thời gian nghỉ dài (phút) - Mặc định: 15
-  sessionsBeforeLongBreak: number; // Số phiên trước khi nghỉ dài - Mặc định: 4
-}
-
-export interface AudioMixerState {
-  rainVolume: number;     // Tiếng mưa: 0.0 đến 1.0
-  campfireVolume: number; // Tiếng lửa trại: 0.0 đến 1.0
-  wavesVolume: number;    // Tiếng sóng biển: 0.0 đến 1.0
-  windVolume: number;     // Tiếng gió rít: 0.0 đến 1.0
-  lofiVolume: number;     // Âm lượng nhạc Lofi phát từ API: 0.0 đến 1.0
-  isPlaying: boolean;     // Trạng thái phát chung của mixer
-  currentLofiGenre: string; // Thể loại nhạc lofi ('chill', 'coding', 'piano')
-}
-
-export interface UserStreaks {
-  currentStreak: number;  // Chuỗi ngày tập trung liên tục hiện tại
-  longestStreak: number;  // Chuỗi ngày dài nhất từng đạt được
-  lastActiveDate: string; // Định dạng YYYY-MM-DD để kiểm tra chuỗi liên tục hàng ngày
-  totalFocusMinutes: number; // Tổng số phút đã tập trung
+  created_at: string;
 }
 
 export interface FocusSession {
-  date: string;           // Định dạng YYYY-MM-DD
-  minutesFocused: number; // Số phút tập trung được ghi nhận trong ngày
-}
-
-// Interface lõi lưu trữ toàn bộ trạng thái hệ thống
-export interface VibeSpaceState {
-  theme: 'cyber-zen' | 'forest-mist' | 'sunset-glow';
-  currentScene: string;   // Tên hoặc URL ảnh/video nền đang chọn
-  pomodoroConfig: PomodoroConfig;
-  todos: TodoItem[];
-  audioMixer: AudioMixerState;
-  streaks: UserStreaks;
-  history: FocusSession[]; // Dữ liệu phục vụ vẽ biểu đồ đóng góp ở trang Journal
+  id: string;
+  user_id: string;
+  minutes_focused: number;
+  created_at: string;
 }
 ```
+
+---
 
 #### 3.3 Đặc tả Audio Engine (Chống re-render trùng tiếng)
 
@@ -217,7 +241,7 @@ Dưới đây là **Template Prompt Vàng** để sinh tài liệu Specs mà b�
 
 ```text
 [BỐI CẢNH / CONTEXT]
-Tôi đang chuẩn bị xây dựng một dự án ứng dụng web có tên là "[TÊN DỰ ÁN CỦA BẠN]" bằng phương pháp Vibe Coding (Sử dụng stack: [NÊU STACK CÔNG NGHỆ, ví dụ: Next.js 14, Tailwind, TypeScript, SQLite]). Ý tưởng sơ khai của ứng dụng này là: "[MÔ TẢ NGẮN GỌN Ý TƯỞNG CỦA BẠN TRONG 2-3 CÂU]".
+Tôi đang chuẩn bị xây dựng một dự án ứng dụng web có tên là "[TÊN DỰ ÁN CỦA BẠN]" bằng phương pháp Vibe Coding (Sử dụng stack: [NÊU STACK CÔNG NGHỆ, ví dụ: ReactJS (Vite), Tailwind, TypeScript, Supabase BaaS]). Ý tưởng sơ khai của ứng dụng này là: "[MÔ TẢ NGẮN GỌN Ý TƯỞNG CỦA BẠN TRONG 2-3 CÂU]".
 
 [VAI TRÒ / ROLE]
 Bạn là một Giám đốc Sản phẩm (Product Manager) kiêm Kiến trúc sư Giải pháp Phần mềm (Solutions Architect) cấp cao. Nhiệm vụ của bạn là biến ý tưởng thô của tôi thành một bộ tài liệu đặc tả kỹ thuật cực kỳ chặt chẽ và chuyên nghiệp để bất kỳ AI Agent nào đọc vào cũng có thể thực thi chính xác 100% không sai lệch.
@@ -233,7 +257,7 @@ Hãy tạo hai tài liệu đặc tả bằng định dạng Markdown:
 
 2. Tech Specs (Technical Specifications):
    - Cấu trúc định tuyến các trang (Routing Architecture).
-   - Lược đồ cơ sở dữ liệu hoặc State Schema lưu trữ chi tiết dưới dạng TypeScript Interfaces (mô tả rõ kiểu dữ liệu của từng trường để tránh sai lệch dữ liệu).
+   - Lược đồ cơ sở dữ liệu hoặc Database Table Schema chi tiết dưới dạng SQL DDL và TypeScript Interfaces ở Client.
    - Chỉ ra 1-2 thách thức kỹ thuật lớn nhất của dự án này (ví dụ: xử lý bất đồng bộ, đồng bộ state, vấn đề re-render, v.v.) và đưa ra giải pháp đặc tả kỹ thuật chi tiết để AI coding agent không mắc lỗi khi thực thi.
 
 [RÀNG BUỘC / CONSTRAINTS]
@@ -267,14 +291,16 @@ Cấu trúc file `PLAN.md` tiêu chuẩn cho dự án VibeSpace Studio được 
   - [ ] Tạo màn hình Studio toàn cảnh (`/space`) với layout Widget nổi
   - [ ] Xuất bản tài liệu `DESIGN.md` từ Stitch
 
-- [ ] **Milestone 3: Convert React & Cài đặt Routing (Next.js)** (Độ ưu tiên: Trung bình)
-  - [ ] Khởi tạo dự án Next.js 14 App Router
+- [ ] **Milestone 3: Convert React & Cài đặt Routing (React Router)** (Độ ưu tiên: Trung bình)
+  - [ ] Khởi tạo dự án ReactJS bằng Vite
   - [ ] Sử dụng skill `react-components` convert thiết kế Stitch thành React
-  - [ ] Thiết lập hệ thống định tuyến giữa `/` và `/space`
+  - [ ] Thiết lập hệ thống định tuyến (Routing) bằng React Router giữa các trang `/`, `/space`, `/journal`, `/settings`
 
-- [ ] **Milestone 4: Lập trình Logic lõi & Audio Engine** (Độ ưu tiên: Cao)
-  - [ ] Triển khai State Engine đồng bộ tự động `localStorage` theo đúng State Schema đặc tả
-  - [ ] Lập trình Logic đếm ngược Pomodoro (Work/Break) kèm âm báo
+- [ ] **Milestone 4: Lập trình Logic lõi & Supabase Integration** (Độ ưu tiên: Cao)
+  - [ ] Khởi tạo dự án Supabase, tạo các bảng `user_preferences`, `todos`, `focus_sessions` theo đặc tả
+  - [ ] Cài đặt `@supabase/supabase-js` và cấu hình file kết nối client
+  - [ ] Lập trình Logic đếm ngược Pomodoro (Work/Break) kèm lưu lịch sử session vào Supabase
+  - [ ] Lập trình Logic đồng bộ danh sách Todo và âm lượng mixer thời gian thực với Supabase
   - [ ] Xây dựng Audio Singleton Manager để trộn âm lượng đa kênh Ambient mượt mà không lặp tiếng
   - [ ] Tích hợp iTunes Search API để đổi thể loại nhạc Lo-fi động
 
@@ -289,7 +315,7 @@ Cấu trúc file `PLAN.md` tiêu chuẩn cho dự án VibeSpace Studio được 
 ## 🧠 Tổng kết & Tư duy PM khi lập kế hoạch
 
 - **Hãy là một PM kỷ luật**: Khi Vibe Coding, AI Agent sẽ có xu hướng muốn code hết mọi thứ cùng một lúc nếu bạn gửi cho nó một prompt quá lớn. Hãy kiên quyết kiểm soát AI. Bắt AI làm việc **từng Milestone một**, cập nhật trạng thái trong `PLAN.md` trước khi sang Milestone tiếp theo.
-- **Tập trung vào MVP**: Đừng cố gắng thêm các tính năng phức tạp (như lưu trữ đám mây, đăng nhập người dùng) ngay từ đầu. Hãy hoàn thành phiên bản MVP tối giản chạy mượt mà trước khi nâng cấp.
+- **Tập trung vào MVP**: Đừng cố gắng thêm các tính năng phức tạp (như đăng nhập nhiều người dùng Oauth, chia sẻ MXH) ngay từ đầu. Hãy hoàn thành phiên bản MVP tối giản chạy mượt mà trước khi nâng cấp.
 
 ---
 

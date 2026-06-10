@@ -135,16 +135,17 @@
 
 📂 [Section README](section-07-vibe-coding/README.md)
 
-- 7.1 · [Tổng quan Vibe Coding & Lập kế hoạch](section-07-vibe-coding/lesson-01-vibe-coding-overview.md)
-- 7.2 · Cài đặt Stitch Skills & Chuẩn bị môi trường
-- 7.3 · Thiết kế Design System với Stitch
-- 7.4 · Tạo UI Screens – Phần 1 (Trang chủ & Navigation)
-- 7.5 · Tạo UI Screens – Phần 2 (Tính năng chính)
-- 7.6 · Convert Design → React Code
-- 7.7 · GitHub Workflow – Branch, Commit & Pull Request tự động
-- 7.8 · Thêm tính năng & Fix bug bằng Vibe Coding
-- 7.9 · Polish UI, Responsive Design & Animation
-- 7.10 · Review dự án, Best Practices & Tổng kết
+- 7.1 · [Tổng quan Vibe Coding & Giới thiệu VibeSpace](section-07-vibe-coding/lesson-01-vibe-coding-overview.md)
+- 7.2 · [Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch](section-07-vibe-coding/lesson-02-prd-and-project-planning.md)
+- 7.3 · [Cài đặt Stitch Skills & Setup Context Engineering](section-07-vibe-coding/lesson-03-setup-context-engineering.md)
+- 7.4 · Thiết kế Design System với Stitch
+- 7.5 · Tạo UI Screens – Phần 1 (Sảnh chờ Lobby & Navigation)
+- 7.6 · Tạo UI Screens – Phần 2 (Immersive Focus Studio)
+- 7.7 · Convert Design → React Code
+- 7.8 · GitHub Workflow – Branch, Commit & Pull Request tự động
+- 7.9 · Thêm tính năng & Fix bug bằng Vibe Coding
+- 7.10 · Polish UI, Responsive Design & Animation
+- 7.11 · Review dự án, Best Practices & Tổng kết
 
 ### 📚 Tài liệu bổ sung Section 7
 
