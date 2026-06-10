@@ -247,6 +247,89 @@ Tạo file [PLAN.md](file:///Users/thanhdo/Documents/Project/antigravity-vibe-co
 
 ---
 
+### 4.4 🧰 Template Prompt: Tự tạo Context Documents cho bất kỳ dự án nào
+
+> **💡 Tại sao cần template?** Các ví dụ ở trên được viết riêng cho dự án VibeSpace. Nhưng khi bạn bắt đầu dự án riêng, bạn cần biết cách **yêu cầu AI Agent tạo bộ Context Documents phù hợp** với stack và yêu cầu cụ thể của mình. Dưới đây là **3 template prompt** mà bạn chỉ cần điền thông tin vào các chỗ `{{...}}` rồi gửi cho AI Agent.
+
+#### 📋 Template 1: Tạo file AGENTS.md
+
+```text
+[BỐI CẢNH / CONTEXT]
+Tôi đang xây dựng dự án "{{TÊN DỰ ÁN}}" - {{MÔ TẢ NGẮN GỌN VỀ DỰ ÁN}}.
+Dự án sử dụng các công nghệ: {{DANH SÁCH TECH STACK, ví dụ: ReactJS (Vite), TypeScript, Tailwind CSS, Supabase}}.
+
+[VAI TRÒ / ROLE]
+Bạn là một Senior Software Architect chuyên về Context Engineering cho AI-assisted development.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy tạo file `AGENTS.md` đặt tại thư mục gốc của dự án với nội dung bao gồm các mục sau:
+
+1. **Project Overview**: Tên dự án, mô tả ngắn, trạng thái hiện tại (Development/Production).
+2. **Tech Stack**: Liệt kê đầy đủ framework, ngôn ngữ, thư viện, database, styling, state management đang sử dụng.
+3. **Coding Conventions & Rules**: Các quy tắc code BẮT BUỘC (ví dụ: strict TypeScript, naming convention, cách import, styling rules).
+4. **Critical Rules**: Các quy tắc NGHIÊM NGẶT mà AI Agent tuyệt đối không được vi phạm (ví dụ: {{CÁC QUY TẮC QUAN TRỌNG NHẤT CỦA DỰ ÁN, như cách quản lý audio, cách kết nối API, cách xử lý authentication}}).
+5. **Environment Variables**: Cách đọc biến môi trường và danh sách các biến cần thiết.
+6. **State Management & Data Flow**: Cách quản lý state và đồng bộ dữ liệu giữa client và server/database.
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+File AGENTS.md hoàn chỉnh, viết bằng Markdown, sẵn sàng đặt ở root dự án. 
+Nội dung phải đủ chi tiết để một AI Agent đọc vào là hiểu ngay "luật chơi" mà không cần hỏi lại.
+```
+
+#### 📋 Template 2: Tạo file ARCHITECTURE.md
+
+```text
+[BỐI CẢNH / CONTEXT]
+Tôi đang xây dựng dự án "{{TÊN DỰ ÁN}}" với kiến trúc {{KIỂU KIẾN TRÚC, ví dụ: SPA, SSR, Micro-frontend, Monolith}}.
+Dự án có {{SỐ LƯỢNG}} trang/view chính: {{LIỆT KÊ CÁC TRANG, ví dụ: Landing Page (/), Dashboard (/dashboard), Settings (/settings)}}.
+Database/Backend: {{MÔ TẢ NGẮN, ví dụ: Supabase BaaS với PostgreSQL, hoặc Express API + MongoDB}}.
+
+[VAI TRÒ / ROLE]
+Bạn là một Senior Software Architect chuyên về hệ thống kiến trúc phần mềm.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy tạo file `ARCHITECTURE.md` đặt tại thư mục gốc của dự án với nội dung bao gồm:
+
+1. **Routing & Page Architecture**: Sơ đồ Mermaid mô tả cấu trúc routing và mối quan hệ giữa các trang/view.
+2. **Component Hierarchy**: Mỗi trang chính chứa những component nào, sắp xếp theo cây phân cấp.
+3. **Navigation Rules**: Quy tắc hiển thị/ẩn Header, Footer, Sidebar theo từng trang (nếu có).
+4. **State & Data Synchronization Flow**: Mô tả luồng dữ liệu từ UI → State → Database và ngược lại. Liệt kê cụ thể bảng/collection nào lưu loại dữ liệu gì.
+5. **Folder Structure**: Cấu trúc thư mục dự kiến (src/components, src/hooks, src/pages, src/utils, v.v.).
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+File ARCHITECTURE.md hoàn chỉnh với sơ đồ Mermaid trực quan và mô tả chi tiết bằng Markdown.
+AI Agent đọc file này phải hiểu rõ "bản đồ" toàn bộ dự án mà không cần scan thư mục.
+```
+
+#### 📋 Template 3: Tạo file PLAN.md
+
+```text
+[BỐI CẢNH / CONTEXT]
+Tôi đang xây dựng dự án "{{TÊN DỰ ÁN}}". 
+PRD và Tech Specs đã hoàn thành. Bộ Context Documents (AGENTS.md, ARCHITECTURE.md) đã có.
+Dự án cần được chia thành các phase phát triển rõ ràng từ setup → design → code → tích hợp → polish → deploy.
+
+[VAI TRÒ / ROLE]
+Bạn là một Technical Project Manager chuyên về lập kế hoạch phát triển phần mềm Agile.
+
+[NHIỆM VỤ / INSTRUCTIONS]
+Hãy tạo file `PLAN.md` đặt tại thư mục gốc của dự án, hoạt động như một **checklist tiến độ động** mà AI Agent sẽ tự đọc và cập nhật trạng thái mỗi khi hoàn thành task.
+
+Yêu cầu:
+1. Chia dự án thành {{SỐ PHASE, ví dụ: 4-6}} phase phát triển logic.
+2. Mỗi phase có danh sách task dạng checkbox: `- [ ]` (chưa làm), `- [/]` (đang làm), `- [x]` (hoàn thành).
+3. Phase 1 nên bao gồm các task đã hoàn thành (viết PRD, setup context docs, tạo repo).
+4. Các phase tiếp theo tương ứng với {{MÔ TẢ CÁC GIAI ĐOẠN CHÍNH, ví dụ: Design System → Code scaffold → Core features → Database integration → Polish & Deploy}}.
+5. Mỗi task phải đủ cụ thể để AI Agent hiểu được scope công việc.
+
+[ĐẦU RA MONG ĐỢI / EXPECTED OUTPUT]
+File PLAN.md hoàn chỉnh với checkbox Markdown, sẵn sàng để AI Agent tự đánh dấu tiến độ trong quá trình phát triển.
+```
+
+> **🎯 Mẹo sử dụng:** Bạn có thể gửi cả 3 template prompt liên tiếp trong cùng một phiên chat, hoặc gộp thành một prompt duy nhất yêu cầu AI tạo cả 3 file cùng lúc. Sau khi AI tạo xong, hãy **review kỹ nội dung** và chỉnh sửa cho phù hợp với dự án thực tế của bạn trước khi commit.
+
+---
+
 ## 5. Thực hành: Từng bước cài đặt môi trường của bạn
 
 Bây giờ hãy tự mình thực hiện setup môi trường và context cho dự án thực tế theo các bước sau:
