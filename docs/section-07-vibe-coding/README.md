@@ -57,8 +57,8 @@ graph TD
 | 7.1 | [**Tổng quan Vibe Coding & Giới thiệu VibeSpace**](lesson-01-vibe-coding-overview.md) | Mindset, workflow, giới thiệu dự án VibeSpace | ~30 phút |
 | 7.2 | [**Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch**](lesson-02-prd-and-project-planning.md) | Viết PRD, Tech Specs, và lập kế hoạch PLAN.md | ~35 phút |
 | 7.3 | [**Cài đặt Stitch Skills & Setup Context Engineering**](lesson-03-setup-context-engineering.md) | Setup môi trường dev, cài đặt skills, khởi tạo context docs | ~30 phút |
-| 7.4 | **Thiết kế Design System với Stitch** | Màu sắc (Cyber-Zen), typography, shape, DESIGN.md | ~45 phút |
-| 7.5 | **Tạo UI Screens – Phần 1** | Thiết kế Sảnh chờ (Lobby) & Cấu trúc chính | ~50 phút |
+| 7.4 | [**Thiết kế Design System với Stitch**](lesson-04-design-system-with-stitch.md) | Màu sắc (Cyber-Zen), typography, shape, DESIGN.md | ~45 phút |
+| 7.5 | [**Tạo UI Screens – Phần 1**](lesson-05-lobby-and-navigation.md) | Thiết kế Sảnh chờ (Lobby) & Cấu trúc chính | ~50 phút |
 | 7.6 | **Tạo UI Screens – Phần 2** | Thiết kế Immersive Focus Studio với các Widget nổi | ~50 phút |
 | 7.7 | **Convert Design → React Code** | `react-components` skill, cấu trúc ReactJS (Vite) & Routing | ~55 phút |
 | 7.8 | **GitHub Workflow tự động** | Quản lý repo workspaces, branch, commit, PR, merge | ~45 phút |
