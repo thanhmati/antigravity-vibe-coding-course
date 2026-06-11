@@ -12,6 +12,8 @@ Bài học này sẽ cung cấp cho bạn bản PRD rút gọn tiêu chuẩn c�
 
 > [!NOTE]
 > Đây là bản PRD được viết hoàn toàn dưới lăng kính PM/BA: Tập trung mô tả **trải nghiệm người dùng (UX)**, **hành vi giao diện** và **tiêu chí chấp nhận (Acceptance Criteria)**. Tài liệu hoàn toàn không chứa code hay đặc tả kỹ thuật sâu để đảm bảo tính trực quan.
+>
+> **Xem bản PRD riêng biệt tại đây:** [vibespace-prd.md](file:///Users/tanthanh/Documents/Project/antigravity-vibe-coding-course/docs/section-07-vibe-coding/vibespace-prd.md)
 
 ### 📌 Tổng quan sản phẩm
 **VibeSpace** là một ứng dụng web giúp người dùng tạo ra một **không gian làm việc và học tập tập trung cá nhân hóa**. Người dùng mở trang web là có thể sử dụng ngay lập tức (không cần đăng ký tài khoản) để nghe nhạc lofi, bật tiếng mưa rơi, đếm giờ Pomodoro và quản lý các công việc cần làm trong ngày trên một giao diện thư giãn, tuyệt đẹp.
