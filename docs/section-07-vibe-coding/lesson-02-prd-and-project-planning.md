@@ -1,4 +1,4 @@
-# Bài 2: Viết PRD và Lập kế hoạch dự án (Project Planning)
+# Bài 2: Specs-Driven Vibe Coding – PRD & Định hướng Thiết kế
 
 Trong quy trình **Vibe Coding**, AI Agent đóng vai trò là một lập trình viên cao cấp (Developer), còn bạn đóng vai trò là Người quản lý sản phẩm (Product Manager - PM) hoặc Nhà phân tích nghiệp vụ (Business Analyst - BA). 
 

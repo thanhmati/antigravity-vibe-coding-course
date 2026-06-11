@@ -115,16 +115,15 @@ flowchart TD
 
 ### Mỗi bước sử dụng công cụ gì?
 
-| Bước                  | Công cụ chính                                 | Bài học tương ứng   |
-| --------------------- | --------------------------------------------- | ------------------- |
-| 💡 Ý tưởng + Kế hoạch | Antigravity                                   | **Bài 1** (bài này) |
-| 🔧 Cài đặt môi trường | Stitch Skills CLI                             | Bài 2               |
-| 🎨 Design System      | Stitch MCP + `design-md`                      | Bài 3               |
-| 🖼️ UI Screens         | Stitch MCP + `enhance-prompt` + `stitch-loop` | Bài 4, 5            |
-| ⚛️ Design → Code      | `react-components` skill                      | Bài 6               |
-| 🐙 Git Workflow       | GitHub MCP                                    | Bài 7               |
-| 🔄 Thêm tính năng     | Stitch MCP + GitHub MCP                       | Bài 8               |
-| ✨ Polish             | Antigravity                                   | Bài 9, 10           |
+| Bước                          | Công cụ chính                                 | Bài học tương ứng           |
+| ----------------------------- | --------------------------------------------- | --------------------------- |
+| 💡 Ý tưởng                    | Antigravity                                   | **Bài 1** (bài này)         |
+| 📋 Lập kế hoạch & PRD          | Antigravity                                   | Bài 2                       |
+| 🖼️ Phác thảo Giao diện UI      | Stitch MCP + `enhance-prompt`                 | Bài 3                       |
+| ⚛️ Chuyển đổi Thiết kế → Code  | `react-components` skill                      | Bài 4                       |
+| 🔄 Tích hợp Logic & Tính năng  | Antigravity                                   | Bài 5                       |
+| 🐙 Polish & Git Workflow      | GitHub MCP                                    | Bài 6                       |
+| 🏁 Review & Tổng kết          | Antigravity                                   | Bài 7                       |
 
 ---
 
@@ -183,9 +182,9 @@ Dự án thực tế này sẽ bao gồm 5 tính năng cốt lõi:
 
 ## ⏭️ Bài tiếp theo
 
-Sau khi đã hiểu rõ khái niệm Vibe Coding và bức tranh tổng thể của dự án VibeSpace, chúng ta sẽ bước vào **Bài 2: Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch** để đặt nền móng tài liệu kỹ thuật cho dự án.
+Sau khi đã hiểu rõ khái niệm Vibe Coding và bức tranh tổng thể của dự án VibeSpace, chúng ta sẽ bước vào **Bài 2: Specs-Driven Vibe Coding – PRD & Định hướng Thiết kế** để đặt nền móng giao diện và trải nghiệm người dùng cho dự án.
 
-👉 **[Bài tiếp theo: Bài 2 – Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch](lesson-02-prd-and-project-planning.md)**
+👉 **[Bài tiếp theo: Bài 2 – Specs-Driven Vibe Coding – PRD & Định hướng Thiết kế](lesson-02-prd-and-project-planning.md)**
 
 ---
 
