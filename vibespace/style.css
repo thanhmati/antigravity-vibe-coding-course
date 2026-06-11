@@ -1,0 +1,962 @@
+/* ==========================================================================
+   VIBESPACE DESIGN SYSTEM (Cyber-Zen Theme)
+   ========================================================================== */
+
+:root {
+    --bg-dark: #0b0f19;
+    --accent-indigo: #6366f1;
+    --accent-indigo-glow: rgba(99, 102, 241, 0.45);
+    --accent-violet: #8b5cf6;
+    --accent-pink: #ec4899;
+    --accent-green: #10b981;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --glass-bg: rgba(10, 15, 30, 0.55);
+    --glass-bg-hover: rgba(10, 15, 30, 0.68);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.09);
+    --glass-nested: rgba(255, 255, 255, 0.03);
+    --glass-nested-border: 1px solid rgba(255, 255, 255, 0.06);
+    --glass-blur: blur(20px);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --panel-width: 320px;
+    --header-height: 60px;
+}
+
+/* ============================
+   BASE
+   ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+/* ============================
+   FULL SCREEN BACKGROUND
+   ============================ */
+.bg-container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1920&q=80');
+}
+
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 8, 18, 0.45) 0%,
+        rgba(5, 8, 18, 0.2) 50%,
+        rgba(5, 8, 18, 0.45) 100%
+    );
+}
+
+/* ============================
+   FLOATING HEADER
+   ============================ */
+.header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    height: var(--header-height);
+    width: calc(100% - var(--panel-width) * 2 - 4rem);
+    max-width: 800px;
+    min-width: 200px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo-icon {
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, #ffffff 60%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    background: rgba(99, 102, 241, 0.18);
+    color: var(--accent-indigo);
+    padding: 2px 6px;
+    border-radius: 9999px;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.header-stats {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-green);
+    flex-shrink: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
+
+/* ============================
+   FLOATING PANELS
+   ============================ */
+.panel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    width: var(--panel-width);
+    /* top pad clears the floating header; no more bottom bar so slim bottom */
+    padding: 5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.panel::-webkit-scrollbar { width: 4px; }
+.panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 9999px; }
+
+.panel-left { left: 0; }
+.panel-right { right: 0; }
+
+
+/* ============================
+   GLASS MORPHISM CLASSES
+   ============================ */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 16px;
+    transition: var(--transition-smooth);
+}
+
+.glass:hover { background: var(--glass-bg-hover); }
+
+.glass-nested {
+    background: var(--glass-nested);
+    border: var(--glass-nested-border);
+    border-radius: 10px;
+}
+
+/* ============================
+   WIDGET BASE
+   ============================ */
+.widget {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.widget-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.widget-title i { font-size: 0.95rem; }
+
+.widget-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center { text-align: center; }
+.flex-grow { flex-grow: 1; }
+
+/* ============================
+   POMODORO CENTER WIDGET
+   ============================ */
+
+/* Floats at the exact center of viewport, fully transparent */
+.pomodoro-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+    /* No background – timer sits directly on the scene */
+    pointer-events: auto;
+}
+
+/* Mode tabs – subtle frosted pill */
+.pomo-modes {
+    display: flex;
+    gap: 2px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Task input – frosted pill */
+.pomo-center-task {
+    width: 260px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 9px 22px;
+    border-radius: 999px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.pomo-center-task::placeholder { color: rgba(255,255,255,0.35); }
+
+.pomo-center-task:focus {
+    border-color: rgba(99, 102, 241, 0.55);
+    box-shadow: 0 0 0 2px var(--accent-indigo-glow);
+    background: rgba(0, 0, 0, 0.32);
+}
+
+/* Container that holds ring SVG + huge time text */
+.pomo-center-timer {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ring sits behind the time text */
+.pomo-ring {
+    position: absolute;
+    inset: 0;
+    transform: rotate(-90deg);
+    overflow: visible;
+}
+
+/* The giant time display */
+.pomo-center-timer .timer-digital {
+    position: relative;
+    z-index: 1;
+    font-size: 5.5rem;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    color: #ffffff;
+    text-shadow:
+        0 2px 40px rgba(0, 0, 0, 0.55),
+        0 0 80px rgba(99, 102, 241, 0.25);
+    line-height: 1;
+}
+
+/* Controls row */
+.pomo-center-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Shared mode-btn */
+.mode-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.mode-btn:hover { color: rgba(255, 255, 255, 0.75); }
+
+.mode-btn.active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Progress ring circle transition */
+.progress-ring__circle { transition: stroke-dashoffset 0.4s ease; }
+
+/* Ctrl buttons */
+.ctrl-btn {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+/* Play/Pause – white circle, prominent */
+.ctrl-primary {
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0b0f19;
+    font-size: 1.1rem;
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255,255,255,0.2);
+}
+
+.ctrl-primary:hover {
+    transform: scale(1.08);
+    background: #ffffff;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Reset – ghost circle */
+.ctrl-secondary {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.9rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.ctrl-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.06);
+}
+
+
+/* ============================
+   THEME SWITCHER
+   ============================ */
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+.theme-btn {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition-smooth);
+}
+
+.theme-btn img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    object-fit: cover;
+    opacity: 0.55;
+    transition: var(--transition-smooth);
+}
+
+.theme-btn span {
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: center;
+}
+
+.theme-btn:hover { border-color: rgba(255,255,255,0.15); }
+.theme-btn:hover img { opacity: 0.85; }
+
+.theme-btn.active {
+    border-color: var(--accent-indigo);
+    background: rgba(99,102,241,0.1);
+    box-shadow: 0 0 10px var(--accent-indigo-glow);
+}
+
+.theme-btn.active img { opacity: 1; }
+.theme-btn.active span { color: var(--text-primary); font-weight: 600; }
+
+/* ============================
+   YOUTUBE PLAYER WIDGET
+   ============================ */
+.yt-input-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.yt-url-input {
+    flex-grow: 1;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 9px 12px;
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    outline: none;
+    transition: var(--transition-smooth);
+    min-width: 0;
+}
+
+.yt-url-input::placeholder { color: var(--text-muted); }
+
+.yt-url-input:focus {
+    border-color: #ff4444;
+    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
+}
+
+.btn-yt-load {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background: #ff4444;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-yt-load:hover {
+    background: #ff2222;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255,68,68,0.4);
+}
+
+/* YouTube Embed Container */
+.yt-player-container {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(0,0,0,0.3);
+}
+
+/* Target both raw <iframe> and iframe injected by YT IFrame API */
+.yt-player-container iframe,
+#yt-player iframe {
+    width: 100% !important;
+    aspect-ratio: 16/9;
+    display: block;
+    border: none;
+}
+
+/* IFrame API injects a div wrapper; make it fill container */
+#yt-player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+}
+
+.yt-default-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 5px 10px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    background: rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.yt-default-label i { color: var(--accent-indigo); font-size: 0.8rem; }
+
+/* YouTube Volume Row */
+.yt-volume-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.15rem 0;
+}
+
+.yt-vol-icon {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.yt-vol-icon:hover { color: #ff4444; }
+
+.yt-volume-slider {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 5px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 9999px;
+    outline: none;
+    cursor: pointer;
+    min-width: 0;
+}
+
+.yt-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #ff4444;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 0 6px rgba(255,68,68,0.4);
+}
+
+.yt-volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.35);
+    box-shadow: 0 0 10px rgba(255,68,68,0.6);
+}
+
+.yt-vol-num {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    min-width: 32px;
+    text-align: right;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================
+   AMBIENT SOUND SLIDERS
+   ============================ */
+.sound-sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.slider-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.slider-label i {
+    width: 14px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.slider-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Custom Range Input */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 9999px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+    background: var(--accent-indigo);
+    box-shadow: 0 0 8px var(--accent-indigo-glow);
+}
+
+.vol-num {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    min-width: 30px;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* ============================
+   TODO LIST WIDGET
+   ============================ */
+.todo-progress-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-indigo);
+    background: rgba(99,102,241,0.1);
+    padding: 3px 8px;
+    border-radius: 9999px;
+    border: 1px solid rgba(99,102,241,0.2);
+}
+
+/* Progress Bar */
+.todo-progress-bar-track {
+    height: 4px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.todo-progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-indigo), var(--accent-violet));
+    border-radius: 9999px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px var(--accent-indigo-glow);
+}
+
+/* New Task Input */
+.todo-input-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.todo-new-input {
+    flex-grow: 1;
+    background: rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 9px 12px;
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    outline: none;
+    transition: var(--transition-smooth);
+    min-width: 0;
+}
+
+.todo-new-input::placeholder { color: var(--text-muted); }
+
+.todo-new-input:focus {
+    border-color: var(--accent-indigo);
+    box-shadow: 0 0 0 2px var(--accent-indigo-glow);
+    background: rgba(0,0,0,0.28);
+}
+
+.btn-todo-add {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background: var(--accent-indigo);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-todo-add:hover {
+    background: var(--accent-violet);
+    transform: scale(1.07);
+    box-shadow: 0 4px 12px var(--accent-indigo-glow);
+}
+
+/* Todo List Items */
+.todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 220px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+    padding-right: 2px;
+}
+
+.todo-list::-webkit-scrollbar { width: 4px; }
+.todo-list::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 9999px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 9px 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+    animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.1);
+}
+
+.todo-item.completed {
+    opacity: 0.55;
+    border-color: rgba(16,185,129,0.15);
+    background: rgba(16,185,129,0.04);
+}
+
+/* Custom Checkbox */
+.todo-checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    background: transparent;
+}
+
+.todo-item.completed .todo-checkbox {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 8px rgba(16,185,129,0.4);
+}
+
+.todo-item.completed .todo-checkbox::after {
+    content: "✓";
+    font-size: 0.65rem;
+    color: white;
+    font-weight: 700;
+}
+
+.todo-checkbox:hover {
+    border-color: var(--accent-indigo);
+    background: rgba(99,102,241,0.15);
+}
+
+/* Task Text */
+.todo-text {
+    flex-grow: 1;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    word-break: break-word;
+    line-height: 1.4;
+    min-width: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+/* Delete button */
+.todo-delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.todo-item:hover .todo-delete-btn { opacity: 1; }
+.todo-delete-btn:hover { color: var(--accent-pink); background: rgba(236,72,153,0.1); }
+
+/* Empty State */
+.todo-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.2rem 0 0.5rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.todo-empty i { font-size: 1.6rem; opacity: 0.4; }
+.todo-empty p { font-size: 0.78rem; line-height: 1.6; opacity: 0.6; }
+.todo-empty.hidden { display: none; }
+
+/* Footer */
+.todo-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.25rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.todo-footer-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.07);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition-smooth);
+}
+
+.todo-footer-btn:hover {
+    color: var(--text-secondary);
+    border-color: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+}
+
+/* ============================
+   SCROLLBAR GLOBAL
+   ============================ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1100px) {
+    :root { --panel-width: 280px; }
+
+    .header {
+        width: calc(100% - var(--panel-width) * 2 - 3rem);
+    }
+}
+
+@media (max-width: 860px) {
+    /* Switch to full-width stacked layout on smaller screens */
+    :root { --panel-width: 100%; }
+
+    html, body { overflow: auto; }
+
+    .bg-container { position: fixed; }
+
+    .header {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .panel {
+        position: relative;
+        width: 100%;
+        overflow: visible;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        padding: 0.75rem;
+        gap: 0.75rem;
+        overflow: auto;
+    }
+}

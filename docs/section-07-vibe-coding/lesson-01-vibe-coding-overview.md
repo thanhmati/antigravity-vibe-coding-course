@@ -25,7 +25,7 @@ Sau bài này, bạn sẽ:
 
 Thuật ngữ "Vibe Coding" được đặt bởi **Andrej Karpathy** (cựu Director of AI tại Tesla, co-founder OpenAI) vào đầu năm 2025:
 
-> *"There's a new kind of coding I call 'vibe coding', where you fully give in to the vibes, embrace exponentials, and forget that the code even exists."*
+> _"There's a new kind of coding I call 'vibe coding', where you fully give in to the vibes, embrace exponentials, and forget that the code even exists."_
 >
 > — Andrej Karpathy
 
@@ -47,17 +47,18 @@ graph LR
     end
 ```
 
-| | **Lập trình truyền thống** | **Vibe Coding** |
-|---|---|---|
-| **Developer làm gì?** | Viết code từng dòng, debug, build UI | Mô tả ý tưởng, review, điều hướng AI |
-| **Tốc độ** | Chậm – phụ thuộc vào kinh nghiệm | Nhanh – AI sinh code trong vài giây |
-| **Kiến thức cần** | Thành thạo ngôn ngữ lập trình | Tư duy sản phẩm + Kỹ năng viết prompt |
-| **Thiết kế UI** | Cần designer hoặc tự design | AI Agent + Stitch MCP thiết kế |
-| **Quản lý code** | Git thủ công | GitHub MCP tự động |
+|                       | **Lập trình truyền thống**           | **Vibe Coding**                       |
+| --------------------- | ------------------------------------ | ------------------------------------- |
+| **Developer làm gì?** | Viết code từng dòng, debug, build UI | Mô tả ý tưởng, review, điều hướng AI  |
+| **Tốc độ**            | Chậm – phụ thuộc vào kinh nghiệm     | Nhanh – AI sinh code trong vài giây   |
+| **Kiến thức cần**     | Thành thạo ngôn ngữ lập trình        | Tư duy sản phẩm + Kỹ năng viết prompt |
+| **Thiết kế UI**       | Cần designer hoặc tự design          | AI Agent + Stitch MCP thiết kế        |
+| **Quản lý code**      | Git thủ công                         | GitHub MCP tự động                    |
 
 ### 1.3 Ví dụ thực tế
 
 **❌ Cách truyền thống – Tạo Landing Page:**
+
 ```
 1. Mở IDE, tạo file index.html          (5 phút)
 2. Viết HTML structure                    (15 phút)
@@ -70,11 +71,12 @@ graph LR
 ```
 
 **✅ Cách Vibe Coding – Cùng một Landing Page:**
+
 ```
 1. Mô tả cho AI Agent:                   (2 phút)
-   "Tạo landing page với hero section, 
+   "Tạo landing page với hero section,
    3 feature cards, CTA button..."
-   
+
 2. AI Agent sinh code tự động             (30 giây)
 3. Review và yêu cầu chỉnh sửa           (5 phút)
    "Đổi màu primary sang xanh dương,
@@ -113,16 +115,16 @@ flowchart TD
 
 ### Mỗi bước sử dụng công cụ gì?
 
-| Bước | Công cụ chính | Bài học tương ứng |
-|------|--------------|-------------------|
-| 💡 Ý tưởng + Kế hoạch | Antigravity | **Bài 1** (bài này) |
-| 🔧 Cài đặt môi trường | Stitch Skills CLI | Bài 2 |
-| 🎨 Design System | Stitch MCP + `design-md` | Bài 3 |
-| 🖼️ UI Screens | Stitch MCP + `enhance-prompt` + `stitch-loop` | Bài 4, 5 |
-| ⚛️ Design → Code | `react-components` skill | Bài 6 |
-| 🐙 Git Workflow | GitHub MCP | Bài 7 |
-| 🔄 Thêm tính năng | Stitch MCP + GitHub MCP | Bài 8 |
-| ✨ Polish | Antigravity | Bài 9, 10 |
+| Bước                  | Công cụ chính                                 | Bài học tương ứng   |
+| --------------------- | --------------------------------------------- | ------------------- |
+| 💡 Ý tưởng + Kế hoạch | Antigravity                                   | **Bài 1** (bài này) |
+| 🔧 Cài đặt môi trường | Stitch Skills CLI                             | Bài 2               |
+| 🎨 Design System      | Stitch MCP + `design-md`                      | Bài 3               |
+| 🖼️ UI Screens         | Stitch MCP + `enhance-prompt` + `stitch-loop` | Bài 4, 5            |
+| ⚛️ Design → Code      | `react-components` skill                      | Bài 6               |
+| 🐙 Git Workflow       | GitHub MCP                                    | Bài 7               |
+| 🔄 Thêm tính năng     | Stitch MCP + GitHub MCP                       | Bài 8               |
+| ✨ Polish             | Antigravity                                   | Bài 9, 10           |
 
 ---
 
@@ -152,194 +154,39 @@ graph TD
 
 ### Tóm tắt vai trò từng công cụ
 
-| Công cụ | Vai trò | Ví dụ tương đương |
-|---------|---------|-------------------|
-| **Antigravity** | "Bộ não" – điều phối mọi thứ | Như 1 senior developer |
-| **Stitch MCP** | "Đôi mắt" – thiết kế UI đẹp | Như 1 UI/UX designer |
-| **GitHub MCP** | "Đôi tay" – quản lý source code | Như 1 DevOps engineer |
+| Công cụ           | Vai trò                             | Ví dụ tương đương          |
+| ----------------- | ----------------------------------- | -------------------------- |
+| **Antigravity**   | "Bộ não" – điều phối mọi thứ        | Như 1 senior developer     |
+| **Stitch MCP**    | "Đôi mắt" – thiết kế UI đẹp         | Như 1 UI/UX designer       |
+| **GitHub MCP**    | "Đôi tay" – quản lý source code     | Như 1 DevOps engineer      |
 | **Stitch Skills** | "Siêu năng lực" – khả năng đặc biệt | Như các plugin chuyên dụng |
-
----
 
 ## 4. Giới thiệu dự án: VibeSpace Studio
 
 ### 4.1 Tổng quan dự án
 
-> 🧘‍♂️ **VibeSpace Studio** — Trạm tập trung và âm thanh chữa lành tích hợp đồng hồ Pomodoro, bộ trộn âm thanh thiên nhiên đa kênh, trình phát nhạc Lo-fi và phong cảnh động cá nhân hóa.
+**VibeSpace Studio** là một ứng dụng "Ambient Space & Productivity Dashboard" (Trạm tập trung & Âm thanh chữa lành). Ứng dụng tích hợp các tính năng bổ trợ năng suất cùng hệ thống âm thanh, hình ảnh giúp người dùng giải tỏa căng thẳng và tăng cường sự tập trung khi học tập hay làm việc.
 
-**Tại sao chọn dự án này?**
-- 📱 **UI cực kỳ lộng lẫy** – Thiết kế dạng thẻ kính mờ (Glassmorphism) nổi trên nền phong cảnh động.
-- 🎮 **Tương tác rất mạnh** – Trình phát nhạc iTunes API thực tế, bộ trộn âm thanh (mixer) đa kênh chạy song song, đồng hồ đếm ngược Pomodoro và bảng việc cần làm.
-- 🎨 **Cá nhân hóa sâu sắc** – Cho phép người dùng tùy chọn chủ đề nhạc lo-fi theo từ khóa, đổi ảnh phong cảnh nền bằng URL bất kỳ hoặc qua từ khóa Unsplash, và lưu thiết lập đồng bộ thời gian thực vào `Supabase Database`.
-- 🌍 **Đời sống gần gũi** – Hỗ trợ đắc lực cho các lập trình viên rèn luyện lối sống tập trung, giảm stress mỗi ngày.
+Dự án thực tế này sẽ bao gồm 5 tính năng cốt lõi:
+1. **⏱️ Pomodoro Focus Timer**: Đồng hồ đếm ngược với 3 chế độ (Tập trung, Nghỉ ngắn, Nghỉ dài), vòng tiến trình SVG động mượt mà, và tự động thay đổi tiêu đề trình duyệt.
+2. **🎵 Ambient Sound Mixer**: Bộ trộn âm thanh thiên nhiên đa kênh (Rain, Campfire, Wind, Forest) cho phép người dùng tùy chỉnh mức âm lượng riêng biệt của từng kênh âm thanh để tạo ra một không gian làm việc cá nhân hóa.
+3. **📺 YouTube Music Player Widget**: Trình phát nhạc tích hợp YouTube IFrame API cho phép người dùng copy và dán bất kỳ link bài nhạc Lo-fi hay nhạc nền nào để phát trực tiếp ngay trên Dashboard với thanh kiểm soát âm lượng riêng biệt.
+4. **📋 Daily Todo List**: Widget quản lý danh sách công việc cần làm trong ngày tích hợp thanh tiến trình tự động tính toán, lưu trữ dữ liệu thông qua LocalStorage.
+5. **🌅 Scene & Theme Selector**: Bộ chuyển đổi phong cảnh hình nền động chất lượng cao (Rừng thông sương mù, Bãi biển hoàng hôn, Quán café mưa, Vũ trụ) để thay đổi tức thì cảm xúc toàn bộ không gian làm việc.
 
-### 4.2 Các trang của ứng dụng
+### 4.2 Tại sao chọn dự án này?
 
-```mermaid
-graph TD
-    LE["🏠 Sảnh chờ Lobby /<br/><i>Giới thiệu và thống kê</i>"]
-    LE --> VS["🧘‍♂️ Immersive Studio /space<br/><i>Bảng điều khiển tập trung</i>"]
-    LE --> PJ["📊 Productivity Journal /journal<br/><i>Nhật ký đóng góp năng suất</i>"]
-    LE --> CS["⚙️ Customizer Settings /settings<br/><i>Cấu hình thời gian Pomodoro</i>"]
-
-    VS --> AM["🎵 Ambient Mixer<br/><i>Trình trộn âm thanh nền</i>"]
-    VS --> PT["⏱️ Pomodoro Timer<br/><i>Đếm ngược tập trung</i>"]
-    VS --> DG["📋 Daily Goals<br/><i>Nhiệm vụ trong ngày</i>"]
-    VS --> SS["🌅 Scene Selector<br/><i>Đổi cảnh phong cảnh nền</i>"]
-
-    style LE fill:#3b82f6,stroke:#2563eb,color:#fff
-    style VS fill:#8b5cf6,stroke:#7c3aed,color:#fff
-    style PJ fill:#ec4899,stroke:#db2777,color:#fff
-    style CS fill:#f59e0b,stroke:#d97706,color:#fff
-```
-
-### 4.3 Chi tiết từng cấu phần tại Focus Studio (`/space`)
-
-#### 🎵 Ambient Mixer & Lo-fi Player (Study With Me)
-- **iTunes Search API integration**: Nhập từ khóa (lofi, piano, jazz...) để tải về playlist dynamic. Hỗ trợ Play, Pause, Next, Prev.
-- **Multi-channel Sound Mixer**: Các thanh trượt chỉnh âm lượng độc lập cho tiếng mưa rơi, sóng biển, gió thổi, lửa trại để người dùng tự thiết kế bản nhạc thư giãn của mình.
-
-#### ⏱️ Pomodoro Timer & Zen Quotes
-- **Pomodoro Timer**: Đồng hồ đếm ngược với 3 chế độ (Work, Short Break, Long Break). Có vòng tròn tiến trình SVG sinh động, tự chuyển đổi trạng thái và âm báo nhẹ nhàng khi kết thúc phiên.
-- **Zen Quotes**: Trích dẫn châm ngôn sống ngẫu nhiên từ ZenQuotes API hiển thị tinh tế ở dưới cùng màn hình giúp chữa lành và tiếp thêm năng lực tích cực.
-
-#### 📋 Daily Focus Goals
-- Bảng Checklist ghi chú nhanh các công việc cần hoàn thành trong ngày.
-- Hỗ trợ lưu trữ và đồng bộ hóa tự động vào bảng `todos` trên `Supabase` kèm thanh tiến độ hoàn thành (Progress Bar).
-
-#### 🌅 Scene Selector & dynamic backgrounds
-- Cung cấp danh sách các cảnh đẹp tuyển chọn (ảnh chất lượng cao / ảnh động).
-- Hỗ trợ đổi hình nền động bằng cách nhập từ khóa tìm ảnh Unsplash hoặc dán một đường dẫn ảnh URL bất kỳ.
-
----
-
-## 5. Phân tích yêu cầu & MVP
-
-### 5.1 MVP (Minimum Viable Product) vs Nice-to-have
-
-Khi Vibe Coding, chúng ta cần tư duy sản phẩm để phân chia giai đoạn phát triển hợp lý:
-
-```mermaid
-graph TD
-    subgraph "A1: MVP - Làm trước"
-        M1["Lobby Entrance Page"]
-        M2["Immersive Studio với layout Widget nổi"]
-        M3["Trình trộn âm thanh Ambient Mixer"]
-        M4["Đồng hồ Pomodoro cơ bản"]
-        M5["Checklist Todo đồng bộ Supabase"]
-    end
-
-    subgraph "A2: Nice-to-have - Làm sau"
-        N1["⚙️ Bảng tùy biến Settings nổi"]
-        N2["🎵 Tích hợp iTunes API tải nhạc động"]
-        N3["🌅 Thay đổi ảnh nền bằng URL/Unsplash"]
-        N4["🌱 Vòng tròn thiền định nhịp thở SVG"]
-        N5["📊 Biểu đồ đóng góp Productivity Journal"]
-    end
-
-    style M1 fill:#dcfce7,stroke:#16a34a,color:#000
-    style M2 fill:#dcfce7,stroke:#16a34a,color:#000
-    style M3 fill:#dcfce7,stroke:#16a34a,color:#000
-    style M4 fill:#dcfce7,stroke:#16a34a,color:#000
-    style M5 fill:#dcfce7,stroke:#16a34a,color:#000
-    style N1 fill:#fef9c3,stroke:#ca8a04,color:#000
-    style N2 fill:#fef9c3,stroke:#ca8a04,color:#000
-    style N3 fill:#fef9c3,stroke:#ca8a04,color:#000
-    style N4 fill:#fef9c3,stroke:#ca8a04,color:#000
-    style N5 fill:#fef9c3,stroke:#ca8a04,color:#000
-```
-
----
-
-### 5.2 Tech Stack
-
-| Layer | Công nghệ | Lý do chọn |
-|-------|-----------|------------|
-| **Framework** | ReactJS (Vite) | Nhẹ, khởi động cực nhanh, quản lý routing linh hoạt với React Router |
-| **Language** | TypeScript | Kiểm soát chặt chẽ lỗi cú pháp, dễ bảo trì |
-| **Styling** | Tailwind CSS + Glassmorphism | Thiết kế giao diện trong suốt, viền neon mờ ảo, đáp ứng nhanh |
-| **UI Design** | Google Stitch | AI-powered design system, MCP integration tốt |
-| **Audio Processing** | Web Audio API / HTML5 Audio | Phát nhạc nền và trộn âm thanh đa kênh đồng thời |
-| **APIs** | **iTunes Search API** + **ZenQuotes API** | Gọi dữ liệu nhạc Lo-fi động và câu trích dẫn 100% miễn phí |
-| **Database & Storage** | Supabase BaaS (Postgres) | Đồng bộ trạng thái và cơ sở dữ liệu thời gian thực trên đám mây |
-
----
-
-### 5.3 Cấu trúc dự án dự kiến
-
-```
-vibespace-dashboard/
-├── .stitch/
-│   └── DESIGN.md                 ← Design system của Stitch
-├── src/
-│   ├── components/
-│   │   ├── PomodoroTimer.tsx     ← Widget đồng hồ
-│   │   ├── AmbientMixer.tsx      ← Widget trộn âm thanh thiên nhiên
-│   │   ├── LofiPlayer.tsx        ← Trình phát nhạc Lo-fi (iTunes API)
-│   │   ├── TodoChecklist.tsx     ← Bảng công việc cần làm
-│   │   ├── BreathingBubble.tsx   ← Vòng tròn nhịp thở SVG
-│   │   ├── SceneSelector.tsx     ← Bảng đổi hình nền
-│   │   └── ThemeToggle.tsx       ← Nút chỉnh theme màu hệ thống
-│   ├── pages/
-│   │   ├── Lobby.tsx             ← Lobby Entrance (Sảnh chờ)
-│   │   ├── Space.tsx             ← Immersive Studio (Hợp nhất các Widget nổi)
-│   │   ├── Journal.tsx           ← Productivity Journal
-│   │   └── Settings.tsx          ← Settings cấu hình
-│   ├── App.tsx                   ← File định cấu hình React Router
-│   ├── main.tsx                  ← File khởi chạy ứng dụng React
-│   └── index.css                 ← Tailwind & Glassmorphism classes
-├── public/                       ← Chứa âm thanh lặp (.mp3) và ảnh tĩnh
-├── .env                          ← Cấu hình API keys của Supabase (URL, Anon Key)
-├── index.html
-├── package.json
-├── vite.config.ts
-└── README.md
-```
-
----
-
-## 6. Tư duy quan trọng khi Vibe Coding
-
-### 🧠 5 Nguyên tắc vàng
-
-#### 1. "Bạn là Product Manager, không phải Developer"
-Đừng nghĩ về code – hãy nghĩ về **sản phẩm**. AI Agent sẽ lo phần viết mã nguồn chi tiết.
-
-#### 2. "Mô tả càng chi tiết, kết quả càng tốt"
-```
-❌ Prompt mơ hồ:    "Tạo trang web nghe nhạc thiền"
-✅ Prompt chi tiết:  "Tạo trang Studio tập trung toàn màn hình có hình nền phong cảnh, 
-                      có đồng hồ Pomodoro mờ kính bên phải, và bộ trộn âm lượng 
-                      tiếng mưa, tiếng lửa trại bên trái..."
-```
-
-#### 3. "Design First, Code Later"
-Luôn bắt đầu từ việc thiết kế các layer hình ảnh trên Stitch, sau đó mới convert sang code React. Đừng nhảy vào code ngay!
-
-#### 4. "Iterate, Don't Perfect"
-Vibe Coding là quy trình **lặp đi lặp lại**. Phiên bản đầu tiên không cần hoàn hảo – bạn có thể thêm các tính năng nâng cao (như tùy biến URL ảnh nền) dần dần.
-
-#### 5. "Trust but Verify"
-AI rất mạnh nhưng có thể gặp lỗi khi xử lý luồng Audio đồng thời. Luôn **chạy thử** và review code mà AI generate trước khi merge branch.
-
----
-
-## 📝 Tóm tắt bài học
-
-| Khái niệm | Nội dung chính |
-|-----------|---------------|
-| **Vibe Coding** | Lập trình bằng ngôn ngữ tự nhiên, AI Agent thực thi |
-| **Vai trò mới** | Developer = Product Manager + Architect |
-| **Dự án** | VibeSpace Studio – Trạm tập trung chữa lành cho lập trình viên |
-| **MVP** | Lobby Entrance (`/`) & Focus Studio (`/space` với Widget hợp nhất) |
-| **Nguyên tắc** | Design First, Mô tả chi tiết, Lặp liên tục |
+- **Hội tụ đầy đủ yếu tố kỹ thuật**: Kết hợp giữa quản lý trạng thái phức tạp (State management), tương tác API bên thứ ba (YouTube API), xử lý Audio (Web Audio API/HTML Audio), hoạt họa (SVG & CSS Transitions), và tối ưu giao diện Glassmorphism cao cấp.
+- **Phù hợp hoàn hảo cho Vibe Coding**: Bạn sẽ đi từ bước phác thảo ý tưởng (PRD), thiết kế Layout bằng Stitch, rồi tự động sinh mã React từ UI mockup và ghép nối logic, giúp hiểu sâu sắc workflow thực tế.
 
 ---
 
 ## ⏭️ Bài tiếp theo
 
-**[Bài 2: Specs-Driven Vibe Coding – Viết PRD & Tech Specs](lesson-02-prd-and-project-planning.md)** – Chúng ta sẽ bước vào quy trình Specs-Driven Development chuyên nghiệp của thế giới thực: Tự tay viết tài liệu Product Requirement Document (PRD) và Technical Specifications (Tech Specs) chi tiết cho VibeSpace Studio trước khi code.
+Sau khi đã hiểu rõ khái niệm Vibe Coding và bức tranh tổng thể của dự án VibeSpace, chúng ta sẽ bước vào **Bài 2: Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch** để đặt nền móng tài liệu kỹ thuật cho dự án.
+
+👉 **[Bài tiếp theo: Bài 2 – Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch](lesson-02-prd-and-project-planning.md)**
 
 ---
 
-*📚 Section 7 · Google Antigravity: Xây dựng AI Agent, AI App & Vibe Coding*
+_📚 Section 7 · Google Antigravity: Xây dựng AI Agent, AI App & Vibe Coding_

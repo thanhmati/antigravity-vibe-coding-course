@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeSpace - Không gian tập trung và âm thanh chữa lành</title>
+    <meta
+      name="description"
+      content="VibeSpace là trạm tập trung tối giản tích hợp đồng hồ Pomodoro, bộ trộn âm thanh môi trường và todo list hàng ngày giúp bạn làm việc năng suất hơn."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ======= FULL SCREEN BACKGROUND ======= -->
+    <div id="bg-container" class="bg-container">
+      <div id="bg-overlay" class="bg-overlay"></div>
+    </div>
+
+    <!-- ======= FLOATING HEADER ======= -->
+    <header class="header glass" id="main-header">
+      <div class="logo">
+        <i class="fa-solid fa-headset logo-icon"></i>
+        <span class="logo-text">VibeSpace</span>
+        <span class="logo-badge">v1.0</span>
+      </div>
+      <div class="header-stats" id="focus-stats">
+        <span class="status-dot animate-pulse"></span>
+        <span id="focusing-count">38 đang tập trung</span>
+      </div>
+    </header>
+
+    <!-- ======= LEFT PANEL ======= -->
+    <aside class="panel panel-left">
+
+      <!-- Daily Todo List Widget (top-left) -->
+      <div class="widget glass flex-grow" id="todo-widget">
+        <div class="widget-header-row">
+          <h2 class="widget-title"><i class="fa-solid fa-list-check"></i> Todo hôm nay</h2>
+          <div class="todo-progress-label">
+            <span id="todo-done-count">0</span>/<span id="todo-total-count">0</span>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="todo-progress-bar-track">
+          <div class="todo-progress-bar-fill" id="todo-progress-fill" style="width: 0%"></div>
+        </div>
+
+        <!-- Input to add new task -->
+        <div class="todo-input-row">
+          <input
+            type="text"
+            id="todo-new-input"
+            class="todo-new-input"
+            placeholder="Thêm công việc mới..."
+            aria-label="Nhập công việc mới"
+            maxlength="100"
+          />
+          <button id="btn-todo-add" class="btn-todo-add" title="Thêm công việc">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+
+        <!-- Todo List -->
+        <ul class="todo-list" id="todo-list" aria-label="Danh sách công việc">
+          <!-- Dynamically rendered by JS -->
+        </ul>
+
+        <!-- Empty State -->
+        <div class="todo-empty" id="todo-empty">
+          <i class="fa-solid fa-mug-hot"></i>
+          <p>Chưa có công việc nào<br />Thêm mục tiêu cho hôm nay!</p>
+        </div>
+
+        <!-- Footer actions -->
+        <div class="todo-footer">
+          <button class="todo-footer-btn" id="btn-todo-clear-done" title="Xóa các việc đã xong">
+            <i class="fa-solid fa-broom"></i> Dọn việc xong
+          </button>
+        </div>
+      </div>
+
+      <!-- Theme Switcher Widget -->
+      <div class="widget glass" id="theme-widget">
+        <h2 class="widget-title"><i class="fa-solid fa-image"></i> Cảnh nền</h2>
+        <div class="theme-grid">
+          <button class="theme-btn active" data-scene="forest" title="Rừng thông sương mù">
+            <img
+              src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=80&h=80&q=80"
+              alt="Rừng thông"
+            />
+            <span>Rừng thông</span>
+          </button>
+          <button class="theme-btn" data-scene="beach" title="Bãi biển hoàng hôn">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=80&h=80&q=80"
+              alt="Bãi biển"
+            />
+            <span>Bãi biển</span>
+          </button>
+          <button class="theme-btn" data-scene="cafe" title="Quán cà phê mưa">
+            <img
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=80&h=80&q=80"
+              alt="Quán cà phê"
+            />
+            <span>Quán cafe</span>
+          </button>
+          <button class="theme-btn" data-scene="cosmic" title="Thiền vũ trụ">
+            <img
+              src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=80&h=80&q=80"
+              alt="Vũ trụ"
+            />
+            <span>Vũ trụ</span>
+          </button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ======= RIGHT PANEL ======= -->
+    <aside class="panel panel-right">
+
+      <!-- YouTube Music Widget -->
+      <div class="widget glass" id="youtube-widget">
+        <h2 class="widget-title">
+          <i class="fa-brands fa-youtube" style="color: #ff4444"></i> Nhạc YouTube
+        </h2>
+
+        <!-- YouTube URL Input -->
+        <div class="yt-input-row">
+          <input
+            type="text"
+            id="yt-url-input"
+            class="yt-url-input"
+            placeholder="Dán link YouTube vào đây..."
+            aria-label="Đường dẫn YouTube"
+          />
+          <button id="btn-yt-load" class="btn-yt-load" title="Tải nhạc">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- YouTube Embed Player (IFrame API target) -->
+        <div class="yt-player-container" id="yt-player-container">
+          <!-- YT IFrame API sẽ tạo <iframe> bên trong div này -->
+          <div id="yt-player"></div>
+
+          <div class="yt-default-label">
+            <i class="fa-solid fa-headphones-simple"></i>
+            <span id="yt-track-label">Lofi Chill Mix – mặc định</span>
+          </div>
+        </div>
+
+        <!-- YouTube Volume Control -->
+        <div class="yt-volume-row">
+          <i class="fa-solid fa-volume-high yt-vol-icon" id="yt-vol-icon"></i>
+          <input
+            type="range"
+            id="yt-volume"
+            class="yt-volume-slider"
+            min="0" max="100" step="5" value="80"
+            aria-label="Âm lượng YouTube"
+          />
+          <span class="yt-vol-num" id="yt-vol-num">80%</span>
+        </div>
+      </div>
+
+      <!-- Ambient Sound Mixer Widget -->
+      <div class="widget glass" id="sound-widget">
+        <h2 class="widget-title">
+          <i class="fa-solid fa-sliders"></i> Âm thanh môi trường
+        </h2>
+        <div class="sound-sliders">
+          <div class="slider-group">
+            <div class="slider-label">
+              <i class="fa-solid fa-cloud-showers-heavy"></i> Tiếng mưa
+            </div>
+            <div class="slider-control">
+              <input type="range" id="vol-rain" min="0" max="1" step="0.05" value="0" />
+              <span class="vol-num" id="vol-num-rain">0%</span>
+            </div>
+          </div>
+          <div class="slider-group">
+            <div class="slider-label">
+              <i class="fa-solid fa-fire"></i> Lửa trại
+            </div>
+            <div class="slider-control">
+              <input type="range" id="vol-campfire" min="0" max="1" step="0.05" value="0" />
+              <span class="vol-num" id="vol-num-campfire">0%</span>
+            </div>
+          </div>
+          <div class="slider-group">
+            <div class="slider-label">
+              <i class="fa-solid fa-wind"></i> Tiếng gió
+            </div>
+            <div class="slider-control">
+              <input type="range" id="vol-wind" min="0" max="1" step="0.05" value="0" />
+              <span class="vol-num" id="vol-num-wind">0%</span>
+            </div>
+          </div>
+          <div class="slider-group">
+            <div class="slider-label">
+              <i class="fa-solid fa-tree"></i> Rừng thông
+            </div>
+            <div class="slider-control">
+              <input type="range" id="vol-forest" min="0" max="1" step="0.05" value="0" />
+              <span class="vol-num" id="vol-num-forest">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ======= CENTER POMODORO ======= -->
+    <div class="pomodoro-center" id="pomodoro-widget">
+
+      <!-- Mode Selector -->
+      <div class="pomo-modes">
+        <button class="mode-btn active" id="btn-work" data-mode="work">Tập trung</button>
+        <button class="mode-btn" id="btn-short" data-mode="short">Nghỉ ngắn</button>
+        <button class="mode-btn" id="btn-long" data-mode="long">Nghỉ dài</button>
+      </div>
+
+      <!-- Task input -->
+      <input
+        type="text"
+        id="input-task"
+        class="pomo-center-task"
+        placeholder="Bạn đang làm gì?"
+        aria-label="Nhiệm vụ đang thực hiện"
+      />
+
+      <!-- Large ring + time -->
+      <div class="pomo-center-timer">
+        <svg class="progress-ring pomo-ring" width="260" height="260">
+          <circle
+            class="progress-ring__circle-bg"
+            stroke="rgba(255,255,255,0.07)"
+            stroke-width="3"
+            fill="transparent"
+            r="125"
+            cx="130"
+            cy="130"
+          />
+          <circle
+            id="timer-progress"
+            class="progress-ring__circle"
+            stroke="#6366f1"
+            stroke-dasharray="785.4"
+            stroke-dashoffset="0"
+            stroke-width="3"
+            stroke-linecap="round"
+            fill="transparent"
+            r="125"
+            cx="130"
+            cy="130"
+          />
+        </svg>
+        <div class="timer-digital" id="timer-digital">25:00</div>
+      </div>
+
+      <!-- Controls -->
+      <div class="pomo-center-controls">
+        <button class="ctrl-btn ctrl-secondary" id="btn-reset" title="Đặt lại">
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button class="ctrl-btn ctrl-primary" id="btn-play-pause" title="Bắt đầu/Tạm dừng">
+          <i class="fa-solid fa-play" id="play-icon"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ======= HIDDEN AUDIO ======= -->
+    <audio
+      id="timer-alarm"
+      src="https://assets.mixkit.co/active_storage/sfx/911/911-84.wav"
+      preload="auto"
+    ></audio>
+
+    <!-- YouTube IFrame Player API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

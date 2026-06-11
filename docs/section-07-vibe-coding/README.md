@@ -54,17 +54,17 @@ graph TD
 
 | # | Lecture | Mô tả | Thời lượng |
 |---|---------|--------|------------|
-| 7.1 | [**Tổng quan Vibe Coding & Giới thiệu VibeSpace**](lesson-01-vibe-coding-overview.md) | Mindset, workflow, giới thiệu dự án VibeSpace | ~30 phút |
-| 7.2 | [**Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch**](lesson-02-prd-and-project-planning.md) | Viết PRD, Tech Specs, và lập kế hoạch PLAN.md | ~35 phút |
-| 7.3 | [**Cài đặt Stitch Skills & Setup Context Engineering**](lesson-03-setup-context-engineering.md) | Setup môi trường dev, cài đặt skills, khởi tạo context docs | ~30 phút |
-| 7.4 | [**Thiết kế Design System với Stitch**](lesson-04-design-system-with-stitch.md) | Màu sắc (Cyber-Zen), typography, shape, DESIGN.md | ~45 phút |
-| 7.5 | [**Tạo UI Screens – Phần 1**](lesson-05-lobby-and-navigation.md) | Thiết kế Sảnh chờ (Lobby) & Cấu trúc chính | ~50 phút |
-| 7.6 | **Tạo UI Screens – Phần 2** | Thiết kế Immersive Focus Studio với các Widget nổi | ~50 phút |
-| 7.7 | **Convert Design → React Code** | `react-components` skill, cấu trúc ReactJS (Vite) & Routing | ~55 phút |
-| 7.8 | **GitHub Workflow tự động** | Quản lý repo workspaces, branch, commit, PR, merge | ~45 phút |
-| 7.9 | **Thêm tính năng & Fix bug** | Tích hợp iTunes API, Supabase DB, và Mixer đa kênh | ~45 phút |
-| 7.10 | **Polish UI, Responsive & Animation** | Nhịp thở SVG, lật thẻ, chuyển cảnh mượt mà | ~45 phút |
-| 7.11 | **Review & Tổng kết** | Best practices khi Vibe Coding với AI Agent | ~35 phút |
+| 7.1 | [**Tổng quan Vibe Coding & Giới thiệu VibeSpace**](lesson-01-vibe-coding-overview.md) | Triết lý Vibe Coding, giới thiệu dự án thực tế VibeSpace Studio | ~30 phút |
+| 7.2 | [**Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch**](lesson-02-prd-and-project-planning.md) | Prompt tạo tài liệu yêu cầu sản phẩm PRD và kế hoạch PLAN.md | ~35 phút |
+| 7.3 | [**Setup Môi trường & Khởi tạo Context Engineering**](lesson-03-setup-context-engineering.md) | Khởi tạo React Vite, cài đặt Stitch CLI và thiết lập file context cho AI | ~30 phút |
+| 7.4 | [**Thiết kế Design System với Stitch**](lesson-04-design-system-with-stitch.md) | Tạo DESIGN.md định nghĩa phong cách Cyber-Zen và đồng bộ CSS Variables | ~45 phút |
+| 7.5 | [**Tạo UI Màn hình Sảnh chờ (Lobby UI) với Stitch**](lesson-05-lobby-and-navigation.md) | Dựng mockup thô màn hình Lobby và cấu trúc định tuyến (React Router) | ~50 phút |
+| 7.6 | [**Tạo UI Màn hình Focus Studio & các Widget**](lesson-06-focus-studio-and-widgets.md) | Thiết kế Dashboard 3 cột và các widget: Pomodoro, Mixer, YouTube, Todo | ~50 phút |
+| 7.7 | [**Convert Design sang React Components**](lesson-07-convert-design-to-react.md) | Sử dụng react-components skill quét thiết kế để tự động tạo code React tĩnh | ~55 phút |
+| 7.8 | [**GitHub Workflow Tự động với GitHub MCP**](lesson-08-github-workflow.md) | Quản lý repo, tạo branch, commit, tạo PR và merge tự động qua AI Agent | ~45 phút |
+| 7.9 | [**Tích hợp Logic & Kết nối APIs**](lesson-09-integrate-logic-and-apis.md) | Ghép logic State, Web Audio Mixer, YouTube IFrame API và LocalStorage | ~45 phút |
+| 7.10 | [**Polish UI, Responsive & Animations**](lesson-10-polish-ui-and-animations.md) | Thêm hoạt ảnh Breathing Bubble SVG, transition chuyển cảnh và responsive | ~45 phút |
+| 7.11 | [**Review & Tổng kết**](lesson-11-review-and-summary.md) | Hướng dẫn deploy ứng dụng lên Vercel/GitHub Pages và đúc kết kinh nghiệm | ~35 phút |
 
 ---
 

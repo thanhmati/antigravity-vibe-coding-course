@@ -1,245 +1,95 @@
-# Section 7: Vibe Coding Dự Án Thực Tế – Từ Ý Tưởng Đến Sản Phẩm
+# 📋 Chương trình đào tạo (Curriculum) · Section 7
 
-> **Mục tiêu:** Áp dụng toàn bộ kiến thức từ Section 1-6 để xây dựng một dự án web hoàn chỉnh bằng phương pháp Vibe Coding, sử dụng Google Stitch MCP (thiết kế UI) và GitHub MCP (quản lý source code).
+## 🎨 Vibe Coding Dự Án Thực Tế: VibeSpace Studio (React + Stitch MCP)
 
----
-
-## 📋 Tổng quan Section
-
-| Thông tin | Chi tiết |
-|-----------|----------|
-| **Số bài học** | 11 bài |
-| **Thời lượng ước tính** | 6-8 giờ |
-| **Dự án thực tế** | **VibeSpace** – Studio tập trung & âm thanh chữa lành tích hợp |
-| **Công nghệ sử dụng** | Antigravity, Stitch MCP, GitHub MCP, Stitch Skills, ReactJS (Vite), Supabase |
-| **Yêu cầu trước** | Hoàn thành Section 1-6 |
+> **Thời lượng:** ~6 - 8 giờ thực hành  
+> **Phương pháp:** Specs-Driven Vibe Coding (Lập trình dựa trên tài liệu đặc tả cùng AI Agent)  
+> **Công nghệ:** ReactJS, Vite, Tailwind CSS / Vanilla CSS, Stitch MCP, GitHub MCP, YouTube Player API
 
 ---
 
-## 🎯 Curriculum Chi Tiết
+## 🎯 Mục tiêu tổng quan
 
-### Bài 1: Tổng quan Vibe Coding & Giới thiệu VibeSpace Studio
-**Thời lượng:** 25-30 phút
-
-**Nội dung:**
-- Vibe Coding là gì? Triết lý "mô tả ý tưởng, AI xây dựng".
-- So sánh sự khác biệt lớn giữa Vibe Coding vs Traditional Coding.
-- Giới thiệu dự án VibeSpace Studio – Trạm tập trung và chữa lành cho lập trình viên.
-- Phân tích sơ đồ các cấu phần lõi và tính năng của VibeSpace.
-- Thiết lập mindset đúng đắn khi lập trình cùng AI Agent.
-
-**Kết quả bài học:**
-- Thấu hiểu mindset Vibe Coding cốt lõi.
-- Có cái nhìn tổng quan về kiến trúc và giao diện dự án thực tế VibeSpace Studio.
+Sau khi hoàn thành Section 7, học viên sẽ:
+1. **Làm chủ quy trình Vibe Coding chuyên nghiệp**: Từ ý tưởng ban đầu -> tài liệu đặc tả (PRD) -> thiết kế UI mockup (Stitch) -> tự động tạo code React (`react-components` skill) -> lập trình logic -> tối ưu và deploy.
+2. **Khai thác tối đa hệ sinh thái AI MCP**: Sử dụng thành thạo Stitch MCP (Designer) và GitHub MCP (DevOps/Git) kết hợp cùng Antigravity IDE.
+3. **Thành thạo Context Engineering**: Biết cách cung cấp context chuẩn xác để AI Agent code đúng ngay từ lần đầu, giảm thiểu tối đa lỗi logic hoặc sai lệch thiết kế.
+4. **Sở hữu dự án thực chiến cao cấp**: Có một ứng dụng Ambient Space & Productivity Dashboard (VibeSpace Studio) cực kỳ bắt mắt để đưa vào portfolio cá nhân.
 
 ---
 
-### Bài 2: Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch dự án
-**Thời lượng:** 30-40 phút
+## 📚 Nội dung chi tiết 11 bài học
 
-**Nội dung:**
-- Triết lý **Specs-Driven Development** (Phát triển hướng Đặc tả) và lý do nó là cứu tinh của Vibe Coding.
-- Soạn thảo và phân tích tài liệu **PRD (Product Requirement Document)** hoàn chỉnh của VibeSpace Studio (User Stories, Flow, MVP vs Nice-to-have).
-- Xây dựng tài liệu **Tech Specs (Đặc tả kỹ thuật)**: Routing React Router (Vite), Supabase Database Table Schema, Audio Engine (Singleton/Ref Pattern).
-- Kỹ thuật Prompt Engineering để tự động tạo PRD & Tech Specs cho các ý tưởng dự án cá nhân.
-- Lên kế hoạch phát triển MVP và phân rã các Task nhỏ thông qua file `PLAN.md`.
+### Bài 7.1: Tổng quan Vibe Coding & Giới thiệu VibeSpace
+*   **Thời lượng:** 30 phút
+*   **Mô tả:** Giới thiệu triết lý Vibe Coding (Andrej Karpathy 2025), sự dịch chuyển vai trò từ coder thành Product Manager điều phối AI Agent, và giới thiệu các tính năng của dự án VibeSpace Studio.
+*   **Mục tiêu học tập:** Hiểu rõ mind-set "Vibe Coding" và workflow tổng thể của Section 7.
+*   **Sản phẩm đầu ra:** Nắm vững cấu trúc ứng dụng đích cần đạt được.
 
-**Kết quả bài học:**
-- Có bộ tài liệu PRD và Tech Specs hoàn chỉnh để làm kim chỉ nam phát triển VibeSpace.
-- Biết cách dùng AI tạo tài liệu đặc tả chuẩn hóa cho bất kỳ sản phẩm nào.
-- Sở hữu file kế hoạch phát triển `PLAN.md` chuyên nghiệp.
+### Bài 7.2: Specs-Driven Vibe Coding – Viết PRD & Lập kế hoạch
+*   **Thời lượng:** 35 phút
+*   **Mô tả:** Học cách hướng dẫn Agent tạo tài liệu PRD (`PRD.md`) và kế hoạch phát triển (`PLAN.md`) chi tiết. Học cách thiết kế spec rõ ràng trước khi viết code để tránh AI "đi lạc".
+*   **Mục tiêu học tập:** Biết cách prompt để AI phân tích tính năng, định nghĩa data model và lên roadmap từng phần.
+*   **Sản phẩm đầu ra:** File `PRD.md` và `PLAN.md` chuẩn chỉ trong dự án.
 
----
+### Bài 7.3: Setup Môi trường & Khởi tạo Context Engineering
+*   **Thời lượng:** 30 phút
+*   **Mô tả:** Khởi tạo project React (Vite) trong workspace. Hướng dẫn cài đặt công cụ Stitch CLI và nạp các skills cần thiết cho Agent. Thiết lập các file context cho dự án.
+*   **Mục tiêu học tập:** Thiết lập workspace sạch, sẵn sàng giao quyền cho AI Agent đọc/ghi file và tương tác với Stitch.
+*   **Sản phẩm đầu ra:** Project React trống chạy trên local dev server kèm theo cấu hình Stitch hoàn chỉnh.
 
-### Bài 3: Cài đặt & Setup Context Engineering cho VibeSpace
-**Thời lượng:** 25-35 phút
+### Bài 7.4: Thiết kế Design System với Stitch
+*   **Thời lượng:** 45 phút
+*   **Mô tả:** Thiết lập bộ nhận diện thiết kế Cyber-Zen thông qua skill `design-md`. Xác định bảng màu HSL, typography (Outfit font), và các thông số Glassmorphism (backdrop-filter, border opacity).
+*   **Mục tiêu học tập:** Nắm vững cách xây dựng Design Tokens bằng AI để các UI screen đồng bộ hoàn toàn về mặt mỹ thuật.
+*   **Sản phẩm đầu ra:** File `.stitch/DESIGN.md` chứa định nghĩa thiết kế hệ thống.
 
-**Nội dung:**
-- Tổng quan thư viện Stitch Skills (google-labs-code/stitch-skills) và vai trò của các skills.
-- Cài đặt các Stitch skills cần thiết bằng terminal.
-- Tạo GitHub repo mới `vibespace-dashboard` bằng GitHub MCP.
-- **Tầm quan trọng của Context Engineering** trong Vibe Coding.
-- Thiết lập bộ 3 file context documents tại root của dự án VibeSpace:
-  - `AGENTS.md` (Tech stack, coding conventions, rules cho Audio & Supabase)
-  - `ARCHITECTURE.md` (Phân mảnh component, State flow, định tuyến)
-  - `PLAN.md` (Task list ban đầu của MVP)
+### Bài 7.5: Tạo UI Màn hình Sảnh chờ (Lobby UI) với Stitch
+*   **Thời lượng:** 50 phút
+*   **Mô tả:** Thiết kế màn hình Lobby (đầu vào của ứng dụng) hiển thị welcome message, statistics mock (số người đang tập trung) và nút CTA chuyển vào Không gian focus.
+*   **Mục tiêu học tập:** Sử dụng Stitch MCP để phác thảo và tinh chỉnh layout thô, định dạng lưới/ flexbox của screen đầu tiên.
+*   **Sản phẩm đầu ra:** Mockup thiết kế cho màn hình Lobby lưu trong thư mục Stitch.
 
-**Kết quả bài học:**
-- Môi trường dev sẵn sàng cùng Git Repo.
-- **Bộ nhớ ngoài (Context Documents)** được cài đặt giúp AI Agent hiểu chính xác dự án ngay từ đầu, giảm 80%+ tokens lãng phí.
+### Bài 7.6: Tạo UI Màn hình Focus Studio & các Widget
+*   **Thời lượng:** 50 phút
+*   **Mô tả:** Thiết kế màn hình lõi `/space` chứa đồng hồ Pomodoro chính giữa và các panel bên trái/phải chứa widget: Mixer, YouTube, Todo, Scene Switcher.
+*   **Mục tiêu học tập:** Sử dụng `stitch-loop` và `enhance-prompt` để điều hướng Agent tạo layout 3 cột dạng Dashboard phức tạp với hiệu ứng Glassmorphism.
+*   **Sản phẩm đầu ra:** Mockup chi tiết cho các Widget và màn hình Space.
 
----
+### Bài 7.7: Convert Design sang React Components
+*   **Thời lượng:** 55 phút
+*   **Mô tả:** Hướng dẫn sử dụng skill `react-components` để quét các mockup thiết kế của Stitch và tự động sinh code React Component sạch đẹp (JSX/TSX) và CSS đồng bộ.
+*   **Mục tiêu học tập:** Hiểu cách AI ánh xạ các phần tử thiết kế thô thành cấu trúc Component phân rã, tái sử dụng được trong React.
+*   **Sản phẩm đầu ra:** Các file React component tĩnh: `PomodoroTimer.tsx`, `AmbientMixer.tsx`, `LofiPlayer.tsx`, `TodoChecklist.tsx`, `SceneSelector.tsx`.
 
-### Bài 4: Thiết kế Design System với Stitch
-**Thời lượng:** 40-50 phút
+### Bài 7.8: GitHub Workflow Tự động với GitHub MCP
+*   **Thời lượng:** 45 phút
+*   **Mô tả:** Kết nối dự án với Git. Sử dụng GitHub MCP thông qua Agent để tự động hóa: tạo branch tính năng, commit định kỳ, đẩy PR (Pull Request), và thực hiện merge.
+*   **Mục tiêu học tập:** Sử dụng AI quản lý mã nguồn, giảm tải thao tác Git thủ công và tạo thói quen làm việc theo nhánh tính năng.
+*   **Sản phẩm đầu ra:** Nhánh git sạch sẽ, các commit được viết mô tả rõ ràng bằng AI và PR được phê duyệt.
 
-**Nội dung:**
-- Design System là gì và tại sao cần cho Vibe Coding?
-- Sử dụng Stitch MCP để tạo project mới
-- Tạo Design System: Color palette (Cyber-Zen dark mode, neon accents), Typography, Shape, Appearance
-- Sử dụng skill `design-md` để generate file DESIGN.md
-- Review và tinh chỉnh design tokens phù hợp với không gian tập trung
+### Bài 7.9: Tích hợp Logic (Pomodoro, Audio Mixer, YouTube API)
+*   **Thời lượng:** 45 phút
+*   **Mô tả:** Đổ logic nghiệp vụ (business logic) vào các component React tĩnh. Thiết lập state tập trung (STATE engine), quản lý Web Audio API cho mixer, khởi tạo YouTube IFrame API và kết nối LocalStorage lưu Todo.
+*   **Mục tiêu học tập:** Từng bước dẫn dắt Agent tích hợp JS logic từ phiên bản Vanilla cũ sang cấu trúc Hooks và Lifecycle của React.
+*   **Sản phẩm đầu ra:** Ứng dụng chạy mượt mà tất cả các tính năng cơ bản trên máy học viên.
 
-**Kết quả bài học:**
-- Stitch project với design system hoàn chỉnh
-- File DESIGN.md mô tả design system bằng ngôn ngữ tự nhiên
+### Bài 7.10: Tối ưu UI, Transition & Hoạt ảnh SVG
+*   **Thời lượng:** 45 phút
+*   **Mô tả:** Polish giao diện: thêm transition chuyển trang mượt mà (View Transitions API hoặc CSS), hoạt ảnh SVG Breathing Bubble (bong bóng nhịp thở thiền định), responsive cho tablet/mobile và fix các bug hiển thị.
+*   **Mục tiêu học tập:** Nâng cấp trải nghiệm người dùng (UX) để đạt chuẩn "Stunning and WOW design" như guidelines.
+*   **Sản phẩm đầu ra:** Ứng dụng VibeSpace hoàn hảo, đẹp mắt trên mọi kích thước màn hình.
 
----
-
-### Bài 5: Tạo UI Screens với Stitch – Phần 1 (Sảnh chờ Lobby & Navigation)
-**Thời lượng:** 45-60 phút
-
-**Nội dung:**
-- Sử dụng skill `enhance-prompt` để tối ưu prompt thiết kế
-- Tạo màn hình Lobby Entrance (Sảnh chờ) của VibeSpace
-- Thiết kế bố cục chính, navigation, khu vực thống kê chuỗi tập trung
-- Sử dụng `stitch-design` workflow cho thiết kế nhất quán
-- Tạo variants để so sánh và chọn thiết kế tốt nhất
-
-**Kết quả bài học:**
-- Giao diện Sảnh chờ (Lobby) hoàn chỉnh trên Stitch
-- Nắm vững cách thiết kế sảnh chờ thu hút người dùng
-
----
-
-### Bài 6: Tạo UI Screens với Stitch – Phần 2 (Immersive Focus Studio)
-**Thời lượng:** 45-60 phút
-
-**Nội dung:**
-- Thiết kế giao diện lõi Immersive Studio (`/space`) toàn màn hình
-- Cách bố trí các Widget nổi dạng kính mờ (Floating Glassmorphic Cards):
-  - Pomodoro Timer, Audio Mixer, Daily Focus Goals, Breathing Circle
-  - Settings Panel (đổi nhạc, đổi cảnh nền)
-- Sử dụng `stitch-loop` để sinh nhiều trang đồng bộ (Space, Journal, Settings)
-- Apply design system đồng bộ cho tất cả các Widget
-
-**Kết quả bài học:**
-- Bộ UI screens hoàn chỉnh cho trang làm việc toàn diện
-- Thiết kế nhất quán, lộng lẫy và giảm mỏi mắt
+### Bài 7.11: Review, Tối ưu hóa & Deploy
+*   **Thời lượng:** 35 phút
+*   **Mô tả:** Hướng dẫn deploy ứng dụng lên Vercel/Netlify hoặc GitHub Pages. Tổng kết các bài học về Prompt Engineering, cách sửa lỗi khi Agent sinh code sai, và tư duy phát triển sản phẩm thời đại AI.
+*   **Mục tiêu học tập:** Đóng gói sản phẩm, xuất bản ra Internet và nắm vững phương pháp khắc phục lỗi thường gặp của AI.
+*   **Sản phẩm đầu ra:** Đường link deploy thực tế của VibeSpace và chứng nhận hoàn thành khóa học.
 
 ---
 
-### Bài 7: Convert Design → Code với React Components
-**Thời lượng:** 50-60 phút
+<div align="center">
 
-**Nội dung:**
-- Sử dụng skill `react-components` để convert screens → React code
-- Cấu trúc component tree (các widget tách biệt: Pomodoro, Mixer, Todo)
-- Xử lý design tokens → CSS variables / Tailwind config với hiệu ứng mờ kính
-- Khởi tạo project ReactJS (Vite) và tích hợp các components
-- Thiết lập hệ thống định tuyến (Routing) bằng React Router
+[← Bài 1: Tổng quan](lesson-01-vibe-coding-overview.md) · [Mục lục Section 7](README.md) · [Bài 2: Viết PRD →](lesson-02-prd-and-project-planning.md)
 
-**Kết quả bài học:**
-- Bộ React components từ design Stitch
-- Project ReactJS (Vite) chạy được với cấu trúc UI mờ kính từ Stitch và hệ thống định tuyến hoàn chỉnh
-
----
-
-### Bài 8: GitHub Workflow – Branch, Commit & Pull Request tự động
-**Thời lượng:** 40-50 phút
-
-**Nội dung:**
-- Tạo branch mới cho tính năng giao diện bằng GitHub MCP
-- Push code lên branch feature
-- Tạo Pull Request tự động với mô tả chi tiết kiến trúc dashboard
-- Review code trên Pull Request và tự động squash merge
-
-**Kết quả bài học:**
-- Quy trình Git tự động hoá hoàn chỉnh
-- Hiểu cách kết hợp GitHub MCP để đẩy nhanh tiến độ làm việc
-
----
-
-### Bài 9: Thêm tính năng & Fix bug bằng Vibe Coding (Nhạc & Âm thanh Mixer)
-**Thời lượng:** 40-50 phút
-
-**Nội dung:**
-- Thêm tính năng: Gọi iTunes Search API để người dùng thay đổi thể loại nhạc lo-fi theo keyword
-- Thêm tính năng: Thiết lập trình trộn âm thanh thiên nhiên đa kênh (Rain, Campfire, Waves) hoạt động song song
-- Thêm tính năng: Lưu trữ cấu hình nhạc, checklist Todo và đồng hồ vào cơ sở dữ liệu Supabase
-- Phát hiện và fix bug bất đồng bộ khi gọi API bằng Antigravity
-- Tạo branch, PR cho các tính năng audio bằng GitHub MCP
-
-**Kết quả bài học:**
-- Ứng dụng thực sự phát được nhạc và trộn âm thanh đa kênh
-- Trạng thái người dùng được lưu trữ đồng bộ thời gian thực trên đám mây với Supabase
-
----
-
-### Bài 10: Polish UI, Responsive Design & Animation
-**Thời lượng:** 40-50 phút
-
-**Nội dung:**
-- Thiết kế responsive hoàn hảo cho thiết bị di động (các widget xếp chồng mượt mà)
-- Thêm các micro-animations ấn tượng:
-  - Vòng tròn thiền định nhịp thở SVG co dãn mượt mà (4s-4s-4s)
-  - Hiệu ứng chuyển động mờ ảo khi kéo thả hoặc bật/tắt các widget
-  - Transition đổi ảnh phong cảnh nền mượt
-- Accessibility check (độ tương phản màu tối, phím tắt nhanh Pomodoro)
-
-**Kết quả bài học:**
-- Studio tập trung hoạt động responsive hoàn hảo
-- Hiệu ứng chuyển động và nhịp thở thiền định cực kỳ thư giãn
-
----
-
-### Bài 11: Review dự án, Best Practices & Tổng kết
-**Thời lượng:** 30-40 phút
-
-**Nội dung:**
-- Review toàn bộ workflow Vibe Coding đã thực hiện cho VibeSpace
-- Thống kê: thời gian tiết kiệm vs coding truyền thống
-- Best practices khi Vibe Coding với AI Agent
-- Những lỗi phổ biến (đồng bộ database, xử lý audio lặp) và cách tránh
-- Q&A và hướng dẫn áp dụng Vibe Coding vào bất kỳ dự án SaaS nào khác
-
-**Kết quả bài học:**
-- Nắm vững toàn bộ quy trình Vibe Coding từ đầu đến cuối
-- Sở hữu 1 dự án cực "wow" trong portfolio cá nhân
-
----
-
-## 🛠 Công cụ & Skills sử dụng trong Section
-
-| Công cụ / Skill | Mục đích | Bài học |
-|-----------------|---------|--------|
-| **Antigravity IDE** | Coding agent chính | Tất cả |
-| **Stitch MCP Server** | Thiết kế UI, tạo screens | 4, 5, 6, 10 |
-| **GitHub MCP Server** | Quản lý repo, branches, PRs | 3, 8, 9 |
-| `stitch-design` | Thiết kế tổng thể, prompt enhance, design system | 4, 5, 6 |
-| `stitch-loop` | Sinh multi-page website | 6 |
-| `enhance-prompt` | Tối ưu prompt cho Stitch | 5, 6 |
-| `design-md` | Tạo DESIGN.md document | 4 |
-| `react-components` | Convert design → React code | 7 |
-
----
-
-## 📁 Cấu trúc dự án cuối cùng
-
-```
-vibespace-dashboard/
-├── .stitch/
-│   └── DESIGN.md              # Design system document
-├── src/
-│   ├── components/
-│   │   ├── PomodoroTimer.tsx   # Đồng hồ đếm ngược Pomodoro
-│   │   ├── AmbientMixer.tsx    # Bộ trộn âm thanh thiên nhiên đa kênh
-│   │   ├── LofiPlayer.tsx      # Trình phát nhạc Lo-fi (iTunes API)
-│   │   ├── TodoChecklist.tsx   # Danh sách mục tiêu trong ngày
-│   │   ├── BreathingBubble.tsx # Vòng tròn bong bóng tập thở SVG
-│   │   ├── SceneSelector.tsx   # Bộ chuyển đổi và tuỳ chỉnh ảnh nền
-│   │   └── ThemeToggle.tsx     # Customizer chuyển đổi theme màu
-│   ├── pages/
-│   │   ├── Lobby.tsx           # Lobby Entrance Page (Sảnh chờ)
-│   │   ├── Space.tsx           # Immersive Focus Studio (Bảng điều khiển lõi)
-│   │   ├── Journal.tsx         # Productivity Stats Journal
-│   │   └── Settings.tsx        # Customize Timer & sound presets
-│   ├── App.tsx                 # Cấu hình Routing chính cho ứng dụng
-│   ├── main.tsx                # Khởi tạo React & Mount DOM
-│   └── index.css               # CSS & Glassmorphism styles
-├── public/
-├── index.html
-├── package.json
-├── vite.config.ts
-└── README.md
-```
+</div>
