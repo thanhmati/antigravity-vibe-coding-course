@@ -8,138 +8,99 @@ Bài học này sẽ cung cấp cho bạn bản PRD rút gọn tiêu chuẩn c�
 
 ---
 
-## 1. Bản PRD rút gọn: VibeSpace v1.0
+## 1. Bản PRD: VibeSpace v1.0
 
-> [!NOTE]
-> Đây là bản PRD được viết hoàn toàn dưới lăng kính PM/BA: Tập trung mô tả **trải nghiệm người dùng (UX)**, **hành vi giao diện** và **tiêu chí chấp nhận (Acceptance Criteria)**. Tài liệu hoàn toàn không chứa code hay đặc tả kỹ thuật sâu để đảm bảo tính trực quan.
->
-> **Xem bản PRD riêng biệt tại đây:** [vibespace-prd.md](file:///Users/tanthanh/Documents/Project/antigravity-vibe-coding-course/docs/section-07-vibe-coding/vibespace-prd.md)
+# Tài liệu Yêu cầu Sản phẩm (PRD): VibeSpace
 
-### 📌 Tổng quan sản phẩm
-**VibeSpace** là một ứng dụng web giúp người dùng tạo ra một **không gian làm việc và học tập tập trung cá nhân hóa**. Người dùng mở trang web là có thể sử dụng ngay lập tức (không cần đăng ký tài khoản) để nghe nhạc lofi, bật tiếng mưa rơi, đếm giờ Pomodoro và quản lý các công việc cần làm trong ngày trên một giao diện thư giãn, tuyệt đẹp.
+## 1. Project Overview (Tổng quan dự án)
+**VibeSpace** là một ứng dụng web (web application) cá nhân hóa, tối giản và có tính thẩm mỹ cao, được thiết kế để giúp user tập trung, học tập và thư giãn. Đây là một workspace không cần thiết lập (zero-setup): user có thể mở trang web và ngay lập tức sử dụng mọi tính năng mà không cần đăng ký hay đăng nhập tài khoản.
 
----
-
-### 🎨 Định hướng Thiết kế & Bố cục (Design Direction & Layout)
-
-Giao diện của VibeSpace được thiết kế theo phong cách tối giản, hiện đại và tập trung vào cảm xúc (Vibe):
-* **Chủ đề (Theme):** Chế độ tối (Dark Mode) làm mặc định để chống mỏi mắt.
-* **Phong cách UI:** Hiệu ứng **kính mờ (Glassmorphism)** (nền panel bán trong suốt kết hợp làm mờ hậu cảnh) tạo cảm giác cao cấp và chiều sâu.
-* **Phông chữ:** Sử dụng phông chữ không chân hiện đại, thanh lịch (ví dụ: Google Font **Outfit**).
-* **Bảng màu:** Màu tím/indigo (`#6366f1`, `#8b5cf6`) làm chủ đạo cho các nút bấm, màu xanh lá (`#10b981`) cho trạng thái hoàn thành công việc, màu đỏ/hồng cho hành động xóa.
-
-#### 📐 Bố cục màn hình (Layout)
-Màn hình được chia làm 3 khu vực chính nhằm giữ cho khoảng không ở giữa luôn thoáng đãng để ngắm cảnh nền:
-
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│ [Logo] VibeSpace                   ● 38 người đang tập trung           │ (Header)
-├───────────────────┬────────────────────────────────┬───────────────────┤
-│                   │                                │                   │
-│ [Todo List]       │                                │ [YouTube Player]  │
-│ (Trái - Trên)     │                                │ (Phải - Trên)     │
-│                   │                                │                   │
-│                   │      [Đồng hồ Pomodoro]        │                   │
-│                   │          (Chính giữa)          │                   │
-│                   │      (Trong suốt hoàn toàn)    │                   │
-│                   │                                │ [Ambient Sounds]  │
-│ [Chọn Cảnh Nền]   │                                │ (Phải - Dưới)     │
-│ (Trái - Dưới)     │                                │                   │
-│                   │                                │                   │
-└───────────────────┴────────────────────────────────┴───────────────────┘
-```
-
-* **Vùng chính giữa:** Đồng hồ Pomodoro nổi trực tiếp trên cảnh nền. **Không sử dụng hộp nền (background card)** để tránh che khuất cảnh quan phía sau.
-* **Cột bên trái:** 
-  * Cạnh trên: Widget Quản lý công việc (Todo List).
-  * Cạnh dưới: Widget Chọn cảnh nền (Scene Selector).
-* **Cột bên phải:** 
-  * Cạnh trên: Widget Trình phát nhạc YouTube (YouTube Player).
-  * Cạnh dưới: Widget Bộ trộn âm thanh thiên nhiên (Ambient Sounds Mixer).
-* **Cạnh trên cùng:** Header mỏng, trong suốt chứa Logo và bộ đếm số người đang tập trung.
+Mục tiêu là tạo ra một môi trường liền mạch (seamless), không gây xao nhãng, kết hợp giữa âm thanh (Lofi & White Noise), hình ảnh (background thư giãn) và các công cụ tối ưu năng suất (Pomodoro Timer & Daily Todo List).
 
 ---
 
-### ⚙️ Chi tiết các tính năng chính
-
-#### F1. Không gian nền phong cảnh (Scene Background)
-* **Mô tả:** Thay đổi toàn bộ hình nền của website để tạo cảm hứng làm việc.
-* **Hành vi:**
-  * Cung cấp sẵn 4 cảnh nền chất lượng cao: **Rừng thông (mặc định), Bãi biển hoàng hôn, Quán café, Vũ trụ**.
-  * Chọn cảnh thông qua 4 ô ảnh thu nhỏ (thumbnail) ở góc trái dưới. Click vào ô nào thì cảnh nền thay đổi ngay lập tức với hiệu ứng chuyển cảnh mượt mà.
-  * Ứng dụng tự động ghi nhớ cảnh nền được chọn gần nhất cho lần truy cập sau.
-* **Tiêu chí chấp nhận (Acceptance Criteria - AC):**
-  - [ ] Hiển thị hình nền tràn màn hình (Fullscreen).
-  - [ ] Đổi nền ngay lập tức khi click thumbnail (thời gian chuyển < 1 giây).
-  - [ ] Thumbnail của cảnh đang chọn phải có viền sáng nổi bật.
-  - [ ] Trạng thái cảnh nền được lưu vào bộ nhớ trình duyệt (localStorage).
-
-#### F2. Đồng hồ Pomodoro chính giữa (Focus Timer)
-* **Mô tả:** Đồng hồ đếm ngược giúp người dùng làm việc khoa học theo chu kỳ 25 phút tập trung - 5 phút nghỉ ngơi.
-* **Hành vi:**
-  * Hiển thị ở chính giữa màn hình với phông chữ số cực lớn (khoảng 5.5rem). Bao quanh số giờ là một vòng tròn tiến trình (progress ring) siêu mảnh tự động co ngắn lại khi thời gian trôi đi.
-  * Có 3 chế độ lựa chọn nhanh: **Tập trung (25 phút), Nghỉ ngắn (5 phút), Nghỉ dài (15 phút)**.
-  * Có ô nhập nội dung *"Bạn đang làm gì?"* để người dùng ghi nhớ mục tiêu hiện tại. Khi timer chạy, nội dung này cùng thời gian đếm ngược sẽ hiển thị lên tiêu đề tab trình duyệt (ví dụ: `[24:50] VibeSpace | Viết PRD`).
-  * Có nút điều khiển: Bắt đầu (Play) / Tạm dừng (Pause) và Đặt lại (Reset). Khi hết giờ, phát âm thanh chuông báo nhẹ nhàng.
-* **Tiêu chí chấp nhận (AC):**
-  - [ ] Đồng hồ đếm ngược chính xác từng giây.
-  - [ ] Chuyển đổi giữa các chế độ tự động đặt lại thời gian tương ứng.
-  - [ ] Tiêu đề tab trình duyệt cập nhật động theo thời gian thực.
-  - [ ] Phát âm thanh thông báo khi thời gian đếm ngược về `00:00`.
-  - [ ] Vòng tiến trình SVG chạy mượt mà, đồng bộ với giây đếm ngược.
-
-#### F3. Bộ trộn âm thanh thiên nhiên (Ambient Sound Mixer)
-* **Mô tả:** Người dùng tự tùy biến âm thanh nền bằng cách trộn nhiều tiếng động tự nhiên lại với nhau.
-* **Hành vi:**
-  * Cung cấp 4 kênh âm thanh lặp (loop) chất lượng cao: **Tiếng mưa, Lửa trại, Tiếng gió, Rừng thông**.
-  * Mỗi âm thanh có nút bật/tắt độc lập và thanh trượt (slider) điều chỉnh âm lượng từ `0%` đến `100%`.
-  * Người dùng có thể bật cùng lúc nhiều âm thanh (ví dụ: vừa mưa vừa lửa trại). Mặc định tất cả âm thanh ở trạng thái tắt khi mới vào trang.
-* **Tiêu chí chấp nhận (AC):**
-  - [ ] Các thanh slider phản hồi nhạy bén, âm lượng thay đổi tức thì.
-  - [ ] Âm thanh phát lặp vô hạn, không bị vấp hay giật lag khi chuyển tiếp.
-  - [ ] Ghi nhớ mức âm lượng của từng kênh khi tải lại trang.
-
-#### F4. Trình phát nhạc YouTube (YouTube Player)
-* **Mô tả:** Phát nhạc lofi hoặc playlist cá nhân từ YouTube làm nhạc nền.
-* **Hành vi:**
-  * Hiển thị một khung phát video YouTube thu nhỏ. Mặc định có sẵn một bài nhạc lofi cực chill khi người dùng truy cập lần đầu.
-  * Cung cấp ô nhập để người dùng dán link YouTube bất kỳ (dạng đầy đủ hoặc rút gọn) để đổi bài hát.
-  * Có thanh điều chỉnh âm lượng riêng biệt cho YouTube và nút Tắt tiếng nhanh (Mute).
-* **Tiêu chí chấp nhận (AC):**
-  - [ ] Video mặc định chạy bình thường khi bấm Play.
-  - [ ] Đổi video thành công khi dán link hợp lệ và bấm nút tải mà không cần reload trang.
-  - [ ] Hiển thị thông báo lỗi rõ ràng nếu dán link không đúng định dạng YouTube.
-  - [ ] Lưu lại bài hát gần nhất người dùng đã phát.
-
-#### F5. Danh sách việc cần làm (Daily Todo List)
-* **Mô tả:** Công cụ quản lý các đầu việc cần hoàn thành trong ngày, nằm ở góc trái trên.
-* **Hành vi:**
-  * Nhập việc cần làm vào ô trống và nhấn Enter (hoặc click nút `+`) để thêm vào danh sách.
-  * Mỗi task có ô chọn (checkbox) hình tròn. Click để hoàn thành (chữ gạch ngang và mờ đi).
-  * Hiển thị thanh tiến trình (progress bar) và bộ đếm (ví dụ: `2/5 công việc`) ở đầu widget.
-  * Khi hover vào task, hiển thị nút xóa (icon ✕).
-  * Có nút "Dọn việc xong" để xóa nhanh toàn bộ các việc đã hoàn thành.
-* **Tiêu chí chấp nhận (AC):**
-  - [ ] Thêm, sửa trạng thái, và xóa task hoạt động mượt mà không lỗi.
-  - [ ] Thanh tiến trình cập nhật chính xác tỷ lệ hoàn thành theo thời gian thực.
-  - [ ] Toàn bộ danh sách công việc được lưu lại ở localStorage.
-
-#### F6. Header & Trạng thái cộng đồng (Header)
-* **Mô tả:** Thanh điều hướng mỏng ở trên cùng màn hình.
-* **Hành vi:**
-  * Hiển thị logo VibeSpace bên trái và bộ đếm số người online tượng trưng (ví dụ: `● 38 người đang tập trung`) bên phải.
-  * Con số người online tự động biến động nhẹ sau mỗi vài phút để tạo cảm giác chân thực.
-* **Tiêu chí chấp nhận (AC):**
-  - [ ] Nằm cố định ở trên cùng màn hình, nền mờ nhẹ để không che background.
-  - [ ] Dấu chấm trạng thái nhấp nháy xanh nhẹ nhàng (pulse animation).
+## 2. Target Audience (Đối tượng mục tiêu)
+- Học sinh, sinh viên cần môi trường học tập.
+- Remote worker, developer và writer đang tìm kiếm một không gian làm việc tập trung (focus space).
+- Bất kỳ ai đang tìm kiếm một dashboard đơn giản, thư giãn để quản lý công việc hàng ngày trong khi nghe các âm thanh ambient.
 
 ---
 
-### 🚫 Phạm vi KHÔNG làm trong v1.0 (Out of Scope)
-* Không làm hệ thống đăng ký/đăng nhập thành viên (tất cả lưu ở trình duyệt người dùng).
-* Không đồng bộ dữ liệu lên máy chủ (Cloud Sync).
-* Không làm tính năng tự tải ảnh nền từ máy tính lên (chỉ dùng 4 cảnh mặc định).
-* Không hỗ trợ hoàn toàn giao diện trên điện thoại di động (chỉ tối ưu hóa cho Desktop và Laptop màn hình rộng từ 1024px trở lên).
+## 3. Product Principles (Nguyên tắc sản phẩm)
+- **Instant Gratification (Trải nghiệm tức thì):** Không có rào cản đăng ký/đăng nhập. Tải trang (load) và sử dụng ngay lập tức.
+- **Aesthetic Excellence (Thẩm mỹ vượt trội):** Giao diện người dùng (UI) theo phong cách Glassmorphism cao cấp, hiện đại với các hiệu ứng chuyển cảnh (transitions) mượt mà và hình ảnh được chọn lọc kỹ lưỡng.
+- **Local-First (Ưu tiên lưu trữ cục bộ):** Tất cả tùy chọn của user, playlist tùy chỉnh và các todo item đều được lưu cục bộ trong trình duyệt của user (`localStorage`).
+- **Simplicity (Sự tối giản):** Giảm thiểu sự lộn xộn của UI. Các control panel có thể tự động ẩn đi (fade out) hoặc dễ dàng bật/tắt (toggle) để user tập trung hoàn toàn vào công việc.
+
+---
+
+## 4. Feature Requirements (Yêu cầu tính năng)
+
+### 4.1. YouTube Lofi Music Player (Trình phát nhạc YouTube Lofi)
+- **Core Functionality (Tính năng cốt lõi):** Tích hợp trình phát nhạc YouTube sử dụng YouTube Iframe API.
+- **Default Playlists (Playlist mặc định):** Hệ thống tự động chọn sẵn một danh sách các luồng livestream/playlist Lofi chất lượng cao (ví dụ: Lofi Girl, Chillhop, Cozy Coffee Shop).
+- **Search & Customization (Tìm kiếm & Tùy biến):**
+  - User có thể copy và paste trực tiếp bất kỳ URL Video hoặc Playlist nào từ YouTube để load và phát nhạc.
+- **Controls (Bộ điều khiển):**
+  - Play, Pause, Next, Previous track (nếu là playlist).
+  - Điều chỉnh âm lượng (volume control) riêng biệt cho trình phát (độc lập với âm lượng hệ thống).
+  - Bật/tắt hiển thị metadata của track (Title, Channel).
+
+### 4.2. Ambient White Noise Mixer (Bộ trộn âm thanh nền Ambient)
+- **Core Functionality (Tính năng cốt lõi):** Một panel dạng floating để phát và mix đồng thời nhiều vòng lặp âm thanh (sound loops).
+- **Sound Catalog (Danh mục âm thanh - Tối thiểu 5 loại):**
+  - Tiếng mưa rơi / Bão sấm sét (Rain / Thunderstorm)
+  - Tiếng lửa trại tách bách (Crackling Campfire)
+  - Tiếng gió / Gió thổi rừng thông (Wind / Forest Breeze)
+  - Tiếng sóng biển / Bờ biển (Ocean Waves / Sea Shore)
+  - Không gian quán cà phê (Coffee Shop Ambience)
+- **Controls (Bộ điều khiển):**
+  - Nút Master Mute/Unmute.
+  - Bật/tắt (Toggle ON/OFF) cho từng loại âm thanh.
+  - Thanh trượt âm lượng (volume slider) riêng cho từng âm thanh để user tự mix theo sở thích.
+- **Audio Delivery (Phương thức truyền tải âm thanh):** Tải file từ các CDN trực tuyến tốc độ cao chứa các file ambient sound lặp (looping) miễn phí bản quyền để giữ cho mã nguồn (repository) siêu nhẹ.
+
+### 4.3. Aesthetic Background Switcher (Bộ chuyển đổi ảnh nền thẩm mỹ)
+- **Core Functionality (Tính năng cốt lõi):** Thay đổi vibe không gian làm việc bằng các hình nền chất lượng cao, đậm chất thư giãn.
+- **Visual Options (Tùy chọn hình ảnh):**
+  - Bộ sưu tập hình nền phong cảnh độ phân giải cao được chọn lọc (Rừng thông, Đại dương, Căn phòng ấm cúng, Núi non).
+  - Hỗ trợ tải ảnh nền từ URL tùy chỉnh của user.
+- **Visual Style (Phong cách hiển thị):** Lớp phủ (overlay) phong cách Glassmorphism với độ mờ (opacity) có thể tùy chỉnh.
+
+### 4.4. Pomodoro Timer (Đồng hồ Pomodoro)
+- **Core Functionality (Tính năng cốt lõi):** Trung tâm của Zen dashboard. Hiển thị đồng hồ đếm ngược kỹ thuật số trực quan.
+- **Cycles (Chu kỳ hoạt động):**
+  - Focus Session (Mặc định: 25 phút)
+  - Short Break (Mặc định: 5 phút)
+  - Long Break (Mặc định: 15 phút)
+- **Controls (Bộ điều khiển):** Start, Pause, Reset, Skip.
+- **Notifications (Thông báo):** Âm thanh chime nhẹ nhàng khi kết thúc một chu kỳ, kết hợp hiệu ứng nhấp nháy (flashing) tiêu đề tab trên trình duyệt.
+- **Settings (Cài đặt):** Cho phép tùy chỉnh thời gian của Focus, Short Break và Long Break.
+
+### 4.5. Daily Todo List (Danh sách công việc hàng ngày)
+- **Core Functionality (Tính năng cốt lõi):** Một checklist công việc hàng ngày.
+- **Interaction (Tương tác):** Add task, toggle completion (đánh dấu hoàn thành), delete.
+- **Daily Reset Logic (Logic tự động reset theo ngày):**
+  - Tự động xóa sạch/reset danh sách khi hệ thống phát hiện sang ngày mới dựa trên múi giờ địa phương (local timezone) của user khi họ mở hoặc reload trang web.
+
+### 4.6. Zen Layout & Floating UI Widgets (Bố cục Zen & Các widget nổi)
+- **Zen Focus Layout (Bố cục tập trung):** Theo mặc định, giao diện cực kỳ trống trải và sạch sẽ, chỉ hiển thị đồng hồ Pomodoro lớn ở chính giữa và hình nền thư giãn.
+- **Floating Controls (Điều khiển dạng nổi):** Các widget phụ (Music Player, Sound Mixer, Todo List) được truy cập thông qua các nút floating action buttons (FABs) tối giản. Khi click vào một button sẽ mở ra một panel overlay mờ ảo dạng Glassmorphism để user thao tác.
+
+---
+
+## 5. Non-Functional Requirements (Yêu cầu phi chức năng)
+- **Performance (Hiệu năng):** Thời gian tải trang ban đầu cực nhanh (LCP < 1.5 giây). Các luồng âm thanh phải được tối ưu hóa/nén để tải nhanh nhất.
+- **Responsiveness (Giao diện đáp ứng):** Responsive tốt từ màn hình desktop cho đến màn hình mobile (mặc dù desktop là use-case chính).
+- **Browser Compatibility (Độ tương thích trình duyệt):** Hoạt động tốt trên tất cả các trình duyệt hiện đại (Chrome, Safari, Firefox, Edge).
+- **Reliability (Độ tin cậy):** Âm thanh phải loop mượt mà, không có khoảng dừng ngắt quãng dễ nhận thấy hoặc gây rò rỉ bộ nhớ (memory leaks).
+
+---
+
+## 6. Out of Scope (V1) (Nằm ngoài phạm vi phiên bản 1)
+- Tài khoản người dùng (user accounts), đồng bộ hóa đám mây (cloud sync) và biểu đồ lịch sử làm việc.
+- Không gian làm việc chung (collaborative workspaces - phòng học tập chung).
+- Tích hợp trực tiếp Spotify/Apple Music (do giới hạn API và yêu cầu xác thực người dùng).
 
 ---
 
