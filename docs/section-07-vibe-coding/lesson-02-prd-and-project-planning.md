@@ -10,8 +10,6 @@ Bài học này sẽ cung cấp cho bạn bản PRD rút gọn tiêu chuẩn c�
 
 ## 1. Bản PRD: VibeSpace v1.0
 
-# Tài liệu Yêu cầu Sản phẩm (PRD): VibeSpace
-
 ## 1. Project Overview (Tổng quan dự án)
 **VibeSpace** là một ứng dụng web (web application) cá nhân hóa, tối giản và có tính thẩm mỹ cao, được thiết kế để giúp user tập trung, học tập và thư giãn. Đây là một workspace không cần thiết lập (zero-setup): user có thể mở trang web và ngay lập tức sử dụng mọi tính năng mà không cần đăng ký hay đăng nhập tài khoản.
 
