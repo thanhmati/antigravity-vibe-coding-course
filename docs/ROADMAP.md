@@ -14,7 +14,7 @@ graph TD
 
     S1 --> S2["⚙️ Section 2: Core Concepts\n━━━━━━━━━━━━━━\n• Model, Rules, Workflows\n• Agent Skills\n• 9 lectures · ~4h"]
 
-    S2 --> S3["✍️ Section 3: Prompt Engineering\n━━━━━━━━━━━━━━\n• Thiết kế prompt hiệu quả\n• Debug & tối ưu\n• 4 lectures · ~2h"]
+    S2 --> S3["✍️ Section 3: Prompt Engineering\n━━━━━━━━━━━━━━\n• Thiết kế prompt hiệu quả\n• Debug & tối ưu\n• 6 lectures · ~3h"]
 
     S3 --> S4["🧠 Section 4: Context Engineering\n━━━━━━━━━━━━━━\n• Context docs & memory\n• Token optimization\n• 10 lectures · ~4-5h"]
 
@@ -102,8 +102,8 @@ graph TD
 |---------|-----------|----------------|
 | Section 1: Foundation | ~2 giờ | 2 giờ |
 | Section 2: Core Concepts | ~4 giờ | 6 giờ |
-| Section 3: Prompt Engineering | ~2 giờ | 8 giờ |
-| Section 4: Context Engineering | ~4-5 giờ | 12-13 giờ |
+| Section 3: Prompt Engineering | ~3 giờ | 7 giờ |
+| Section 4: Context Engineering | ~4-5 giờ | 11-12 giờ |
 | Section 5: Multi-Agent | ~3-4 giờ | 15-17 giờ |
 | Section 6: MCP | ~3 giờ | 18-19 giờ |
 | Section 7: Vibe Coding | ~6-8 giờ | **24-27 giờ** |

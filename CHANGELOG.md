@@ -12,6 +12,7 @@ Format dựa trên [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Updated
 - **Section 2:** Expanded from 7 to 9 lectures to include "Workflows Demo" and "Demo Agent Skills".
+- **Section 3:** Refactored from 4 to 6 lectures — added 2 Demo sessions (Prompt tệ vs tốt, Zero→Pro) and replaced Debug lecture with "Workshop: Xây dựng Prompt Library cá nhân".
 - **Section 4:** Restructured and streamlined to 10 lectures.
 - **Section 5:** Updated to 6 lectures (from 4).
 - **Section 7:** Reorganized and expanded to 11 lectures (added Game 3D project, MCP integrations, and PRD breakdown).

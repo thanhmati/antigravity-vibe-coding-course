@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="#-curriculum"><img src="https://img.shields.io/badge/📚_Sections-7-blueviolet?style=for-the-badge" alt="Sections" /></a>
-  <a href="#-curriculum"><img src="https://img.shields.io/badge/🎓_Lectures-51-blue?style=for-the-badge" alt="Lectures" /></a>
+  <a href="#-curriculum"><img src="https://img.shields.io/badge/🎓_Lectures-53-blue?style=for-the-badge" alt="Lectures" /></a>
   <a href="#-tech-stack"><img src="https://img.shields.io/badge/🤖_Antigravity-Powered-brightgreen?style=for-the-badge" alt="Antigravity" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/📄_License-CC_BY--NC--SA_4.0-orange?style=for-the-badge" alt="License" /></a>
 </p>
@@ -102,7 +102,7 @@ Nếu bạn cần hỗ trợ hoặc muốn kết nối thêm ngoài khóa học,
 
 ## 📚 Curriculum
 
-> **7 Sections • 51 Lectures • Từ Zero → Production**
+> **7 Sections • 53 Lectures • Từ Zero → Production**
 
 ```mermaid
 flowchart LR
@@ -175,17 +175,19 @@ flowchart LR
 
 ### Section 3 · Prompt Engineering for AI Agents
 
-> ✍️ Viết prompt hiệu quả cho AI Agent — không chỉ cho chatbot
+> ✍️ Viết prompt hiệu quả cho AI Agent — xen kẽ theory và demo thực chiến
 
 <details>
-<summary><b>📋 4 Lectures — Xem chi tiết</b></summary>
+<summary><b>📋 6 Lectures — Xem chi tiết</b></summary>
 
-| # | Lecture | Mô tả |
-|---|---------|--------|
-| 3.1 | Prompt Engineering cho AI Agent là gì? | Prompt ảnh hưởng agent suy nghĩ & hành động |
-| 3.2 | Các lỗi phổ biến khi viết Prompt | Mơ hồ, xung đột, context quá dài |
-| 3.3 | Cách thiết kế Prompt hiệu quả | Role, Goal, Constraints, Output |
-| 3.4 | Debug & phân tích Prompt | Antigravity Kit |
+| # | Loại | Lecture | Mô tả |
+|---|------|---------|--------|
+| 3.1 | 📖 Theory | Prompt Engineering cho AI Agent là gì? | Bản chất PE và sự khác biệt so với chatbot |
+| 3.2 | 📖 Theory | Các lỗi phổ biến khi viết Prompt | Mơ hồ, xung đột, over-prompting, thiếu context |
+| 3.3 | 🎬 Demo | Demo: Prompt tệ vs Prompt tốt | Live side-by-side — AI Agent phản ứng khác nhau |
+| 3.4 | 📖 Theory | Framework RGCO | Role, Goal, Constraints, Output + templates |
+| 3.5 | 🎬 Demo | Demo: Viết Prompt từ Zero → Pro | Thực hành live 3 use case thực tế |
+| 3.6 | 🛠️ Workshop | Xây dựng Prompt Library cá nhân | Tự build bộ prompt reusable cho dự án thực |
 
 </details>
 
@@ -300,7 +302,7 @@ graph TD
     START(("🎬 Start")) --> S1
 
     S1["🧱 Section 1\nFoundation\n5 lectures"] --> S2["⚙️ Section 2\nCore Concepts\n9 lectures"]
-    S2 --> S3["✍️ Section 3\nPrompt Engineering\n4 lectures"]
+    S2 --> S3["✍️ Section 3\nPrompt Engineering\n6 lectures"]
     S3 --> S4["🧠 Section 4\nContext Engineering\n10 lectures"]
     S4 --> S5["🤖 Section 5\nMulti-Agent\n6 lectures"]
     S5 --> S6["🔌 Section 6\nMCP\n6 lectures"]

@@ -169,19 +169,25 @@ Curriculum
 - Description: Demo cách sử dụng Agent Skills từ Vercel Labs trong thực tế. Hiểu cách Skills giúp AI Agent thực thi workflow phức tạp (không chỉ gọi tool). Áp dụng các skills như React, AI SDK, deployment vào AI Agent. Nắm được cách integrate skills vào project để build production AI system.
 
 [chapter] Prompt Engineering for AI Agents
-- Description: 
+- Description: Trang bị kỹ năng viết prompt hiệu quả đặc thù cho AI Agent — không chỉ là chatbot. Học viên sẽ hiểu tại sao prompt ảnh hưởng trực tiếp đến cách Agent suy nghĩ, ra quyết định và hành động. Xen kẽ theory và demo thực chiến — ra khỏi section này với bộ Prompt Library cá nhân dùng được ngay.
 
 [lecture] Prompt Engineering cho AI Agent là gì ?
-- Description: Hiểu Prompt Engineering trong AI Agent và cách prompt ảnh hưởng đến cách agent suy nghĩ, quyết định và hành động.
+- Description: Hiểu Prompt Engineering trong AI Agent và cách prompt ảnh hưởng đến cách agent suy nghĩ, quyết định và hành động. Khác biệt cốt lõi so với prompt chatbot thông thường: tại sao cùng một câu prompt cho ra kết quả đối lập giữa chatbot và AI Agent.
 
 [lecture] Các lỗi phổ biến khi viết Prompt
-- Description: Những lỗi thường gặp như prompt mơ hồ, xung đột instruction, context quá dài khiến agent trả lời sai.
+- Description: Những lỗi thường gặp như prompt mơ hồ, xung đột instruction, thiếu context, over-prompting khiến agent trả lời sai, lặp vô hạn hoặc làm sai ngoài yếú muốn.
+
+[lecture] Demo: Prompt tệ vs Prompt tốt — AI Agent phản ứng như thế nào ?
+- Description: Demo sống động: cùng một task, 2 cách prompt khác nhau — AI Agent phản ứng hoàn toàn khác nhau. Học viên tự mắt chứng kiến hậu quả của prompt kém và hiệu quả vượt trội của prompt tốt trên Antigravity.
 
 [lecture] Cách thiết kế Prompt hiệu quả (Role, Goal, Constraints, Output)
-- Description: 
+- Description: Framework 4 thành phần RGCO — Role, Goal, Constraints, Output — để thiết kế prompt có cấu trúc, rõ ràng và tái sử dụng được. Kèm template sẵn có cho từng loại task phổ biến: code generation, code review, UI design, bug fixing.
 
-[lecture] Debug & phân tích Prompt (Antigravity Kit)
-- Description: 
+[lecture] Demo: Viết Prompt cho AI Agent từ Zero → Pro
+- Description: Thực hành live trỮn Antigravity: bắt đầu từ prompt thô, áp dụng framework RGCO, tối ưu từng bước và so sánh output qua 3 use case thực tế: generate UI component, review code, debug lỗi phức tạp.
+
+[lecture] Workshop: Xây dựng Prompt Library cá nhân
+- Description: Bài tập thực hành cuối section: học viên tự xây dựng bộ Prompt Library réusable của riêng mình cho các tình huống dev thường gặp. Ra khỏi bài học với một tài sản thực sự dùng được ngay trong dự án thực tế.
 
 [chapter] Context Engineering for AI Agents
 - Description: Quản lý context & memory cho AI Agent khi Vibe Coding, tránh Agent "quên" dự án, giảm token usage, tăng tốc development.

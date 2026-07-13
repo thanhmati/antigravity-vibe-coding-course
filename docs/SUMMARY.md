@@ -1,6 +1,6 @@
 # 📑 Table of Contents — Mục Lục Khóa Học
 
-> Full curriculum — 7 Sections · 51 Lectures
+> Full curriculum — 7 Sections · 53 Lectures
 
 ---
 
@@ -64,14 +64,16 @@
 
 ## Section 3 · ✍️ Prompt Engineering for AI Agents
 
-> Viết prompt hiệu quả cho AI Agent
+> Viết prompt hiệu quả cho AI Agent — xen kẽ theory và demo thực chiến
 
 📂 [Section README](section-03-prompt-engineering/README.md)
 
-- 3.1 · Prompt Engineering cho AI Agent là gì?
-- 3.2 · Các lỗi phổ biến khi viết Prompt
-- 3.3 · Cách thiết kế Prompt hiệu quả (Role, Goal, Constraints, Output)
-- 3.4 · Debug & phân tích Prompt (Antigravity Kit)
+- [3.1 · Prompt Engineering cho AI Agent là gì?](section-03-prompt-engineering/lesson-01-what-is-prompt-engineering.md)
+- [3.2 · Các lỗi phổ biến khi viết Prompt](section-03-prompt-engineering/lesson-02-common-prompt-mistakes.md)
+- [3.3 · 🎬 Demo: Prompt tệ vs Prompt tốt — AI Agent phản ứng như thế nào?](section-03-prompt-engineering/lesson-03-demo-bad-vs-good-prompt.md)
+- [3.4 · Cách thiết kế Prompt hiệu quả (Role, Goal, Constraints, Output)](section-03-prompt-engineering/lesson-04-rgco-framework.md)
+- [3.5 · 🎬 Demo: Viết Prompt cho AI Agent từ Zero → Pro](section-03-prompt-engineering/lesson-05-demo-zero-to-pro.md)
+- [3.6 · 🛠️ Workshop: Xây dựng Prompt Library cá nhân](section-03-prompt-engineering/lesson-06-workshop-prompt-library.md)
 
 ---
 
