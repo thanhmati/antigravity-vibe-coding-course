@@ -261,5 +261,35 @@ Curriculum
 [chapter] Vibe Coding Dự Án Thực Tế – Từ Ý Tưởng Đến Sản Phẩm - UPDATING
 - Description: Áp dụng toàn bộ kiến thức từ Section 1-5 để xây dựng một dự án web hoàn chỉnh bằng phương pháp Vibe Coding, sử dụng Google Stitch MCP (thiết kế UI) và GitHub MCP (quản lý source code)
 
-[lecture] Tổng Quan Vibe Coding – Từ Concept Đến Product
+[lecture] Tổng Quan Vibe Coding & Giới thiệu dự án
 - Description:
+
+[lecture] Quy trình 4 bước khi Vibe coding
+- Description: 
+
+[lecture] Cài đặt plugin Agent Skills - Đóng gói quy trình phát triển phần mềm
+- Description: 
+
+[lecture] Tìm hiểu về PRD (Project requirement document)
+- Description: 
+
+[lecture] Lập kế hoạch dự án VibeSpace - PRD, PLAN, ARCHITECTURE (context document)
+- Description: 
+
+[lecture] Thiết kế UI cho VibeSpace trên Google Stitch
+- Description: 
+
+[lecture] Chuyển đổi Thiết kế UI → Code - Chạy dự án ở localhost
+- Description: 
+
+[lecture] Triển khai website lên Production với Vercel
+- Description: 
+
+[lecture] Mở rộng dự án VibeSpace gồm Backend và Database
+- Description: 
+
+[lecture] Kết nối MCP tới Render và Supabase
+- Description: 
+
+[lecture] Vibe Coding Làm Game 3D Endless Runner - Dự án 2
+- Description: 

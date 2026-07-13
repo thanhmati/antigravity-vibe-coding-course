@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="#-curriculum"><img src="https://img.shields.io/badge/📚_Sections-7-blueviolet?style=for-the-badge" alt="Sections" /></a>
-  <a href="#-curriculum"><img src="https://img.shields.io/badge/🎓_Lectures-40+-blue?style=for-the-badge" alt="Lectures" /></a>
+  <a href="#-curriculum"><img src="https://img.shields.io/badge/🎓_Lectures-51-blue?style=for-the-badge" alt="Lectures" /></a>
   <a href="#-tech-stack"><img src="https://img.shields.io/badge/🤖_Antigravity-Powered-brightgreen?style=for-the-badge" alt="Antigravity" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/📄_License-CC_BY--NC--SA_4.0-orange?style=for-the-badge" alt="License" /></a>
 </p>
@@ -102,7 +102,7 @@ Nếu bạn cần hỗ trợ hoặc muốn kết nối thêm ngoài khóa học,
 
 ## 📚 Curriculum
 
-> **7 Sections • 40+ Lectures • Từ Zero → Production**
+> **7 Sections • 51 Lectures • Từ Zero → Production**
 
 ```mermaid
 flowchart LR
@@ -153,7 +153,7 @@ flowchart LR
 > ⚙️ Từ hiểu → build → control → production mindset
 
 <details>
-<summary><b>📋 7 Lectures — Xem chi tiết</b></summary>
+<summary><b>📋 9 Lectures — Xem chi tiết</b></summary>
 
 | # | Lecture | Mô tả |
 |---|---------|--------|
@@ -163,7 +163,9 @@ flowchart LR
 | 2.4 | Rules trong AI Agent | Kiểm soát hành vi & coding style |
 | 2.5 | Demo Rules: Trước vs Sau | Impact của Rules trong production |
 | 2.6 | Workflows trong AI Agent | Tự động hoá quy trình dev |
-| 2.7 | Agent Skills là gì? | Mở rộng sức mạnh Agent với Tools |
+| 2.7 | Workflows Demo | Từ manual → auto với AI Agent |
+| 2.8 | Agent Skills là gì? | Mở rộng sức mạnh Agent với Tools |
+| 2.9 | Demo Agent Skills | Demo Skills từ Vercel Labs trong thực tế |
 
 </details>
 
@@ -196,7 +198,7 @@ flowchart LR
 > 🧠 Giúp AI Agent "Nhớ" & Tối ưu Token — Kỹ thuật quan trọng nhất khi Vibe Coding
 
 <details>
-<summary><b>📋 7 Lectures — Xem chi tiết</b></summary>
+<summary><b>📋 10 Lectures — Xem chi tiết</b></summary>
 
 | # | Lecture | Mô tả |
 |---|---------|--------|
@@ -205,8 +207,11 @@ flowchart LR
 | 4.3 | 5 trụ cột của Context Engineering | Instructions, Tools, Memory, Retrieval, State |
 | 4.4 | Token là gì? Tại sao quan trọng? | Chi phí & hiệu suất |
 | 4.5 | Context Documents — Bộ nhớ ngoài cho Agent | AGENTS.md, ARCHITECTURE.md, PLAN.md |
-| 4.6 | Kỹ thuật Summarize Context | Giữ Agent "tỉnh táo" phiên dài |
-| 4.7 | Context Compaction | "Nén" conversation |
+| 4.6 | AGENTS.md – File quan trọng nhất | Convention, tech stack, do's & don'ts |
+| 4.7 | ARCHITECTURE.md – Bản đồ dự án | Kiến trúc hệ thống |
+| 4.8 | PLAN.md – Trạng thái dự án | Task list & priorities |
+| 4.9 | Kỹ thuật Summarize Context | Giữ Agent "tỉnh táo" phiên dài |
+| 4.10 | Context Compaction | "Nén" lại conversation |
 
 </details>
 
@@ -263,22 +268,24 @@ flowchart LR
 > 🎨 Áp dụng toàn bộ kiến thức để build dự án web hoàn chỉnh
 
 <details>
-<summary><b>📋 10 Lectures — Xem chi tiết</b></summary>
+<summary><b>📋 11 Lectures — Xem chi tiết</b></summary>
 
 | # | Lecture | Mô tả |
 |---|---------|--------|
-| 7.1 | Tổng quan Vibe Coding & Lập kế hoạch | Mindset & project plan |
-| 7.2 | Cài đặt Stitch Skills & Chuẩn bị | Môi trường dev |
-| 7.3 | Thiết kế Design System với Stitch | Color, typography, shape |
-| 7.4 | Tạo UI Screens – Phần 1 | Trang chủ & Navigation |
-| 7.5 | Tạo UI Screens – Phần 2 | Tính năng chính |
-| 7.6 | Convert Design → React Code | react-components skill |
-| 7.7 | GitHub Workflow tự động | Branch, Commit & PR |
-| 7.8 | Thêm tính năng & Fix bug | Iterative Vibe Coding |
-| 7.9 | Polish UI, Responsive & Animation | Hoàn thiện sản phẩm |
-| 7.10 | Review & Tổng kết | Best practices |
+| 7.1 | Tổng quan Vibe Coding & Giới thiệu dự án | Mindset & giới thiệu dự án VibeSpace |
+| 7.2 | Quy trình 4 bước khi Vibe coding | Quy trình làm việc hiệu quả |
+| 7.3 | Cài đặt plugin Agent Skills | Đóng gói quy trình phát triển phần mềm |
+| 7.4 | Tìm hiểu về PRD | Project Requirement Document |
+| 7.5 | Lập kế hoạch dự án VibeSpace | PRD, PLAN, ARCHITECTURE (context documents) |
+| 7.6 | Thiết kế UI cho VibeSpace trên Google Stitch | Thiết kế giao diện Dashboard |
+| 7.7 | Chuyển đổi Thiết kế UI → Code | Chạy dự án ở localhost |
+| 7.8 | Triển khai website lên Production với Vercel | Đưa sản phẩm lên môi trường thực tế |
+| 7.9 | Mở rộng dự án VibeSpace | Tích hợp Backend và Database |
+| 7.10 | Kết nối MCP tới Render và Supabase | Gọi tool và sử dụng dữ liệu thực tế |
+| 7.11 | Vibe Coding Làm Game 3D Endless Runner | Dự án 2 - game thực tế |
 
-**🛠 Dự án thực tế:** VibeSpace Studio — Trạm tập trung và âm thanh chữa lành
+**🛠 Dự án thực tế 1:** VibeSpace Studio — Trạm tập trung và âm thanh chữa lành  
+**🎮 Dự án thực tế 2:** Endless Runner — Game 3D chạy vô tận
 
 </details>
 
@@ -292,12 +299,12 @@ flowchart LR
 graph TD
     START(("🎬 Start")) --> S1
 
-    S1["🧱 Section 1\nFoundation\n5 lectures"] --> S2["⚙️ Section 2\nCore Concepts\n7 lectures"]
+    S1["🧱 Section 1\nFoundation\n5 lectures"] --> S2["⚙️ Section 2\nCore Concepts\n9 lectures"]
     S2 --> S3["✍️ Section 3\nPrompt Engineering\n4 lectures"]
-    S3 --> S4["🧠 Section 4\nContext Engineering\n7 lectures"]
+    S3 --> S4["🧠 Section 4\nContext Engineering\n10 lectures"]
     S4 --> S5["🤖 Section 5\nMulti-Agent\n6 lectures"]
     S5 --> S6["🔌 Section 6\nMCP\n6 lectures"]
-    S6 --> S7["🎨 Section 7\nVibe Coding Project\n10 lectures"]
+    S6 --> S7["🎨 Section 7\nVibe Coding Project\n11 lectures"]
 
     S7 --> FINISH(("🏆 Done!"))
 

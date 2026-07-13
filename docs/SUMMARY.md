@@ -1,7 +1,6 @@
 # 📑 Table of Contents — Mục Lục Khóa Học
 
-> **Google Antigravity: AI Agent, AI App & Vibe Coding**  
-> Full curriculum — 7 Sections · 42 Lectures
+> Full curriculum — 7 Sections · 51 Lectures
 
 ---
 
@@ -92,10 +91,6 @@
 - 4.8 · PLAN.md – Trạng thái dự án
 - 4.9 · [Kỹ thuật Summarize Context](section-04-context-engineering/lesson-03-summarize-context-techniques.md)
 - 4.10 · Context Compaction – "Nén" lại conversation
-- 4.11 · [Just-in-Time Context – Chỉ cho Agent biết điều cần biết](section-04-context-engineering/lesson-04-just-in-time-context.md)
-- 4.12 · Targeted File References – Tham chiếu đích danh
-- 4.13 · Layered Context – Mô hình phân tầng
-- 4.14 · Rules & Smart Prompting – Tối ưu hóa token
 
 ---
 
@@ -135,8 +130,17 @@
 
 📂 [Section README](section-07-vibe-coding/README.md)
 
-- 7.1 · [Tổng quan Vibe Coding & Giới thiệu VibeSpace](section-07-vibe-coding/lesson-01-vibe-coding-overview.md)
-- 7.2 · [Specs-Driven Vibe Coding – PRD & Định hướng Thiết kế](section-07-vibe-coding/lesson-02-prd-and-project-planning.md)
+- 7.1 · [Tổng Quan Vibe Coding & Giới thiệu dự án](section-07-vibe-coding/lesson-01-vibe-coding-overview.md)
+- 7.2 · [Quy trình 4 bước khi Vibe coding](section-07-vibe-coding/lesson-01-vibe-coding-overview.md)
+- 7.3 · Cài đặt plugin Agent Skills - Đóng gói quy trình phát triển phần mềm
+- 7.4 · [Tìm hiểu về PRD (Project requirement document)](section-07-vibe-coding/lesson-02-prd-and-project-planning.md)
+- 7.5 · [Lập kế hoạch dự án VibeSpace - PRD, PLAN, ARCHITECTURE](section-07-vibe-coding/lesson-02-prd-and-project-planning.md)
+- 7.6 · Thiết kế UI cho VibeSpace trên Google Stitch
+- 7.7 · Chuyển đổi Thiết kế UI → Code - Chạy dự án ở localhost
+- 7.8 · Triển khai website lên Production với Vercel
+- 7.9 · Mở rộng dự án VibeSpace gồm Backend và Database
+- 7.10 · Kết nối MCP tới Render và Supabase
+- 7.11 · Vibe Coding Làm Game 3D Endless Runner - Dự án 2
 
 ---
 

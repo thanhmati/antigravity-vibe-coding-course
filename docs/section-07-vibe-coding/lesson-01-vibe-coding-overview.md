@@ -115,15 +115,19 @@ flowchart TD
 
 ### Mỗi bước sử dụng công cụ gì?
 
-| Bước                          | Công cụ chính                                 | Bài học tương ứng           |
-| ----------------------------- | --------------------------------------------- | --------------------------- |
-| 💡 Ý tưởng                    | Antigravity                                   | **Bài 1** (bài này)         |
-| 📋 Lập kế hoạch & PRD          | Antigravity                                   | Bài 2                       |
-| 🖼️ Phác thảo Giao diện UI      | Stitch MCP + `enhance-prompt`                 | Bài 3                       |
-| ⚛️ Chuyển đổi Thiết kế → Code  | `react-components` skill                      | Bài 4                       |
-| 🔄 Tích hợp Logic & Tính năng  | Antigravity                                   | Bài 5                       |
-| 🐙 Polish & Git Workflow      | GitHub MCP                                    | Bài 6                       |
-| 🏁 Review & Tổng kết          | Antigravity                                   | Bài 7                       |
+| Bước | Công cụ chính | Bài học tương ứng |
+| --------------------------------------------------- | --------------------------------------------- | ----------------------------------- |
+| 💡 Tổng Quan Vibe Coding & Giới thiệu dự án | Antigravity | **Bài 7.1** (bài này) |
+| 🔄 Quy trình 4 bước khi Vibe coding | Antigravity | **Bài 7.2** (bài này) |
+| 🛠️ Cài đặt plugin Agent Skills | Agent Skills Plugin | Bài 7.3 |
+| 📋 Tìm hiểu về PRD (Project requirement document) | Antigravity | Bài 7.4 |
+| 🗺️ Lập kế hoạch dự án VibeSpace | Antigravity (PRD, PLAN, ARCHITECTURE) | Bài 7.5 |
+| 🎨 Thiết kế UI cho VibeSpace | Google Stitch MCP | Bài 7.6 |
+| ⚛️ Chuyển đổi Thiết kế UI → Code | Google Stitch MCP (`react-components` skill) | Bài 7.7 |
+| 🚀 Triển khai website lên Production | Vercel | Bài 7.8 |
+| 🗄️ Mở rộng dự án VibeSpace (Backend & Database) | NodeJS, Supabase | Bài 7.9 |
+| 🔌 Kết nối MCP tới Render và Supabase | MCP Servers | Bài 7.10 |
+| 🎮 Dự án 2: Endless Runner (Game 3D) | Antigravity | Bài 7.11 |
 
 ---
 

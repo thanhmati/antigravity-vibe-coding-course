@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Section-4_of_7-f59e0b?style=for-the-badge" alt="Section 4" />
-  <img src="https://img.shields.io/badge/Lectures-7+-blue?style=for-the-badge" alt="7+ Lectures" />
+  <img src="https://img.shields.io/badge/Lectures-10-blue?style=for-the-badge" alt="10 Lectures" />
   <img src="https://img.shields.io/badge/Duration-~4--5_hours-green?style=for-the-badge" alt="~4-5 hours" />
   <img src="https://img.shields.io/badge/Level-Intermediate→Advanced-orange?style=for-the-badge" alt="Level" />
 </p>
@@ -48,10 +48,6 @@ Sau section này, bạn sẽ:
 | 4.8 | **PLAN.md – Trạng thái dự án** | Task list & priorities | ~15 phút |
 | 4.9 | [**Kỹ thuật Summarize Context**](lesson-03-summarize-context-techniques.md) | Giữ Agent "tỉnh táo" phiên dài | ~40 phút |
 | 4.10 | **Context Compaction** | "Nén" conversation, handoff documents | ~30 phút |
-| 4.11 | [**Just-in-Time Context**](lesson-04-just-in-time-context.md) | Chỉ cho Agent biết điều cần biết, tối ưu token. | ~40 phút |
-| 4.12 | **Targeted References** | Chỉ định chính xác file và khoảng dòng code. | ~20 phút |
-| 4.13 | **Layered Context** | Phân tầng thông tin thành 3 lớp. | ~20 phút |
-| 4.14 | **Rules & Smart Prompting** | Tiết kiệm token bằng system rules. | ~20 phút |
 
 ---
 

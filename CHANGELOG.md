@@ -6,6 +6,17 @@ Format dựa trên [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.1.0] — 2026-07-13
+
+### 🔄 Curriculum Synchronization
+
+#### Updated
+- **Section 2:** Expanded from 7 to 9 lectures to include "Workflows Demo" and "Demo Agent Skills".
+- **Section 4:** Restructured and streamlined to 10 lectures.
+- **Section 5:** Updated to 6 lectures (from 4).
+- **Section 7:** Reorganized and expanded to 11 lectures (added Game 3D project, MCP integrations, and PRD breakdown).
+- Synchronized all related roadmaps, README files, and index summaries.
+
 ## [1.0.0] — 2026-05-14
 
 ### 🎉 Initial Release

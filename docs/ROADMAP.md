@@ -16,13 +16,13 @@ graph TD
 
     S2 --> S3["✍️ Section 3: Prompt Engineering\n━━━━━━━━━━━━━━\n• Thiết kế prompt hiệu quả\n• Debug & tối ưu\n• 4 lectures · ~2h"]
 
-    S3 --> S4["🧠 Section 4: Context Engineering\n━━━━━━━━━━━━━━\n• Context docs & memory\n• Token optimization\n• 7+ lectures · ~4-5h"]
+    S3 --> S4["🧠 Section 4: Context Engineering\n━━━━━━━━━━━━━━\n• Context docs & memory\n• Token optimization\n• 10 lectures · ~4-5h"]
 
     S4 --> S5["🤖 Section 5: Multi-Agent\n━━━━━━━━━━━━━━\n• Subagents & Orchestration\n• /goal, /grill-me, /schedule\n• 6 lectures · ~3-4h"]
 
     S5 --> S6["🔌 Section 6: MCP\n━━━━━━━━━━━━━━\n• Kết nối external systems\n• Stitch & GitHub MCP\n• 6 lectures · ~3h"]
 
-    S6 --> S7["🎨 Section 7: Vibe Coding Project\n━━━━━━━━━━━━━━\n• Build dự án thực tế\n• End-to-end workflow\n• 10 lectures · ~6-8h"]
+    S6 --> S7["🎨 Section 7: Vibe Coding Project\n━━━━━━━━━━━━━━\n• Build dự án thực tế\n• End-to-end workflow\n• 11 lectures · ~6-8h"]
 
     S7 --> FINISH(("🏆 Hoàn thành!"))
 
