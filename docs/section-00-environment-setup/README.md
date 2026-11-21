@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Target-Dành_cho_cả_Non--Developer-brightgreen?style=for-the-badge" alt="Target" />
 </p>
 
-> **1ài học duy nhất chuẩn bị toàn bộ "đồ nghề" để bạn tự tin bước vào hành trình Vibe Coding mà không cần biết viết code trước đó.**
+> **Bài học duy nhất chuẩn bị toàn bộ "đồ nghề" để bạn tự tin bước vào hành trình Vibe Coding mà không cần biết viết code trước đó.**
 
 ---
 
