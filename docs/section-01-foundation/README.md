@@ -63,6 +63,6 @@ graph TD
 
 <div align="center">
 
-[🏠 Home](../../README.md) · [📑 Mục lục](../SUMMARY.md) · [Section 2 →](../section-02-core-concepts/README.md)
+[← Section 0](../section-00-environment-setup/README.md) · [🏠 Home](../../README.md) · [📑 Mục lục](../SUMMARY.md) · [Section 2 →](../section-02-core-concepts/README.md)
 
 </div>

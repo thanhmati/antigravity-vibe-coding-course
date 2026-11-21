@@ -30,6 +30,16 @@
 
 ---
 
+## Section 0 · 🛠️ Environment & Tools Setup: Chuẩn Bị Môi Trường
+
+> Sẵn sàng đồ nghề cho Vibe Coder (Dành cho cả người không phải Developer)
+
+📂 [Section README](section-00-environment-setup/README.md)
+
+- 0.1 · [Hướng dẫn cài đặt Bộ Công Cụ & Môi Trường Vibe Coding từ A-Z](section-00-environment-setup/README.md)
+
+---
+
 ## Section 1 · 🧱 Foundation: AI Agent & Antigravity Basics
 
 > Xây nền tảng từ concept → setup → làm quen công cụ

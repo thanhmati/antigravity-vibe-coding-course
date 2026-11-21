@@ -8,9 +8,11 @@
 
 ```mermaid
 graph TD
-    START(("🎬 Bắt đầu")) --> S1
+    START(("🎬 Bắt đầu")) --> S0
 
-    S1["🧱 Section 1: Foundation\n━━━━━━━━━━━━━━\n• AI Agent là gì?\n• Setup Antigravity\n• 5 lectures · ~2h"]
+    S0["🛠️ Section 0: Environment Setup\n━━━━━━━━━━━━━━\n• Antigravity, Node.js, Git, GitHub\n• Dành cho cả Non-Developer\n• 1 lecture · ~25m"]
+
+    S0 --> S1["🧱 Section 1: Foundation\n━━━━━━━━━━━━━━\n• AI Agent là gì?\n• Setup Antigravity\n• 5 lectures · ~2h"]
 
     S1 --> S2["⚙️ Section 2: Core Concepts\n━━━━━━━━━━━━━━\n• Model, Rules, Workflows\n• Agent Skills\n• 9 lectures · ~4h"]
 
@@ -27,6 +29,7 @@ graph TD
     S7 --> FINISH(("🏆 Hoàn thành!"))
 
     style START fill:#fbbf24,stroke:#f59e0b,color:#000
+    style S0 fill:#4285F4,stroke:#1a73e8,color:#fff
     style S1 fill:#3b82f6,stroke:#2563eb,color:#fff
     style S2 fill:#8b5cf6,stroke:#7c3aed,color:#fff
     style S3 fill:#ec4899,stroke:#db2777,color:#fff
